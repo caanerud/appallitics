@@ -29,7 +29,10 @@ public class Dictator {
     private String legalPrivacyLaws;
     private String legalRightToBearArms;
 
-    public Dictator(User user, String overviewBlurb, String overviewDictatorshipName, String overviewMascot, String overviewPicture, String econLabor, String econTax, String econTrade, String econCapital, String econMilitary, String socialHealthcare, String socialRetirement, String socialEducation, String socialEnvironment, String socialWelfare, String legalPunishment, String legalImmigration, String legalVotingRights, String legalPrivacyLaws, String legalRightToBearArms) {
+    private Integer revolt;
+    private Integer pledge;
+
+    public Dictator(User user, String overviewBlurb, String overviewDictatorshipName, String overviewMascot, String overviewPicture, String econLabor, String econTax, String econTrade, String econCapital, String econMilitary, String socialHealthcare, String socialRetirement, String socialEducation, String socialEnvironment, String socialWelfare, String legalPunishment, String legalImmigration, String legalVotingRights, String legalPrivacyLaws, String legalRightToBearArms, Integer revolt, Integer pledge) {
         this.user = user;
         this.overviewBlurb = overviewBlurb;
         this.overviewDictatorshipName = overviewDictatorshipName;
@@ -50,6 +53,8 @@ public class Dictator {
         this.legalVotingRights = legalVotingRights;
         this.legalPrivacyLaws = legalPrivacyLaws;
         this.legalRightToBearArms = legalRightToBearArms;
+        this.revolt = revolt;
+        this.pledge = pledge;
     }
 
     public User getUser() {
@@ -210,5 +215,21 @@ public class Dictator {
 
     public void setLegalRightToBearArms(String legalRightToBearArms) {
         this.legalRightToBearArms = legalRightToBearArms;
+    }
+
+    public Integer getRevolt() {
+        return revolt;
+    }
+
+    public void setRevolt(Integer revolt) {
+        this.revolt = revolt;
+    }
+
+    public Integer getPledge() {
+        return pledge;
+    }
+
+    public void setPledge(Integer pledge) {
+        this.pledge = pledge;
     }
 }
