@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8" />
@@ -21,29 +21,28 @@
       <a href="index.html">Appallitics</a>
     </div>
     <ul class="main-nav">
-      <li><a href="#">Login</a></li>
-      <li><a href="#">Leaderboard</a></li>
-      <li><a href="#">Vote</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="leaderboard.html">Leaderboard</a></li>
+      <li><a href="vote.html">Vote</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="about.html">About</a></li>
     </ul>
     <div class="hamburger-trigger">
       <ul class="hamburger-nav">
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Leaderboard</a></li>
-        <li><a href="#">Vote</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="vote.html">Vote</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="about.html">About</a></li>
       </ul>
     </div>
   </header>
-
 
 <!-- CONTENT___________________________________________ -->
 
   <div class="content">
 
-    <form class="login" action="" method="">
+    <form class="login" action="profile.html" method="">
       <h1>Login</h1>
       <a href="#" class="go-to-create-account">Don't have an account?</a>
       <br />
@@ -51,13 +50,13 @@
 
       <label for="username">Username</label>
       <br />
-      <input type="text" id="username" name="username" placeholder="" />
+      <input type="text" id="username" name="username" placeholder="" required="required"/>
       <br />
       <br />
 
       <label for="password">Password</label>
       <br />
-      <input type="password" id="password" name="password" placeholder="" />
+      <input type="password" id="password" name="password" placeholder="" required="required"/>
       <br />
       <br />
 
@@ -65,29 +64,29 @@
     </form>
 
 
-    <form class="create-account" action="" method="">
+    <form class="create-account" action="createform.html" method="">
       <h1>Create Account</h1>
       <a href="#" class="go-to-login">Already have an account?</a>
       <br />
       <br />
 
       <label for="email">Email</label>
-      <input type="text" id="email" name="email" placeholder="" />
+      <input type="text" id="email" name="email" placeholder="" required="required"/>
       <br />
       <br />
 
       <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="" />
+      <input type="text" id="username" name="username" placeholder="" required="required"/>
       <br />
       <br />
 
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="" />
+      <input type="password" id="password" name="password" placeholder="" required="required"/>
       <br />
       <br />
 
       <label for="confirm">Confirm Password</label>
-      <input type="password" id="confirm" name="confirm" placeholder="" />
+      <input type="password" id="confirm" name="confirm" placeholder="" required="required"/>
       <br />
       <br />
 
