@@ -8,13 +8,13 @@ public class Dictator {
     private String overviewBlurb;
     private String overviewDictatorshipName;
     private String overviewMascot;
-//    NOT SURE, IS THIS A STRING ??
+//    NOT SURE, IS THIS A STRING ?? - currently it will link to picture
     private String overviewPicture;
 
     private String econLabor;
     private String econTax;
     private String econTrade;
-    private String econCapital;
+    private String econInfrastructure;
     private String econMilitary;
 
     private String socialHealthcare;
@@ -27,12 +27,12 @@ public class Dictator {
     private String legalImmigration;
     private String legalVotingRights;
     private String legalPrivacyLaws;
-    private String legalRightToBearArms;
+    private String legalWeapons;
 
     private Integer revolt;
     private Integer pledge;
 
-    public Dictator(User user, String overviewBlurb, String overviewDictatorshipName, String overviewMascot, String overviewPicture, String econLabor, String econTax, String econTrade, String econCapital, String econMilitary, String socialHealthcare, String socialRetirement, String socialEducation, String socialEnvironment, String socialWelfare, String legalPunishment, String legalImmigration, String legalVotingRights, String legalPrivacyLaws, String legalRightToBearArms, Integer revolt, Integer pledge) {
+    public Dictator(User user, String overviewBlurb, String overviewDictatorshipName, String overviewMascot, String overviewPicture, String econLabor, String econTax, String econTrade, String econInfrastructure, String econMilitary, String socialHealthcare, String socialRetirement, String socialEducation, String socialEnvironment, String socialWelfare, String legalPunishment, String legalImmigration, String legalVotingRights, String legalPrivacyLaws, String legalWeapons, Integer revolt, Integer pledge) {
         this.user = user;
         this.overviewBlurb = overviewBlurb;
         this.overviewDictatorshipName = overviewDictatorshipName;
@@ -41,7 +41,7 @@ public class Dictator {
         this.econLabor = econLabor;
         this.econTax = econTax;
         this.econTrade = econTrade;
-        this.econCapital = econCapital;
+        this.econInfrastructure = econInfrastructure;
         this.econMilitary = econMilitary;
         this.socialHealthcare = socialHealthcare;
         this.socialRetirement = socialRetirement;
@@ -52,7 +52,7 @@ public class Dictator {
         this.legalImmigration = legalImmigration;
         this.legalVotingRights = legalVotingRights;
         this.legalPrivacyLaws = legalPrivacyLaws;
-        this.legalRightToBearArms = legalRightToBearArms;
+        this.legalWeapons = legalWeapons;
         this.revolt = revolt;
         this.pledge = pledge;
     }
@@ -121,12 +121,12 @@ public class Dictator {
         this.econTrade = econTrade;
     }
 
-    public String getEconCapital() {
-        return econCapital;
+    public String getEconInfrastructure() {
+        return econInfrastructure;
     }
 
-    public void setEconCapital(String econCapital) {
-        this.econCapital = econCapital;
+    public void setEconInfrastructure(String econInfrastructure) {
+        this.econInfrastructure = econInfrastructure;
     }
 
     public String getEconMilitary() {
@@ -209,12 +209,12 @@ public class Dictator {
         this.legalPrivacyLaws = legalPrivacyLaws;
     }
 
-    public String getLegalRightToBearArms() {
-        return legalRightToBearArms;
+    public String getLegalWeapons() {
+        return legalWeapons;
     }
 
-    public void setLegalRightToBearArms(String legalRightToBearArms) {
-        this.legalRightToBearArms = legalRightToBearArms;
+    public void setLegalWeapons(String legalWeapons) {
+        this.legalWeapons = legalWeapons;
     }
 
     public Integer getRevolt() {
