@@ -42,7 +42,7 @@
 
   <div class="content">
 
-    <form class="login" action="profile.html" method="">
+    <form class="login" action="profile.html" th:action="@{/loginVerify}" method="get">
       <h1>Login</h1>
       <a href="#" class="go-to-create-account">Don't have an account?</a>
       <br />
@@ -64,7 +64,7 @@
     </form>
 
 
-    <form class="create-account" action="createform.html" method="">
+    <form class="create-account" action="createform.html" th:action="@{/createAccount}" method="post">
       <h1>Create Account</h1>
       <a href="#" class="go-to-login">Already have an account?</a>
       <br />
