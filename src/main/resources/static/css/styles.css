@@ -1,4 +1,4 @@
-.login {
+.login, .create-account {
   background-color: #FE5745;
   position: absolute;
   margin: auto;
@@ -7,19 +7,20 @@
   bottom: 0;
   right: 0;
   width: 70%;
-  height: 50%; }
+  height: 70%;
+  padding: 50px;
+  max-width: 900px; }
+  .login h1, .create-account h1 {
+    text-align: center;
+    margin-bottom: 30px; }
+  .login input, .create-account input {
+    width: 100%; }
+  .login input[type="submit"], .create-account input[type="submit"] {
+    margin-top: 30px;
+    width: 50%; }
 
 .create-account {
-  background-color: #FE5745;
-  display: none;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 70%;
-  height: 50%; }
+  display: none; }
 
 * {
   box-sizing: border-box; }
