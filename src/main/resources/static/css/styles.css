@@ -1,3 +1,26 @@
+.login {
+  background-color: #FE5745;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 50%; }
+
+.create-account {
+  background-color: #FE5745;
+  display: none;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 50%; }
+
 * {
   box-sizing: border-box; }
 
