@@ -83,10 +83,19 @@ public class DictatorRepository {
 
 
     public User getByUserName(String userName) {
-        return jdbcTemplate;
+        return jdbcTemplate.queryForObject("SELECT * FROM users WHERE lower(username) = lower(?)",
+                new Object[]{userName},
+                (resultSet, i) -> new User(
+                        resultSet.getInt("userid"),
+                        resultSet.getString("username"),
+                        resultSet.getString("password"),
+                        resultSet.getString("email")
+                ));
     }
 
     public void save(User user) {
-
+        jdbcTemplate.update("INSERT INTO users(username,password) VALUES(?,?)",
+                new Object[]{user.getUsername(),user.getPassword()});
+    }
     }
 }
