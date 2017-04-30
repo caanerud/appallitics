@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Profile</title>
+    <script src="https://use.fontawesome.com/d631437608.js"></script>
+    <link rel="stylesheet" href="../static/css/normalize.css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/css/remodal-default-theme.css" />
+    <link rel="stylesheet" href="../static/css/remodal.css" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
 </head>
+
 <body>
+
 <!-- HEADER____________________________________________ -->
+
 <header>
     <div class="logo">
         <a href="index.html">Appallitics</a>
@@ -31,33 +42,47 @@
 
 <!-- CONTENT___________________________________________ -->
 
-<h1>Profile</h1>
+<div class="content">
+  <h1>Profile</h1>
 
-<div>Picture at left</div>
+  <div class="top-section">
+    <div class="profile-pic">Picture at left</div>
 
-<h2>Username</h2>
-<h2>Party</h2>
-<h3>Blurb</h3>
+    <div class="profile-info">
+      <h2>Username</h2>
+      <h2>Party</h2>
+      <h3>Blurb</h3>
+    </div>
 
-<h3>Rank: <div id="rank">5</div> </h3>
-<h3>Pledge: <div id="pledge">2</div> </h3>
-<h3>Revolt: <div id="revolt">998001</div> </h3>
+    <div class="profile-stats">
 
-<button type="button">Revolt</button>
-<button type="button">Pledge</button>
+      <h3>Rank: <div id="rank">5</div> </h3>
+      <h3>Pledge: <div id="pledge">2</div> </h3>
+      <h3>Revolt: <div id="revolt">998001</div> </h3>
 
-<!--hide it-->
-<button type="button">Edit</button>
+      <button id="revolt-button" type="button">Revolt</button>
+      <button id="pledge-button" type="button">Pledge</button>
 
+      <!--hide it-->
+      <button id="edit-button" type="button">Edit</button>
+    </div>
+  </div>
 
-<h4>Economics</h4>
-<p>Economic Information</p>
+  <div class="profile-details">
+    <h4>Economics</h4>
+    <p>Economic Information</p>
+    <br/>
+    <br/>
 
-<h4>Social</h4>
-<p>Social Information</p>
+    <h4>Social</h4>
+    <p>Social Information</p>
+    <br/>
+    <br/>
 
-<h4>Legal</h4>
-<p>Legal Information</p>
+    <h4>Legal</h4>
+    <p>Legal Information</p>
+  </div>
+</div>
 
 
 <!-- FOOTER____________________________________________ -->
