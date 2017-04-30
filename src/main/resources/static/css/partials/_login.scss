@@ -1,28 +1,20 @@
 .login, .create-account{
-  background-color: $color1;
-  position: absolute;
-  margin: auto;
-  top: 0; left: 0; bottom: 0; right: 0;
-  width: 70%;
-  height: 70%;
-  padding:50px;
-  max-width: 900px;
-
-  h1{
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  input{
-    width: 100%;
-  }
-
-  input[type="submit"]{
-    margin-top: 30px;
-    width: 50%;
-  }
+  z-index: -1;
+  margin:0 15px;
 }
 
 .create-account{
   display: none;
+}
+
+.form-container{
+  background-color: $color4;
+  width: 100%;
+  min-height:70vh;
+  padding:30px 10%;
+
+  a{
+    display: block;
+    text-align: center;
+  }
 }

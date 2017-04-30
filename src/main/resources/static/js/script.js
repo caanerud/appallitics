@@ -5,7 +5,13 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('.go-to-create-account, .go-to-login').click(function(){
-    $('.login, .create-account').toggle();
+  $('.go-to-create-account').click(function(){
+    $('.login').fadeOut(100);
+    $('.create-account').delay(100).fadeIn(100);
+  });
+
+  $('.go-to-login').click(function(){
+    $('.create-account').fadeOut(100);
+    $('.login').delay(100).fadeIn(100);
   });
 });
