@@ -94,8 +94,7 @@ public class DictatorRepository {
     }
 
     public void save(User user) {
-        jdbcTemplate.update("INSERT INTO users(username,password) VALUES(?,?)",
-                new Object[]{user.getUsername(),user.getPassword()});
-    }
+        jdbcTemplate.update("INSERT INTO users(username,password,email) VALUES(?,?,?)",
+                new Object[]{user.getUsername(),user.getPassword(),user.getEmail()});
     }
 }
