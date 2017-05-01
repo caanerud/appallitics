@@ -108,7 +108,7 @@ public class DictatorController {
             rank.add(x);
         }
         model.addAttribute("rank",rank);
-        model.addAttribute("bestDicators",dictatorRepository.listBestDictators(search));
+        model.addAttribute("bestDictators",dictatorRepository.listBestDictators(search));
         return "leaderboard";
     }
 

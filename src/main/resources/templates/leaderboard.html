@@ -56,8 +56,8 @@
 
 
     <table>
-        <tr>
-            <td th:value="*{rank}">Rank</td>
+        <tr th:each="rank : ${ranks}">
+            <td>Rank</td>
             <td>Picture</td>
             <td>Username</td>
             <td>Dictatorship name</td>
@@ -67,11 +67,11 @@
 
         <tr>
             <td>1</td>
-            <td>Picture 1</td>
-            <td>Username 1</td>
-            <td>Dictatorship name 1</td>
-            <td>Pledges 1</td>
-            <td>Revolts 1</td>
+            <td th:text="${overview_picture}">Picture 1</td>
+            <td th:text="${username}">Username 1</td>
+            <td th:text="${overview_dictatorship_name}">Dictatorship name 1</td>
+            <td th:text="${pledge}">Pledges 1</td>
+            <td th:text="${revolt}">Revolts 1</td>
         </tr>
 
         <tr th:remove="all">
