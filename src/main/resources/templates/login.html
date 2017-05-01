@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <script src="https://use.fontawesome.com/d631437608.js"></script>
-    <link rel="stylesheet" href="../static/css/normalize.css" />
+    <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{css/normalize.css}" />
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,400,700" rel="stylesheet" />
-    <link rel="stylesheet" href="../static/css/remodal-default-theme.css" />
-    <link rel="stylesheet" href="../static/css/remodal.css" />
-    <link rel="stylesheet" href="../static/css/styles.css" />
+    <link rel="stylesheet" href="../static/css/remodal-default-theme.css" th:href="@{css/remodal-default-theme.css}" />
+    <link rel="stylesheet" href="../static/css/remodal.css" th:href="@{css/remodal.css}" />
+    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{css/styles.css}"/>
 </head>
 
 <body>
@@ -18,22 +18,22 @@
 <!-- HEADER____________________________________________ -->
   <header>
     <div class="logo">
-      <a href="index.html">Appallitics</a>
+      <a href="index.html" th:href="@{/}">Appallitics</a>
     </div>
     <ul class="main-nav">
-      <li><a href="login.html">Login</a></li>
-      <li><a href="leaderboard.html">Leaderboard</a></li>
-      <li><a href="vote.html">Vote</a></li>
-      <li><a href="profile.html">Profile</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="login.html" th:href="@{/login}">Login</a></li>
+      <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
+      <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
+      <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
+      <li><a href="about.html" th:href="@{/about}">About</a></li>
     </ul>
     <div class="hamburger-trigger">
       <ul class="hamburger-nav">
-        <li><a href="login.html">Login</a></li>
-        <li><a href="leaderboard.html">Leaderboard</a></li>
-        <li><a href="vote.html">Vote</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="login.html" th:href="@{/login}">Login</a></li>
+        <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
+        <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
+        <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
+        <li><a href="about.html" th:href="@{/about}">About</a></li>
       </ul>
     </div>
   </header>
@@ -46,7 +46,7 @@
     <form class="login" action="profile.html" th:action="@{/loginVerify}" method="post">
       <div class="form-container">
         <h1>Login</h1>
-        <a href="#" class="go-to-create-account">Don't have an account?</a>
+        <a href="#" class="go-to-create-account" th:href="@{/createform}">Don't have an account?</a>
         <br />
         <br />
 
@@ -68,7 +68,7 @@
     <form class="create-account" action="createform.html" th:action="@{/createAccount}" method="post">
       <div class="form-container">
         <h1>Create Account</h1>
-        <a href="#" class="go-to-login">Already have an account?</a>
+        <a href="#" class="go-to-login" th:href="@{/profile}">Already have an account?</a>
         <br />
         <br />
 
