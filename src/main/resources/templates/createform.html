@@ -47,31 +47,36 @@
           <h1>Overview</h1>
 
           <!--For username-->
-          <div id="username-print">Username</div>
+          <div id="username-print"><h3>Username Here</h3></div>
 
-          <label for="overviewBlurb">Blurb</label>
-          <!-- <br /> -->
-          <input type="text" id="overviewBlurb" name="overviewBlurb" placeholder="" required="required"/>
-          <br />
-          <!-- <br /> -->
+          <div class="input-field">
+            <label for="overviewBlurb">Party Catchphrase</label>
+            <input type="text" id="overviewBlurb" name="overviewBlurb" placeholder="" required="required"/>
+          </div>
 
-          <label for="overviewDictatorshipName">Blurb</label>
-          <!-- <br /> -->
-          <input type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" placeholder="" required="required"/>
-          <br />
-          <!-- <br /> -->
+          <div class="input-field">
+            <label for="overviewDictatorshipName">Dictatorship Name</label>
+            <input type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" placeholder="" required="required"/>
+          </div>
 
-          <label for="overviewMascot">DictatorshipName</label>
-          <!-- <br /> -->
-          <input type="text" id="overviewMascot" name="overviewMascot" placeholder="" required="required"/>
-          <br />
-          <!-- <br /> -->
+          <div id="regFormContainer" class="bar-colors-borders">
+            <form action="uploadImages.php" method="post" onsubmit="return validateUploadFile();" enctype="multipart/form-data" />
+              <p><input type="hidden" name="MAX_FILE_SIZE" value="100000" /></p>
+              <div class="uploadFileprompt">
+                <div class="span_left">File 1 to upload - Max. 100kb</div>
+                <div class="span_right"><input type="file" name="txtUploadFile[]" /></div>
+              </div>
+            </div>
 
-          <label for="overviewPicture">Mascot</label>
-          <!-- <br /> -->
-          <input type="text" id="overviewPicture" name="overviewPicture" placeholder="" required="required"/>
-          <br />
-          <!-- <br /> -->
+          <!-- <div class="input-field">
+            <label for="overviewMascot">Party Name</label>
+            <input type="text" id="overviewMascot" name="overviewMascot" placeholder="" required="required"/>
+          </div>
+
+          <div class="input-field">
+            <label for="overviewPicture">Mascot</label>
+            <input type="text" id="overviewPicture" name="overviewPicture" placeholder="" required="required"/>
+          </div> -->
 
           <div class="form-nav">
             <span></span>
@@ -86,31 +91,31 @@
           <br />
           <input type="text" id="econLabor" name="econLabor" placeholder="" required="required"/>
           <br />
-          <br />
+          <!-- <br /> -->
 
           <label for="econTax">Tax</label>
           <br />
           <input type="text" id="econTax" name="econTax" placeholder="" required="required"/>
           <br />
-          <br />
+          <!-- <br /> -->
 
           <label for="econTrade">Trade</label>
           <br />
           <input type="text" id="econTrade" name="econTrade" placeholder="" required="required"/>
           <br />
-          <br />
+          <!-- <br /> -->
 
           <label for="econInfrastructure">Infrastructure</label>
           <br />
           <input type="text" id="econInfrastructure" name="econInfrastructure" placeholder="" required="required"/>
           <br />
-          <br />
+          <!-- <br /> -->
 
           <label for="econMilitary">Military</label>
           <br />
           <input type="text" id="econMilitary" name="econMilitary" placeholder="" required="required"/>
           <br />
-          <br />
+          <!-- <br /> -->
 
           <div class="form-nav">
             <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
