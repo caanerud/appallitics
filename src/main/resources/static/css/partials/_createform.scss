@@ -1,0 +1,28 @@
+#overview{
+  background-color: pink;
+}
+
+#economics{
+  background-color: green;
+  display: none;
+}
+
+#social{
+  background-color: orange;
+  display: none;
+}
+
+#legal{
+  background-color: purple;
+  display: none;
+}
+
+.form-nav{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  button{
+    width: 50px;
+  }
+}

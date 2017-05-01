@@ -1,5 +1,6 @@
 .top-section{
   justify-content: space-between;
+  margin-bottom:30px;
 
   .profile-pic{
     height:200px;
@@ -10,32 +11,47 @@
   }
 
   .profile-info{
-    width: 35%;
+    width:80%;
     display: block;
     margin:0 auto;
     text-align: center;
+
+    h2{
+      color: white;
+    }
+
+    h3{
+      color:white;
+    }
   }
 
   .profile-stats{
-    width: 35%;
+    width: 80%;
     text-align: left;
     display: block;
     margin:0 auto;
 
-    #revolt-button{
-      background-color: red;
-      width: 45%;
-      float: left;
-      margin-right: 10%;
-    }
-
-    #pledge-button{
-      background-color: green;
-      width: 45%;
-    }
-
-    #edit-button{
+    .buttons{
       width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      #revolt-button{
+        background-color: red;
+        max-width: 200px;
+        margin:0 20px;
+      }
+
+      #pledge-button{
+        background-color: green;
+        max-width: 200px;
+        margin: 0 20px;
+      }
+
+      #edit-button{
+        width: 100%;
+      }
     }
   }
 }
@@ -53,10 +69,15 @@
 
     .profile-info{
       text-align: left;
+      width: 35%;
+    }
+
+    .profile-stats{
+      width:35%;
     }
   }
 
   .profile-details{
-    padding: 0 5%;
+    padding: 0 1.5%;
   }
 }
