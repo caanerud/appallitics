@@ -15,3 +15,15 @@ $(document).ready(function(){
     $('.login').delay(100).fadeIn(100);
   });
 });
+
+$(document).ready(function(){
+  $('.next').click(function(){
+    $(this).parent().parent().hide();
+    $(this).parent().parent().next().show();
+  });
+
+  $('.prev').click(function(){
+    $(this).parent().parent().hide();
+    $(this).parent().parent().prev().show();
+  });
+});
