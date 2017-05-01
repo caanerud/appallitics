@@ -1,5 +1,16 @@
+section{
+  min-height: 70vh;
+  // padding:30px 10%;
+  margin:0 15px 70px;
+  position: relative;
+
+  h1{
+    background-color: $color4;
+    padding: 10px 0;
+  }
+}
+
 #overview{
-  background-color: pink;
 }
 
 #economics{
@@ -19,10 +30,18 @@
 
 .form-nav{
   width: 100%;
+  position: absolute;
+  bottom: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 
   button{
     width: 50px;
+    margin:0;
+  }
+
+  input[type="submit"]{
+    width: 50%;
+    margin:0;
   }
 }

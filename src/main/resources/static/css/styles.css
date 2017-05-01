@@ -2,9 +2,6 @@
   z-index: -1;
   margin: 0 15px; }
 
-.create-account {
-  display: none; }
-
 .form-container {
   background-color: #635a60;
   width: 100%;
@@ -89,8 +86,13 @@ tr:first-of-type {
 
   .profile-details {
     padding: 0 1.5%; } }
-#overview {
-  background-color: pink; }
+section {
+  min-height: 70vh;
+  margin: 0 15px 70px;
+  position: relative; }
+  section h1 {
+    background-color: #635a60;
+    padding: 10px 0; }
 
 #economics {
   background-color: green;
@@ -106,10 +108,16 @@ tr:first-of-type {
 
 .form-nav {
   width: 100%;
+  position: absolute;
+  bottom: 0;
   display: flex;
-  justify-content: flex-end; }
+  justify-content: space-between; }
   .form-nav button {
-    width: 50px; }
+    width: 50px;
+    margin: 0; }
+  .form-nav input[type="submit"] {
+    width: 50%;
+    margin: 0; }
 
 * {
   box-sizing: border-box; }
