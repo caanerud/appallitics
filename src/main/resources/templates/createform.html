@@ -44,42 +44,43 @@
 <div class="content">
   <form action="profile.html">
       <section id="overview">
-          <h2>Overview</h2>
+          <h1>Overview</h1>
 
           <!--For username-->
           <div id="username-print">Username</div>
 
           <label for="overviewBlurb">Blurb</label>
-          <br />
+          <!-- <br /> -->
           <input type="text" id="overviewBlurb" name="overviewBlurb" placeholder="" required="required"/>
           <br />
-          <br />
+          <!-- <br /> -->
 
           <label for="overviewDictatorshipName">Blurb</label>
-          <br />
+          <!-- <br /> -->
           <input type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" placeholder="" required="required"/>
           <br />
-          <br />
+          <!-- <br /> -->
 
           <label for="overviewMascot">DictatorshipName</label>
-          <br />
+          <!-- <br /> -->
           <input type="text" id="overviewMascot" name="overviewMascot" placeholder="" required="required"/>
           <br />
-          <br />
+          <!-- <br /> -->
 
           <label for="overviewPicture">Mascot</label>
-          <br />
+          <!-- <br /> -->
           <input type="text" id="overviewPicture" name="overviewPicture" placeholder="" required="required"/>
           <br />
-          <br />
+          <!-- <br /> -->
 
           <div class="form-nav">
-            <button type="button" name="button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            <span></span>
+            <button type="button" name="button" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
           </div>
       </section>
 
       <section id="economics">
-          <h2>Economics</h2>
+          <h1>Economics</h1>
 
           <label for="econLabor">Labor</label>
           <br />
@@ -110,10 +111,16 @@
           <input type="text" id="econMilitary" name="econMilitary" placeholder="" required="required"/>
           <br />
           <br />
+
+          <div class="form-nav">
+            <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+
+            <button type="button" name="button" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+          </div>
       </section>
 
       <section id="social">
-          <h2>Social</h2>
+          <h1>Social</h1>
 
           <label for="socialHealthcare">Healthcare</label>
           <br />
@@ -144,10 +151,16 @@
           <input type="text" id="socialWelfare" name="socialWelfare" placeholder="" required="required"/>
           <br />
           <br />
+
+          <div class="form-nav">
+            <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+
+            <button type="button" name="button" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+          </div>
       </section>
 
       <section id="legal">
-          <h2>Legal</h2>
+          <h1>Legal</h1>
 
           <label for="legalPunishment">Punishment</label>
           <br />
@@ -179,14 +192,19 @@
           <br />
           <br />
 
-          <input type="submit" />
+          <div class="form-nav">
+            <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+
+            <input type="submit" />
+          </div>
+
       </section>
   </form>
 </div>
 
 <!-- FOOTER____________________________________________ -->
 <footer>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
 </footer>
 
 
