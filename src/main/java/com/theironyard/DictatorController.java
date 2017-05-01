@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 /**
  * Created by chrisaanerud on 4/28/17.
@@ -30,37 +31,58 @@ public class DictatorController {
         return "login";
     }
 
-
+    // creating dictator form
     @GetMapping("/createform")
     public String createform(){
         return "createform";
     }
 
+    // checking login inputs
     @PostMapping("/loginVerify")
     public String login(String username, String password, HttpSession session, Model model) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
 
-
-        // gets a particular user by username
-        User user = dictatorRepository.getByUserName(username);
-
-        // checks the user inputs, if correct then goes to their profile, it not back to login
-        if(user != null && PasswordStorage.verifyPassword(password, user.getPassword())){
-            session.setAttribute("userId", user.getId());
-            return "redirect:/profile";
-        } else {
-            model.addAttribute("loginFailed", true);
-            return "redirect:/login";
+        // Creates list of usernames
+        ArrayList<String> usernameList = new ArrayList<>();
+        for (int x = 0; x < dictatorRepository.listUsers().size(); x =x + 1){
+            usernameList.add(dictatorRepository.listUsers().get(x).getUsername());
         }
 
+        // Checks to see if username is in database
+        if (usernameList.contains(username)){
+            // gets a particular user by username
+            User user = dictatorRepository.getByUserName(username);
+
+            // checks the user inputs, if correct then goes to their profile, it not back to login
+            if(user != null && PasswordStorage.verifyPassword(password, user.getPassword())){
+                session.setAttribute("userId", user.getId());
+                return "redirect:/profile";
+            } else {
+                model.addAttribute("loginFailed", true);
+                return "redirect:/login";
+            }
+        }
+        // username not in list
+        return "redirect:/login";
     }
     @PostMapping(value = "/createAccount")
-    public String register(User user) throws PasswordStorage.CannotPerformOperationException {
-        // sets the password
-        user.setPassword(PasswordStorage.createHash(user.getPassword()));
+    public String register(String username, String password, String confirm, String email) throws PasswordStorage.CannotPerformOperationException {
 
-        // puts it in the database
-        dictatorRepository.save(user);
+        // Creates list of usernames
+        ArrayList<String> usernameList = new ArrayList<>();
+        for (int x = 0; x < dictatorRepository.listUsers().size(); x =x + 1){
+            usernameList.add(dictatorRepository.listUsers().get(x).getUsername());
+        }
 
+        if (!usernameList.contains(username) && password.equals(confirm)){
+            User user = new User(username,password,email);
+            // sets the password
+            user.setPassword(PasswordStorage.createHash(user.getPassword()));
+
+            // puts it in the database
+            dictatorRepository.save(user);
+        }
+
+        // redirect to creating dictator
         return "redirect:/createform";
     }
 
