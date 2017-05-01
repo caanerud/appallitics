@@ -57,7 +57,8 @@ public class DictatorController {
                 session.setAttribute("userId", user.getId());
                 return "redirect:/profile";
             } else {
-                model.addAttribute("loginFailed", true);
+                // the indication that login failed, stored as a variable
+                    model.addAttribute("loginFailed", true);
                 return "redirect:/login";
             }
         }
@@ -80,10 +81,13 @@ public class DictatorController {
 
             // puts it in the database
             dictatorRepository.save(user);
+
+            // redirect to creating dictator
+            return "redirect:/createform";
         }
 
-        // redirect to creating dictator
-        return "redirect:/createform";
+        // redirect to login
+        return "redirect:/login";
     }
 
     // the about page
