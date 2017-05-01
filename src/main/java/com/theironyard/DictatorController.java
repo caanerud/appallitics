@@ -27,16 +27,11 @@ public class DictatorController {
 
     // login/register screen
     @GetMapping("/login")
-    public String login(Model model) {
-        model.addAttribute("showLogin",true);
+    public String login() {
+
         return "login";
     }
-//example
-    @GetMapping("/signup")
-    public String signup(Model model) {
-        model.addAttribute("showLogin",false);
-        return "login";
-    }
+
 
     // creating dictator form
     @GetMapping("/createform")

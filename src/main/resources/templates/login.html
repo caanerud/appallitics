@@ -43,7 +43,7 @@
 
   <div class="content">
 
-    <form class="login" action="profile.html" th:action="@{/loginVerify}" method="post" th:style="${showLogin} ? '':'display:none;'">
+    <form class="login" action="profile.html" th:action="@{/loginVerify}" method="post">
       <div class="form-container">
         <h1>Login</h1>
         <a href="#" th:href="@{/signup}" class="go-to-create-account" >Don't have an account?</a>
@@ -65,7 +65,7 @@
     </form>
 
 
-    <form class="create-account" action="createform.html" th:action="@{/createAccount}" method="post" th:style="${showLogin} ? 'display:none;':''">
+    <form class="create-account" action="createform.html" th:action="@{/createAccount}" method="post" >
       <div class="form-container">
         <h1>Create Account</h1>
         <a href="#" class="go-to-login" th:href="@{/login}">Already have an account?</a>
@@ -112,8 +112,8 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../static/js/remodal.js"></script>
-    <script src="../static/js/script.js"></script>
+    <script type="text/javascript" src="../static/js/remodal.js" th:src="@{/js/remodal.js}"></script>
+    <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
 </body>
 
 </html>
