@@ -4,6 +4,7 @@
 @import "partials/_index.scss";
 @import "partials/_leaderboard.scss";
 @import "partials/_profile.scss";
+@import "partials/_createform.scss";
 
 *{
   box-sizing: border-box;
@@ -182,7 +183,7 @@ input[type="submit"]:active, button:active{
 // FOOTER__________________________________
 
 footer{
-  background-color: $color1;
+  background-color: $color4;
   position: fixed;
   bottom: 0;
   width: 100%;

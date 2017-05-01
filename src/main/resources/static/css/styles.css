@@ -37,7 +37,8 @@ tr:first-of-type {
   background-color: transparent; }
 
 .top-section {
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-bottom: 30px; }
   .top-section .profile-pic {
     height: 200px;
     width: 200px;
@@ -45,25 +46,34 @@ tr:first-of-type {
     display: block;
     margin: 0 auto 20px; }
   .top-section .profile-info {
-    width: 35%;
+    width: 80%;
     display: block;
     margin: 0 auto;
     text-align: center; }
+    .top-section .profile-info h2 {
+      color: white; }
+    .top-section .profile-info h3 {
+      color: white; }
   .top-section .profile-stats {
-    width: 35%;
+    width: 80%;
     text-align: left;
     display: block;
     margin: 0 auto; }
-    .top-section .profile-stats #revolt-button {
-      background-color: red;
-      width: 45%;
-      float: left;
-      margin-right: 10%; }
-    .top-section .profile-stats #pledge-button {
-      background-color: green;
-      width: 45%; }
-    .top-section .profile-stats #edit-button {
-      width: 100%; }
+    .top-section .profile-stats .buttons {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .top-section .profile-stats .buttons #revolt-button {
+        background-color: red;
+        max-width: 200px;
+        margin: 0 20px; }
+      .top-section .profile-stats .buttons #pledge-button {
+        background-color: green;
+        max-width: 200px;
+        margin: 0 20px; }
+      .top-section .profile-stats .buttons #edit-button {
+        width: 100%; }
 
 .profile-details {
   padding: 0 10%; }
@@ -72,10 +82,35 @@ tr:first-of-type {
   .top-section {
     display: flex; }
     .top-section .profile-info {
-      text-align: left; }
+      text-align: left;
+      width: 35%; }
+    .top-section .profile-stats {
+      width: 35%; }
 
   .profile-details {
-    padding: 0 5%; } }
+    padding: 0 1.5%; } }
+#overview {
+  background-color: pink; }
+
+#economics {
+  background-color: green;
+  display: none; }
+
+#social {
+  background-color: orange;
+  display: none; }
+
+#legal {
+  background-color: purple;
+  display: none; }
+
+.form-nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; }
+  .form-nav button {
+    width: 50px; }
+
 * {
   box-sizing: border-box; }
 
@@ -207,7 +242,7 @@ input[type="submit"]:active, button:active {
   transform: scale(0.98); }
 
 footer {
-  background-color: #FE5745;
+  background-color: #635a60;
   position: fixed;
   bottom: 0;
   width: 100%;

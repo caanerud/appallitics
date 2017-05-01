@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8" />
-    <title>Create Form</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Form</title>
+  <script src="https://use.fontawesome.com/d631437608.js"></script>
+  <link rel="stylesheet" href="../static/css/normalize.css" />
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,400,700" rel="stylesheet" />
+  <link rel="stylesheet" href="../static/css/remodal-default-theme.css" />
+  <link rel="stylesheet" href="../static/css/remodal.css" />
+  <link rel="stylesheet" href="../static/css/styles.css" />
 </head>
+
 <body>
 
 <!-- HEADER____________________________________________ -->
@@ -32,142 +41,148 @@
 
 <!-- CONTENT___________________________________________ -->
 
-<form action="profile.html">
-    <section>
-        <h2>Overview</h2>
+<div class="content">
+  <form action="profile.html">
+      <section id="overview">
+          <h2>Overview</h2>
 
-        <!--For username-->
-        <div id="username-print">Username</div>
+          <!--For username-->
+          <div id="username-print">Username</div>
 
-        <label for="overviewBlurb">Blurb</label>
-        <br />
-        <input type="text" id="overviewBlurb" name="overviewBlurb" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="overviewBlurb">Blurb</label>
+          <br />
+          <input type="text" id="overviewBlurb" name="overviewBlurb" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="overviewDictatorshipName">Blurb</label>
-        <br />
-        <input type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="overviewDictatorshipName">Blurb</label>
+          <br />
+          <input type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="overviewMascot">DictatorshipName</label>
-        <br />
-        <input type="text" id="overviewMascot" name="overviewMascot" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="overviewMascot">DictatorshipName</label>
+          <br />
+          <input type="text" id="overviewMascot" name="overviewMascot" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="overviewPicture">Mascot</label>
-        <br />
-        <input type="text" id="overviewPicture" name="overviewPicture" placeholder="" required="required"/>
-        <br />
-        <br />
-    </section>
+          <label for="overviewPicture">Mascot</label>
+          <br />
+          <input type="text" id="overviewPicture" name="overviewPicture" placeholder="" required="required"/>
+          <br />
+          <br />
 
-    <section>
-        <h2>Economics</h2>
+          <div class="form-nav">
+            <button type="button" name="button"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+          </div>
+      </section>
 
-        <label for="econLabor">Labor</label>
-        <br />
-        <input type="text" id="econLabor" name="econLabor" placeholder="" required="required"/>
-        <br />
-        <br />
+      <section id="economics">
+          <h2>Economics</h2>
 
-        <label for="econTax">Tax</label>
-        <br />
-        <input type="text" id="econTax" name="econTax" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="econLabor">Labor</label>
+          <br />
+          <input type="text" id="econLabor" name="econLabor" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="econTrade">Trade</label>
-        <br />
-        <input type="text" id="econTrade" name="econTrade" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="econTax">Tax</label>
+          <br />
+          <input type="text" id="econTax" name="econTax" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="econInfrastructure">Infrastructure</label>
-        <br />
-        <input type="text" id="econInfrastructure" name="econInfrastructure" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="econTrade">Trade</label>
+          <br />
+          <input type="text" id="econTrade" name="econTrade" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="econMilitary">Military</label>
-        <br />
-        <input type="text" id="econMilitary" name="econMilitary" placeholder="" required="required"/>
-        <br />
-        <br />
-    </section>
+          <label for="econInfrastructure">Infrastructure</label>
+          <br />
+          <input type="text" id="econInfrastructure" name="econInfrastructure" placeholder="" required="required"/>
+          <br />
+          <br />
 
-    <section>
-        <h2>Social</h2>
+          <label for="econMilitary">Military</label>
+          <br />
+          <input type="text" id="econMilitary" name="econMilitary" placeholder="" required="required"/>
+          <br />
+          <br />
+      </section>
 
-        <label for="socialHealthcare">Healthcare</label>
-        <br />
-        <input type="text" id="socialHealthcare" name="socialHealthcare" placeholder="" required="required"/>
-        <br />
-        <br />
+      <section id="social">
+          <h2>Social</h2>
 
-        <label for="socialRetirement">Retirement</label>
-        <br />
-        <input type="text" id="socialRetirement" name="socialRetirement" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="socialHealthcare">Healthcare</label>
+          <br />
+          <input type="text" id="socialHealthcare" name="socialHealthcare" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="socialEducation">Education</label>
-        <br />
-        <input type="text" id="socialEducation" name="econTrade" socialEducation="" required="required"/>
-        <br />
-        <br />
+          <label for="socialRetirement">Retirement</label>
+          <br />
+          <input type="text" id="socialRetirement" name="socialRetirement" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="socialEnvironment">Environment</label>
-        <br />
-        <input type="text" id="socialEnvironment" name="socialEnvironment" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="socialEducation">Education</label>
+          <br />
+          <input type="text" id="socialEducation" name="econTrade" socialEducation="" required="required"/>
+          <br />
+          <br />
 
-        <label for="socialWelfare">Welfare</label>
-        <br />
-        <input type="text" id="socialWelfare" name="socialWelfare" placeholder="" required="required"/>
-        <br />
-        <br />
-    </section>
+          <label for="socialEnvironment">Environment</label>
+          <br />
+          <input type="text" id="socialEnvironment" name="socialEnvironment" placeholder="" required="required"/>
+          <br />
+          <br />
 
-    <section>
-        <h2>Economics</h2>
+          <label for="socialWelfare">Welfare</label>
+          <br />
+          <input type="text" id="socialWelfare" name="socialWelfare" placeholder="" required="required"/>
+          <br />
+          <br />
+      </section>
 
-        <label for="legalPunishment">Punishment</label>
-        <br />
-        <input type="text" id="legalPunishment" name="legalPunishment" placeholder="" required="required"/>
-        <br />
-        <br />
+      <section id="legal">
+          <h2>Legal</h2>
 
-        <label for="legalImmigration">Immigration</label>
-        <br />
-        <input type="text" id="legalImmigration" name="legalImmigration" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="legalPunishment">Punishment</label>
+          <br />
+          <input type="text" id="legalPunishment" name="legalPunishment" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="legalVotingRights">Voting Rights</label>
-        <br />
-        <input type="text" id="legalVotingRights" name="legalVotingRights" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="legalImmigration">Immigration</label>
+          <br />
+          <input type="text" id="legalImmigration" name="legalImmigration" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="legalPrivacyLaws">Privacy Laws</label>
-        <br />
-        <input type="text" id="legalPrivacyLaws" name="legalPrivacyLaws" placeholder="" required="required"/>
-        <br />
-        <br />
+          <label for="legalVotingRights">Voting Rights</label>
+          <br />
+          <input type="text" id="legalVotingRights" name="legalVotingRights" placeholder="" required="required"/>
+          <br />
+          <br />
 
-        <label for="legalWeapons">Weapons</label>
-        <br />
-        <input type="text" id="legalWeapons" name="legalWeapons" placeholder="" required="required"/>
-        <br />
-        <br />
-    </section>
+          <label for="legalPrivacyLaws">Privacy Laws</label>
+          <br />
+          <input type="text" id="legalPrivacyLaws" name="legalPrivacyLaws" placeholder="" required="required"/>
+          <br />
+          <br />
 
-    <input type="submit" />
-</form>
+          <label for="legalWeapons">Weapons</label>
+          <br />
+          <input type="text" id="legalWeapons" name="legalWeapons" placeholder="" required="required"/>
+          <br />
+          <br />
+
+          <input type="submit" />
+      </section>
+  </form>
+</div>
 
 <!-- FOOTER____________________________________________ -->
 <footer>
