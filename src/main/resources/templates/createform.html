@@ -47,7 +47,7 @@
           <h1>Overview</h1>
 
           <!--For username-->
-          <div id="username-print"><h3>Username Here</h3></div>
+          <h3>Welcome, <div id="username-print"></div></h3>
 
           <div class="input-field">
             <label for="overviewBlurb">Party Catchphrase</label>
@@ -59,24 +59,34 @@
             <input type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" placeholder="" required="required"/>
           </div>
 
-          <div id="regFormContainer" class="bar-colors-borders">
-            <form action="uploadImages.php" method="post" onsubmit="return validateUploadFile();" enctype="multipart/form-data" />
-              <p><input type="hidden" name="MAX_FILE_SIZE" value="100000" /></p>
-              <div class="uploadFileprompt">
-                <div class="span_left">File 1 to upload - Max. 100kb</div>
-                <div class="span_right"><input type="file" name="txtUploadFile[]" /></div>
+          <hr/>
+          <br/>
+
+          <div class="overview-bottom">
+            <div id="regFormContainer" class="bar-colors-borders">
+              <form action="uploadImages.php" method="post" onsubmit="return validateUploadFile();" enctype="multipart/form-data" />
+                <p><input type="hidden" name="MAX_FILE_SIZE" value="100000" /></p>
+                <div class="uploadFileprompt">
+                  <div class="span_left">Upload Profile Pic (Max. 100kb)</div>
+                  <div class="span_right"><input type="file" name="txtUploadFile[]" /></div>
+                </div>
               </div>
-            </div>
 
-          <!-- <div class="input-field">
-            <label for="overviewMascot">Party Name</label>
-            <input type="text" id="overviewMascot" name="overviewMascot" placeholder="" required="required"/>
+              <div class="choose-color">
+                <p>Choose Your Color (note: color picker doesn't work in Safari or Internet Explorer)</p>
+                <input type="color" name="favcolor" value="#ff0000">
+              </div>
+
+            <!-- <div class="input-field">
+              <label for="overviewMascot">Party Name</label>
+              <input type="text" id="overviewMascot" name="overviewMascot" placeholder="" required="required"/>
+            </div> -->
+
+            <!-- <div class="input-field">
+              <label for="overviewPicture">Mascot</label>
+              <input type="text" id="overviewPicture" name="overviewPicture" placeholder="" required="required"/>
+            </div> -->
           </div>
-
-          <div class="input-field">
-            <label for="overviewPicture">Mascot</label>
-            <input type="text" id="overviewPicture" name="overviewPicture" placeholder="" required="required"/>
-          </div> -->
 
           <div class="form-nav">
             <span></span>

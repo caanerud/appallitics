@@ -2,6 +2,9 @@
   z-index: -1;
   margin: 0 15px; }
 
+.create-account {
+  display: none; }
+
 .form-container {
   background-color: #635a60;
   width: 100%;
@@ -94,9 +97,8 @@ section {
   padding-bottom: 60px; }
   section h1 {
     background-color: #635a60;
-    padding: 10px 0; }
-  section h3 {
-    margin-bottom: 10px; }
+    padding: 10px 0;
+    margin-bottom: 20px; }
 
 #economics {
   display: none; }
@@ -113,12 +115,23 @@ section {
   align-items: center;
   margin-bottom: 20px; }
   .input-field label {
+    width: 150px;
     margin-right: 10px; }
+
+.overview-bottom {
+  justify-content: space-between;
+  margin-top: 10px; }
+  .overview-bottom #regFormContainer {
+    width: 100%; }
+  .overview-bottom input[type="file"] {
+    padding: 0; }
 
 .form-nav {
   width: 100%;
+  max-width: 900px;
   position: absolute;
   bottom: 0;
+  left: 0;
   display: flex;
   justify-content: space-between; }
   .form-nav button {
@@ -149,7 +162,7 @@ h1 {
   margin-bottom: 10px; }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: white;
   text-transform: uppercase;
   letter-spacing: .1rem;
