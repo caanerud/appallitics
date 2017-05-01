@@ -63,29 +63,36 @@
           <br/>
 
           <div class="overview-bottom">
-            <div id="regFormContainer" class="bar-colors-borders">
-              <form action="uploadImages.php" method="post" onsubmit="return validateUploadFile();" enctype="multipart/form-data" />
-                <p><input type="hidden" name="MAX_FILE_SIZE" value="100000" /></p>
-                <div class="uploadFileprompt">
-                  <div class="span_left">Upload Profile Pic (Max. 100kb)</div>
-                  <div class="span_right"><input type="file" name="txtUploadFile[]" /></div>
-                </div>
+
+              <div class="choose-pic">
+                <p>Choose Your Profile Picture</p>
+                <label class="custom-file-upload">
+                  <input type="file"/>
+                  <i class="fa fa-cloud-upload"></i>
+                </label>
               </div>
 
               <div class="choose-color">
-                <p>Choose Your Color (note: color picker doesn't work in Safari or Internet Explorer)</p>
-                <input type="color" name="favcolor" value="#ff0000">
+                <p>Choose Your Color</p>
+                <input type="color" name="favcolor" value="#ffffff">
               </div>
 
-            <!-- <div class="input-field">
-              <label for="overviewMascot">Party Name</label>
-              <input type="text" id="overviewMascot" name="overviewMascot" placeholder="" required="required"/>
-            </div> -->
+              <div class="choose-mascot">
+                <p>Choose Your Mascot</p>
+                <select class="mascot-dropdown" name="mascot">
+                  <option value="">Tiger</option>
+                  <option value="">Wild Boar</option>
+                  <option value="">Iguana</option>
+                  <option value="">Koala</option>
+                  <option value="">Crocodile</option>
+                  <option value="">Parrot</option>
+                  <option value="">Whale</option>
+                  <option value="">Eagle</option>
+                  <option value="">Dolphin</option>
+                  <option value="">Clown Fish</option>
+                </select>
+              </div>
 
-            <!-- <div class="input-field">
-              <label for="overviewPicture">Mascot</label>
-              <input type="text" id="overviewPicture" name="overviewPicture" placeholder="" required="required"/>
-            </div> -->
           </div>
 
           <div class="form-nav">
@@ -231,8 +238,8 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="../static/js/remodal.js"></script>
-<script src="../static/js/script.js"></script>
+<script type="text/javascript" src="../static/js/remodal.js" th:src="@{js/remodal.js}"></script>
+<script src="../static/js/script.js" th:src="@{js/script.js}"></script>
 
 </body>
 </html>

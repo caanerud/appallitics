@@ -28,7 +28,6 @@ public class DictatorController {
     // login/register screen
     @GetMapping("/login")
     public String login() {
-
         return "login";
     }
 
@@ -104,7 +103,7 @@ public class DictatorController {
     @GetMapping("/leaderboard")
     public String leaderboard(Model model, String search){
         ArrayList<Integer> rank = new ArrayList<>();
-        for (int x = 1; x < 11; x = x + 1){
+        for (int x = 1; x <= dictatorRepository.listUsers().size(); x = x + 1){
             rank.add(x);
         }
         model.addAttribute("rank",rank);
@@ -114,7 +113,16 @@ public class DictatorController {
 
     // view a profile
     @GetMapping("/profile")
-    public String profile(){
+    public String profile(Model model, HttpSession session){
+        // Getting id from session
+        Integer userId = (Integer) session.getAttribute("userId");
+
+        // Getting dictator from session id
+        Dictator dictator = dictatorRepository.getDictatorById(userId);
+
+        // Adding the dictator to the model
+        model.addAttribute("dictator",dictator);
+
         return "profile";
     }
 
