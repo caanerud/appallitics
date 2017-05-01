@@ -66,7 +66,7 @@ public class DictatorController {
         return "redirect:/login";
     }
     @PostMapping(value = "/createAccount")
-    public String register(String username, String password, String confirm, String email) throws PasswordStorage.CannotPerformOperationException {
+    public String register(Model model, String username, String password, String confirm, String email) throws PasswordStorage.CannotPerformOperationException {
 
         // Creates list of usernames
         ArrayList<String> usernameList = new ArrayList<>();
@@ -85,6 +85,8 @@ public class DictatorController {
             // redirect to creating dictator
             return "redirect:/createform";
         }
+        // failed to create account
+        model.addAttribute("loginFailed", true);
 
         // redirect to login
         return "redirect:/login";
@@ -98,7 +100,8 @@ public class DictatorController {
 
     // leaderboard page
     @GetMapping("/leaderboard")
-    public String leaderboard(){
+    public String leaderboard(Model model, String search){
+        model.addAttribute("bestDicators",dictatorRepository.listBestDictators(search));
         return "leaderboard";
     }
 

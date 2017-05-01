@@ -46,6 +46,15 @@
   <div class="leaderboard-container">
 
     <h1>Leaderboard</h1>
+
+      <form action="leaderboard.html" th:action="@{/leaderboard}" method="get">
+          <label>
+              <span>Search:</span>
+              <input type="text" name="search" value="" th:value="${search}"/>
+          </label>
+      </form>
+
+
     <table>
         <tr>
             <td>Rank</td>
