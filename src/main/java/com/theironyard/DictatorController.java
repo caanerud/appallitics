@@ -37,9 +37,11 @@ public class DictatorController {
     }
 
     @PostMapping("/loginVerify")
-    public String login(String userName, String password, HttpSession session, Model model) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
+    public String login(String username, String password, HttpSession session, Model model) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
+
+
         // gets a particular user by username
-        User user = dictatorRepository.getByUserName(userName);
+        User user = dictatorRepository.getByUserName(username);
 
         // checks the user inputs, if correct then goes to their profile, it not back to login
         if(user != null && PasswordStorage.verifyPassword(password, user.getPassword())){

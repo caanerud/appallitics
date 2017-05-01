@@ -11,8 +11,12 @@ import java.util.List;
  */
 @Component
 public class DictatorRepository {
+
     @Autowired
     JdbcTemplate jdbcTemplate;
+
+    // ** LEADERBOARD RELATED **
+    // list of the best dictators
     public List<Dictator> listBestDictators (String search){
         return jdbcTemplate.query(
                 "SELECT users.username, dictators.* FROM dictators JOIN users " +
@@ -47,6 +51,7 @@ public class DictatorRepository {
         );
     }
 
+    // list of the worse dictators
     public List<Dictator> listWorstDictators (String search){
         return jdbcTemplate.query(
                 "SELECT users.username, dictators.* FROM dictators JOIN users " +
@@ -82,6 +87,8 @@ public class DictatorRepository {
     }
 
 
+    // ** LOGIN RELATED **
+    // get a particular user by their username
     public User getByUserName(String userName) {
         return jdbcTemplate.queryForObject("SELECT * FROM users WHERE lower(username) = lower(?)",
                 new Object[]{userName},
@@ -93,8 +100,20 @@ public class DictatorRepository {
                 ));
     }
 
+    // saves the user into the database
     public void save(User user) {
         jdbcTemplate.update("INSERT INTO users(username,password,email) VALUES(?,?,?)",
                 new Object[]{user.getUsername(),user.getPassword(),user.getEmail()});
+    }
+
+    // list of users
+    public List<User> listUsers(){
+        return jdbcTemplate.query("SELECT * FROM users",
+                (resultSet, i) -> new User(
+                        resultSet.getInt("userid"),
+                        resultSet.getString("username"),
+                        resultSet.getString("password"),
+                        resultSet.getString("email")
+                ));
     }
 }
