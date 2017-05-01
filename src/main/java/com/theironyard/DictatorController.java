@@ -27,7 +27,14 @@ public class DictatorController {
 
     // login/register screen
     @GetMapping("/login")
-    public String login() {
+    public String login(Model model) {
+        model.addAttribute("showLogin",true);
+        return "login";
+    }
+//example
+    @GetMapping("/signup")
+    public String signup(Model model) {
+        model.addAttribute("showLogin",false);
         return "login";
     }
 
@@ -101,6 +108,11 @@ public class DictatorController {
     // leaderboard page
     @GetMapping("/leaderboard")
     public String leaderboard(Model model, String search){
+        ArrayList<Integer> rank = new ArrayList<>();
+        for (int x = 1; x < 11; x = x + 1){
+            rank.add(x);
+        }
+        model.addAttribute("rank",rank);
         model.addAttribute("bestDicators",dictatorRepository.listBestDictators(search));
         return "leaderboard";
     }
