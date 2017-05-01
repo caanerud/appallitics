@@ -100,6 +100,39 @@ public class DictatorRepository {
                 ));
     }
 
+    // get a particular dictator by id
+    public Dictator getDictatorById(Integer id){
+        return jdbcTemplate.queryForObject("SELECT d.*,u.username FROM dictators as d " +
+                "JOIN users as u ON d.id_dictators = u.userid " +
+                "WHERE id = ?",
+                new Object[]{id},
+                (resultSet, i) -> new Dictator(
+                        new User(resultSet.getInt("id"),
+                                resultSet.getString("username")),
+                        resultSet.getString("overview_blurb"),
+                        resultSet.getString("overview_dictatorship_name"),
+                        resultSet.getString("overview_mascot"),
+                        resultSet.getString("overview_picture"),
+                        resultSet.getString("econ_labor"),
+                        resultSet.getString("econ_tax"),
+                        resultSet.getString("econ_trade"),
+                        resultSet.getString("econ_infrastructure"),
+                        resultSet.getString("econ_military"),
+                        resultSet.getString("social_healthcare"),
+                        resultSet.getString("social_retirement"),
+                        resultSet.getString("social_education"),
+                        resultSet.getString("social_environment"),
+                        resultSet.getString("social_welfare"),
+                        resultSet.getString("legal_punishment"),
+                        resultSet.getString("legal_immigration"),
+                        resultSet.getString("legal_voting_rights"),
+                        resultSet.getString("legal_privacy_laws"),
+                        resultSet.getString("legal_weapons"),
+                        resultSet.getInt("revolt"),
+                        resultSet.getInt("pledge")
+                ));
+    }
+
     // saves the user into the database
     public void save(User user) {
         jdbcTemplate.update("INSERT INTO users(username,password,email) VALUES(?,?,?)",
