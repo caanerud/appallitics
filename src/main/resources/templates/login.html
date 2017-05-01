@@ -40,65 +40,67 @@
 
 <!-- CONTENT___________________________________________ -->
 
+
   <div class="content">
 
     <form class="login" action="profile.html" th:action="@{/loginVerify}" method="get">
-      <h1>Login</h1>
-      <a href="#" class="go-to-create-account">Don't have an account?</a>
-      <br />
-      <br />
+      <div class="form-container">
+        <h1>Login</h1>
+        <a href="#" class="go-to-create-account">Don't have an account?</a>
+        <br />
+        <br />
 
-      <label for="username">Username</label>
-      <br />
-      <input type="text" id="username" name="username" placeholder="" required="required"/>
-      <br />
-      <br />
+        <!-- <label for="username">Username</label> -->
+        <input type="text" id="username" name="username" placeholder="Username" required="required"/>
+        <!-- <br /> -->
+        <!-- <br /> -->
 
-      <label for="password">Password</label>
-      <br />
-      <input type="password" id="password" name="password" placeholder="" required="required"/>
-      <br />
-      <br />
+        <!-- <label for="password">Password</label> -->
+        <input type="password" id="password" name="password" placeholder="Password" required="required"/>
+        <!-- <br />
+        <br /> -->
 
-      <input type="submit" name="submit" value="continue" />
+        <input type="submit" name="submit" value="continue" />
+      </div>
     </form>
 
 
     <form class="create-account" action="createform.html" th:action="@{/createAccount}" method="post">
-      <h1>Create Account</h1>
-      <a href="#" class="go-to-login">Already have an account?</a>
-      <br />
-      <br />
+      <div class="form-container">
+        <h1>Create Account</h1>
+        <a href="#" class="go-to-login">Already have an account?</a>
+        <br />
+        <br />
 
-      <label for="email">Email</label>
-      <input type="text" id="email" name="email" placeholder="" required="required"/>
-      <br />
-      <br />
+        <!-- <label for="email">Email</label> -->
+        <input type="text" id="email" name="email" placeholder="Email" required="required"/>
+        <!-- <br />
+        <br /> -->
 
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="" required="required"/>
-      <br />
-      <br />
+        <!-- <label for="username">Username</label> -->
+        <input type="text" id="username" name="username" placeholder="Username" required="required"/>
+        <!-- <br />
+        <br /> -->
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="" required="required"/>
-      <br />
-      <br />
+        <!-- <label for="password">Password</label> -->
+        <input type="password" id="password" name="password" placeholder="Password" required="required"/>
+        <!-- <br />
+        <br /> -->
 
-      <label for="confirm">Confirm Password</label>
-      <input type="password" id="confirm" name="confirm" placeholder="" required="required"/>
-      <br />
-      <br />
+        <!-- <label for="confirm">Confirm Password</label> -->
+        <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" required="required"/>
+        <!-- <br />
+        <br /> -->
 
-      <input type="submit" name="submit" value="create account" />
+        <input type="submit" name="submit" value="create account" />
+      </div>
     </form>
 
   </div>
 
-
 <!-- FOOTER____________________________________________ -->
   <footer>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </footer>
 
 

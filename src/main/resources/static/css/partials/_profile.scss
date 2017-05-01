@@ -1,0 +1,62 @@
+.top-section{
+  justify-content: space-between;
+
+  .profile-pic{
+    height:200px;
+    width: 200px;
+    background-color: orange;
+    display: block;
+    margin:0 auto 20px;
+  }
+
+  .profile-info{
+    width: 35%;
+    display: block;
+    margin:0 auto;
+    text-align: center;
+  }
+
+  .profile-stats{
+    width: 35%;
+    text-align: left;
+    display: block;
+    margin:0 auto;
+
+    #revolt-button{
+      background-color: red;
+      width: 45%;
+      float: left;
+      margin-right: 10%;
+    }
+
+    #pledge-button{
+      background-color: green;
+      width: 45%;
+    }
+
+    #edit-button{
+      width: 100%;
+    }
+  }
+}
+
+.profile-details{
+  padding:0 10%;
+}
+
+
+
+
+@media (min-width:900px) {
+  .top-section{
+    display: flex;
+
+    .profile-info{
+      text-align: left;
+    }
+  }
+
+  .profile-details{
+    padding: 0 5%;
+  }
+}
