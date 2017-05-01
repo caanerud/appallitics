@@ -1,9 +1,9 @@
 section{
-  min-height: 75vh;
+  min-height: 70vh;
   margin:0 15px 70px;
   position: relative;
   color:white;
-  padding-bottom: 60px;
+  padding-bottom: 70px;
 
   h1{
     background-color: $color4;
@@ -12,21 +12,15 @@ section{
   }
 }
 
-#overview{
-}
-
 #economics{
-  // background-color: green;
   display: none;
 }
 
 #social{
-  // background-color: orange;
   display: none;
 }
 
 #legal{
-  // background-color: purple;
   display: none;
 }
 
@@ -43,16 +37,47 @@ section{
 }
 
 .overview-bottom{
-  // display: flex;
-  justify-content: space-between;
   margin-top: 10px;
+  text-align: center;
 
-  #regFormContainer{
-    width: 100%;
+  .choose-pic{
+    margin-bottom: 20px;
+
+    input[type="file"] {
+    display: none;
+    }
+
+    .custom-file-upload {
+      margin-top: 10px;
+      display: inline-block;
+      padding:12px;
+      width: 100%;
+      max-width: 300px;
+      background-color: $color1;
+      cursor: pointer;
+    }
   }
 
-  input[type="file"]{
-    padding:0;
+  .choose-color{
+    margin-bottom:20px;
+
+    input[type="color"]{
+      max-width: 300px;
+      height: 50px;
+      border: 0;
+    }
+  }
+
+  .choose-mascot{
+    margin-bottom:20px;
+
+    select{
+      margin-top:10px;
+      padding:5px;
+      background-color: white;
+      border:0;
+      outline:0;
+    }
   }
 }
 
@@ -73,5 +98,18 @@ section{
   input[type="submit"]{
     width: 50%;
     margin:0;
+  }
+}
+
+
+
+@media (min-width:767px) {
+  .overview-bottom{
+    display: flex;
+    justify-content: space-between;
+
+    .choose-pic, .choose-color, .choose-mascot{
+      width: 30%;
+    }
   }
 }

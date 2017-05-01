@@ -90,11 +90,11 @@ tr:first-of-type {
   .profile-details {
     padding: 0 1.5%; } }
 section {
-  min-height: 75vh;
+  min-height: 70vh;
   margin: 0 15px 70px;
   position: relative;
   color: white;
-  padding-bottom: 60px; }
+  padding-bottom: 70px; }
   section h1 {
     background-color: #635a60;
     padding: 10px 0;
@@ -119,12 +119,34 @@ section {
     margin-right: 10px; }
 
 .overview-bottom {
-  justify-content: space-between;
-  margin-top: 10px; }
-  .overview-bottom #regFormContainer {
-    width: 100%; }
-  .overview-bottom input[type="file"] {
-    padding: 0; }
+  margin-top: 10px;
+  text-align: center; }
+  .overview-bottom .choose-pic {
+    margin-bottom: 20px; }
+    .overview-bottom .choose-pic input[type="file"] {
+      display: none; }
+    .overview-bottom .choose-pic .custom-file-upload {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 12px;
+      width: 100%;
+      max-width: 300px;
+      background-color: #FE5745;
+      cursor: pointer; }
+  .overview-bottom .choose-color {
+    margin-bottom: 20px; }
+    .overview-bottom .choose-color input[type="color"] {
+      max-width: 300px;
+      height: 50px;
+      border: 0; }
+  .overview-bottom .choose-mascot {
+    margin-bottom: 20px; }
+    .overview-bottom .choose-mascot select {
+      margin-top: 10px;
+      padding: 5px;
+      background-color: white;
+      border: 0;
+      outline: 0; }
 
 .form-nav {
   width: 100%;
@@ -141,6 +163,12 @@ section {
     width: 50%;
     margin: 0; }
 
+@media (min-width: 767px) {
+  .overview-bottom {
+    display: flex;
+    justify-content: space-between; }
+    .overview-bottom .choose-pic, .overview-bottom .choose-color, .overview-bottom .choose-mascot {
+      width: 30%; } }
 * {
   box-sizing: border-box; }
 
