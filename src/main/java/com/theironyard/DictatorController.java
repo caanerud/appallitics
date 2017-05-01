@@ -59,7 +59,7 @@ public class DictatorController {
                 return "redirect:/profile";
             } else {
                 // the indication that login failed, stored as a variable
-                    model.addAttribute("loginFailed", true);
+                    model.addAttribute("loginFailed", "Error: Incorrect");
                 return "redirect:/login";
             }
         }
