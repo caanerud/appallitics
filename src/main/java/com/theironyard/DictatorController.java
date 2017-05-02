@@ -129,7 +129,7 @@ public class DictatorController {
 
     // view a profile/Dictator
     @GetMapping("/profile")
-    public String profile(Model model, HttpSession session){
+    public String profile(Model model, HttpSession session, Integer viewerId){
         // Getting id from session
         Integer userId = (Integer) session.getAttribute("userId");
 
@@ -138,6 +138,13 @@ public class DictatorController {
 
         // Adding the dictator to the model
         model.addAttribute("dictator",dictator);
+
+        // Creating variable to see if viewer is owner
+        boolean owner = true;
+        if (userId != viewerId){
+            owner = false;
+        }
+        model.addAttribute("owner",owner);
 
         return "profile";
     }

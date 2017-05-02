@@ -48,28 +48,32 @@
       <h1>Profile</h1>
     </div>
 
+      <div th:text="${dictator.getOverviewImage()}"></div>
+      <!--<div th:src="@{dictator.getOverviewImage()}"></div>-->
+
     <div class="top-section">
       <div class="profile-pic"></div>
 
       <div class="profile-info">
         <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
-        <h2>Party</h2>
-        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+        <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
+        <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
       </div>
 
       <div class="profile-stats">
 
         <h3>RANK: <div id="rank">5</div> </h3>
-        <h3>PLEDGE: <div id="pledge">2</div> </h3>
-        <h3>REVOLT: <div id="revolt">998001</div> </h3>
+        <h3>PLEDGE: <div id="pledge" th:text="${dictator.getPledge()}">2</div> </h3>
+        <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
 
         <div class="buttons">
-          <div class="view">
+            <!--<div th:if="${thisThing.status()} ? : th:remove='all'"></div>--> 
+            <div class="view" th:if="${owner} == true" th:remove='all'>
             <button id="revolt-button" type="button">Revolt</button>
             <button id="pledge-button" type="button">Pledge</button>
           </div>
 
-          <div class="edit">
+          <div class="edit" th:if="${owner} == false" th:remove='all'>
             <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
             <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
           </div>
