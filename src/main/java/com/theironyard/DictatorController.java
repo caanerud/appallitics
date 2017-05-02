@@ -25,12 +25,13 @@ public class DictatorController {
         return "index";
     }
 
+
+    // LOGIN RELATED !!
     // login/register screen
     @GetMapping("/login")
     public String login() {
         return "login";
     }
-
 
     // creating dictator form
     @GetMapping("/createform")
@@ -93,6 +94,30 @@ public class DictatorController {
         return "redirect:/login";
     }
 
+    // CREATING DICTATOR & VIEWING DICTATOR !!
+    @PostMapping("/createDictator")
+    public String createDictator(){
+        return "redirect:/profile";
+    }
+
+    // view a profile
+    @GetMapping("/profile")
+    public String profile(Model model, HttpSession session){
+        // Getting id from session
+        Integer userId = (Integer) session.getAttribute("userId");
+
+        // Getting dictator from session id
+        Dictator dictator = dictatorRepository.getDictatorById(userId);
+
+        // Adding the dictator to the model
+        model.addAttribute("dictator",dictator);
+
+        return "profile";
+    }
+
+
+    // OTHERS !!
+
     // the about page
     @GetMapping("/about")
     public String about(){
@@ -109,21 +134,6 @@ public class DictatorController {
         model.addAttribute("rank",rank);
         model.addAttribute("bestDicators",dictatorRepository.listBestDictators(search));
         return "leaderboard";
-    }
-
-    // view a profile
-    @GetMapping("/profile")
-    public String profile(Model model, HttpSession session){
-        // Getting id from session
-        Integer userId = (Integer) session.getAttribute("userId");
-
-        // Getting dictator from session id
-        Dictator dictator = dictatorRepository.getDictatorById(userId);
-
-        // Adding the dictator to the model
-        model.addAttribute("dictator",dictator);
-
-        return "profile";
     }
 
     // voting part
