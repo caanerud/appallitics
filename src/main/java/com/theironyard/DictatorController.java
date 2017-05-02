@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -66,7 +67,7 @@ public class DictatorController {
         return "redirect:/login";
     }
     @PostMapping(value = "/createAccount")
-    public String register(Model model, String username, String password, String confirm, String email) throws PasswordStorage.CannotPerformOperationException {
+    public String register(HttpSession session, Model model, String username, String password, String confirm, String email) throws PasswordStorage.CannotPerformOperationException {
 
         // Creates list of usernames
         ArrayList<String> usernameList = new ArrayList<>();
@@ -82,6 +83,12 @@ public class DictatorController {
             // puts it in the database
             dictatorRepository.save(user);
 
+            // gets the same user by username, with the id from the database
+            User userWithId = dictatorRepository.getByUserName(username);
+
+            // gets a session id
+            session.setAttribute("userId", userWithId.getId());
+
             // redirect to creating dictator
             return "redirect:/createform";
         }
@@ -92,22 +99,35 @@ public class DictatorController {
         return "redirect:/login";
     }
 
-    // CREATING DICTATOR & VIEWING DICTATOR !!
+    // CREATING DICTATOR, EDITING DICTATOR, AND VIEWING DICTATOR !!
+    //creation and edit
     @PostMapping("/createDictator")
-    public String createDictator(Model model, @RequestParam(name = "file") MultipartFile file, String overviewBlurb,
+    public String createDictator(Model model, HttpSession session, @RequestParam(name = "file") MultipartFile file, String overviewBlurb,
                                  String overviewDictatorshipName, String favcolor, String mascot, String econLabor,
                                  String econTax, String econTrade, String econInfrastructure, String econMilitary,
                                  String socialHealthcare, String socialRetirement, String socialEducation,
                                  String socialEnvironment, String socialWelfare, String legalPunishment,
                                  String legalImmigration, String legalVotingRights, String legalPrivacyLaws,
-                                 String legalWeapons){
+                                 String legalWeapons) throws IOException {
 
-       // Dictator dictator = new Dictator();
+        // Getting id from session
+        Integer userId = (Integer) session.getAttribute("userId");
+
+        // creating the dictator
+        Dictator dictator = new Dictator(new User(userId), overviewBlurb, overviewDictatorshipName,
+                mascot, favcolor, file.getContentType(), file.getBytes(), econLabor, econTax, econTrade,
+                econInfrastructure,econMilitary,socialHealthcare,socialRetirement,socialEducation,
+                socialEnvironment,socialWelfare,legalPunishment,legalImmigration,legalVotingRights,
+                legalPrivacyLaws,legalWeapons,0,0);
+
+
+        // saving the dictator to database
+        dictatorRepository.saveDictator(dictator);
 
         return "redirect:/profile";
     }
 
-    // view a profile
+    // view a profile/Dictator
     @GetMapping("/profile")
     public String profile(Model model, HttpSession session){
         // Getting id from session
