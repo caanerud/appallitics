@@ -43,11 +43,19 @@
 
 <div class="content">
   <form action="profile.html">
+
+
       <section id="overview">
-          <h1>Overview</h1>
+          <div class="section-header">
+            <h1>Overview</h1>
+          </div>
+          <div class="pro-bar">
+            <div class="step"></div>
+          </div>
 
           <!--For username-->
           <h3>Welcome, <div id="username-print"></div></h3>
+          <br/>
 
           <div class="input-field">
             <label for="overviewBlurb">Party Catchphrase</label>
@@ -59,17 +67,13 @@
             <input type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" placeholder="" required="required"/>
           </div>
 
-          <hr/>
           <br/>
 
           <div class="overview-bottom">
 
               <div class="choose-pic">
-                <p>Choose Your Profile Picture</p>
-                <label class="custom-file-upload">
-                  <input type="file"/>
-                  <i class="fa fa-cloud-upload"></i>
-                </label>
+                <label for="file">Choose Your Profile Picture</label>
+                <input type="file" class="upload" />
               </div>
 
               <div class="choose-color">
@@ -97,122 +101,136 @@
 
           <div class="form-nav">
             <span></span>
-            <button type="button" name="button" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            <button type="button" name="button" class="next"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></button>
           </div>
       </section>
+
+
 
       <section id="economics">
-          <h1>Economics</h1>
+          <div class="section-header">
+            <h1>Economics</h1>
+          </div>
+          <div class="pro-bar">
+            <div class="step"></div>
+            <div class="step"></div>
+          </div>
 
-          <label for="econLabor">Labor</label>
-          <br />
-          <input type="text" id="econLabor" name="econLabor" placeholder="" required="required"/>
-          <br />
-          <!-- <br /> -->
+          <div class="input-field">
+            <label for="econLabor">Labor</label>
+            <input type="text" id="econLabor" name="econLabor" placeholder="" required="required"/>
+          </div>
 
-          <label for="econTax">Tax</label>
-          <br />
-          <input type="text" id="econTax" name="econTax" placeholder="" required="required"/>
-          <br />
-          <!-- <br /> -->
+          <div class="input-field">
+            <label for="econTax">Tax</label>
+            <input type="text" id="econTax" name="econTax" placeholder="" required="required"/>
+          </div>
 
-          <label for="econTrade">Trade</label>
-          <br />
-          <input type="text" id="econTrade" name="econTrade" placeholder="" required="required"/>
-          <br />
-          <!-- <br /> -->
+          <div class="input-field">
+            <label for="econTrade">Trade</label>
+            <input type="text" id="econTrade" name="econTrade" placeholder="" required="required"/>
+          </div>
 
-          <label for="econInfrastructure">Infrastructure</label>
-          <br />
-          <input type="text" id="econInfrastructure" name="econInfrastructure" placeholder="" required="required"/>
-          <br />
-          <!-- <br /> -->
+          <div class="input-field">
+            <label for="econInfrastructure">Infrastructure</label>
+            <input type="text" id="econInfrastructure" name="econInfrastructure" placeholder="" required="required"/>
+          </div>
 
-          <label for="econMilitary">Military</label>
-          <br />
-          <input type="text" id="econMilitary" name="econMilitary" placeholder="" required="required"/>
-          <br />
-          <!-- <br /> -->
+          <div class="input-field">
+            <label for="econMilitary">Military</label>
+            <input type="text" id="econMilitary" name="econMilitary" placeholder="" required="required"/>
+          </div>
 
           <div class="form-nav">
             <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-
             <button type="button" name="button" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
           </div>
       </section>
+
+
 
       <section id="social">
-          <h1>Social</h1>
+          <div class="section-header">
+            <h1>Social</h1>
+          </div>
+          <div class="pro-bar">
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+          </div>
 
-          <label for="socialHealthcare">Healthcare</label>
-          <br />
-          <input type="text" id="socialHealthcare" name="socialHealthcare" placeholder="" required="required"/>
-          <br />
-          <br />
+          <div class="input-field">
+            <label for="socialHealthcare">Healthcare</label>
+            <input type="text" id="socialHealthcare" name="socialHealthcare" placeholder="" required="required"/>
+          </div>
 
-          <label for="socialRetirement">Retirement</label>
-          <br />
-          <input type="text" id="socialRetirement" name="socialRetirement" placeholder="" required="required"/>
-          <br />
-          <br />
 
-          <label for="socialEducation">Education</label>
-          <br />
-          <input type="text" id="socialEducation" name="econTrade" socialEducation="" required="required"/>
-          <br />
-          <br />
+          <div class="input-field">
+            <label for="socialRetirement">Retirement</label>
+            <input type="text" id="socialRetirement" name="socialRetirement" placeholder="" required="required"/>
+          </div>
 
-          <label for="socialEnvironment">Environment</label>
-          <br />
-          <input type="text" id="socialEnvironment" name="socialEnvironment" placeholder="" required="required"/>
-          <br />
-          <br />
+          <div class="input-field">
+            <label for="socialEducation">Education</label>
+            <input type="text" id="socialEducation" name="econTrade" socialEducation="" required="required"/>
+          </div>
 
-          <label for="socialWelfare">Welfare</label>
-          <br />
-          <input type="text" id="socialWelfare" name="socialWelfare" placeholder="" required="required"/>
-          <br />
-          <br />
+          <div class="input-field">
+            <label for="socialEnvironment">Environment</label>
+            <input type="text" id="socialEnvironment" name="socialEnvironment" placeholder="" required="required"/>
+          </div>
+
+
+          <div class="input-field">
+            <label for="socialWelfare">Welfare</label>
+            <input type="text" id="socialWelfare" name="socialWelfare" placeholder="" required="required"/>
+          </div>
+
 
           <div class="form-nav">
             <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-
             <button type="button" name="button" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
           </div>
       </section>
 
+
+
       <section id="legal">
-          <h1>Legal</h1>
+          <div class="section-header">
+            <h1>Legal</h1>
+          </div>
+          <div class="pro-bar">
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+          </div>
 
-          <label for="legalPunishment">Punishment</label>
-          <br />
-          <input type="text" id="legalPunishment" name="legalPunishment" placeholder="" required="required"/>
-          <br />
-          <br />
+          <div class="input-field">
+            <label for="legalPunishment">Punishment</label>
+            <input type="text" id="legalPunishment" name="legalPunishment" placeholder="" required="required"/>
+          </div>
 
-          <label for="legalImmigration">Immigration</label>
-          <br />
-          <input type="text" id="legalImmigration" name="legalImmigration" placeholder="" required="required"/>
-          <br />
-          <br />
+          <div class="input-field">
+            <label for="legalImmigration">Immigration</label>
+            <input type="text" id="legalImmigration" name="legalImmigration" placeholder="" required="required"/>
+          </div>
 
-          <label for="legalVotingRights">Voting Rights</label>
-          <br />
-          <input type="text" id="legalVotingRights" name="legalVotingRights" placeholder="" required="required"/>
-          <br />
-          <br />
+          <div class="input-field">
+            <label for="legalVotingRights">Voting Rights</label>
+            <input type="text" id="legalVotingRights" name="legalVotingRights" placeholder="" required="required"/>
+          </div>
 
-          <label for="legalPrivacyLaws">Privacy Laws</label>
-          <br />
-          <input type="text" id="legalPrivacyLaws" name="legalPrivacyLaws" placeholder="" required="required"/>
-          <br />
-          <br />
+          <div class="input-field">
+            <label for="legalPrivacyLaws">Privacy Laws</label>
+            <input type="text" id="legalPrivacyLaws" name="legalPrivacyLaws" placeholder="" required="required"/>
+          </div>
 
-          <label for="legalWeapons">Weapons</label>
-          <br />
-          <input type="text" id="legalWeapons" name="legalWeapons" placeholder="" required="required"/>
-          <br />
-          <br />
+
+          <div class="input-field">
+            <label for="legalWeapons">Weapons</label>
+            <input type="text" id="legalWeapons" name="legalWeapons" placeholder="" required="required"/>
+          </div>
 
           <div class="form-nav">
             <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>

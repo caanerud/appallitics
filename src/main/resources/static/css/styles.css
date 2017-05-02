@@ -14,6 +14,9 @@
     display: block;
     text-align: center; }
 
+@media (min-width: 767px) {
+  .login, .create-account {
+    margin: 0 50px; } }
 .hero {
   height: 500px;
   background-color: #635a60; }
@@ -89,50 +92,47 @@ tr:first-of-type {
 
   .profile-details {
     padding: 0 1.5%; } }
-section {
-  min-height: 70vh;
+.content section {
+  min-height: 76vh;
   margin: 0 15px 70px;
   position: relative;
   color: white;
-  padding-bottom: 70px; }
-  section h1 {
-    background-color: #635a60;
-    padding: 10px 0;
-    margin-bottom: 20px; }
+  padding-bottom: 100px; }
 
-#economics {
-  display: none; }
+.section-header {
+  background-color: #635a60;
+  padding: 30px 0 15px; }
 
-#social {
-  display: none; }
+.pro-bar {
+  height: 10px;
+  width: 100%;
+  background-color: grey;
+  display: flex;
+  margin-bottom: 30px; }
+  .pro-bar .step {
+    background-color: #FE5745;
+    height: 10px;
+    width: 25%; }
 
-#legal {
+#economics, #social, #legal {
   display: none; }
 
 .input-field {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px; }
+  width: 100%; }
   .input-field label {
-    width: 150px;
+    width: 120px;
     margin-right: 10px; }
 
 .overview-bottom {
-  margin-top: 10px;
-  text-align: center; }
+  margin-top: 10px; }
   .overview-bottom .choose-pic {
     margin-bottom: 20px; }
-    .overview-bottom .choose-pic input[type="file"] {
-      display: none; }
-    .overview-bottom .choose-pic .custom-file-upload {
-      margin-top: 10px;
-      display: inline-block;
-      padding: 12px;
-      width: 100%;
+    .overview-bottom .choose-pic input.upload {
+      display: block;
+      height: 50px;
       max-width: 300px;
-      background-color: #FE5745;
-      cursor: pointer; }
+      padding: 13px;
+      background-color: #FE5745; }
   .overview-bottom .choose-color {
     margin-bottom: 20px; }
     .overview-bottom .choose-color input[type="color"] {
@@ -164,6 +164,9 @@ section {
     margin: 0; }
 
 @media (min-width: 767px) {
+  .content section {
+    margin: 0 50px 70px; }
+
   .overview-bottom {
     display: flex;
     justify-content: space-between; }
@@ -175,7 +178,7 @@ section {
 h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, hr {
   padding: 0;
   margin: 0;
-  color: rgba(0, 0, 0, 0.5); }
+  color: white; }
 
 body {
   background-color: #3E383C;
@@ -204,7 +207,9 @@ h4 {
   margin-bottom: 10px; }
 
 p {
-  color: white; }
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.5rem; }
 
 .flex {
   display: flex;
@@ -306,6 +311,10 @@ input[type="submit"]:hover, button:hover {
 input[type="submit"]:active, button:active {
   transform: scale(0.98); }
 
+label {
+  font-size: 1.1rem;
+  line-height: 1.5rem; }
+
 footer {
   background-color: #635a60;
   position: fixed;
@@ -321,6 +330,17 @@ footer {
     text-align: center; }
 
 @media (min-width: 767px) {
+  .content {
+    margin: 100px auto; }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 20px; }
+
+  h4 {
+    font-size: 1.5rem; }
+
   header {
     padding: 0 5%; }
 
@@ -329,16 +349,5 @@ footer {
 
   .hamburger-trigger {
     display: none; } }
-@media (min-width: 900px) {
-  .content {
-    margin: 120px auto; }
-
-  h1 {
-    font-size: 2rem;
-    margin-top: 10px;
-    margin-bottom: 20px; }
-
-  h4 {
-    font-size: 1.5rem; } }
 
 /*# sourceMappingURL=styles.css.map */
