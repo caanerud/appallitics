@@ -67,7 +67,7 @@ public class DictatorController {
         return "redirect:/login";
     }
     @PostMapping(value = "/createAccount")
-    public String register(Model model, String username, String password, String confirm, String email) throws PasswordStorage.CannotPerformOperationException {
+    public String register(HttpSession session, Model model, String username, String password, String confirm, String email) throws PasswordStorage.CannotPerformOperationException {
 
         // Creates list of usernames
         ArrayList<String> usernameList = new ArrayList<>();
@@ -82,6 +82,12 @@ public class DictatorController {
 
             // puts it in the database
             dictatorRepository.save(user);
+
+            // gets the same user by username, with the id from the database
+            User userWithId = dictatorRepository.getByUserName(username);
+
+            // gets a session id
+            session.setAttribute("userId", userWithId.getId());
 
             // redirect to creating dictator
             return "redirect:/createform";

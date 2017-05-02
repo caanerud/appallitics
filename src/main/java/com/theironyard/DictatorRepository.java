@@ -108,7 +108,7 @@ public class DictatorRepository {
     public Dictator getDictatorById(Integer id){
         return jdbcTemplate.queryForObject("SELECT d.*,u.username FROM dictators as d " +
                 "JOIN users as u ON d.id_dictators = u.userid " +
-                "WHERE id = ?",
+                "WHERE id_dictators = ?",
                 new Object[]{id},
                 (resultSet, i) -> new Dictator(
                         new User(resultSet.getInt("id"),
