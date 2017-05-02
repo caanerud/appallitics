@@ -56,22 +56,27 @@
 
 
     <table>
-        <tr th:each="rank : ${ranks}">
+        <tr>
             <td>Rank</td>
             <td>Picture</td>
             <td>Username</td>
             <td>Dictatorship name</td>
-            <td>Pledges</td>
-            <td>Revolts</td>
+            <td>
+                <a href="leaderboard.html" th:href="@{'/leaderboard?pledge='} + ${rank.getPledge()}">
+                </a> title="Sort by Greatest # of Pledges">Pledges</td>
+            <td>
+                <a href="leaderboard.html" th:href="@{'/leaderboard?revolt='} + ${rank.getRevolt()}">
+                </a> title="Sort by Greatest # of Revolts">Revolts
+            </td>
         </tr>
 
-        <tr>
+        <tr th:each="rank : ${bestDictators}">
             <td>1</td>
-            <td th:text="${overview_picture}">Picture 1</td>
-            <td th:text="${username}">Username 1</td>
-            <td th:text="${overview_dictatorship_name}">Dictatorship name 1</td>
-            <td th:text="${pledge}">Pledges 1</td>
-            <td th:text="${revolt}">Revolts 1</td>
+            <td th:text="${rank.getOverviewImage()}">Picture 1</td>
+            <td th:text="${rank.getUser().getUsername()}">Username 1</td>
+            <td th:text="${rank.getOverviewDictatorshipName()}">Dictatorship name 1</td>
+            <td th:text="${rank.getPledge()}">Pledges 1</td>
+            <td th:text="${rank.getRevolt()}">Revolts 1</td>
         </tr>
 
         <tr th:remove="all">
