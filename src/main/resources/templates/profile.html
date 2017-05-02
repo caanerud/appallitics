@@ -43,46 +43,68 @@
 <!-- CONTENT___________________________________________ -->
 
 <div class="content">
-  <h1>Profile</h1>
-
-  <div class="top-section">
-    <div class="profile-pic">Picture at left</div>
-
-    <div class="profile-info">
-      <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
-      <h2>Party</h2>
-      <h3>Blurb</h3>
+  <section>
+    <div class="section-header">
+      <h1>Profile</h1>
     </div>
 
-    <div class="profile-stats">
+    <div class="top-section">
+      <div class="profile-pic"></div>
 
-      <h3>Rank: <div id="rank">5</div> </h3>
-      <h3>Pledge: <div id="pledge">2</div> </h3>
-      <h3>Revolt: <div id="revolt">998001</div> </h3>
+      <div class="profile-info">
+        <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
+        <h2>Party</h2>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+      </div>
 
-      <div class="buttons">
-        <button id="revolt-button" type="button">Revolt</button>
-        <button id="pledge-button" type="button">Pledge</button>
-        <!--hide it-->
-        <!-- <button id="edit-button" type="button">Edit</button> -->
+      <div class="profile-stats">
+
+        <h3>RANK: <div id="rank">5</div> </h3>
+        <h3>PLEDGE: <div id="pledge">2</div> </h3>
+        <h3>REVOLT: <div id="revolt">998001</div> </h3>
+
+        <div class="buttons">
+          <div class="view">
+            <button id="revolt-button" type="button">Revolt</button>
+            <button id="pledge-button" type="button">Pledge</button>
+          </div>
+
+          <div class="edit">
+            <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+            <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
 
-  <div class="profile-details">
-    <h4>Economics</h4>
-    <p>Economic Information</p>
-    <br/>
-    <br/>
+    <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
+    <div class="remodal" data-remodal-id="modal">
+      <a href="#" data-remodal-action="close" class="remodal-close" ></a>
+      <p>Are you sure?<br/>Editing your profile will reset your user rank, pledge and revolt values.</p>
+      <br/>
+      <a href="#" data-remodal-action="cancel">CANCEL</a>
+      <a href="#" data-remodal-action="confirm">OK</a>
+    </div>
 
-    <h4>Social</h4>
-    <p>Social Information</p>
-    <br/>
-    <br/>
 
-    <h4>Legal</h4>
-    <p>Legal Information</p>
-  </div>
+    <hr/>
+
+    <div class="bottom-section">
+      <h4>Economics</h4>
+      <p>Economic Information</p>
+      <br/>
+      <br/>
+
+      <h4>Social</h4>
+      <p>Social Information</p>
+      <br/>
+      <br/>
+
+      <h4>Legal</h4>
+      <p>Legal Information</p>
+    </div>
+  </section>
 </div>
 
 

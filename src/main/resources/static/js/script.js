@@ -1,9 +1,11 @@
+// ACCORDION MENU
 $(document).ready(function(){
   $('.hamburger-trigger').click(function(){
     $('.hamburger-nav').slideToggle();
   });
 });
 
+// SWITCH BETWEEN LOGIN AND CREATE ACCOUNT
 $(document).ready(function(){
   $('.go-to-create-account').click(function(){
     $('.login').fadeOut(100);
@@ -16,6 +18,7 @@ $(document).ready(function(){
   });
 });
 
+// CREATE FORM NAVIGATION
 $(document).ready(function(){
   $('.next').click(function(){
     $(this).parent().parent().hide();
@@ -27,3 +30,10 @@ $(document).ready(function(){
     $(this).parent().parent().prev().show();
   });
 });
+
+// EDIT PROFILE WARNING
+// $(document).ready(function(){
+//   $('#edit-button').click(function(){
+//     alert('Are you sure? Editing your profile will reset your user rank, pledge and revolt values.');
+//   });
+// });

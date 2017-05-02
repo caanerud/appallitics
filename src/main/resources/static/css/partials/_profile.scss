@@ -1,78 +1,150 @@
 .top-section{
   justify-content: space-between;
-  margin-bottom:30px;
+  margin: 30px 0;
 
   .profile-pic{
     height:200px;
     width: 200px;
-    background-color: orange;
+    border:1px dashed white;
     display: block;
     margin:0 auto 20px;
   }
 
   .profile-info{
-    width:80%;
     display: block;
-    margin:0 auto;
+    margin:0 auto 30px;
+    padding:0 30px;
     text-align: center;
 
     h2{
       color: white;
+      font-size: 1.5rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      margin-bottom: 5px;
+    }
+
+    h2:last-of-type{
+      margin-bottom: 20px;
     }
 
     h3{
       color:white;
+      font-weight: 100;
+      font-style: italic;
+    }
+
+    h3::before, h3::after{
+      content: '"';
     }
   }
 
   .profile-stats{
     width: 80%;
-    text-align: left;
+    text-align: center;
     display: block;
     margin:0 auto;
+    padding:0 15px;
+    line-height: 1rem;
+
+    #rank, #pledge, #revolt{
+      display: inline-block;
+      font-size: 1.5rem;
+      margin-left: 5px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,.1);
+    }
+
+    #rank{
+      color: $blue;
+    }
+
+    #pledge{
+      color: $green;
+    }
+
+    #pledge::before{
+      content: "+";
+    }
+
+    #revolt{
+      color:$color1;
+    }
+
+    #revolt::before{
+      content: "-";
+    }
 
     .buttons{
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin-top: 30px;
+
+      #revolt-button, #pledge-button, #edit-button{
+        max-width: 200px;
+        margin:10px auto;
+        height: 40px;
+      }
 
       #revolt-button{
         background-color: red;
-        max-width: 200px;
-        margin:0 20px;
       }
 
       #pledge-button{
         background-color: green;
-        max-width: 200px;
-        margin: 0 20px;
       }
 
       #edit-button{
-        width: 100%;
+        background-color: $color1;
+      }
+
+      .view{
+        display: block;
+      }
+
+      .edit{
+        display: none;
+      }
+
+      p{
+        width: 200px;
+        text-align: center;
+        margin: 10px auto 0;
+        font-size: .8rem;
+        line-height: 1.1rem;
+
+        b{
+          color: $color1;
+        }
       }
     }
   }
 }
 
-.profile-details{
-  padding:0 10%;
+.remodal{
+  a{
+    color:black;
+    margin: 0 10px;
+  }
+}
+
+.bottom-section{
+  margin: 30px 0 0;
 }
 
 
 
 
-@media (min-width:900px) {
+@media (min-width:767px) {
   .top-section{
     display: flex;
 
     .profile-info{
       text-align: left;
       width: 35%;
+      margin:0 auto 0px;
     }
 
     .profile-stats{
+      text-align: left;
       width:35%;
     }
   }
