@@ -62,7 +62,8 @@ CREATE TABLE dictators (
     pledge integer NOT NULL,
     revolt integer NOT NULL,
     overview_dictatorship_name character varying(255) NOT NULL,
-    overview_image bytea NOT NULL
+    overview_image bytea NOT NULL,
+    overview_color character varying(255) NOT NULL
 );
 
 
@@ -142,7 +143,7 @@ ALTER TABLE ONLY users ALTER COLUMN userid SET DEFAULT nextval('users_userid_seq
 -- Data for Name: dictators; Type: TABLE DATA; Schema: public; Owner: JamesHartanto
 --
 
-COPY dictators (id, id_dictators, overview_blurb, overview_mascot, overview_content_type, econ_labor, econ_tax, econ_trade, econ_infrastructure, econ_military, social_healthcare, social_retirement, social_education, social_environment, social_welfare, legal_punishment, legal_immigration, legal_voting_rights, legal_privacy_laws, legal_weapons, pledge, revolt, overview_dictatorship_name, overview_image) FROM stdin;
+COPY dictators (id, id_dictators, overview_blurb, overview_mascot, overview_content_type, econ_labor, econ_tax, econ_trade, econ_infrastructure, econ_military, social_healthcare, social_retirement, social_education, social_environment, social_welfare, legal_punishment, legal_immigration, legal_voting_rights, legal_privacy_laws, legal_weapons, pledge, revolt, overview_dictatorship_name, overview_image, overview_color) FROM stdin;
 \.
 
 
@@ -150,7 +151,7 @@ COPY dictators (id, id_dictators, overview_blurb, overview_mascot, overview_cont
 -- Name: dictators_id_seq; Type: SEQUENCE SET; Schema: public; Owner: JamesHartanto
 --
 
-SELECT pg_catalog.setval('dictators_id_seq', 1, true);
+SELECT pg_catalog.setval('dictators_id_seq', 4, true);
 
 
 --
@@ -165,7 +166,7 @@ COPY users (userid, password, username, email) FROM stdin;
 -- Name: users_userid_seq; Type: SEQUENCE SET; Schema: public; Owner: JamesHartanto
 --
 
-SELECT pg_catalog.setval('users_userid_seq', 2, true);
+SELECT pg_catalog.setval('users_userid_seq', 8, true);
 
 
 --
