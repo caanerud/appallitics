@@ -8,8 +8,9 @@ public class Dictator {
     private String overviewBlurb;
     private String overviewDictatorshipName;
     private String overviewMascot;
-//    NOT SURE, IS THIS A STRING ?? - currently it will link to picture
-    private String overviewPicture;
+//    Picture
+    private String overviewContentType;
+    private byte[] overviewImage;
 
     private String econLabor;
     private String econTax;
@@ -32,12 +33,13 @@ public class Dictator {
     private Integer revolt;
     private Integer pledge;
 
-    public Dictator(User user, String overviewBlurb, String overviewDictatorshipName, String overviewMascot, String overviewPicture, String econLabor, String econTax, String econTrade, String econInfrastructure, String econMilitary, String socialHealthcare, String socialRetirement, String socialEducation, String socialEnvironment, String socialWelfare, String legalPunishment, String legalImmigration, String legalVotingRights, String legalPrivacyLaws, String legalWeapons, Integer revolt, Integer pledge) {
+    public Dictator(User user, String overviewBlurb, String overviewDictatorshipName, String overviewMascot, String overviewContentType, byte[] overviewImage, String econLabor, String econTax, String econTrade, String econInfrastructure, String econMilitary, String socialHealthcare, String socialRetirement, String socialEducation, String socialEnvironment, String socialWelfare, String legalPunishment, String legalImmigration, String legalVotingRights, String legalPrivacyLaws, String legalWeapons, Integer revolt, Integer pledge) {
         this.user = user;
         this.overviewBlurb = overviewBlurb;
         this.overviewDictatorshipName = overviewDictatorshipName;
         this.overviewMascot = overviewMascot;
-        this.overviewPicture = overviewPicture;
+        this.overviewContentType = overviewContentType;
+        this.overviewImage = overviewImage;
         this.econLabor = econLabor;
         this.econTax = econTax;
         this.econTrade = econTrade;
@@ -89,12 +91,20 @@ public class Dictator {
         this.overviewMascot = overviewMascot;
     }
 
-    public String getOverviewPicture() {
-        return overviewPicture;
+    public String getOverviewContentType() {
+        return overviewContentType;
     }
 
-    public void setOverviewPicture(String overviewPicture) {
-        this.overviewPicture = overviewPicture;
+    public void setOverviewContentType(String overviewContentType) {
+        this.overviewContentType = overviewContentType;
+    }
+
+    public byte[] getOverviewImage() {
+        return overviewImage;
+    }
+
+    public void setOverviewImage(byte[] overviewImage) {
+        this.overviewImage = overviewImage;
     }
 
     public String getEconLabor() {
