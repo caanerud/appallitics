@@ -102,7 +102,7 @@ public class DictatorController {
                                  String legalImmigration, String legalVotingRights, String legalPrivacyLaws,
                                  String legalWeapons){
 
-        Dictator dictator = new Dictator()
+       // Dictator dictator = new Dictator();
 
         return "redirect:/profile";
     }
