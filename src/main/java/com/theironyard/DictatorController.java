@@ -120,6 +120,7 @@ public class DictatorController {
                 socialEnvironment,socialWelfare,legalPunishment,legalImmigration,legalVotingRights,
                 legalPrivacyLaws,legalWeapons,0,0);
 
+
         // saving the dictator to database
         dictatorRepository.saveDictator(dictator);
 
@@ -153,11 +154,7 @@ public class DictatorController {
     // leaderboard page
     @GetMapping("/leaderboard")
     public String leaderboard(Model model, String search){
-        ArrayList<Integer> rank = new ArrayList<>();
-        for (int x = 1; x <= dictatorRepository.listUsers().size(); x = x + 1){
-            rank.add(x);
-        }
-        model.addAttribute("rank",rank);
+
         model.addAttribute("bestDictators",dictatorRepository.listBestDictators(search));
         return "leaderboard";
     }

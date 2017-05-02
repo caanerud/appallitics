@@ -31,9 +31,4 @@ $(document).ready(function(){
   });
 });
 
-// EDIT PROFILE WARNING
-// $(document).ready(function(){
-//   $('#edit-button').click(function(){
-//     alert('Are you sure? Editing your profile will reset your user rank, pledge and revolt values.');
-//   });
-// });
+// STATUS BAR ANIMATION
