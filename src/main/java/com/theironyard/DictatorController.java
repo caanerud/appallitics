@@ -3,10 +3,8 @@ package com.theironyard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -96,7 +94,16 @@ public class DictatorController {
 
     // CREATING DICTATOR & VIEWING DICTATOR !!
     @PostMapping("/createDictator")
-    public String createDictator(){
+    public String createDictator(Model model, @RequestParam(name = "file") MultipartFile file, String overviewBlurb,
+                                 String overviewDictatorshipName, String favcolor, String mascot, String econLabor,
+                                 String econTax, String econTrade, String econInfrastructure, String econMilitary,
+                                 String socialHealthcare, String socialRetirement, String socialEducation,
+                                 String socialEnvironment, String socialWelfare, String legalPunishment,
+                                 String legalImmigration, String legalVotingRights, String legalPrivacyLaws,
+                                 String legalWeapons){
+
+        Dictator dictator = new Dictator()
+
         return "redirect:/profile";
     }
 

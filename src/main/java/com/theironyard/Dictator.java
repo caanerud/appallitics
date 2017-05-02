@@ -8,6 +8,7 @@ public class Dictator {
     private String overviewBlurb;
     private String overviewDictatorshipName;
     private String overviewMascot;
+    private String overviewColor;
 //    Picture
     private String overviewContentType;
     private byte[] overviewImage;
@@ -33,11 +34,12 @@ public class Dictator {
     private Integer revolt;
     private Integer pledge;
 
-    public Dictator(User user, String overviewBlurb, String overviewDictatorshipName, String overviewMascot, String overviewContentType, byte[] overviewImage, String econLabor, String econTax, String econTrade, String econInfrastructure, String econMilitary, String socialHealthcare, String socialRetirement, String socialEducation, String socialEnvironment, String socialWelfare, String legalPunishment, String legalImmigration, String legalVotingRights, String legalPrivacyLaws, String legalWeapons, Integer revolt, Integer pledge) {
+    public Dictator(User user, String overviewBlurb, String overviewDictatorshipName, String overviewMascot, String overviewColor, String overviewContentType, byte[] overviewImage, String econLabor, String econTax, String econTrade, String econInfrastructure, String econMilitary, String socialHealthcare, String socialRetirement, String socialEducation, String socialEnvironment, String socialWelfare, String legalPunishment, String legalImmigration, String legalVotingRights, String legalPrivacyLaws, String legalWeapons, Integer revolt, Integer pledge) {
         this.user = user;
         this.overviewBlurb = overviewBlurb;
         this.overviewDictatorshipName = overviewDictatorshipName;
         this.overviewMascot = overviewMascot;
+        this.overviewColor = overviewColor;
         this.overviewContentType = overviewContentType;
         this.overviewImage = overviewImage;
         this.econLabor = econLabor;
@@ -97,6 +99,14 @@ public class Dictator {
 
     public void setOverviewContentType(String overviewContentType) {
         this.overviewContentType = overviewContentType;
+    }
+
+    public String getOverviewColor() {
+        return overviewColor;
+    }
+
+    public void setOverviewColor(String overviewColor) {
+        this.overviewColor = overviewColor;
     }
 
     public byte[] getOverviewImage() {

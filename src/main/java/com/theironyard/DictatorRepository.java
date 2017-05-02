@@ -29,6 +29,7 @@ public class DictatorRepository {
                         resultSet.getString("overview_blurb"),
                         resultSet.getString("overview_dictatorship_name"),
                         resultSet.getString("overview_mascot"),
+                        resultSet.getString("overview_color"),
                         resultSet.getString("overview_content_type"),
                         resultSet.getBytes("overview_image"),
                         resultSet.getString("econ_labor"),
@@ -65,6 +66,7 @@ public class DictatorRepository {
                         resultSet.getString("overview_blurb"),
                         resultSet.getString("overview_dictatorship_name"),
                         resultSet.getString("overview_mascot"),
+                        resultSet.getString("overview_color"),
                         resultSet.getString("overview_content_type"),
                         resultSet.getBytes("overview_image"),
                         resultSet.getString("econ_labor"),
@@ -114,6 +116,7 @@ public class DictatorRepository {
                         resultSet.getString("overview_blurb"),
                         resultSet.getString("overview_dictatorship_name"),
                         resultSet.getString("overview_mascot"),
+                        resultSet.getString("overview_color"),
                         resultSet.getString("overview_content_type"),
                         resultSet.getBytes("overview_image"),
                         resultSet.getString("econ_labor"),
@@ -140,6 +143,28 @@ public class DictatorRepository {
     public void save(User user) {
         jdbcTemplate.update("INSERT INTO users(username,password,email) VALUES(?,?,?)",
                 new Object[]{user.getUsername(),user.getPassword(),user.getEmail()});
+    }
+
+    // SAVE/UPDATE DICTATOR
+    public void saveDictator(Dictator dictator){
+        jdbcTemplate.update("INSERT INTO dictators(id_dictators, overview_blurb, " +
+                "overview_dictatorship_name, overview_mascot, overview_color, " +
+                "overview_content_type, overview_image, econ_labor, econ_tax, econ_trade, " +
+                "econ_infrastructure, econ_military, social_healthcare, social_retirement, " +
+                "social_education, social_environment, social_welfare, legal_punishment, " +
+                "legal_immigration, legal_voting_rights, legal_privacy_laws, legal_weapons, " +
+                "pledge, revolt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                new Object[]{dictator.getUser().getId(),dictator.getOverviewBlurb(),
+                dictator.getOverviewDictatorshipName(),dictator.getOverviewMascot(),
+                dictator.getOverviewColor(),dictator.getOverviewContentType(),
+                dictator.getOverviewImage(),dictator.getEconLabor(),
+                dictator.getEconTax(),dictator.getEconTrade(),dictator.getEconInfrastructure(),
+                dictator.getEconMilitary(),dictator.getSocialHealthcare(),
+                dictator.getSocialRetirement(),dictator.getSocialEducation(),
+                dictator.getSocialEnvironment(),dictator.getSocialWelfare(),
+                dictator.getLegalPunishment(),dictator.getLegalImmigration(),
+                dictator.getLegalVotingRights(),dictator.getLegalPrivacyLaws(),
+                dictator.getLegalWeapons(),dictator.getPledge(),dictator.getRevolt()});
     }
 
     // list of users
