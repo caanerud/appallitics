@@ -178,13 +178,14 @@ input[type="submit"], button{
   font-family: inherit;
   text-transform: uppercase;
   letter-spacing: .1rem;
-  transition: scale .2s ease-in-out;
+  transition: all .1s ease-in-out;
   box-shadow: 3px 5px 10px rgba(0,0,0,.1);
 }
 
 input[type="submit"]:hover, button:hover{
   cursor: pointer;
   background-color: darken($color1, 2%);
+  transform: translateY(-2px);
 }
 
 input[type="submit"]:active, button:active{
