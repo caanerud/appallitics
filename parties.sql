@@ -62,7 +62,7 @@ CREATE TABLE dictators (
     pledge integer NOT NULL,
     revolt integer NOT NULL,
     overview_dictatorship_name character varying(255) NOT NULL,
-    overview_image character varying(255) NOT NULL
+    overview_image bytea NOT NULL
 );
 
 
