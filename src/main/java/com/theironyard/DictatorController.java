@@ -156,6 +156,7 @@ public class DictatorController {
     public String leaderboard(Model model, String search){
 
         model.addAttribute("bestDictators",dictatorRepository.listBestDictators(search));
+        model.addAttribute("worstDictators", dictatorRepository.listWorstDictators(search));
         return "leaderboard";
     }
 

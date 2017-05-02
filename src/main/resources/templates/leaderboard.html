@@ -61,13 +61,14 @@
             <td>Picture</td>
             <td>Username</td>
             <td>Dictatorship name</td>
-            <td>
-                <a href="leaderboard.html" th:href="@{'/leaderboard?pledge='} + ${rank.getPledge()}">
-                </a> title="Sort by Greatest # of Pledges">Pledges</td>
-            <td>
-                <a href="leaderboard.html" th:href="@{'/leaderboard?revolt='} + ${rank.getRevolt()}">
-                </a> title="Sort by Greatest # of Revolts">Revolts
-            </td>
+            <td title="Sort by Greatest # of Pledges">Pledges</td>
+                <!--<a href="leaderboard.html" th:href="@{'/leaderboard?pledge='} + ${()}">-->
+                <!--</a> -->
+
+            <td title="Sort by Greatest # of Revolts">Revolts</td>
+                <!--<a href="leaderboard.html" th:href="@{'/leaderboard?revolt='} + ${()}">-->
+                <!--</a> -->
+
         </tr>
 
         <tr th:each="rank : ${bestDictators}">
