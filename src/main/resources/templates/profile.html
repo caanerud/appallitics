@@ -67,12 +67,13 @@
         <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
 
         <div class="buttons">
-          <div class="view">
+            <!--<div th:if="${thisThing.status()} ? : th:remove='all'"></div>--> 
+            <div class="view" th:if="${owner} == true" th:remove='all'>
             <button id="revolt-button" type="button">Revolt</button>
             <button id="pledge-button" type="button">Pledge</button>
           </div>
 
-          <div class="edit">
+          <div class="edit" th:if="${owner} == false" th:remove='all'>
             <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
             <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
           </div>
