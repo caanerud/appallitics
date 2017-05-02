@@ -20,15 +20,27 @@ $(document).ready(function(){
 
 // CREATE FORM NAVIGATION
 $(document).ready(function(){
+  $('#overview').show();
+  $('#overview .pro-bar .step:last-of-type').animate({width:'25%'});
+
+
   $('.next').click(function(){
     $(this).parent().parent().hide();
     $(this).parent().parent().next().show();
+    // $(this).parent().parent().next().ready(function(){
+    //   $('.step:last-of-type').animate({width:'25%'});
+    // });
   });
 
   $('.prev').click(function(){
     $(this).parent().parent().hide();
     $(this).parent().parent().prev().show();
+    // $(this).parent().parent().prev().ready(function(){
+    //   $('.step:last-of-type').css('width','0%');
+    // });
+    // $(this).parent().parent().next().ready(function(){
+    //   $('.step:last-of-type').animate({width:'25%'});
+    // });
   });
+  
 });
-
-// STATUS BAR ANIMATION

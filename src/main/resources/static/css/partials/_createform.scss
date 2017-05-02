@@ -25,9 +25,14 @@
     height: 10px;
     width: 25%;
   }
+
+  .step:last-of-type{
+    width: 0%;
+  }
+
 }
 
-#economics, #social, #legal{
+#overview, #economics, #social, #legal{
   display: none;
 }
 
