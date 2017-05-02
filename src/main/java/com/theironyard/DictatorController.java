@@ -1,6 +1,8 @@
 package com.theironyard;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +10,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 /**
@@ -140,7 +144,7 @@ public class DictatorController {
         model.addAttribute("dictator",dictator);
 
         // Creating variable to see if viewer is owner
-        boolean owner = true;
+        Boolean owner = true;
         if (userId != viewerId){
             owner = false;
         }
@@ -170,5 +174,19 @@ public class DictatorController {
     @GetMapping("/vote")
     public String vote(){
         return "vote";
+    }
+
+    // Getting the picture
+    @GetMapping("/dictator/image")
+    @ResponseBody
+    public ResponseEntity serveFile(Integer id) throws URISyntaxException {
+
+        Dictator dictator = dictatorRepository.getDictatorById(id);
+
+        return ResponseEntity
+                .ok()
+                .header(HttpHeaders.CONTENT_TYPE, dictator.getOverviewContentType())
+                .body(dictator.getOverviewImage());
+
     }
 }

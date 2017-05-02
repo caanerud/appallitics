@@ -111,7 +111,7 @@ public class DictatorRepository {
                 "WHERE id_dictators = ?",
                 new Object[]{id},
                 (resultSet, i) -> new Dictator(
-                        new User(resultSet.getInt("id"),
+                        new User(resultSet.getInt("id_dictators"),
                                 resultSet.getString("username")),
                         resultSet.getString("overview_blurb"),
                         resultSet.getString("overview_dictatorship_name"),
