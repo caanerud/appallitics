@@ -13,7 +13,8 @@
 h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, hr{
   padding:0;
   margin:0;
-  color: rgba(0,0,0,.5);
+  // color: rgba(0,0,0,.5);
+  color:white;
 }
 
 body{
@@ -48,6 +49,8 @@ h4{
 
 p{
   color:white;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
 }
 
 .flex{
@@ -183,6 +186,11 @@ input[type="submit"]:active, button:active{
   transform: scale(.98);
 }
 
+label{
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
 
 
 
@@ -215,6 +223,19 @@ footer{
 
 // MEDIA QUERIES_________________________________
 @media (min-width:767px) {
+  .content{
+    margin: 100px auto;
+  }
+
+  h1{
+    font-size: 2rem;
+    margin-top:10px;
+    margin-bottom: 20px;
+  }
+
+  h4{
+    font-size: 1.5rem;
+  }
 
   header{
     padding:0 5%;
@@ -230,17 +251,17 @@ footer{
 }
 
 @media (min-width:900px) {
-  .content{
-    margin: 120px auto;
-  }
-
-  h1{
-    font-size: 2rem;
-    margin-top:10px;
-    margin-bottom: 20px;
-  }
-
-  h4{
-    font-size: 1.5rem;
-  }
+  // .content{
+  //   margin: 120px auto;
+  // }
+  //
+  // h1{
+  //   font-size: 2rem;
+  //   margin-top:10px;
+  //   margin-bottom: 20px;
+  // }
+  //
+  // h4{
+  //   font-size: 1.5rem;
+  // }
 }

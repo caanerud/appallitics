@@ -18,3 +18,9 @@
     text-align: center;
   }
 }
+
+@media (min-width:767px) {
+  .login, .create-account{
+    margin:0 50px;
+  }
+}

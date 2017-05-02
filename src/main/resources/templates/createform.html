@@ -42,12 +42,21 @@
 <!-- CONTENT___________________________________________ -->
 
 <div class="content">
+
   <form action="profile.html" th:action="@{/createDictator}" method="post">
+
+
       <section id="overview">
-          <h1>Let's Create a Ruling Party!</h1>
+          <div class="section-header">
+            <h1>Let's Create a Ruling Party!</h1>
+          </div>
+          <div class="pro-bar">
+            <div class="step"></div>
+          </div>
 
           <!--For username-->
           <h3>Welcome, <div id="username-print"></div></h3>
+          <br/>
 
           <div class="input-field">
             <label for="overviewBlurb">Party Catchphrase</label>
@@ -59,22 +68,18 @@
             <input type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" placeholder="make it something intimidating, like Meat Hammock or Butterfly Nozzle or The Sentient Waffle Iron" required="required"/>
           </div>
 
-          <hr/>
           <br/>
 
           <div class="overview-bottom">
 
               <div class="choose-pic">
-                <p>Choose Your Profile Picture</p>
-                <label class="custom-file-upload">
-                  <input type="file"/>
-                  <i class="fa fa-cloud-upload"></i>
-                </label>
+                <label for="file">Choose Your Profile Picture</label>
+                <input type="file" class="upload" />
               </div>
 
               <div class="choose-color">
                 <p>Choose Your Color</p>
-                <input type="color" name="favcolor" value="#ffffff">
+                <input type="color" name="favcolor" value="#ffffff"/>
               </div>
 
               <div class="choose-mascot">
@@ -97,9 +102,11 @@
 
           <div class="form-nav">
             <span></span>
-            <button type="button" name="button" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            <button type="button" name="button" class="next"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></button>
           </div>
       </section>
+
+
 
       <section id="economics">
           <h1>Your Economic Policies</h1>
@@ -136,10 +143,11 @@
 
           <div class="form-nav">
             <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-
             <button type="button" name="button" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
           </div>
       </section>
+
+
 
       <section id="social">
           <h1>Your Social Policies</h1>
@@ -176,10 +184,11 @@
 
           <div class="form-nav">
             <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-
             <button type="button" name="button" class="next"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
           </div>
       </section>
+
+
 
       <section id="legal">
           <h1>Your Legal Policies</h1>
