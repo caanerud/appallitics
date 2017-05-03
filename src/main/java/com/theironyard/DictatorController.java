@@ -197,10 +197,28 @@ public class DictatorController {
 
     // leaderboard page
     @GetMapping("/leaderboard")
-    public String leaderboard(Model model, String search){
+    public String leaderboard(Model model, @RequestParam(defaultValue = "") String search){
 
-        model.addAttribute("bestDictators",dictatorRepository.listBestDictators(search));
-        model.addAttribute("worstDictators", dictatorRepository.listWorstDictators(search));
+        model.addAttribute("dictators",dictatorRepository.listBestDictators(search));
+//        model.addAttribute("worstDictators", dictatorRepository.listWorstDictators(search));
+        return "leaderboard";
+    }
+
+    // leaderboard sort best
+    @GetMapping("/bestDictators")
+    public String bestDictators(Model model, @RequestParam(defaultValue = "") String search){
+
+        model.addAttribute("dictators",dictatorRepository.listBestDictators(search));
+
+        return "leaderboard";
+    }
+
+    // leaderboard sort worst
+    @GetMapping("/worstDictators")
+    public String worstDictators(Model model, @RequestParam(defaultValue = "") String search){
+
+        model.addAttribute("dictators", dictatorRepository.listWorstDictators(search));
+
         return "leaderboard";
     }
 
@@ -209,6 +227,7 @@ public class DictatorController {
     public String vote(){
         return "vote";
     }
+
 
     // Getting the picture
     @GetMapping("/dictator/image")
