@@ -20,9 +20,11 @@ $(document).ready(function(){
 
 // CREATE FORM NAVIGATION
 $(document).ready(function(){
-  $('#overview').show();
-  $('#overview .pro-bar .step:last-of-type').animate({width:'25%'});
+  // $('#overview').show();
+  // $('#overview .pro-bar .step:last-of-type').delay(500).animate({width:'25%'});
 
+  $('section:first-of-type').show();
+  $('section:first-of-type .pro-bar .step:last-of-type').delay(500).animate({width:'25%'});
 
   $('.next').click(function(){
     $(this).parent().parent().hide();
