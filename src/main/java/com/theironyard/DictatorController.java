@@ -38,7 +38,11 @@ public class DictatorController {
 
     // creating dictator form
     @GetMapping("/createform")
-    public String createform(){
+    public String createform(HttpSession session){
+
+        // Getting the session id
+        Integer userId = (Integer) session.getAttribute("userId");
+
         return "createform";
     }
 
