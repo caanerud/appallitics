@@ -154,6 +154,9 @@ public class DictatorController {
         // Gets the dictator so that the input fields may be filled with previous answers
         model.addAttribute("dictator",dictatorRepository.getDictatorById(userId));
 
+        // Checker for mascot (select, option)
+
+
         return "createform";
     }
 
