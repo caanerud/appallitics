@@ -16,87 +16,87 @@
 
 <body>
 
-<!-- HEADER____________________________________________ -->
-<header>
-    <div class="logo">
-        <a href="index.html" th:href="@{/}">Appallitics</a>
-    </div>
-    <ul class="main-nav">
-        <li><a href="login.html" th:href="@{/login}">Login</a></li>
-        <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
-        <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
-        <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
-        <li><a href="about.html" th:href="@{/about}">About</a></li>
-    </ul>
-    <div class="hamburger-trigger">
-        <ul class="hamburger-nav">
+    <!-- HEADER____________________________________________ -->
+    <header>
+        <div class="logo">
+            <a href="index.html" th:href="@{/}">Appallitics</a>
+        </div>
+        <ul class="main-nav">
             <li><a href="login.html" th:href="@{/login}">Login</a></li>
             <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
             <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
             <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
             <li><a href="about.html" th:href="@{/about}">About</a></li>
         </ul>
+        <div class="hamburger-trigger">
+            <ul class="hamburger-nav">
+                <li><a href="login.html" th:href="@{/login}">Login</a></li>
+                <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
+                <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
+                <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
+                <li><a href="about.html" th:href="@{/about}">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <!-- CONTENT___________________________________________ -->
+
+    <div class="content">
+      <div class="leaderboard-container">
+
+        <h1>Leaderboard</h1>
+
+          <form action="leaderboard.html" th:action="@{/leaderboard}" method="get">
+              <label>
+                  <span>Search:</span>
+                  <input type="text" name="search" value="" th:value="${search}"/>
+              </label>
+          </form>
+
+
+        <table>
+            <tr>
+                <td>Rank</td>
+                <td>Picture</td>
+                <td>Username</td>
+                <td>Dictatorship name</td>
+                <td title="Sort by Greatest # of Pledges">Pledges</td>
+                    <!--<a href="leaderboard.html" th:href="@{'/leaderboard?pledge='} + ${()}">-->
+                    <!--</a> -->
+
+                <td title="Sort by Greatest # of Revolts">Revolts</td>
+                    <!--<a href="leaderboard.html" th:href="@{'/leaderboard?revolt='} + ${()}">-->
+                    <!--</a> -->
+
+            </tr>
+
+            <tr th:each="rank : ${bestDictators}">
+                <td>1</td>
+                <td th:text="${rank.getOverviewImage()}">Picture 1</td>
+                <td th:text="${rank.getUser().getUsername()}">Username 1</td>
+                <td th:text="${rank.getOverviewDictatorshipName()}">Dictatorship name 1</td>
+                <td th:text="${rank.getPledge()}">Pledges 1</td>
+                <td th:text="${rank.getRevolt()}">Revolts 1</td>
+            </tr>
+
+            <tr th:remove="all">
+                <td>2</td>
+                <td>Picture 2</td>
+                <td>Username 2</td>
+                <td>Dictatorship name 2</td>
+                <td>Pledges 2</td>
+                <td>Revolts 2</td>
+            </tr>
+        </table>
+
+      </div>
     </div>
-</header>
 
-
-<!-- CONTENT___________________________________________ -->
-
-<div class="content">
-  <div class="leaderboard-container">
-
-    <h1>Leaderboard</h1>
-
-      <form action="leaderboard.html" th:action="@{/leaderboard}" method="get">
-          <label>
-              <span>Search:</span>
-              <input type="text" name="search" value="" th:value="${search}"/>
-          </label>
-      </form>
-
-
-    <table>
-        <tr>
-            <td>Rank</td>
-            <td>Picture</td>
-            <td>Username</td>
-            <td>Dictatorship name</td>
-            <td title="Sort by Greatest # of Pledges">Pledges</td>
-                <!--<a href="leaderboard.html" th:href="@{'/leaderboard?pledge='} + ${()}">-->
-                <!--</a> -->
-
-            <td title="Sort by Greatest # of Revolts">Revolts</td>
-                <!--<a href="leaderboard.html" th:href="@{'/leaderboard?revolt='} + ${()}">-->
-                <!--</a> -->
-
-        </tr>
-
-        <tr th:each="rank : ${bestDictators}">
-            <td>1</td>
-            <td th:text="${rank.getOverviewImage()}">Picture 1</td>
-            <td th:text="${rank.getUser().getUsername()}">Username 1</td>
-            <td th:text="${rank.getOverviewDictatorshipName()}">Dictatorship name 1</td>
-            <td th:text="${rank.getPledge()}">Pledges 1</td>
-            <td th:text="${rank.getRevolt()}">Revolts 1</td>
-        </tr>
-
-        <tr th:remove="all">
-            <td>2</td>
-            <td>Picture 2</td>
-            <td>Username 2</td>
-            <td>Dictatorship name 2</td>
-            <td>Pledges 2</td>
-            <td>Revolts 2</td>
-        </tr>
-    </table>
-
-  </div>
-</div>
-
-<!-- FOOTER____________________________________________ -->
-<footer>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</footer>
+    <!-- FOOTER____________________________________________ -->
+    <footer>
+        <p></p>
+    </footer>
 
 
 

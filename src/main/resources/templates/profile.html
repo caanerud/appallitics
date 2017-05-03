@@ -15,125 +15,125 @@
 
 <body>
 
-<!-- HEADER____________________________________________ -->
+    <!-- HEADER____________________________________________ -->
 
-<header>
-    <div class="logo">
-        <a href="index.html" th:href="@{/}">Appallitics</a>
-    </div>
-    <ul class="main-nav">
-        <li><a href="login.html" th:href="@{/login}">Login</a></li>
-        <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
-        <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
-        <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
-        <li><a href="about.html" th:href="@{/about}">About</a></li>
-    </ul>
-    <div class="hamburger-trigger">
-        <ul class="hamburger-nav">
+    <header>
+        <div class="logo">
+            <a href="index.html" th:href="@{/}">Appallitics</a>
+        </div>
+        <ul class="main-nav">
             <li><a href="login.html" th:href="@{/login}">Login</a></li>
             <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
             <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
             <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
             <li><a href="about.html" th:href="@{/about}">About</a></li>
         </ul>
-    </div>
-</header>
+        <div class="hamburger-trigger">
+            <ul class="hamburger-nav">
+                <li><a href="login.html" th:href="@{/login}">Login</a></li>
+                <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
+                <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
+                <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
+                <li><a href="about.html" th:href="@{/about}">About</a></li>
+            </ul>
+        </div>
+    </header>
 
 
-<!-- CONTENT___________________________________________ -->
+    <!-- CONTENT___________________________________________ -->
 
-<div class="content">
-  <section>
-    <div class="section-header">
-      <h1>Profile</h1>
-    </div>
-
-    <div class="top-section">
-      <div class="profile-pic" style="overflow:hidden;">
-        <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}" style="width:100%;"/>
-      </div>
-
-      <div class="profile-info">
-        <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
-        <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
-        <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-      </div>
-
-      <div class="profile-stats">
-
-        <h3>RANK: <div id="rank">5</div> </h3>
-        <h3>PLEDGE: <div id="pledge" th:text="${dictator.getPledge()}">2</div> </h3>
-        <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
-
-        <div class="buttons" >
-          <div class="view" th:if="${!owner}" >
-            <button id="revolt-button" type="button">Revolt</button>
-            <button id="pledge-button" type="button">Pledge</button>
-          </div>
-
-          <div class="edit" th:if="${owner}">
-              <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-              <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
-          </div>
-
+    <div class="content">
+      <section>
+        <div class="section-header">
+          <h1>Profile</h1>
         </div>
 
-      </div>
+        <div class="top-section">
+          <div class="profile-pic" style="overflow:hidden;">
+            <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}" style="width:100%;"/>
+          </div>
+
+          <div class="profile-info">
+            <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
+            <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
+            <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+          </div>
+
+          <div class="profile-stats">
+
+            <h3>RANK: <div id="rank">5</div> </h3>
+            <h3>PLEDGE: <div id="pledge" th:text="${dictator.getPledge()}">2</div> </h3>
+            <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
+
+            <div class="buttons" >
+              <div class="view" th:if="${!owner}" >
+                <button id="revolt-button" type="button">Revolt</button>
+                <button id="pledge-button" type="button">Pledge</button>
+              </div>
+
+              <div class="edit" th:if="${owner}">
+                  <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+                  <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
+        <div class="remodal" data-remodal-id="modal">
+          <a href="#" data-remodal-action="close" class="remodal-close" ></a>
+          <p>Are you sure?<br/>Editing your profile will reset your user rank, pledge and revolt values.</p>
+          <br/>
+          <a href="#" data-remodal-action="cancel">CANCEL</a>
+          <a href="createform.html" th:href="@{/editDictator}">OK</a>
+        </div>
+
+
+        <hr/>
+
+        <div class="bottom-section">
+          <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Economic Policies</h4>
+            <ul>
+              <li>Stance on minion labor rights: <span th:text="${dictator.getEconLabor()}"></span></li>
+              <li>Minion Taxes: <span th:text="${dictator.getEconTax()}"></span></li>
+              <li>Foreign trade with other realms: <span th:text="${dictator.getEconTrade()}"></span></li>
+              <li>Realm infrastructure: <span th:text="${dictator.getEconInfrastructure()}"></span></li>
+              <li>Military might: <span th:text="${dictator.getEconMilitary()}"></span></li>
+            </ul>
+          <br/>
+          <br/>
+
+          <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Social Policies</h4>
+            <ul>
+              <li>Stance on minion healthcare: <span th:text="${dictator.getSocialHealthcare()}"></span></li>
+              <li>Minion retirement: <span th:text="${dictator.getSocialRetirement()}"></span></li>
+              <li>Minion education: <span th:text="${dictator.getSocialEducation()}"></span></li>
+              <li>Environmental issues: <span th:text="${dictator.getSocialEnvironment()}"></span></li>
+              <li>Minion welfare: <span th:text="${dictator.getSocialWelfare()}"></span></li>
+            </ul>
+          <br/>
+          <br/>
+
+          <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Legal Policies</h4>
+            <ul>
+              <li>Minion punishment: <span th:text="${dictator.getLegalPunishment()}"></span></li>
+              <li>Minion immigration: <span th:text="${dictator.getLegalImmigration()}"></span></li>
+              <li>Minion voting rights: <span th:text="${dictator.getLegalVotingRights()}"></span></li>
+              <li>Minion privacy Laws: <span th:text="${dictator.getLegalPrivacyLaws()}"></span></li>
+              <li>Minion weapon rights: <span th:text="${dictator.getLegalWeapons()}"></span></li>
+            </ul>
+
+        </div>
+      </section>
     </div>
 
-    <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
-    <div class="remodal" data-remodal-id="modal">
-      <a href="#" data-remodal-action="close" class="remodal-close" ></a>
-      <p>Are you sure?<br/>Editing your profile will reset your user rank, pledge and revolt values.</p>
-      <br/>
-      <a href="#" data-remodal-action="cancel">CANCEL</a>
-      <a href="createform.html" th:href="@{/editDictator}">OK</a>
-    </div>
 
-
-    <hr/>
-
-    <div class="bottom-section">
-      <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Economic Policies</h4>
-        <ul>
-          <li>Stance on minion labor rights: <span th:text="${dictator.getEconLabor()}"></span></li>
-          <li>Minion Taxes: <span th:text="${dictator.getEconTax()}"></span></li>
-          <li>Foreign trade with other realms: <span th:text="${dictator.getEconTrade()}"></span></li>
-          <li>Realm infrastructure: <span th:text="${dictator.getEconInfrastructure()}"></span></li>
-          <li>Military might: <span th:text="${dictator.getEconMilitary()}"></span></li>
-        </ul>
-      <br/>
-      <br/>
-
-      <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Social Policies</h4>
-        <ul>
-          <li>Stance on minion healthcare: <span th:text="${dictator.getSocialHealthcare()}"></span></li>
-          <li>Minion retirement: <span th:text="${dictator.getSocialRetirement()}"></span></li>
-          <li>Minion education: <span th:text="${dictator.getSocialEducation()}"></span></li>
-          <li>Environmental issues: <span th:text="${dictator.getSocialEnvironment()}"></span></li>
-          <li>Minion welfare: <span th:text="${dictator.getSocialWelfare()}"></span></li>
-        </ul>
-      <br/>
-      <br/>
-
-      <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Legal Policies</h4>
-        <ul>
-          <li>Minion punishment: <span th:text="${dictator.getLegalPunishment()}"></span></li>
-          <li>Minion immigration: <span th:text="${dictator.getLegalImmigration()}"></span></li>
-          <li>Minion voting rights: <span th:text="${dictator.getLegalVotingRights()}"></span></li>
-          <li>Minion privacy Laws: <span th:text="${dictator.getLegalPrivacyLaws()}"></span></li>
-          <li>Minion weapon rights: <span th:text="${dictator.getLegalWeapons()}"></span></li>
-        </ul>
-
-    </div>
-  </section>
-</div>
-
-
-<!-- FOOTER____________________________________________ -->
-<footer>
-    <p></p>
-</footer>
+    <!-- FOOTER____________________________________________ -->
+    <footer>
+        <p></p>
+    </footer>
 
 
 

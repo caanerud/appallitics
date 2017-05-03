@@ -284,17 +284,21 @@ tr:first-of-type {
     justify-content: space-between; }
     .overview-bottom .choose-pic, .overview-bottom .choose-color, .overview-bottom .choose-mascot {
       width: 30%; } }
+html {
+  min-height: 100%;
+  position: relative; }
+
 * {
   box-sizing: border-box; }
+
+body {
+  background-color: #3E383C;
+  font-family: 'Josefin Sans', sans-serif; }
 
 h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, hr {
   padding: 0;
   margin: 0;
   color: white; }
-
-body {
-  background-color: #3E383C;
-  font-family: 'Josefin Sans', sans-serif; }
 
 h1 {
   font-size: 1.3rem;
@@ -437,7 +441,7 @@ label {
 
 footer {
   background-color: #635a60;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   height: 50px;

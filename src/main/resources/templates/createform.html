@@ -15,253 +15,253 @@
 
 <body>
 
-<!-- HEADER____________________________________________ -->
-<header>
-    <div class="logo">
-        <a href="index.html">Appallitics</a>
-    </div>
-    <ul class="main-nav">
-        <li><a href="login.html">Login</a></li>
-        <li><a href="leaderboard.html">Leaderboard</a></li>
-        <li><a href="vote.html">Vote</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="about.html">About</a></li>
-    </ul>
-    <div class="hamburger-trigger">
-        <ul class="hamburger-nav">
+    <!-- HEADER____________________________________________ -->
+    <header>
+        <div class="logo">
+            <a href="index.html">Appallitics</a>
+        </div>
+        <ul class="main-nav">
             <li><a href="login.html">Login</a></li>
             <li><a href="leaderboard.html">Leaderboard</a></li>
             <li><a href="vote.html">Vote</a></li>
             <li><a href="profile.html">Profile</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
+        <div class="hamburger-trigger">
+            <ul class="hamburger-nav">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="vote.html">Vote</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <!-- CONTENT___________________________________________ -->
+
+    <div class="content">
+
+      <form action="profile.html" th:action="@{/createDictator}" method="post" enctype="multipart/form-data">
+
+
+          <section id="overview">
+              <div class="section-header">
+                <h1>Let's Create a Ruling Party!</h1>
+              </div>
+              <div class="pro-bar">
+                <div class="step"></div>
+                <div class="step"></div>
+              </div>
+
+              <!--For username-->
+              <h3>Welcome, <div id="username-print" th:text="${dictator.getUser().getUsername()}"></div></h3>
+              <br/>
+
+              <div class="input-field">
+                <label for="overviewBlurb">Party Catchphrase</label>
+                <input spellcheck="true" type="text" id="overviewBlurb" name="overviewBlurb" th:value="${dictator.getOverviewBlurb().trim()}" placeholder="instill fear in your fellow minions! or advertise your home business" required="required"/>
+              </div>
+
+              <div class="input-field">
+                <label for="overviewDictatorshipName">Dictatorship Name</label>
+                <input spellcheck="true" type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" th:value="${dictator.getOverviewDictatorshipName()}" placeholder="make it something intimidating, like Meat Hammock or Butterfly Nozzle or The Sentient Waffle Iron" required="required"/>
+              </div>
+
+              <br/>
+
+              <div class="overview-bottom">
+
+                  <div class="choose-pic">
+                    <label for="file">Choose Your Profile Picture</label>
+                    <input name="file" id="file" type="file" class="upload" />
+                  </div>
+
+                  <div class="choose-color">
+                    <p>Choose Your Color</p>
+                    <input type="color" name="favcolor" th:value="${dictator.getOverviewColor()}" value="#ffffff"/>
+                  </div>
+
+                  <div class="choose-mascot">
+                    <p>Choose Your Mascot</p>
+                    <select class="mascot-dropdown" name="mascot">
+                      <option value="Tiger">Tiger</option>
+                      <option value="Wild Boar">Wild Boar</option>
+                      <option value="Iguana">Iguana</option>
+                      <option value="Koala">Koala</option>
+                      <option value="Crocodile">Crocodile</option>
+                      <option value="Parrot">Parrot</option>
+                      <option value="Whale">Whale</option>
+                      <option value="Eagle">Eagle</option>
+                      <option value="Dolphin">Dolphin</option>
+                      <option value="Clown Fish">Clown Fish</option>
+                    </select>
+                  </div>
+
+              </div>
+
+              <div class="form-nav">
+                <span></span>
+                <button type="button" name="button" class="next"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></button>
+              </div>
+          </section>
+
+
+
+          <section id="economics">
+              <div class="section-header">
+                <h1>Your Economic Policies</h1>
+              </div>
+              <div class="pro-bar">
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+              </div>
+
+              <label for="econLabor">Stance on minion labor rights</label>
+              <br />
+              <input spellcheck="true" type="text" id="econLabor" name="econLabor" th:value="${dictator.getEconLabor().trim()}" placeholder="minimum wage! unions! unemployment! and other things that the sniveling masses expect you to care about" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="econTax">Minion Taxes</label>
+              <br />
+              <input spellcheck="true" type="text" id="econTax" name="econTax" th:value="${dictator.getEconTax().trim()}" placeholder="haha, as if you'll pay them a living wage" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="econTrade">Foreign trade with other realms</label>
+              <br />
+              <input spellcheck="true" type="text" id="econTrade" name="econTrade" th:value="${dictator.getEconTrade().trim()}" placeholder="let's just pretend for a moment that you'll have to deal with an equal at some point during your reign" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="econInfrastructure">Realm infrastructure</label>
+              <br />
+              <input spellcheck="true" type="text" id="econInfrastructure" name="econInfrastructure" th:value="${dictator.getEconInfrastructure().trim()}" placeholder="build bridges with your former enemies! or better yet have them build the bridges" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="econMilitary">Military might</label>
+              <br />
+              <input spellcheck="true" type="text" id="econMilitary" name="econMilitary" th:value="${dictator.getEconMilitary().trim()}" placeholder="crush your enemies -- See them driven before you...etc" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <div class="form-nav">
+                <button type="button" name="button" class="prev"><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></button>
+                <button type="button" name="button" class="next"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></button>
+              </div>
+          </section>
+
+
+
+          <section id="social">
+            <div class="section-header">
+              <h1>Your Social Policies</h1>
+            </div>
+            <div class="pro-bar">
+              <div class="step"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+            </div>
+
+              <label for="socialHealthcare">Stance on minion healthcare</label>
+              <br />
+              <input spellcheck="true" type="text" id="socialHealthcare" name="socialHealthcare" th:value="${dictator.getSocialHealthcare().trim()}" placeholder="more like Deathcare, am I right?" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="socialRetirement">Minion retirement</label>
+              <br />
+              <input spellcheck="true" type="text" id="socialRetirement" name="socialRetirement" th:value="${dictator.getSocialRetirement().trim()}" placeholder="too old to work? that's unpossible" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="socialEducation">Minion education</label>
+              <br />
+              <input spellcheck="true" type="text" id="socialEducation" name="socialEducation" th:value="${dictator.getSocialEducation().trim()}" placeholder="because a well-educated minion will lack the physical strength to defeat you in hand-to-hand combat" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="socialEnvironment">Environmental issues</label>
+              <br />
+              <input spellcheck="true" type="text" id="socialEnvironment" name="socialEnvironment" th:value="${dictator.getSocialEnvironment().trim()}" placeholder="destroying the planet is hard work but someone's got to do it" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="socialWelfare">Minion welfare</label>
+              <br />
+              <input spellcheck="true" type="text" id="socialWelfare" name="socialWelfare" th:value="${dictator.getSocialWelfare().trim()}" placeholder="let's throw a pity party for the weak and feeble" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <div class="form-nav">
+                <button type="button" name="button" class="prev"><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></button>
+                <button type="button" name="button" class="next"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></button>
+              </div>
+          </section>
+
+
+
+          <section id="legal">
+            <div class="section-header">
+              <h1>Your Legal Policies</h1>
+            </div>
+            <div class="pro-bar">
+              <div class="step"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+              <div class="step"></div>
+            </div>
+
+              <label for="legalPunishment">Minion punishment</label>
+              <br />
+              <input spellcheck="true" type="text" id="legalPunishment" name="legalPunishment" th:value="${dictator.getLegalPunishment().trim()}" placeholder="undignified slaps with the back of your hand shall abound" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="legalImmigration">Minion immigration</label>
+              <br />
+              <input spellcheck="true" type="text" id="legalImmigration" name="legalImmigration" th:value="${dictator.getLegalImmigration().trim()}" placeholder="you will be more than happy to accept/deny new vassals who will do your bidding" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="legalVotingRights">Minion voting rights</label>
+              <br />
+              <input spellcheck="true" type="text" id="legalVotingRights" name="legalVotingRights" th:value="${dictator.getLegalVotingRights().trim()}" placeholder="dictator-for-life does have a nice ring to it" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="legalPrivacyLaws">Minion privacy Laws</label>
+              <br />
+              <input spellcheck="true" type="text" id="legalPrivacyLaws" name="legalPrivacyLaws" th:value="${dictator.getLegalPrivacyLaws().trim()}" placeholder="your minions will of course have nothing to hide from you" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <label for="legalWeapons">Minion weapon rights</label>
+              <br />
+              <input spellcheck="true" type="text" id="legalWeapons" name="legalWeapons" th:value="${dictator.getLegalWeapons().trim()}" placeholder="the right to bear spiked clubs and ninja stars" required="required"/>
+              <br />
+              <!-- <br /> -->
+
+              <div class="form-nav">
+                <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+
+                <input type="submit" />
+              </div>
+
+          </section>
+      </form>
     </div>
-</header>
 
-
-<!-- CONTENT___________________________________________ -->
-
-<div class="content">
-
-  <form action="profile.html" th:action="@{/createDictator}" method="post" enctype="multipart/form-data">
-
-
-      <section id="overview">
-          <div class="section-header">
-            <h1>Let's Create a Ruling Party!</h1>
-          </div>
-          <div class="pro-bar">
-            <div class="step"></div>
-            <div class="step"></div>
-          </div>
-
-          <!--For username-->
-          <h3>Welcome, <div id="username-print" th:text="${dictator.getUser().getUsername()}"></div></h3>
-          <br/>
-
-          <div class="input-field">
-            <label for="overviewBlurb">Party Catchphrase</label>
-            <input spellcheck="true" type="text" id="overviewBlurb" name="overviewBlurb" th:value="${dictator.getOverviewBlurb().trim()}" placeholder="instill fear in your fellow minions! or advertise your home business" required="required"/>
-          </div>
-
-          <div class="input-field">
-            <label for="overviewDictatorshipName">Dictatorship Name</label>
-            <input spellcheck="true" type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" th:value="${dictator.getOverviewDictatorshipName()}" placeholder="make it something intimidating, like Meat Hammock or Butterfly Nozzle or The Sentient Waffle Iron" required="required"/>
-          </div>
-
-          <br/>
-
-          <div class="overview-bottom">
-
-              <div class="choose-pic">
-                <label for="file">Choose Your Profile Picture</label>
-                <input name="file" id="file" type="file" class="upload" />
-              </div>
-
-              <div class="choose-color">
-                <p>Choose Your Color</p>
-                <input type="color" name="favcolor" th:value="${dictator.getOverviewColor()}" value="#ffffff"/>
-              </div>
-
-              <div class="choose-mascot">
-                <p>Choose Your Mascot</p>
-                <select class="mascot-dropdown" name="mascot">
-                  <option value="Tiger">Tiger</option>
-                  <option value="Wild Boar">Wild Boar</option>
-                  <option value="Iguana">Iguana</option>
-                  <option value="Koala">Koala</option>
-                  <option value="Crocodile">Crocodile</option>
-                  <option value="Parrot">Parrot</option>
-                  <option value="Whale">Whale</option>
-                  <option value="Eagle">Eagle</option>
-                  <option value="Dolphin">Dolphin</option>
-                  <option value="Clown Fish">Clown Fish</option>
-                </select>
-              </div>
-
-          </div>
-
-          <div class="form-nav">
-            <span></span>
-            <button type="button" name="button" class="next"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></button>
-          </div>
-      </section>
-
-
-
-      <section id="economics">
-          <div class="section-header">
-            <h1>Your Economic Policies</h1>
-          </div>
-          <div class="pro-bar">
-            <div class="step"></div>
-            <div class="step"></div>
-            <div class="step"></div>
-          </div>
-
-          <label for="econLabor">Stance on minion labor rights</label>
-          <br />
-          <input spellcheck="true" type="text" id="econLabor" name="econLabor" th:value="${dictator.getEconLabor().trim()}" placeholder="minimum wage! unions! unemployment! and other things that the sniveling masses expect you to care about" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="econTax">Minion Taxes</label>
-          <br />
-          <input spellcheck="true" type="text" id="econTax" name="econTax" th:value="${dictator.getEconTax().trim()}" placeholder="haha, as if you'll pay them a living wage" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="econTrade">Foreign trade with other realms</label>
-          <br />
-          <input spellcheck="true" type="text" id="econTrade" name="econTrade" th:value="${dictator.getEconTrade().trim()}" placeholder="let's just pretend for a moment that you'll have to deal with an equal at some point during your reign" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="econInfrastructure">Realm infrastructure</label>
-          <br />
-          <input spellcheck="true" type="text" id="econInfrastructure" name="econInfrastructure" th:value="${dictator.getEconInfrastructure().trim()}" placeholder="build bridges with your former enemies! or better yet have them build the bridges" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="econMilitary">Military might</label>
-          <br />
-          <input spellcheck="true" type="text" id="econMilitary" name="econMilitary" th:value="${dictator.getEconMilitary().trim()}" placeholder="crush your enemies -- See them driven before you...etc" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <div class="form-nav">
-            <button type="button" name="button" class="prev"><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></button>
-            <button type="button" name="button" class="next"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></button>
-          </div>
-      </section>
-
-
-
-      <section id="social">
-        <div class="section-header">
-          <h1>Your Social Policies</h1>
-        </div>
-        <div class="pro-bar">
-          <div class="step"></div>
-          <div class="step"></div>
-          <div class="step"></div>
-          <div class="step"></div>
-        </div>
-
-          <label for="socialHealthcare">Stance on minion healthcare</label>
-          <br />
-          <input spellcheck="true" type="text" id="socialHealthcare" name="socialHealthcare" th:value="${dictator.getSocialHealthcare().trim()}" placeholder="more like Deathcare, am I right?" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="socialRetirement">Minion retirement</label>
-          <br />
-          <input spellcheck="true" type="text" id="socialRetirement" name="socialRetirement" th:value="${dictator.getSocialRetirement().trim()}" placeholder="too old to work? that's unpossible" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="socialEducation">Minion education</label>
-          <br />
-          <input spellcheck="true" type="text" id="socialEducation" name="socialEducation" th:value="${dictator.getSocialEducation().trim()}" placeholder="because a well-educated minion will lack the physical strength to defeat you in hand-to-hand combat" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="socialEnvironment">Environmental issues</label>
-          <br />
-          <input spellcheck="true" type="text" id="socialEnvironment" name="socialEnvironment" th:value="${dictator.getSocialEnvironment().trim()}" placeholder="destroying the planet is hard work but someone's got to do it" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="socialWelfare">Minion welfare</label>
-          <br />
-          <input spellcheck="true" type="text" id="socialWelfare" name="socialWelfare" th:value="${dictator.getSocialWelfare().trim()}" placeholder="let's throw a pity party for the weak and feeble" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <div class="form-nav">
-            <button type="button" name="button" class="prev"><a href="#"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></button>
-            <button type="button" name="button" class="next"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></button>
-          </div>
-      </section>
-
-
-
-      <section id="legal">
-        <div class="section-header">
-          <h1>Your Legal Policies</h1>
-        </div>
-        <div class="pro-bar">
-          <div class="step"></div>
-          <div class="step"></div>
-          <div class="step"></div>
-          <div class="step"></div>
-          <div class="step"></div>
-        </div>
-
-          <label for="legalPunishment">Minion punishment</label>
-          <br />
-          <input spellcheck="true" type="text" id="legalPunishment" name="legalPunishment" th:value="${dictator.getLegalPunishment().trim()}" placeholder="undignified slaps with the back of your hand shall abound" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="legalImmigration">Minion immigration</label>
-          <br />
-          <input spellcheck="true" type="text" id="legalImmigration" name="legalImmigration" th:value="${dictator.getLegalImmigration().trim()}" placeholder="you will be more than happy to accept/deny new vassals who will do your bidding" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="legalVotingRights">Minion voting rights</label>
-          <br />
-          <input spellcheck="true" type="text" id="legalVotingRights" name="legalVotingRights" th:value="${dictator.getLegalVotingRights().trim()}" placeholder="dictator-for-life does have a nice ring to it" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="legalPrivacyLaws">Minion privacy Laws</label>
-          <br />
-          <input spellcheck="true" type="text" id="legalPrivacyLaws" name="legalPrivacyLaws" th:value="${dictator.getLegalPrivacyLaws().trim()}" placeholder="your minions will of course have nothing to hide from you" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <label for="legalWeapons">Minion weapon rights</label>
-          <br />
-          <input spellcheck="true" type="text" id="legalWeapons" name="legalWeapons" th:value="${dictator.getLegalWeapons().trim()}" placeholder="the right to bear spiked clubs and ninja stars" required="required"/>
-          <br />
-          <!-- <br /> -->
-
-          <div class="form-nav">
-            <button type="button" name="button" class="prev"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-
-            <input type="submit" />
-          </div>
-
-      </section>
-  </form>
-</div>
-
-<!-- FOOTER____________________________________________ -->
-<footer>
-    <p>Lorem ipsum dolor sit amet.</p>
-</footer>
+    <!-- FOOTER____________________________________________ -->
+    <footer>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </footer>
 
 
 
