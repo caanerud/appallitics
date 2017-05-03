@@ -81,7 +81,8 @@ table {
   color: white; }
 
 tr {
-  background-color: #635a60; }
+  background-color: #635a60;
+  display: none; }
 
 td {
   padding: 20px; }
