@@ -63,8 +63,10 @@
     }
 
     p{
-      padding: 25px;
+      padding: 30px;
       background-color: $color4;
+      max-width: 500px;
+      margin: 0 auto;
       // min-height: 400px;
     }
   }

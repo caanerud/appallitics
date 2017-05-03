@@ -5,6 +5,8 @@ $(document).ready(function(){
   });
 });
 
+
+
 // SWITCH BETWEEN LOGIN AND CREATE ACCOUNT
 $(document).ready(function(){
   $('.go-to-create-account').click(function(){
@@ -17,6 +19,8 @@ $(document).ready(function(){
     $('.login').delay(100).fadeIn(100);
   });
 });
+
+
 
 // CREATE FORM NAVIGATION
 $(document).ready(function(){
@@ -66,4 +70,25 @@ $(document).ready(function(){
       });
     } // End if
   });
+});
+
+
+
+// LEADERBOARD LOAD MORE FUNCTIONALITY
+$(document).ready(function(){
+
+  $(function () {
+    $("tr").slice(0, 2).show();
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $("tr:hidden").slice(0, 2).slideDown();
+        if ($("tr:hidden").length == 0) {
+            // $("#load").fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+    });
+  });
+
 });
