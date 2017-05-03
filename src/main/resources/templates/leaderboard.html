@@ -75,7 +75,7 @@
 
             <tr th:each="rank : ${dictators}">
                 <td>
-                    <img th:src="@{/dictator/image(id=${rank.getUser().getId()})}" style="width:100%;"/>
+                    <img th:src="@{/dictator/image(id=${rank.getUser().getId()})}" alt="Picture 1" style="width:100%;"/>
                 </td>
                 <td> <a href="profile.html" th:text="${rank.getUser().getUsername()}" th:href="@{'/profile?get=' + ${rank.getUser().getUsername()}}">Username 1</a></td>
                 <!--<td><a href="#" placethymeleafhere>testing</a></td>-->

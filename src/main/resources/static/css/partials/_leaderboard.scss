@@ -16,10 +16,18 @@ table{
 tr{
   background-color: $color4;
   display: none;
+  width: 100%;
 }
 
 td{
   padding:20px;
+  width: 16.667%;
+  // border:1px solid white;
+}
+
+td:nth-of-type(3){
+  // background-color: red;
+  // width: 50%;
 }
 
 tr:first-of-type{

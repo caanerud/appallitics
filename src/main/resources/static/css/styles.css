@@ -82,10 +82,12 @@ table {
 
 tr {
   background-color: #635a60;
-  display: none; }
+  display: none;
+  width: 100%; }
 
 td {
-  padding: 20px; }
+  padding: 20px;
+  width: 16.667%; }
 
 tr:first-of-type {
   background-color: transparent; }
@@ -335,6 +337,9 @@ p {
 
 a {
   text-decoration: none; }
+
+li {
+  list-style-type: none; }
 
 .flex {
   display: flex;
