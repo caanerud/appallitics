@@ -71,11 +71,18 @@
             <button id="pledge-button" type="button">Pledge</button>
           </div>
 
-          <div class="edit" th:if="${owner}">
-            <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-            <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
-          </div>
+            <div class="edit" th:if="${owner}">
+                <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+                <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
+            </div>
+
         </div>
+
+          <!--<div class="edit" th:if="${owner}">-->
+              <!--<button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>-->
+              <!--<p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>-->
+          <!--</div>-->
+
 
       </div>
     </div>
@@ -110,7 +117,7 @@
         <p>Minion welfare: <span th:text="${dictator.getSocialWelfare()}"></span></p>
       <br/>
       <br/>
-        
+
       <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Legal Policies</h4>
         <p>Minion punishment: <span th:text="${dictator.getLegalPunishment()}"></span></p>
         <p>Minion immigration: <span th:text="${dictator.getLegalImmigration()}"></span></p>

@@ -148,6 +148,10 @@ public class DictatorController {
         if (userId != viewerId){
             owner = false;
         }
+        // Handling case when viewerId is null (when user just login to see their own page)
+        if (viewerId == null){
+            owner = true;
+        }
         model.addAttribute("owner",owner);
 
         return "profile";
