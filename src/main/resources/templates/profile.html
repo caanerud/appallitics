@@ -71,18 +71,12 @@
             <button id="pledge-button" type="button">Pledge</button>
           </div>
 
-            <div class="edit" th:if="${owner}">
-                <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-                <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
-            </div>
+          <div class="edit" th:if="${owner}">
+              <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+              <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
+          </div>
 
         </div>
-
-          <!--<div class="edit" th:if="${owner}">-->
-              <!--<button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>-->
-              <!--<p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>-->
-          <!--</div>-->
-
 
       </div>
     </div>
