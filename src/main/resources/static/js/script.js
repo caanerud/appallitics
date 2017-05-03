@@ -78,13 +78,17 @@ $(document).ready(function(){
 $(document).ready(function(){
 
   $(function () {
-    $("tr").slice(0, 2).show();
+    $("tr").slice(0, 10).show();
     $("#loadMore").on('click', function (e) {
-        e.preventDefault();
-        $("tr:hidden").slice(0, 2).slideDown();
-        if ($("tr:hidden").length == 0) {
-            // $("#load").fadeOut('slow');
-        }
+        // e.preventDefault();
+        $("tr:hidden").slice(0, 10).slideDown();
+
+        // NOT SURE I NEED THIS PART
+        // if ($("tr:hidden").length == 0) {
+        //     $("#load").fadeOut('slow');
+        // }
+
+        // SCROLL TO THE END OF THE NEW SET OF DICTATORS ON CLICK
         $('html,body').animate({
             scrollTop: $(this).offset().top
         }, 1500);
