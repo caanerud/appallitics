@@ -90,6 +90,42 @@ public class DictatorRepository {
         );
     }
 
+    public List<Dictator> sortByScore(String search) {
+        return jdbcTemplate.query(
+                "SELECT users.username, dictators.* FROM dictators JOIN users " +
+                        "ON dictators.id_dictators = users.userid WHERE lower(overview_dictatorship_name) " +
+                        "LIKE lower(?) ORDER BY (dictators.pledge - dictators.revolt) DESC",
+                new Object[]{"%" + search + "%"},
+                ((resultSet, i) -> new Dictator(new User(
+                        resultSet.getInt("id_dictators"),
+                        resultSet.getString("username")),
+                        resultSet.getString("overview_blurb"),
+                        resultSet.getString("overview_dictatorship_name"),
+                        resultSet.getString("overview_mascot"),
+                        resultSet.getString("overview_color"),
+                        resultSet.getString("overview_content_type"),
+                        resultSet.getBytes("overview_image"),
+                        resultSet.getString("econ_labor"),
+                        resultSet.getString("econ_tax"),
+                        resultSet.getString("econ_trade"),
+                        resultSet.getString("econ_infrastructure"),
+                        resultSet.getString("econ_military"),
+                        resultSet.getString("social_healthcare"),
+                        resultSet.getString("social_retirement"),
+                        resultSet.getString("social_education"),
+                        resultSet.getString("social_environment"),
+                        resultSet.getString("social_welfare"),
+                        resultSet.getString("legal_punishment"),
+                        resultSet.getString("legal_immigration"),
+                        resultSet.getString("legal_voting_rights"),
+                        resultSet.getString("legal_privacy_laws"),
+                        resultSet.getString("legal_weapons"),
+                        resultSet.getInt("revolt"),
+                        resultSet.getInt("pledge")
+                ))
+        );
+    }
+
 
     // ** LOGIN RELATED **
     // get a particular user by their username
@@ -199,4 +235,5 @@ public class DictatorRepository {
                         resultSet.getString("email")
                 ));
     }
+
 }

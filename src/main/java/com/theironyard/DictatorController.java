@@ -195,18 +195,9 @@ public class DictatorController {
         return "about";
     }
 
-    // leaderboard page
+    // leaderboard page, sort by best (most pledges)
     @GetMapping("/leaderboard")
     public String leaderboard(Model model, @RequestParam(defaultValue = "") String search){
-
-        model.addAttribute("dictators",dictatorRepository.listBestDictators(search));
-//        model.addAttribute("worstDictators", dictatorRepository.listWorstDictators(search));
-        return "leaderboard";
-    }
-
-    // leaderboard sort best
-    @GetMapping("/bestDictators")
-    public String bestDictators(Model model, @RequestParam(defaultValue = "") String search){
 
         model.addAttribute("dictators",dictatorRepository.listBestDictators(search));
 
@@ -219,6 +210,13 @@ public class DictatorController {
 
         model.addAttribute("dictators", dictatorRepository.listWorstDictators(search));
 
+        return "leaderboard";
+    }
+
+    // leaderboard sort by score
+    @GetMapping("/score")
+    public String score(Model model, @RequestParam(defaultValue = "") String search){
+        model.addAttribute("dictators",dictatorRepository.sortByScore(search));
         return "leaderboard";
     }
 
