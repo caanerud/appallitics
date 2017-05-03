@@ -27,20 +27,15 @@ $(document).ready(function(){
   $('.next').click(function(){
     $(this).parent().parent().hide();
     $(this).parent().parent().next().show();
-    // $(this).parent().parent().next().ready(function(){
-    //   $('.step:last-of-type').animate({width:'25%'});
-    // });
+    $(this).parent().parent().children('.pro-bar').children('.step:first-of-type').animate({width:'25%'});
+    $(this).parent().parent().next().children('.pro-bar').children('.step:last-of-type').animate({width:'25%'});
   });
 
   $('.prev').click(function(){
     $(this).parent().parent().hide();
     $(this).parent().parent().prev().show();
-    // $(this).parent().parent().prev().ready(function(){
-    //   $('.step:last-of-type').css('width','0%');
-    // });
-    // $(this).parent().parent().next().ready(function(){
-    //   $('.step:last-of-type').animate({width:'25%'});
-    // });
+    $(this).parent().parent().prev().children('.pro-bar').children('.step:first-of-type').animate({width:'0%'});
+    $(this).parent().parent().children('.pro-bar').children('.step:last-of-type').animate({width:'0%'});
   });
-  
+
 });

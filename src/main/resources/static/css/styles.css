@@ -158,6 +158,8 @@ tr:first-of-type {
     background-color: #FE5745;
     height: 10px;
     width: 25%; }
+  .pro-bar .step:first-of-type {
+    width: 0%; }
   .pro-bar .step:last-of-type {
     width: 0%; }
 
