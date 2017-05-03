@@ -87,7 +87,8 @@ tr {
 
 td {
   padding: 20px;
-  width: 16.667%; }
+  width: 16.667%;
+  letter-spacing: .05rem; }
 
 tr:first-of-type {
   background-color: transparent; }
@@ -303,7 +304,8 @@ body {
 h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, hr {
   padding: 0;
   margin: 0;
-  color: white; }
+  color: white;
+  letter-spacing: .05rem; }
 
 h1 {
   font-size: 1.3rem;
