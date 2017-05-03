@@ -85,7 +85,8 @@ tr {
   display: none; }
 
 td {
-  padding: 20px; }
+  padding: 20px;
+  width: 16.667%; }
 
 tr:first-of-type {
   background-color: transparent; }
