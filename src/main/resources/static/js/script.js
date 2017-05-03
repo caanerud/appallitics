@@ -20,8 +20,6 @@ $(document).ready(function(){
 
 // CREATE FORM NAVIGATION
 $(document).ready(function(){
-  // $('#overview').show();
-  // $('#overview .pro-bar .step:last-of-type').delay(500).animate({width:'25%'});
 
   $('section:first-of-type').show();
   $('section:first-of-type .pro-bar .step:last-of-type').delay(500).animate({width:'25%'});
@@ -40,4 +38,32 @@ $(document).ready(function(){
     $(this).parent().parent().children('.pro-bar').children('.step:last-of-type').animate({width:'0%'});
   });
 
+});
+
+
+
+// SMOOTH SCROLLING, BABY
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $(".scrollDown").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top -50
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
 });
