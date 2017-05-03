@@ -38,10 +38,12 @@ public class DictatorController {
 
     // creating dictator form
     @GetMapping("/createform")
-    public String createform(HttpSession session){
-
-        // Getting the session id
+    public String createform(Model model, HttpSession session){
+        // Getting id from session
         Integer userId = (Integer) session.getAttribute("userId");
+
+        // modeling empty dictator
+        model.addAttribute("dictator",dictatorRepository.getDictatorById(userId));
 
         return "createform";
     }
@@ -94,8 +96,17 @@ public class DictatorController {
             // gets the same user by username, with the id from the database
             User userWithId = dictatorRepository.getByUserName(username);
 
-            // gets a session id
+            // sets a session id
             session.setAttribute("userId", userWithId.getId());
+
+            // creates blank dictator
+            Dictator dictator = new Dictator(new User(userWithId.getId()),
+                    " ", " "," "," "," ",new byte [1],
+                    " "," "," "," "," ",
+                    " "," "," "," "," ",
+                    " "," "," "," "," ",
+                    0, 0);
+            dictatorRepository.saveDictator(dictator);
 
             // redirect to creating dictator
             return "redirect:/createform";
@@ -130,9 +141,20 @@ public class DictatorController {
 
 
         // saving the dictator to database
-        dictatorRepository.saveDictator(dictator);
+        dictatorRepository.updateDictator(dictator);
 
         return "redirect:/profile";
+    }
+
+    @GetMapping("/editDictator")
+    public String editDictator(HttpSession session, Model model){
+        // Gets the id of the user
+        Integer userId = (Integer) session.getAttribute("userId");
+
+        // Gets the dictator so that the input fields may be filled with previous answers
+        model.addAttribute("dictator",dictatorRepository.getDictatorById(userId));
+
+        return "createform";
     }
 
     // view a profile/Dictator

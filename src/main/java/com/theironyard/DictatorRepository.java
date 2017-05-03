@@ -146,6 +146,28 @@ public class DictatorRepository {
     }
 
     // SAVE/UPDATE DICTATOR
+    public void updateDictator(Dictator dictator){
+        jdbcTemplate.update("UPDATE dictators SET overview_blurb=?, " +
+                        "overview_dictatorship_name=?, overview_mascot=?, overview_color=?, " +
+                        "overview_content_type=?, overview_image=?, econ_labor=?, econ_tax=?, econ_trade=?, " +
+                        "econ_infrastructure=?, econ_military=?, social_healthcare=?, social_retirement=?, " +
+                        "social_education=?, social_environment=?, social_welfare=?, legal_punishment=?, " +
+                        "legal_immigration=?, legal_voting_rights=?, legal_privacy_laws=?, legal_weapons=?, " +
+                        "pledge=?, revolt=? WHERE id_dictators=?",
+                new Object[]{dictator.getOverviewBlurb(),
+                        dictator.getOverviewDictatorshipName(),dictator.getOverviewMascot(),
+                        dictator.getOverviewColor(),dictator.getOverviewContentType(),
+                        dictator.getOverviewImage(),dictator.getEconLabor(),
+                        dictator.getEconTax(),dictator.getEconTrade(),dictator.getEconInfrastructure(),
+                        dictator.getEconMilitary(),dictator.getSocialHealthcare(),
+                        dictator.getSocialRetirement(),dictator.getSocialEducation(),
+                        dictator.getSocialEnvironment(),dictator.getSocialWelfare(),
+                        dictator.getLegalPunishment(),dictator.getLegalImmigration(),
+                        dictator.getLegalVotingRights(),dictator.getLegalPrivacyLaws(),
+                        dictator.getLegalWeapons(),dictator.getPledge(),dictator.getRevolt(),
+                        dictator.getUser().getId()});
+    }
+
     public void saveDictator(Dictator dictator){
         jdbcTemplate.update("INSERT INTO dictators(id_dictators, overview_blurb, " +
                 "overview_dictatorship_name, overview_mascot, overview_color, " +

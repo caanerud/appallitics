@@ -121,7 +121,7 @@
 
           <label for="econLabor">Stance on minion labor rights</label>
           <br />
-          <input type="text" id="econLabor" name="econLabor" placeholder="minimum wage! unions! unemployment! and other things that the sniveling masses expect you to care about" required="required"/>
+          <input type="text" id="econLabor" name="econLabor" th:value="${dictator.getEconLabor().trim()}" placeholder="minimum wage! unions! unemployment! and other things that the sniveling masses expect you to care about" required="required"/>
           <br />
           <!-- <br /> -->
 
