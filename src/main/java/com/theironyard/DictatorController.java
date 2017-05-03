@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by chrisaanerud on 4/28/17.
@@ -222,7 +223,25 @@ public class DictatorController {
 
     // voting part
     @GetMapping("/vote")
-    public String vote(){
+    public String vote(Model model, HttpSession session){
+        // The user id of the voter
+        Integer userId = (Integer) session.getAttribute("userId");
+
+        // List of users, going to get their ids for dictator
+        List<User> listOfUsers = dictatorRepository.listUsers();
+
+        // Creating array of ids, subtracting 1 for the voter
+        int[] x = new int[listOfUsers.size() - 1];
+
+        // Removing voter from the list of users
+         for (int y = 0; y < listOfUsers.size(); y = y + 1){
+             if (userId == listOfUsers.get(y).getId()){
+                 listOfUsers.remove(y);
+             };
+         }
+
+         // Random
+
         return "vote";
     }
 
