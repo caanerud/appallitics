@@ -75,7 +75,7 @@
 
             <tr th:each="rank : ${dictators}">
                 <td>
-                    <img th:src="@{/dictator/image(id=${rank.getUser().getId()})}" style="width:100%;"/>
+                    <img th:src="@{/dictator/image(id=${rank.getUser().getId()})}" alt="Picture 1" style="width:100%;"/>
                 </td>
                 <td th:text="${rank.getUser().getUsername()}">Username 1</td>
                 <td th:text="${rank.getOverviewDictatorshipName()}">Dictatorship name 1</td>
