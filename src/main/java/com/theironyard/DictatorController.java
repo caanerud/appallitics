@@ -38,7 +38,11 @@ public class DictatorController {
 
     // creating dictator form
     @GetMapping("/createform")
-    public String createform(){
+    public String createform(HttpSession session){
+
+        // Getting the session id
+        Integer userId = (Integer) session.getAttribute("userId");
+
         return "createform";
     }
 
@@ -147,6 +151,10 @@ public class DictatorController {
         Boolean owner = true;
         if (userId != viewerId){
             owner = false;
+        }
+        // Handling case when viewerId is null (when user just login to see their own page)
+        if (viewerId == null){
+            owner = true;
         }
         model.addAttribute("owner",owner);
 

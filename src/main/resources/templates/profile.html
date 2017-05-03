@@ -72,9 +72,10 @@
           </div>
 
           <div class="edit" th:if="${owner}">
-            <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-            <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
+              <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+              <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
           </div>
+
         </div>
 
       </div>
@@ -86,7 +87,7 @@
       <p>Are you sure?<br/>Editing your profile will reset your user rank, pledge and revolt values.</p>
       <br/>
       <a href="#" data-remodal-action="cancel">CANCEL</a>
-      <a href="#" data-remodal-action="confirm">OK</a>
+      <a href="#" th:href="@{/createform}" data-remodal-action="confirm">OK</a>
     </div>
 
 
@@ -94,29 +95,37 @@
 
     <div class="bottom-section">
       <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Economic Policies</h4>
-        <p>Stance on minion labor rights: <span th:text="${dictator.getEconLabor()}"></span></p>
-        <p>Minion Taxes: <span th:text="${dictator.getEconTax()}"></span></p>
-        <p>Foreign trade with other realms: <span th:text="${dictator.getEconTrade()}"></span></p>
-        <p>Realm infrastructure: <span th:text="${dictator.getEconInfrastructure()}"></span></p>
-        <p>Military might: <span th:text="${dictator.getEconMilitary()}"></span></p>
+        <ul>
+          <li>Stance on minion labor rights: <span th:text="${dictator.getEconLabor()}"></span></li>
+          <li>Minion Taxes: <span th:text="${dictator.getEconTax()}"></span></li>
+          <li>Foreign trade with other realms: <span th:text="${dictator.getEconTrade()}"></span></li>
+          <li>Realm infrastructure: <span th:text="${dictator.getEconInfrastructure()}"></span></li>
+          <li>Military might: <span th:text="${dictator.getEconMilitary()}"></span></li>
+        </ul>
       <br/>
       <br/>
 
       <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Social Policies</h4>
-        <p>Stance on minion healthcare: <span th:text="${dictator.getSocialHealthcare()}"></span></p>
-        <p>Minion retirement: <span th:text="${dictator.getSocialRetirement()}"></span></p>
-        <p>Minion education: <span th:text="${dictator.getSocialEducation()}"></span></p>
-        <p>Environmental issues: <span th:text="${dictator.getSocialEnvironment()}"></span></p>
-        <p>Minion welfare: <span th:text="${dictator.getSocialWelfare()}"></span></p>
+        <ul>
+          <li>Stance on minion healthcare: <span th:text="${dictator.getSocialHealthcare()}"></span></li>
+          <li>Minion retirement: <span th:text="${dictator.getSocialRetirement()}"></span></li>
+          <li>Minion education: <span th:text="${dictator.getSocialEducation()}"></span></li>
+          <li>Environmental issues: <span th:text="${dictator.getSocialEnvironment()}"></span></li>
+          <li>Minion welfare: <span th:text="${dictator.getSocialWelfare()}"></span></li>
+        </ul>
       <br/>
       <br/>
-        
+
       <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Legal Policies</h4>
-        <p>Minion punishment: <span th:text="${dictator.getLegalPunishment()}"></span></p>
-        <p>Minion immigration: <span th:text="${dictator.getLegalImmigration()}"></span></p>
-        <p>Minion voting rights: <span th:text="${dictator.getLegalVotingRights()}"></span></p>
-        <p>Minion privacy Laws: <span th:text="${dictator.getLegalPrivacyLaws()}"></span></p>
-        <p>Minion weapon rights: <span th:text="${dictator.getLegalWeapons()}"></span></p>    </div>
+        <ul>
+          <li>Minion punishment: <span th:text="${dictator.getLegalPunishment()}"></span></li>
+          <li>Minion immigration: <span th:text="${dictator.getLegalImmigration()}"></span></li>
+          <li>Minion voting rights: <span th:text="${dictator.getLegalVotingRights()}"></span></li>
+          <li>Minion privacy Laws: <span th:text="${dictator.getLegalPrivacyLaws()}"></span></li>
+          <li>Minion weapon rights: <span th:text="${dictator.getLegalWeapons()}"></span></li>
+        </ul>
+
+    </div>
   </section>
 </div>
 
