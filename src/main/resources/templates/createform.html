@@ -66,7 +66,7 @@
 
               <div class="input-field">
                 <label for="overviewDictatorshipName">Dictatorship Name</label>
-                <input spellcheck="true" type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" th:value="${dictator.getOverviewDictatorshipName()}" placeholder="make it something intimidating, like Meat Hammock or Butterfly Nozzle or The Sentient Waffle Iron" required="required"/>
+                <input spellcheck="true" type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" th:value="${dictator.getOverviewDictatorshipName().trim()}" placeholder="make it something intimidating, like Meat Hammock or Butterfly Nozzle or The Sentient Waffle Iron" required="required"/>
               </div>
 
               <br/>
