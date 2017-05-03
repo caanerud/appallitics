@@ -388,25 +388,33 @@ header {
   content: "\f0c9";
   color: white; }
 
-.hamburger-nav {
+.hamburger-container {
   display: none;
   list-style-type: none;
   position: absolute;
-  top: 35px;
   right: 0px;
   text-align: center;
   background-color: #FE5745;
-  padding: 50px 0;
   width: 100vw;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); }
+  height: 100vh; }
+
+.hamburger-nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
   .hamburger-nav li {
-    padding: 20px;
-    font-size: 1.2rem; }
+    padding: 10px;
+    font-size: 1.2rem;
+    position: relative;
+    top: -7%; }
   .hamburger-nav a {
     text-decoration: none;
     color: white; }
   .hamburger-nav a:hover {
-    color: #FE5745; }
+    color: black; }
 
 .content {
   max-width: 900px;

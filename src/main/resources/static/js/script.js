@@ -1,8 +1,12 @@
 // ACCORDION MENU
 $(document).ready(function(){
   $('.hamburger-trigger').click(function(){
-    $('.hamburger-nav').slideToggle();
+    $('.hamburger-container').slideToggle();
   });
+
+  // $('.logo').click(function(){
+  //   $('.hamburger-container').slideUp();
+  // });
 });
 
 

@@ -131,22 +131,31 @@ header{
   color:white;
 }
 
-.hamburger-nav{
+.hamburger-container{
   display: none;
   list-style-type: none;
   position: absolute;
-  top:35px;
-  // right:-15px;
   right:0px;
   text-align:center;
   background-color:$color1;
-  padding:50px 0;
   width:100vw;
-  box-shadow: 0px 10px 20px rgba(0,0,0,.1);
+  height: 100vh;
+}
+
+.hamburger-nav{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 
   li{
-    padding: 20px;
+    padding: 10px;
     font-size: 1.2rem;
+    position: relative;
+    top:-7%;
   }
 
   a{
@@ -155,7 +164,7 @@ header{
   }
 
   a:hover{
-    color: $color1;
+    color: black;
   }
 }
 
@@ -268,4 +277,8 @@ footer{
   .hamburger-trigger{
     display: none;
   }
+}
+
+@media (min-height:320px){
+
 }
