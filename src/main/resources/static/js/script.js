@@ -100,3 +100,41 @@ $(document).ready(function(){
   });
 
 });
+
+$("#pledge-button").click(function(e) {
+    e.preventDefault();
+    $(this).attr("disabled", "disabled");
+    var count = document.getElementById("pledge");
+    var newCount = parseInt(count.textContent)+1;
+    count.textContent = newCount;
+    $.post("/pledge-click",
+        {
+            count: newCount,
+        }
+    );
+    $("#result").append("Pause.<br>");
+
+
+    setTimeout(function() {
+        $("#pledge-button").removeAttr("disabled");
+    }, 6000 * 10);
+});
+
+$("#revolt-button").click(function(e) {
+    e.preventDefault();
+    $(this).attr("disabled", "disabled");
+   var count = document.getElementById("revolt");
+   var newCount = parseInt(count.textContent)+1;
+   count.textContent = newCount;
+   $.post("/revolt-click",
+       {
+         count: newCount,
+       }
+   );
+    $("#result").append("Pause.<br>");
+
+
+    setTimeout(function() {
+        $("#revolt-button").removeAttr("disabled");
+    }, 6000 * 10);
+});
