@@ -1,5 +1,6 @@
 .leaderboard-container{
   padding:0 15px;
+  margin-bottom: 70px;
 }
 
 
@@ -63,6 +64,24 @@ td, th{
 
 td:nth-child(n+3):nth-child(-n+5),th:nth-child(n+3):nth-child(-n+5){
   display: none;
+}
+
+td:nth-child(n+4){
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 5px rgba(0,0,0,.1);
+}
+
+td:nth-child(4){
+  color:$green;
+}
+
+td:nth-child(5){
+  color:$color1;
+}
+
+td:nth-child(6){
+  color:$blue;
 }
 
 tr:first-of-type{
