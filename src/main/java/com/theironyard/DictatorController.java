@@ -34,14 +34,14 @@ public class DictatorController {
     // LOGIN RELATED !!
     // login/register screen
     @GetMapping("/login")
-    public String login(HttpSession session) {
+    public String login(HttpSession session, Model model) {
         Integer userId = (Integer) session.getAttribute("userId");
 
         if (userId == null){
             // not logged in
             userId = 0;
         }
-
+        model.addAttribute("checkloggedin", userId);
         return "login";
     }
 
