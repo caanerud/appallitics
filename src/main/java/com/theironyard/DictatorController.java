@@ -284,7 +284,7 @@ public class DictatorController {
 // The searched list
         List<Dictator> searchDictators = dictatorRepository.listWorstDictators(search);
 
-        // Getting the list of best dictators
+        // Getting the list of worst dictators
         List<Dictator> dictatorList = new ArrayList<>();
 
         // Getting the dictators (with data)
@@ -307,7 +307,7 @@ public class DictatorController {
         // The searched list
         List<Dictator> searchDictators = dictatorRepository.sortByScore(search);
 
-        // Getting the list of best dictators
+        // Getting the list of dictators sorted by score
         List<Dictator> dictatorList = new ArrayList<>();
 
         // Getting the dictators (with data)
