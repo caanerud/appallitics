@@ -249,14 +249,30 @@ public class DictatorController {
     // leaderboard page, sort by best (most pledges)
     @GetMapping("/leaderboard")
     public String leaderboard(Model model, HttpSession session, @RequestParam(defaultValue = "") String search){
+        // Checking if user is logged in or not
         Integer userId = (Integer) session.getAttribute("userId");
 
-        model.addAttribute("dictators",dictatorRepository.listBestDictators(search));
         if (userId == null){
             // not logged in
             userId = 0;
         }
         model.addAttribute("checkloggedin", userId);
+
+        // The searched list
+        List<Dictator> searchDictators = dictatorRepository.listBestDictators(search);
+
+        // Getting the list of best dictators
+        List<Dictator> dictatorList = new ArrayList<>();
+
+        // Getting the dictators (with data)
+        for (int x = 0; x < searchDictators.size(); x = x + 1){
+            if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
+                dictatorList.add(searchDictators.get(x));
+            }
+        }
+
+        // Sending the filtered list of dictators to leaderboard
+        model.addAttribute("dictators",dictatorList);
 
         return "leaderboard";
     }
@@ -265,6 +281,7 @@ public class DictatorController {
     @GetMapping("/worstDictators")
     public String worstDictators(Model model, @RequestParam(defaultValue = "") String search){
 
+        // Getting the list for worst dictators
         model.addAttribute("dictators", dictatorRepository.listWorstDictators(search));
 
         return "leaderboard";
@@ -273,7 +290,10 @@ public class DictatorController {
     // leaderboard sort by score
     @GetMapping("/score")
     public String score(Model model, @RequestParam(defaultValue = "") String search){
+
+        // Getting the list for best score
         model.addAttribute("dictators",dictatorRepository.sortByScore(search));
+
         return "leaderboard";
     }
 
