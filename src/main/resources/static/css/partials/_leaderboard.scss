@@ -3,7 +3,7 @@
 }
 
 .leaderboard-container{
-  
+
 }
 
 table{
@@ -13,18 +13,67 @@ table{
   color:white;
 }
 
+// th{
+//   text-align: left;
+//   padding:20px;
+//   width: 16.667%;
+//   letter-spacing: .05rem;
+// }
+
 tr{
   background-color: $color4;
   display: none;
   width: 100%;
+  margin-bottom: 10px;
+  height: 100px;
 }
 
-td{
+td, th{
+  text-align: left;
   padding:20px;
   width: 16.667%;
   letter-spacing: .05rem;
+  position: relative;
 }
 
 tr:first-of-type{
   background-color: transparent;
+  display: flex;
+  height: auto;
+}
+
+td img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+td .color-overlay{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+td .image-overlay{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .6;
+
+  img{
+    position: absolute;
+    top:0;
+    left:0;
+    object-fit: contain;
+    padding: 10px;
+  }
 }

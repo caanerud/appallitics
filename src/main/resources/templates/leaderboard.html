@@ -60,8 +60,8 @@
         <table>
             <tr>
                 <th>Picture</th>
-                <th >Username</th>
-                <th>Dictatorship name</th>
+                <th>Username</th>
+                <th>Dictatorship</th>
                 <th title="Sort by Greatest # of Pledges">
                     <a href="leaderboard.html" th:href="@{/leaderboard}">Pledges</a>
                 </th>
@@ -77,20 +77,22 @@
 
             <tr th:each="rank : ${dictators}">
                 <td>
-                    <img th:src="@{/dictator/image(id=${rank.getUser().getId()})}" alt="Picture 1" style="width:100%;"/>
+                    <!-- <img th:src="@{/dictator/image(id=${rank.getUser().getId()})}" alt="Picture 1" /> -->
+                    <div class="color-overlay" style"background-color:#fff;"></div>
+                    <div class="image-overlay"><img src="../static/images/tiger.png" alt="tiger"/></div>
                 </td>
                 <td> <a href="profile.html" th:text="${rank.getUser().getUsername()}" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">Username 1</a></td>
                 <!--<td><a href="#" placethymeleafhere>testing</a></td>-->
-                <td th:text="${rank.getOverviewDictatorshipName()}">Dictatorship name 1</td>
+                <td th:text="${rank.getOverviewDictatorshipName()}">Dictatorship 1</td>
                 <td th:text="${rank.getPledge()}">1</td>
                 <td th:text="${rank.getRevolt()}">99</td>
                 <td th:text="${rank.getPledge() - rank.getRevolt()}">-98</td>
             </tr>
 
             <tr th:remove="all">
-                <td>Picture 2</td>
+                <td>Picture</td>
                 <td>Username 2</td>
-                <td>Dictatorship name 2</td>
+                <td>Dictatorship 2</td>
                 <td>50</td>
                 <td>100</td>
                 <td>-50</td>

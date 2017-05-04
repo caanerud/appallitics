@@ -119,15 +119,52 @@ table {
 tr {
   background-color: #635a60;
   display: none;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 10px;
+  height: 100px; }
 
-td {
+td, th {
+  text-align: left;
   padding: 20px;
   width: 16.667%;
-  letter-spacing: .05rem; }
+  letter-spacing: .05rem;
+  position: relative; }
 
 tr:first-of-type {
-  background-color: transparent; }
+  background-color: transparent;
+  display: flex;
+  height: auto; }
+
+td img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+td .color-overlay {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+td .image-overlay {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .6; }
+  td .image-overlay img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    padding: 10px; }
 
 .top-section {
   justify-content: space-between;
