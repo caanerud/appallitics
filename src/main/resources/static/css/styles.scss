@@ -206,7 +206,7 @@ input[type="submit"], button{
 
 input[type="submit"]:hover, button:hover{
   cursor: pointer;
-  background-color: darken($color1, 2%);
+  background-color: darken($color1, 3%);
   transform: translateY(-2px);
 }
 
