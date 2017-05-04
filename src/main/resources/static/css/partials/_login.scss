@@ -42,8 +42,7 @@
   label{
     position: absolute;
     bottom:0px;
-    left: 0px;
-    // width: 145px;
+    left: -145px;
     width: 0%;
     background-color:transparent;
     color: transparent;
@@ -60,7 +59,7 @@
   }
 
   input:focus + label{
-    width: 100%;
+    width: calc(100% + 145px);
     border-bottom: 5px solid $color1;
   }
 

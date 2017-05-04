@@ -33,7 +33,7 @@
   .input-container label {
     position: absolute;
     bottom: 0px;
-    left: 0px;
+    left: -145px;
     width: 0%;
     background-color: transparent;
     color: transparent;
@@ -46,7 +46,7 @@
   .input-container input:valid {
     z-index: 10; }
   .input-container input:focus + label {
-    width: 100%;
+    width: calc(100% + 145px);
     border-bottom: 5px solid #FE5745; }
 
 @media (min-width: 900px) {
