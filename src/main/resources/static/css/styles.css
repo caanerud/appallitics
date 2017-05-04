@@ -9,7 +9,8 @@
   background-color: #635a60;
   width: 100%;
   min-height: 70vh;
-  padding: 30px 10%; }
+  padding: 30px 10%;
+  margin: 0 0 70px; }
   .form-container a {
     display: block;
     text-align: center; }
@@ -28,8 +29,8 @@
     margin: 0;
     outline: none;
     border: 0;
-    background-color: white;
-    height: 45px; }
+    background-color: transparent;
+    height: 50px; }
   .input-container label {
     position: absolute;
     bottom: 0px;
