@@ -19,6 +19,34 @@
   }
 }
 
+
+.input-container{
+  height: 50px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  input{
+    position: absolute;
+    top:0;
+    margin: 0;
+    outline: none;
+  }
+
+  label{
+    position: absolute;
+    height:100%;
+    padding:15px;
+    cursor:text;
+    transition: all .2s ease-in-out;
+  }
+
+  input:focus + label{
+    background-color: $color1;
+    color:white;
+  }
+}
+
 @media (min-width:900px) {
   .login, .create-account{
     margin:0 50px;
