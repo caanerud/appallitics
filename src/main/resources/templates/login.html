@@ -21,23 +21,41 @@
         <div class="logo">
           <a href="index.html" th:href="@{/}">Appallitics</a>
         </div>
-        <ul class="main-nav">
-          <li><a href="login.html" th:href="@{/login}">Login</a></li>
+          <!--if logged in-->
+          <div th:if="${checkloggedin} != 0">
+        <ul class="main-nav" >
           <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
           <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
           <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
           <li><a href="about.html" th:href="@{/about}">About</a></li>
+          <li><a href="login.html" th:href="@{/logout}">Logout</a></li>
         </ul>
         <div class="hamburger-trigger">
           <div class="hamburger-container">
             <ul class="hamburger-nav">
-              <li><a href="login.html" th:href="@{/login}">Login</a></li>
               <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
               <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
               <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
               <li><a href="about.html" th:href="@{/about}">About</a></li>
+              <li><a href="login.html" th:href="@{/logout}">Logout</a></li>
             </ul>
           </div>
+          </div>
+          </div>
+            <!--if not logged in-->
+            <div th:if="${checkloggedin} == 0">
+            <ul class="main-nav">
+                <li><a href="login.html" th:href="@{/login}">Login</a></li>
+                <li><a href="about.html" th:href="@{/about}">About</a></li>
+            </ul>
+            <div class="hamburger-trigger">
+                <div class="hamburger-container">
+                    <ul class="hamburger-nav">
+                        <li><a href="login.html" th:href="@{/login}">Login</a></li>
+                        <li><a href="about.html" th:href="@{/about}">About</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
       </header>
 
@@ -53,11 +71,13 @@
             <br />
             <br />
 
+            <!--<div th:text="${badUsername}"> Error with Login </div>-->
             <div class="input-container">
               <input type="text" id="username" name="username" placeholder="Username" required="required"/>
               <label for="username">Username</label>
             </div>
 
+            <!--<div th:text="${loginFailed}"> Password Error </div>-->
             <div class="input-container">
               <input type="password" id="password" name="password" placeholder="Password" required="required"/>
               <label for="password">Password</label>
