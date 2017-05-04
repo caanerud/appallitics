@@ -96,10 +96,10 @@
 
         <!--Voting buttons-->
         <button id="revolt-button" type="button">
-            <a href="vote.html" th:href="@{/revolt}">Revolt</a>
+            <a href="vote.html" th:href="@{'/revolt?dictatorId='+${dictator.getUser().getId()}}">Revolt</a>
         </button>
         <button id="pledge-button" type="button">
-            <a href="vote.html" th:href="@{/pledge}">Pledge</a>
+            <a href="vote.html" th:href="@{'/pledge?dictatorId='+${dictator.getUser().getId()}}">Pledge</a>
         </button>
 
     </div>

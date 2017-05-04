@@ -14,6 +14,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by chrisaanerud on 4/28/17.
@@ -230,7 +231,7 @@ public class DictatorController {
         // List of users, going to get their ids for dictator
         List<User> listOfUsers = dictatorRepository.listUsers();
 
-        // Creating array of ids, subtracting 1 for the voter
+        // Creating array of ids, subtracting 1 for the voter (not yet populated)
         int[] x = new int[listOfUsers.size() - 1];
 
         // Removing voter from the list of users
@@ -240,10 +241,81 @@ public class DictatorController {
              };
          }
 
-         // Random
+         // adding the remaining list to the integer array
+        for (int z = 0; z < listOfUsers.size(); z= z + 1){
+             x[z]=listOfUsers.get(z).getId();
+        }
+
+         // Random number generator that will link to a dictator
+        Random random = new Random();
+        int number = random.nextInt(listOfUsers.size());
+
+        // The lucky dictator to get a vote
+        Dictator luckyDictator = dictatorRepository.getDictatorById(x[number]);
+
+        // Modeling the lucky dictator
+        model.addAttribute("dictator",luckyDictator);
 
         return "vote";
     }
+
+    // pledge and vote from vote page
+    @GetMapping("/pledge")
+    public String pledge(Integer dictatorId){
+        // getting the dictator
+        Dictator dictator = dictatorRepository.getDictatorById(dictatorId);
+
+        // updating the pledge value by 1, storing as integer pledge
+        Integer pledge = dictator.getPledge()+1;
+
+        // sending it back to database
+        dictatorRepository.pledge(pledge,dictatorId);
+
+        return "redirect:/vote";
+    }
+
+    @GetMapping("/revolt")
+    public String revolt(Integer dictatorId){
+        // getting the dictator
+        Dictator dictator = dictatorRepository.getDictatorById(dictatorId);
+
+        // updating the pledge value by 1, storing as integer pledge
+        Integer revolt = dictator.getRevolt()+1;
+
+        // sending it back to database
+        dictatorRepository.revolt(revolt,dictatorId);
+
+        return "redirect:/vote";
+    }
+
+//    // from profile page
+//    @PostMapping("/pledge")
+//    public String pledgeFrom(Integer dictatorId){
+//        // getting the dictator
+//        Dictator dictator = dictatorRepository.getDictatorById(dictatorId);
+//
+//        // updating the pledge value by 1, storing as integer pledge
+//        Integer pledge = dictator.getPledge()+1;
+//
+//        // sending it back to database
+//        dictatorRepository.pledge(pledge,dictatorId);
+//
+//        return "redirect:/profile";
+//    }
+//
+//    @PostMapping("/revolt")
+//    public String revoltFrom(Integer dictatorId){
+//        // getting the dictator
+//        Dictator dictator = dictatorRepository.getDictatorById(dictatorId);
+//
+//        // updating the pledge value by 1, storing as integer pledge
+//        Integer revolt = dictator.getRevolt()+1;
+//
+//        // sending it back to database
+//        dictatorRepository.revolt(revolt,dictatorId);
+//
+//        return "redirect:/vote";
+//    }
 
 
     // Getting the picture
