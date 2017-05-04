@@ -35,21 +35,28 @@
     margin: 0;
     outline: none;
     border: 0;
-    // width: 75%;
-    // background-color: orange;
+    background-color: white;
+    height: 45px;
   }
 
   label{
     position: absolute;
     bottom:0px;
     left: 0px;
-    width: 25%;
+    // width: 145px;
+    width: 0%;
+    background-color:transparent;
+    color: transparent;
     height:50px;
     padding-left:10px;
     padding-top: 15px;
     border-bottom: 5px solid transparent;
     cursor:text;
-    transition: width .5s ease-in-out, border-bottom .5s ease-in-out;
+    transition: width .5s ease-in-out, border-bottom .5s ease-in-out, background-color .5s ease-in-out;
+  }
+
+  input:valid{
+    z-index: 10;
   }
 
   input:focus + label{
@@ -57,9 +64,6 @@
     border-bottom: 5px solid $color1;
   }
 
-  input:valid + label{
-    color:transparent;
-  }
 }
 
 @media (min-width:900px) {
