@@ -98,43 +98,56 @@ public class DictatorController {
     @PostMapping(value = "/createAccount")
     public String register(HttpSession session, Model model, String username, String password, String confirm, String email) throws PasswordStorage.CannotPerformOperationException {
 
-        // Creates list of usernames
+        // Creates list of usernames & a list of emails
         ArrayList<String> usernameList = new ArrayList<>();
+        ArrayList<String> emailList = new ArrayList<>();
         for (int x = 0; x < dictatorRepository.listUsers().size(); x =x + 1){
             usernameList.add(dictatorRepository.listUsers().get(x).getUsername());
+            emailList.add(dictatorRepository.listUsers().get(x).getEmail());
         }
 
-        if (!usernameList.contains(username) && password.equals(confirm)){
-            User user = new User(username,password,email);
-            // sets the password
-            user.setPassword(PasswordStorage.createHash(user.getPassword()));
-
-            // puts it in the database
-            dictatorRepository.save(user);
-
-            // gets the same user by username, with the id from the database
-            User userWithId = dictatorRepository.getByUserName(username);
-
-            // sets a session id
-            session.setAttribute("userId", userWithId.getId());
-
-            // creates blank dictator
-            Dictator dictator = new Dictator(new User(userWithId.getId()),
-                    " ", " "," ","#ffffff"," ",new byte [1],
-                    " "," "," "," "," ",
-                    " "," "," "," "," ",
-                    " "," "," "," "," ",
-                    0, 0);
-            dictatorRepository.saveDictator(dictator);
-
-            // redirect to creating dictator
-            return "redirect:/createform";
+        // Checks for uniqueness of email
+        if (emailList.contains(email)){
+            model.addAttribute("error","Error: Email has been used!");
+            return "login";
         }
-        // failed to create account
-        model.addAttribute("error", "Error: Failed to create account. Either username has been taken or your passwords did not match!");
+        // Checks for uniqueness of username.
+        if (usernameList.contains(username)){
+            model.addAttribute("error","Error: Username has been taken!");
+            return "login";
+        }
+        // Checks if password matches
+        if (!password.equals(confirm)){
+            model.addAttribute("error","Error: Passwords did not match!");
+            return "login";
+        }
 
-        // redirect to login
-        return "login";
+        // creates the user
+        User user = new User(username,password,email);
+
+        // sets the password
+        user.setPassword(PasswordStorage.createHash(user.getPassword()));
+
+        // puts it in the database
+        dictatorRepository.save(user);
+
+        // gets the same user by username, with the id from the database
+        User userWithId = dictatorRepository.getByUserName(username);
+
+        // sets a session id
+        session.setAttribute("userId", userWithId.getId());
+
+        // creates blank dictator
+        Dictator dictator = new Dictator(new User(userWithId.getId()),
+                " ", " "," ","#ffffff"," ",new byte [1],
+                " "," "," "," "," ",
+                " "," "," "," "," ",
+                " "," "," "," "," ",
+                0, 0);
+        dictatorRepository.saveDictator(dictator);
+
+        // redirect to creating dictator
+        return "redirect:/createform";
     }
 
     // CREATING DICTATOR, EDITING DICTATOR, AND VIEWING DICTATOR !!
