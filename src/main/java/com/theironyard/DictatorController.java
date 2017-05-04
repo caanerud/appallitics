@@ -34,7 +34,14 @@ public class DictatorController {
     // LOGIN RELATED !!
     // login/register screen
     @GetMapping("/login")
-    public String login() {
+    public String login(HttpSession session) {
+        Integer userId = (Integer) session.getAttribute("userId");
+
+        if (userId == null){
+            // not logged in
+            userId = 0;
+        }
+
         return "login";
     }
 
@@ -71,11 +78,14 @@ public class DictatorController {
                 return "redirect:/profile";
             } else {
                 // the indication that login failed, stored as a variable
-                    model.addAttribute("loginFailed", "Error: Incorrect");
+                    model.addAttribute("loginFailed", "Error: Incorrect Password!");
                 return "redirect:/login";
             }
         }
-        // username not in list
+
+        // username not in list, error then redirect
+        model.addAttribute("badUsername","Error: Bad Username!");
+
         return "redirect:/login";
     }
     @PostMapping(value = "/createAccount")
@@ -337,5 +347,12 @@ public class DictatorController {
                 .header(HttpHeaders.CONTENT_TYPE, dictator.getOverviewContentType())
                 .body(dictator.getOverviewImage());
 
+    }
+
+    // logout
+    @RequestMapping(path = "/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
     }
 }
