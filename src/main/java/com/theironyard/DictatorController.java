@@ -164,23 +164,30 @@ public class DictatorController {
 
     // view a profile/Dictator
     @GetMapping("/profile")
-    public String profile(Model model, HttpSession session, Integer viewerId){
+    public String profile(Model model, HttpSession session, Integer dictatorId){
         // Getting id from session
         Integer userId = (Integer) session.getAttribute("userId");
 
-        // Getting dictator from session id
-        Dictator dictator = dictatorRepository.getDictatorById(userId);
+        // variable dictator
+        Dictator dictator = new Dictator();
+
+        // Getting dictator from session id or dictatorId
+        if (dictatorId == null) {
+            dictator = dictatorRepository.getDictatorById(userId);
+        } else {
+            dictator = dictatorRepository.getDictatorById(dictatorId);
+        }
 
         // Adding the dictator to the model
         model.addAttribute("dictator",dictator);
 
         // Creating variable to see if viewer is owner
         Boolean owner = true;
-        if (userId != viewerId){
+        if (userId != dictatorId){
             owner = false;
         }
         // Handling case when viewerId is null (when user just login to see their own page)
-        if (viewerId == null){
+        if (dictatorId == null){
             owner = true;
         }
         model.addAttribute("owner",owner);
@@ -279,7 +286,7 @@ public class DictatorController {
         // getting the dictator
         Dictator dictator = dictatorRepository.getDictatorById(dictatorId);
 
-        // updating the pledge value by 1, storing as integer pledge
+        // updating the revolt value by 1, storing as integer revolt
         Integer revolt = dictator.getRevolt()+1;
 
         // sending it back to database
@@ -288,34 +295,34 @@ public class DictatorController {
         return "redirect:/vote";
     }
 
-//    // from profile page
-//    @PostMapping("/pledge")
-//    public String pledgeFrom(Integer dictatorId){
-//        // getting the dictator
-//        Dictator dictator = dictatorRepository.getDictatorById(dictatorId);
-//
-//        // updating the pledge value by 1, storing as integer pledge
-//        Integer pledge = dictator.getPledge()+1;
-//
-//        // sending it back to database
-//        dictatorRepository.pledge(pledge,dictatorId);
-//
-//        return "redirect:/profile";
-//    }
-//
-//    @PostMapping("/revolt")
-//    public String revoltFrom(Integer dictatorId){
-//        // getting the dictator
-//        Dictator dictator = dictatorRepository.getDictatorById(dictatorId);
-//
-//        // updating the pledge value by 1, storing as integer pledge
-//        Integer revolt = dictator.getRevolt()+1;
-//
-//        // sending it back to database
-//        dictatorRepository.revolt(revolt,dictatorId);
-//
-//        return "redirect:/vote";
-//    }
+    // from profile page
+    @GetMapping("/pledgeProfile")
+    public String pledgeProfile(Integer dictatorId){
+        // getting the dictator
+        Dictator dictator = dictatorRepository.getDictatorById(dictatorId);
+
+        // updating the pledge value by 1, storing as integer pledge
+        Integer pledge = dictator.getPledge()+1;
+
+        // sending it back to database
+        dictatorRepository.pledge(pledge,dictatorId);
+
+        return "redirect:/profile?dictatorId="+dictatorId;
+    }
+
+    @GetMapping("/revoltProfile")
+    public String revoltFrom(Integer dictatorId){
+        // getting the dictator
+        Dictator dictator = dictatorRepository.getDictatorById(dictatorId);
+
+        // updating the pledge value by 1, storing as integer pledge
+        Integer revolt = dictator.getRevolt()+1;
+
+        // sending it back to database
+        dictatorRepository.revolt(revolt,dictatorId);
+
+        return "redirect:/profile?dictatorId="+dictatorId;
+    }
 
 
     // Getting the picture

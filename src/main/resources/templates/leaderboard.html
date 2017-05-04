@@ -79,7 +79,7 @@
                 <td>
                     <img th:src="@{/dictator/image(id=${rank.getUser().getId()})}" alt="Picture 1" style="width:100%;"/>
                 </td>
-                <td> <a href="profile.html" th:text="${rank.getUser().getUsername()}" th:href="@{'/profile?get=' + ${rank.getUser().getUsername()}}">Username 1</a></td>
+                <td> <a href="profile.html" th:text="${rank.getUser().getUsername()}" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">Username 1</a></td>
                 <!--<td><a href="#" placethymeleafhere>testing</a></td>-->
                 <td th:text="${rank.getOverviewDictatorshipName()}">Dictatorship name 1</td>
                 <td th:text="${rank.getPledge()}">1</td>
