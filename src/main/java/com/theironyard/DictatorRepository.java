@@ -58,7 +58,7 @@ public class DictatorRepository {
         return jdbcTemplate.query(
                 "SELECT users.username, dictators.* FROM dictators JOIN users " +
                         "ON dictators.id_dictators = users.userid WHERE lower(overview_dictatorship_name) " +
-                        "LIKE lower(?) ORDER BY revolt ASC",
+                        "LIKE lower(?) ORDER BY revolt DESC",
                 new Object[]{"%" + search + "%"},
                 ((resultSet, i) -> new Dictator(new User(
                         resultSet.getInt("id_dictators"),
@@ -223,6 +223,17 @@ public class DictatorRepository {
                 dictator.getLegalPunishment(),dictator.getLegalImmigration(),
                 dictator.getLegalVotingRights(),dictator.getLegalPrivacyLaws(),
                 dictator.getLegalWeapons(),dictator.getPledge(),dictator.getRevolt()});
+    }
+
+    // SCORE RELATED - PLEDGE OR REVOLT
+    public void pledge(Integer pledge, Integer dictatorId){
+        jdbcTemplate.update("UPDATE dictators SET pledge=? WHERE id_dictators=?",
+                new Object[]{pledge, dictatorId});
+    }
+
+    public void revolt(Integer revolt, Integer dictatorId){
+        jdbcTemplate.update("UPDATE dictators SET revolt=? WHERE id_dictators=?",
+                new Object[]{revolt, dictatorId});
     }
 
     // list of users
