@@ -34,6 +34,9 @@ public class Dictator {
     private Integer revolt;
     private Integer pledge;
 
+    public Dictator() {
+    }
+
     public Dictator(User user, String overviewBlurb, String overviewDictatorshipName, String overviewMascot, String overviewColor, String overviewContentType, byte[] overviewImage, String econLabor, String econTax, String econTrade, String econInfrastructure, String econMilitary, String socialHealthcare, String socialRetirement, String socialEducation, String socialEnvironment, String socialWelfare, String legalPunishment, String legalImmigration, String legalVotingRights, String legalPrivacyLaws, String legalWeapons, Integer revolt, Integer pledge) {
         this.user = user;
         this.overviewBlurb = overviewBlurb;
