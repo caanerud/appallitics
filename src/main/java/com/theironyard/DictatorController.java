@@ -85,15 +85,15 @@ public class DictatorController {
                 return "redirect:/profile";
             } else {
                 // the indication that login failed, stored as a variable
-                    model.addAttribute("loginFailed", "Error: Incorrect Password!");
-                return "redirect:/login";
+                    model.addAttribute("error", "Error: Incorrect Password!");
+                return "login";
             }
         }
 
         // username not in list, error then redirect
-        model.addAttribute("badUsername","Error: Bad Username!");
+        model.addAttribute("error","Error: Username does not exist!");
 
-        return "redirect:/login";
+        return "login";
     }
     @PostMapping(value = "/createAccount")
     public String register(HttpSession session, Model model, String username, String password, String confirm, String email) throws PasswordStorage.CannotPerformOperationException {
@@ -131,10 +131,10 @@ public class DictatorController {
             return "redirect:/createform";
         }
         // failed to create account
-        model.addAttribute("loginFailed", true);
+        model.addAttribute("error", "Error: Failed to create account. Either username has been taken or your passwords did not match!");
 
         // redirect to login
-        return "redirect:/login";
+        return "login";
     }
 
     // CREATING DICTATOR, EDITING DICTATOR, AND VIEWING DICTATOR !!
