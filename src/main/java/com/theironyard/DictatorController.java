@@ -26,7 +26,14 @@ public class DictatorController {
 
     // homepage
     @GetMapping("/")
-    public String homepage(){
+    public String homepage(Model model, HttpSession session){
+        Integer userId = (Integer) session.getAttribute("userId");
+
+        if (userId == null){
+            // not logged in
+            userId = 0;
+        }
+        model.addAttribute("checkloggedin", userId);
         return "index";
     }
 
@@ -202,6 +209,12 @@ public class DictatorController {
         }
         model.addAttribute("owner",owner);
 
+        if (userId == null){
+            // not logged in
+            userId = 0;
+        }
+        model.addAttribute("checkloggedin", userId);
+
         return "profile";
     }
 
@@ -210,15 +223,27 @@ public class DictatorController {
 
     // the about page
     @GetMapping("/about")
-    public String about(){
+    public String about(Model model, HttpSession session){
+        Integer userId = (Integer) session.getAttribute("userId");
+        if (userId == null){
+            // not logged in
+            userId = 0;
+        }
+        model.addAttribute("checkloggedin", userId);
         return "about";
     }
 
     // leaderboard page, sort by best (most pledges)
     @GetMapping("/leaderboard")
-    public String leaderboard(Model model, @RequestParam(defaultValue = "") String search){
+    public String leaderboard(Model model, HttpSession session, @RequestParam(defaultValue = "") String search){
+        Integer userId = (Integer) session.getAttribute("userId");
 
         model.addAttribute("dictators",dictatorRepository.listBestDictators(search));
+        if (userId == null){
+            // not logged in
+            userId = 0;
+        }
+        model.addAttribute("checkloggedin", userId);
 
         return "leaderboard";
     }
@@ -272,6 +297,12 @@ public class DictatorController {
 
         // Modeling the lucky dictator
         model.addAttribute("dictator",luckyDictator);
+
+        if (userId == null){
+            // not logged in
+            userId = 0;
+        }
+        model.addAttribute("checkloggedin", userId);
 
         return "vote";
     }
