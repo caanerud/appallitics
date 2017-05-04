@@ -79,12 +79,10 @@
 
             <tr th:each="rank : ${dictators}">
                 <td>
-                    <!-- <img th:src="@{/dictator/image(id=${rank.getUser().getId()})}" alt="Picture 1" /> -->
-                    <div class="color-overlay" style"background-color:#fff;"></div>
-                    <div class="image-overlay"><img src="../static/images/tiger.png" alt="tiger"/></div>
+                    <div class="color-overlay" style="background-color:#fff" th:style="'background-color:'+${rank.getOverviewColor()}"></div>
+                    <div class="image-overlay"><img src="../static/images/tiger.png" th:src="@{images/tiger.png}" alt="tiger" th:alt="tiger"/></div>
                 </td>
                 <td> <a href="profile.html" th:text="${rank.getUser().getUsername()}" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">Username 1</a></td>
-                <!--<td><a href="#" placethymeleafhere>testing</a></td>-->
                 <td th:text="${rank.getOverviewDictatorshipName()}">Dictatorship 1</td>
                 <td th:text="${rank.getPledge()}">1</td>
                 <td th:text="${rank.getRevolt()}">99</td>
