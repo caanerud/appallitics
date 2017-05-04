@@ -110,6 +110,31 @@
   .step-by-step {
     display: flex;
     justify-content: space-between; } }
+.leaderboard-container {
+  padding: 0 15px;
+  margin-bottom: 70px; }
+
+#searchbar {
+  margin: 20px 0;
+  width: 100%; }
+  #searchbar input[type="search"] {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin: 0; }
+  #searchbar label {
+    display: none; }
+  #searchbar input[type="submit"] {
+    max-width: 100%;
+    display: block;
+    margin: 10px auto;
+    border-radius: 0;
+    box-shadow: none; }
+  #searchbar input[type="submit"]:hover {
+    transform: translate(0); }
+  #searchbar input[type="submit"]:focus {
+    transform: scale(1); }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -126,9 +151,26 @@ tr {
 td, th {
   text-align: left;
   padding: 20px;
-  width: 16.667%;
+  width: 33.333%;
   letter-spacing: .05rem;
   position: relative; }
+
+td:nth-child(n+3):nth-child(-n+5), th:nth-child(n+3):nth-child(-n+5) {
+  display: none; }
+
+td:nth-child(n+4) {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); }
+
+td:nth-child(4) {
+  color: #21b913; }
+
+td:nth-child(5) {
+  color: #FE5745; }
+
+td:nth-child(6) {
+  color: #878eff; }
 
 tr:first-of-type {
   background-color: transparent;
@@ -166,6 +208,19 @@ td .image-overlay {
     object-fit: contain;
     padding: 5px; }
 
+@media (min-width: 767px) {
+  #searchbar {
+    display: flex; }
+    #searchbar input[type="submit"] {
+      margin: 0;
+      width: 25%; }
+
+  td, th {
+    width: 16.667%;
+    display: block; }
+
+  td:nth-child(n+3):nth-child(-n+5), th:nth-child(n+3):nth-child(-n+5) {
+    display: block; } }
 .top-section {
   justify-content: space-between;
   margin: 30px 0; }
@@ -208,7 +263,7 @@ td .image-overlay {
       margin-left: 5px;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); }
     .top-section .profile-stats #rank {
-      color: #616aff; }
+      color: #878eff; }
     .top-section .profile-stats #pledge {
       color: #21b913; }
     .top-section .profile-stats #pledge::before {
@@ -520,7 +575,7 @@ input[type="submit"], button {
 
 input[type="submit"]:hover, button:hover {
   cursor: pointer;
-  background-color: #fe4e3b;
+  background-color: #fe4936;
   transform: translateY(-2px); }
 
 input[type="submit"]:active, button:active {

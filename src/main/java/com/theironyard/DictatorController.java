@@ -249,14 +249,30 @@ public class DictatorController {
     // leaderboard page, sort by best (most pledges)
     @GetMapping("/leaderboard")
     public String leaderboard(Model model, HttpSession session, @RequestParam(defaultValue = "") String search){
+        // Checking if user is logged in or not
         Integer userId = (Integer) session.getAttribute("userId");
 
-        model.addAttribute("dictators",dictatorRepository.listBestDictators(search));
         if (userId == null){
             // not logged in
             userId = 0;
         }
         model.addAttribute("checkloggedin", userId);
+
+        // The searched list
+        List<Dictator> searchDictators = dictatorRepository.listBestDictators(search);
+
+        // Getting the list of best dictators
+        List<Dictator> dictatorList = new ArrayList<>();
+
+        // Getting the dictators (with data)
+        for (int x = 0; x < searchDictators.size(); x = x + 1){
+            if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
+                dictatorList.add(searchDictators.get(x));
+            }
+        }
+
+        // Sending the filtered list of dictators to leaderboard
+        model.addAttribute("dictators",dictatorList);
 
         return "leaderboard";
     }
@@ -265,7 +281,21 @@ public class DictatorController {
     @GetMapping("/worstDictators")
     public String worstDictators(Model model, @RequestParam(defaultValue = "") String search){
 
-        model.addAttribute("dictators", dictatorRepository.listWorstDictators(search));
+// The searched list
+        List<Dictator> searchDictators = dictatorRepository.listWorstDictators(search);
+
+        // Getting the list of worst dictators
+        List<Dictator> dictatorList = new ArrayList<>();
+
+        // Getting the dictators (with data)
+        for (int x = 0; x < searchDictators.size(); x = x + 1){
+            if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
+                dictatorList.add(searchDictators.get(x));
+            }
+        }
+
+        // Sending the filtered list of dictators to leaderboard
+        model.addAttribute("dictators",dictatorList);
 
         return "leaderboard";
     }
@@ -273,7 +303,23 @@ public class DictatorController {
     // leaderboard sort by score
     @GetMapping("/score")
     public String score(Model model, @RequestParam(defaultValue = "") String search){
-        model.addAttribute("dictators",dictatorRepository.sortByScore(search));
+
+        // The searched list
+        List<Dictator> searchDictators = dictatorRepository.sortByScore(search);
+
+        // Getting the list of dictators sorted by score
+        List<Dictator> dictatorList = new ArrayList<>();
+
+        // Getting the dictators (with data)
+        for (int x = 0; x < searchDictators.size(); x = x + 1){
+            if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
+                dictatorList.add(searchDictators.get(x));
+            }
+        }
+
+        // Sending the filtered list of dictators to leaderboard
+        model.addAttribute("dictators",dictatorList);
+
         return "leaderboard";
     }
 
@@ -283,27 +329,38 @@ public class DictatorController {
         // The user id of the voter
         Integer userId = (Integer) session.getAttribute("userId");
 
-        // List of users, going to get their ids for dictator
-        List<User> listOfUsers = dictatorRepository.listUsers();
+        // Everybody
+        List<Dictator> allUsers = dictatorRepository.listBestDictators("");
 
-        // Creating array of ids, subtracting 1 for the voter (not yet populated)
-        int[] x = new int[listOfUsers.size() - 1];
+        // Filtering out people without filled out dictator (no minions)
+        List<Dictator> dictatorList = new ArrayList<>();
 
-        // Removing voter from the list of users
-         for (int y = 0; y < listOfUsers.size(); y = y + 1){
-             if (userId == listOfUsers.get(y).getId()){
-                 listOfUsers.remove(y);
-             };
-         }
+        // Getting the dictators (with data)
+        for (int x = 0; x < allUsers.size(); x = x + 1){
+            if (!allUsers.get(x).getLegalWeapons().trim().isEmpty()){
+                dictatorList.add(allUsers.get(x));
+            }
+        }
 
-         // adding the remaining list to the integer array
-        for (int z = 0; z < listOfUsers.size(); z= z + 1){
-             x[z]=listOfUsers.get(z).getId();
+        // Checking if user is a dictator, and removing if he/she is
+        if (!dictatorRepository.getDictatorById(userId).getLegalWeapons().trim().isEmpty()) {
+            for (int y = 0; y < dictatorList.size(); y = y + 1) {
+                if (dictatorList.get(y).getUser().getId() == userId) {
+                    dictatorList.remove(y);
+                }
+            }
+        }
+
+        // GETTING RANDOM DICTATOR TO VIEW
+        // creating array of ids
+        int[] x = new int[dictatorList.size()];
+        for (int y = 0; y < dictatorList.size(); y = y + 1){
+            x[y] = dictatorList.get(y).getUser().getId();
         }
 
          // Random number generator that will link to a dictator
         Random random = new Random();
-        int number = random.nextInt(listOfUsers.size());
+        int number = random.nextInt(dictatorList.size());
 
         // The lucky dictator to get a vote
         Dictator luckyDictator = dictatorRepository.getDictatorById(x[number]);
@@ -400,6 +457,7 @@ public class DictatorController {
         return "redirect:/";
     }
 
+
     @PostMapping("/pledge-click")
     @ResponseBody
     public void pledgeClick(Integer dictatorId, Integer count){
@@ -414,3 +472,4 @@ public class DictatorController {
 
     }
 }
+
