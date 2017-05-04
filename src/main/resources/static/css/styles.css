@@ -158,13 +158,13 @@ td .image-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: .6; }
+  opacity: .5; }
   td .image-overlay img {
     position: absolute;
     top: 0;
     left: 0;
     object-fit: contain;
-    padding: 10px; }
+    padding: 5px; }
 
 .top-section {
   justify-content: space-between;
