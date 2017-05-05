@@ -224,7 +224,18 @@ td .image-overlay {
     width: 200px;
     border: 1px dashed white;
     display: block;
-    margin: 0 auto 20px; }
+    margin: 0 auto 20px;
+    overflow: hidden;
+    object-fit: fill;
+    position: relative; }
+    .top-section .profile-pic .profile-logo {
+      position: absolute;
+      width: 50px;
+      bottom: 0;
+      right: 0; }
+      .top-section .profile-pic .profile-logo img {
+        width: 100%;
+        opacity: .6; }
   .top-section .profile-info {
     display: block;
     margin: 0 auto 30px;

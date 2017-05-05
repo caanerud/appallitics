@@ -8,6 +8,21 @@
     border:1px dashed white;
     display: block;
     margin:0 auto 20px;
+    overflow: hidden;
+    object-fit: fill;
+    position: relative;
+
+    .profile-logo{
+      position: absolute;
+      width: 50px;
+      bottom:0;
+      right:0;
+
+      img{
+        width: 100%;
+        opacity: .6;
+      }
+    }
   }
 
   .profile-info{
