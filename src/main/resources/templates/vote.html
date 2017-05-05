@@ -63,17 +63,25 @@
     <!-- CONTENT___________________________________________ -->
     <div class="content">
         <!--image of the user-->
-        <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}" style="width:100%;"/>
+        <!-- <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}" style="width:100%;"/> -->
 
         <!--The mascot image-->
-        <div>
+        <!-- <div>
             <div class="color-overlay" style="background-color:#fff" th:style="'background-color:'+${dictator.getOverviewColor()}"></div>
             <div class="image-overlay"><img src="../static/images/tiger.png" th:src="@{images/tiger.png}" alt="tiger" th:alt="tiger"/></div>
-        </div>
+        </div> -->
 
         <!--Text display-->
-        <h4 th:text="${dictator.getOverviewDictatorshipName()}">Dictator Name</h4>
-        <h5 th:text="${dictator.getOverviewBlurb()}">Blurb Blurb Blurb</h5>
+        <!-- <h4 th:text="${dictator.getOverviewDictatorshipName()}">Dictator Name</h4>
+        <h5 th:text="${dictator.getOverviewBlurb()}">Blurb Blurb Blurb</h5> -->
+
+
+        <div class="profile-pic">
+          <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}"/>
+
+            <div class="profile-icon" style="background-image:url('../static/images/tiger.png');" th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
+        </div>
+
 
         <!--MODAL to view more-->
         <div class="">

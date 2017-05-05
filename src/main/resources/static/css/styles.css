@@ -199,90 +199,93 @@ td .color-overlay {
 .top-section {
   justify-content: space-between;
   margin: 30px 0; }
-  .top-section .profile-pic {
-    height: 250px;
-    width: 250px;
-    margin: 0 auto 20px;
-    overflow: hidden;
-    position: relative; }
-    .top-section .profile-pic img {
-      width: 100%; }
-    .top-section .profile-pic .profile-icon {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      top: 0;
-      right: 0;
-      background-blend-mode: difference;
-      background-size: 80%;
-      background-repeat: no-repeat;
-      background-position: center; }
-  .top-section .profile-info {
-    display: block;
-    margin: 0 auto 30px;
-    padding: 0 30px;
-    text-align: center; }
-    .top-section .profile-info h2 {
-      color: white;
-      font-size: 1.5rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: .1rem;
-      margin-bottom: 5px; }
-    .top-section .profile-info h2:last-of-type {
-      margin-bottom: 20px; }
-    .top-section .profile-info h3 {
-      color: white;
-      font-weight: 100;
-      font-style: italic; }
-    .top-section .profile-info h3::before, .top-section .profile-info h3::after {
-      content: '"'; }
-  .top-section .profile-stats {
-    width: 80%;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    padding: 0 15px;
-    line-height: 1rem; }
-    .top-section .profile-stats #rank, .top-section .profile-stats #pledge, .top-section .profile-stats #revolt {
-      display: inline-block;
-      font-size: 1.5rem;
-      margin-left: 5px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); }
-    .top-section .profile-stats #rank {
-      color: #878eff; }
-    .top-section .profile-stats #pledge {
-      color: #21b913; }
-    .top-section .profile-stats #pledge::before {
-      content: "+"; }
-    .top-section .profile-stats #revolt {
-      color: #FE5745; }
-    .top-section .profile-stats #revolt::before {
-      content: "-"; }
-    .top-section .profile-stats .buttons {
-      margin-top: 30px; }
-      .top-section .profile-stats .buttons #revolt-button, .top-section .profile-stats .buttons #pledge-button, .top-section .profile-stats .buttons #edit-button {
-        max-width: 200px;
-        margin: 10px auto;
-        height: 40px; }
-      .top-section .profile-stats .buttons #revolt-button {
-        background-color: red; }
-      .top-section .profile-stats .buttons #pledge-button {
-        background-color: green; }
-      .top-section .profile-stats .buttons #edit-button {
-        background-color: #FE5745; }
-      .top-section .profile-stats .buttons .view {
-        display: block; }
-      .top-section .profile-stats .buttons .edit {
-        display: block; }
-      .top-section .profile-stats .buttons p {
-        width: 200px;
-        text-align: center;
-        margin: 10px auto 0;
-        font-size: .8rem;
-        line-height: 1.1rem; }
-        .top-section .profile-stats .buttons p b {
-          color: #FE5745; }
+
+.profile-pic {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  position: relative; }
+  .profile-pic img {
+    width: 100%; }
+  .profile-pic .profile-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: 0;
+    background-blend-mode: difference;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center; }
+
+.profile-info {
+  display: block;
+  margin: 0 auto 30px;
+  padding: 0 30px;
+  text-align: center; }
+  .profile-info h2 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-bottom: 5px; }
+  .profile-info h2:last-of-type {
+    margin-bottom: 20px; }
+  .profile-info h3 {
+    color: white;
+    font-weight: 100;
+    font-style: italic; }
+  .profile-info h3::before, .profile-info h3::after {
+    content: '"'; }
+
+.profile-stats {
+  width: 80%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 0 15px;
+  line-height: 1rem; }
+  .profile-stats #rank, .profile-stats #pledge, .profile-stats #revolt {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-left: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); }
+  .profile-stats #rank {
+    color: #878eff; }
+  .profile-stats #pledge {
+    color: #21b913; }
+  .profile-stats #pledge::before {
+    content: "+"; }
+  .profile-stats #revolt {
+    color: #FE5745; }
+  .profile-stats #revolt::before {
+    content: "-"; }
+  .profile-stats .buttons {
+    margin-top: 30px; }
+    .profile-stats .buttons #revolt-button, .profile-stats .buttons #pledge-button, .profile-stats .buttons #edit-button {
+      max-width: 200px;
+      margin: 10px auto;
+      height: 40px; }
+    .profile-stats .buttons #revolt-button {
+      background-color: red; }
+    .profile-stats .buttons #pledge-button {
+      background-color: green; }
+    .profile-stats .buttons #edit-button {
+      background-color: #FE5745; }
+    .profile-stats .buttons .view {
+      display: block; }
+    .profile-stats .buttons .edit {
+      display: block; }
+    .profile-stats .buttons p {
+      width: 200px;
+      text-align: center;
+      margin: 10px auto 0;
+      font-size: .8rem;
+      line-height: 1.1rem; }
+      .profile-stats .buttons p b {
+        color: #FE5745; }
 
 .remodal a {
   color: black;
@@ -429,9 +432,6 @@ td .color-overlay {
     margin: 0; }
 
 @media (min-width: 900px) {
-  .content section {
-    margin: 0 50px 70px; }
-
   #choice1, #choice2 {
     width: 300px;
     height: 300px;
