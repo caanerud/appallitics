@@ -68,14 +68,14 @@
         </div>
 
         <div class="top-section">
-          <div class="profile-pic" style="overflow:hidden;">
-            <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}" style="width:100%;"/>
-          </div>
+          <div class="profile-pic">
+            <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}"/>
 
-            <div>
+            <div class="profile-logo">
               <div class="color-overlay" style="background-color:#fff" th:style="'background-color:'+${dictator.getOverviewColor()}"></div>
               <div class="image-overlay"><img src="../static/images/tiger.png" th:src="@{images/tiger.png}" alt="tiger" th:alt="tiger"/></div>
             </div>
+          </div>
 
           <div class="profile-info">
             <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
