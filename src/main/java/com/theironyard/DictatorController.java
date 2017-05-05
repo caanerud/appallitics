@@ -459,18 +459,20 @@ public class DictatorController {
     }
 
 
-    @PostMapping("/pledge-click")
-    @ResponseBody
-    public void pledgeClick(Integer dictatorId, Integer count){
-        dictatorRepository.pledge(count,dictatorId);
 
-    }
+//    @PostMapping("/pledge-click")
+//    @ResponseBody
+//    public void pledgeClick(Integer dictatorId, Integer count){
+//        dictatorRepository.pledge(dictatorId, count);
+//
+//    }
+//
+//    @PostMapping("/revolt-click")
+//    @ResponseBody
+//    public void revoltClick(Integer dictatorId, Integer count){
+//        dictatorRepository.revolt(dictatorId, count);
+//
+//    }
 
-    @PostMapping("/revolt-click")
-    @ResponseBody
-    public void revoltClick(Integer dictatorId, Integer count){
-        dictatorRepository.revolt(count, dictatorId);
-
-    }
 }
 
