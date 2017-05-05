@@ -77,12 +77,10 @@
               <div id="choice1">
                 Dictator
               </div>
-              <form action="profile.html" th:action="@{/profile}">
-                  <div class="choose-pic">
-                      <input type="file" name="file" id="ghost-input" class="upload" />
-                  </div>
-                  <button id="choice2" type="submit">Minion</button>
-              </form>
+              <a href="profile.html" th:href="@{/profile}">
+                  <div id="choice2">Minion</div>
+              </a>
+
             </div>
           </section>
 
