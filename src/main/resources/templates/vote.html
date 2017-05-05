@@ -71,10 +71,6 @@
             <div class="image-overlay"><img src="../static/images/tiger.png" th:src="@{images/tiger.png}" alt="tiger" th:alt="tiger"/></div>
         </div> -->
 
-        <!--Text display-->
-        <!-- <h4 th:text="${dictator.getOverviewDictatorshipName()}">Dictator Name</h4>
-        <h5 th:text="${dictator.getOverviewBlurb()}">Blurb Blurb Blurb</h5> -->
-
 
         <div class="profile-pic">
           <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}"/>
@@ -82,10 +78,18 @@
             <div class="profile-icon" style="background-image:url('../static/images/tiger.png');" th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
         </div>
 
+        <!--Text display-->
+        <div class="profile-info">
+          <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
+          <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
+          <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+        </div>
+
 
         <!--MODAL to view more-->
-        <div class="">
-            <button id="" type="button" data-remodal-target="modal">More Details</button>
+        <div class="more-info-container">
+            <label for="more-info">More Info</label>
+            <button id="more-info" type="button" data-remodal-target="modal"></button>
         </div>
 
         <!--The modal-->
@@ -127,13 +131,16 @@
         </div>
 
         <!--Voting buttons-->
-        <a href="vote.html" th:href="@{'/revolt?dictatorId='+${dictator.getUser().getId()}}">
-            <button type="button">Revolt</button>
-        </a>
 
-        <a href="vote.html" th:href="@{'/pledge?dictatorId='+${dictator.getUser().getId()}}">
-            <button type="button">Pledge</button>
-        </a>
+        <div class="buttons">
+          <a href="vote.html" th:href="@{'/revolt?dictatorId='+${dictator.getUser().getId()}}">
+              <button id="revolt-button" type="button">Revolt</button>
+          </a>
+
+          <a href="vote.html" th:href="@{'/pledge?dictatorId='+${dictator.getUser().getId()}}">
+              <button id="pledge-button" type="button">Pledge</button>
+          </a>
+        </div>
 
     </div>
     <!-- FOOTER____________________________________________ -->

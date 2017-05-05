@@ -9,6 +9,7 @@
   margin:0 auto 20px;
   overflow: hidden;
   position: relative;
+  background-color: rgba(0,0,0,.1);
 
   img{
     width: 100%;
@@ -20,10 +21,11 @@
     height: 50px;
     top:0;
     right:0;
-    background-blend-mode: difference;
+    background-blend-mode: exclusion;
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
+    filter: grayscale(.4);
   }
 }
 
@@ -50,6 +52,8 @@
     color:white;
     font-weight: 100;
     font-style: italic;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   h3::before, h3::after{
@@ -92,48 +96,49 @@
     content: "-";
   }
 
-  .buttons{
-    margin-top: 30px;
+}
 
-    #revolt-button, #pledge-button, #edit-button{
-      max-width: 200px;
-      margin:10px auto;
-      height: 40px;
-    }
+.buttons{
+  margin-top: 30px;
 
-    #revolt-button{
-      background-color: red;
-    }
+  #revolt-button, #pledge-button, #edit-button{
+    max-width: 200px;
+    margin:10px auto;
+  }
 
-    #pledge-button{
-      background-color: green;
-    }
+  #revolt-button{
+    background-color: red;
+  }
 
-    #edit-button{
-      background-color: $color1;
-    }
+  #pledge-button{
+    background-color: green;
+  }
 
-    .view{
-      display: block;
-    }
+  #edit-button{
+    background-color: $color1;
+  }
 
-    .edit{
-      display: block;
-    }
+  .view{
+    display: block;
+  }
 
-    p{
-      width: 200px;
-      text-align: center;
-      margin: 10px auto 0;
-      font-size: .8rem;
-      line-height: 1.1rem;
+  .edit{
+    display: block;
+  }
 
-      b{
-        color: $color1;
-      }
+  p{
+    width: 200px;
+    text-align: center;
+    margin: 10px auto 0;
+    font-size: .8rem;
+    line-height: 1.1rem;
+
+    b{
+      color: $color1;
     }
   }
 }
+
 
 
 .remodal{

@@ -1,0 +1,17 @@
+.more-info-container{
+  text-align: center;
+  color: white;
+}
+
+#more-info{
+  margin: 10px auto;
+  width: 50px;
+  background-color: $color4;
+}
+
+#more-info::after{
+  content: "+";
+  font-size: 3rem;
+  position: relative;
+  bottom:5px;
+}

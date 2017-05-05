@@ -5,6 +5,7 @@
 @import "partials/_leaderboard.scss";
 @import "partials/_profile.scss";
 @import "partials/_createform.scss";
+@import "partials/_vote.scss";
 
 html{
   min-height: 100%;
@@ -220,11 +221,12 @@ input[type="submit"], button{
 input[type="submit"]:hover, button:hover{
   cursor: pointer;
   background-color: darken($color1, 3%);
-  transform: translateY(-2px);
+  transform: scale(1.05);
 }
 
 input[type="submit"]:active, button:active{
   transform: scale(.98);
+  box-shadow: 1px 2px 5px rgba(0,0,0,.1);
 }
 
 label{

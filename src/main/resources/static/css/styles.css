@@ -178,10 +178,11 @@ td .color-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  background-blend-mode: difference;
+  background-blend-mode: exclusion;
   background-size: 80%;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  filter: grayscale(0.4); }
 
 @media (min-width: 767px) {
   #searchbar {
@@ -205,7 +206,8 @@ td .color-overlay {
   width: 250px;
   margin: 0 auto 20px;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1); }
   .profile-pic img {
     width: 100%; }
   .profile-pic .profile-icon {
@@ -214,10 +216,11 @@ td .color-overlay {
     height: 50px;
     top: 0;
     right: 0;
-    background-blend-mode: difference;
+    background-blend-mode: exclusion;
     background-size: 80%;
     background-repeat: no-repeat;
-    background-position: center; }
+    background-position: center;
+    filter: grayscale(0.4); }
 
 .profile-info {
   display: block;
@@ -236,7 +239,9 @@ td .color-overlay {
   .profile-info h3 {
     color: white;
     font-weight: 100;
-    font-style: italic; }
+    font-style: italic;
+    max-width: 400px;
+    margin: 0 auto; }
   .profile-info h3::before, .profile-info h3::after {
     content: '"'; }
 
@@ -262,30 +267,30 @@ td .color-overlay {
     color: #FE5745; }
   .profile-stats #revolt::before {
     content: "-"; }
-  .profile-stats .buttons {
-    margin-top: 30px; }
-    .profile-stats .buttons #revolt-button, .profile-stats .buttons #pledge-button, .profile-stats .buttons #edit-button {
-      max-width: 200px;
-      margin: 10px auto;
-      height: 40px; }
-    .profile-stats .buttons #revolt-button {
-      background-color: red; }
-    .profile-stats .buttons #pledge-button {
-      background-color: green; }
-    .profile-stats .buttons #edit-button {
-      background-color: #FE5745; }
-    .profile-stats .buttons .view {
-      display: block; }
-    .profile-stats .buttons .edit {
-      display: block; }
-    .profile-stats .buttons p {
-      width: 200px;
-      text-align: center;
-      margin: 10px auto 0;
-      font-size: .8rem;
-      line-height: 1.1rem; }
-      .profile-stats .buttons p b {
-        color: #FE5745; }
+
+.buttons {
+  margin-top: 30px; }
+  .buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button {
+    max-width: 200px;
+    margin: 10px auto; }
+  .buttons #revolt-button {
+    background-color: red; }
+  .buttons #pledge-button {
+    background-color: green; }
+  .buttons #edit-button {
+    background-color: #FE5745; }
+  .buttons .view {
+    display: block; }
+  .buttons .edit {
+    display: block; }
+  .buttons p {
+    width: 200px;
+    text-align: center;
+    margin: 10px auto 0;
+    font-size: .8rem;
+    line-height: 1.1rem; }
+    .buttons p b {
+      color: #FE5745; }
 
 .remodal a {
   color: black;
@@ -443,6 +448,21 @@ td .color-overlay {
     justify-content: space-between; }
     .overview-bottom .choose-pic, .overview-bottom .choose-color, .overview-bottom .choose-mascot {
       width: 30%; } }
+.more-info-container {
+  text-align: center;
+  color: white; }
+
+#more-info {
+  margin: 10px auto;
+  width: 50px;
+  background-color: #635a60; }
+
+#more-info::after {
+  content: "+";
+  font-size: 3rem;
+  position: relative;
+  bottom: 5px; }
+
 html {
   min-height: 100%;
   position: relative; }
@@ -612,10 +632,11 @@ input[type="submit"], button {
 input[type="submit"]:hover, button:hover {
   cursor: pointer;
   background-color: #fe4936;
-  transform: translateY(-2px); }
+  transform: scale(1.05); }
 
 input[type="submit"]:active, button:active {
-  transform: scale(0.98); }
+  transform: scale(0.98);
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1); }
 
 label {
   font-size: 1.1rem;
