@@ -71,12 +71,7 @@
           <div class="profile-pic">
             <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}"/>
 
-            <!--<div class="profile-icon" th:style="'background-color:'+${dictator.getOverviewColor()}+';'">-->
-              <!--<div class="image-overlay"><img src="../static/images/tiger.png" th:src="@{images/tiger.png}" alt="tiger" th:alt="tiger"/></div>-->
-            <!--</div>-->
-
-              <div class="profile-icon" style="background-color:red; background-image:url('../static/images/src.jpg');"
-                   th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png); background-blend-mode:multiply'" ></div>
+              <div class="profile-icon" style="background-image:url('../static/images/tiger.png');" th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
           </div>
 
           <div class="profile-info">

@@ -90,41 +90,44 @@ tr:first-of-type{
   height: auto;
 }
 
-td img{
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+// td img{
+//   width: 100px;
+//   height: 100px;
+//   object-fit: cover;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
 
 td .color-overlay{
   width: 100px;
   height: 100px;
-  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
+  background-blend-mode:difference;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-td .image-overlay{
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: .5;
-
-  img{
-    position: absolute;
-    top:0;
-    left:0;
-    object-fit: contain;
-    padding: 5px;
-  }
-}
+// td .image-overlay{
+//   width: 100px;
+//   height: 100px;
+//   object-fit: cover;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   opacity: .5;
+//
+//   img{
+//     position: absolute;
+//     top:0;
+//     left:0;
+//     object-fit: contain;
+//     padding: 5px;
+//   }
+// }
 
 
 
