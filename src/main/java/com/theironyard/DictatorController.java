@@ -96,6 +96,7 @@ public class DictatorController {
 
         return "login";
     }
+
     @PostMapping(value = "/createAccount")
     public String register(HttpSession session, Model model, String username, String password, String confirm, String email) throws PasswordStorage.CannotPerformOperationException {
 
@@ -187,9 +188,6 @@ public class DictatorController {
 
         // Gets the dictator so that the input fields may be filled with previous answers
         model.addAttribute("dictator",dictatorRepository.getDictatorById(userId));
-
-        // Checker for mascot (select, option)
-
 
         return "createform";
     }
