@@ -220,23 +220,22 @@ td .image-overlay {
   justify-content: space-between;
   margin: 30px 0; }
   .top-section .profile-pic {
-    height: 200px;
-    width: 200px;
-    border: 1px dashed white;
-    display: block;
+    height: 250px;
+    width: 250px;
     margin: 0 auto 20px;
     overflow: hidden;
-    object-fit: fill;
     position: relative; }
+    .top-section .profile-pic img {
+      width: 100%; }
     .top-section .profile-pic .profile-icon {
       position: absolute;
       width: 50px;
       top: 0;
       right: 0; }
       .top-section .profile-pic .profile-icon img {
-        background-blend-mode: overlay;
         width: 100%;
-        opacity: .6; }
+        opacity: .5;
+        padding: 2px; }
   .top-section .profile-info {
     display: block;
     margin: 0 auto 30px;
