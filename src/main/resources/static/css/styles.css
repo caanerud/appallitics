@@ -228,12 +228,13 @@ td .image-overlay {
     overflow: hidden;
     object-fit: fill;
     position: relative; }
-    .top-section .profile-pic .profile-logo {
+    .top-section .profile-pic .profile-icon {
       position: absolute;
       width: 50px;
-      bottom: 0;
+      top: 0;
       right: 0; }
-      .top-section .profile-pic .profile-logo img {
+      .top-section .profile-pic .profile-icon img {
+        background-blend-mode: overlay;
         width: 100%;
         opacity: .6; }
   .top-section .profile-info {
@@ -355,7 +356,7 @@ td .image-overlay {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40vh; }
+  background-color: green; }
 
 #choice1, #choice2 {
   height: 125px;
@@ -452,7 +453,7 @@ td .image-overlay {
     width: 50%;
     margin: 0; }
 
-@media (min-width: 767px) {
+@media (min-width: 900px) {
   .content section {
     margin: 0 50px 70px; }
 

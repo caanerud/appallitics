@@ -12,13 +12,14 @@
     object-fit: fill;
     position: relative;
 
-    .profile-logo{
+    .profile-icon{
       position: absolute;
       width: 50px;
-      bottom:0;
+      top:0;
       right:0;
 
       img{
+        background-blend-mode: overlay;
         width: 100%;
         opacity: .6;
       }

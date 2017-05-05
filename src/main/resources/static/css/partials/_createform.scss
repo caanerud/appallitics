@@ -17,7 +17,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40vh;
+  // height: 40vh;
+  background-color: green;
 }
 
 #choice1, #choice2{
@@ -155,7 +156,7 @@
 
 
 
-@media (min-width:767px) {
+@media (min-width:900px) {
   .content{
     section{
       margin:0 50px 70px;

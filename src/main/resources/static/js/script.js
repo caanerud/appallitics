@@ -29,9 +29,9 @@ $(document).ready(function(){
 // CREATE FORM NAVIGATION
 $(document).ready(function(){
 
-  $('section:first-of-type').show();
   $('#choice1').click(function(){
-    $(this).parent().parent().hide().next().show();
+    $(this).parent().parent().hide();
+    $('#overview').show();
     $('#overview .pro-bar .step:last-of-type').delay(500).animate({width:'25%'});
   });
 
