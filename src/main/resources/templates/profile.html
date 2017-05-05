@@ -68,10 +68,10 @@
         </div>
 
         <div class="top-section">
-          <div class="profile-pic">
-            <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}"/>
+          <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
 
-              <div class="profile-icon" style="background-image:url('../static/images/tiger.png');" th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
+              <div class="profile-icon" style="background-image:url('../static/images/tiger.png');"
+                   th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
           </div>
 
           <div class="profile-info">
