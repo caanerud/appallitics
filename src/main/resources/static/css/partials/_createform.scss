@@ -17,8 +17,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // height: 40vh;
-  background-color: green;
+}
+
+#ghost-input{
+  display: none;
 }
 
 #choice1, #choice2{
@@ -34,6 +36,10 @@
   -moz-animation: balloon 0.7s;
   animation: balloon 0.7s;
   cursor: pointer;
+  border-radius: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
 }
 
 #choice1:active, #choice2:active{
@@ -50,14 +56,12 @@
 
 #choice2{
   background-color: orange;
-
-  h2{
-    color: black;
-  }
+  color:black;
 }
 
 #choice2:hover{
   background-color:darkorange;
+  transform: translate(0);
 }
 
 .pro-bar{
@@ -167,6 +171,7 @@
     width: 300px;
     height: 300px;
     margin:20px;
+    font-size: 1.5rem;
   }
 
   .overview-bottom{

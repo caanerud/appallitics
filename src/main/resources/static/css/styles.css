@@ -355,8 +355,10 @@ td .image-overlay {
 .choices {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: green; }
+  justify-content: center; }
+
+#ghost-input {
+  display: none; }
 
 #choice1, #choice2 {
   height: 125px;
@@ -370,7 +372,11 @@ td .image-overlay {
   -webkit-animation: balloon 0.7s;
   -moz-animation: balloon 0.7s;
   animation: balloon 0.7s;
-  cursor: pointer; }
+  cursor: pointer;
+  border-radius: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem; }
 
 #choice1:active, #choice2:active {
   transform: scale(0.9); }
@@ -382,12 +388,12 @@ td .image-overlay {
   background-color: #fe4936; }
 
 #choice2 {
-  background-color: orange; }
-  #choice2 h2 {
-    color: black; }
+  background-color: orange;
+  color: black; }
 
 #choice2:hover {
-  background-color: darkorange; }
+  background-color: darkorange;
+  transform: translate(0); }
 
 .pro-bar {
   height: 5px;
@@ -460,7 +466,8 @@ td .image-overlay {
   #choice1, #choice2 {
     width: 300px;
     height: 300px;
-    margin: 20px; }
+    margin: 20px;
+    font-size: 1.5rem; }
 
   .overview-bottom {
     display: flex;
