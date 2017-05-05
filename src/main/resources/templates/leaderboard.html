@@ -96,7 +96,7 @@
             <tr th:each="rank : ${dictators}">
                 <td>
                     <div class="color-overlay" style="background-image:url('../static/images/tiger.png');"
-                         th:style="'background-color:'+${rank.getOverviewColor()}+'; background-image:url(images/'+${rank.getOverviewMascot().toLowerCase()}+'.png); background-blend-mode:multiply'" ></div>
+                         th:style="'background-image:url(images/'+${rank.getOverviewMascot().toLowerCase()}+'.png); background-color:'+${rank.getOverviewColor()}+';'"></div>
                 </td>
                 <td> <a href="profile.html" th:text="${rank.getUser().getUsername()}" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">Username 1</a></td>
                 <td> <a href="profile.html" th:text="${rank.getOverviewDictatorshipName()}" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">Dictatorship 1</a></td>

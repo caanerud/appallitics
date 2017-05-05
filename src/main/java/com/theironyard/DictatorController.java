@@ -201,11 +201,16 @@ public class DictatorController {
         // variable dictator
         Dictator dictator = new Dictator();
 
-        // Getting dictator from session id or dictatorId
+        // Getting dictator from session id (seeing own profile case) or dictatorId
         if (dictatorId == null) {
             dictator = dictatorRepository.getDictatorById(userId);
         } else {
             dictator = dictatorRepository.getDictatorById(dictatorId);
+        }
+
+        // MINION !! IF STATEMENT HERE
+        if (dictator.getLegalWeapons().trim().isEmpty()){
+            model.addAttribute("minion",true);
         }
 
         // Adding the dictator to the model
@@ -216,12 +221,14 @@ public class DictatorController {
         if (userId != dictatorId){
             owner = false;
         }
+
         // Handling case when viewerId is null (when user just login to see their own page)
         if (dictatorId == null){
             owner = true;
         }
         model.addAttribute("owner",owner);
 
+        // Checks if user is logged in or not
         if (userId == null){
             // not logged in
             userId = 0;
