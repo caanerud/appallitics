@@ -282,3 +282,27 @@ footer{
 @media (min-height:320px){
 
 }
+
+
+// ANIMATIONS_________________________________
+
+// BOUNCE ANIMATION
+@keyframes bounce {
+  0%{
+    transform: translateY(0px);
+  }
+
+  100%{
+    transform: translateY(5px);
+  }
+}
+
+// BALLOON ANIMATION
+@keyframes balloon {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}

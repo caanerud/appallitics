@@ -30,7 +30,10 @@ $(document).ready(function(){
 $(document).ready(function(){
 
   $('section:first-of-type').show();
-  $('section:first-of-type .pro-bar .step:last-of-type').delay(500).animate({width:'25%'});
+  $('#choice1').click(function(){
+    $(this).parent().parent().hide().next().show();
+    $('#overview .pro-bar .step:last-of-type').delay(500).animate({width:'25%'});
+  });
 
   $('.next').click(function(){
     $(this).parent().parent().hide();
@@ -82,7 +85,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 
   $(function () {
-    $("tr").slice(0, 10).show();
+    $("tr").slice(0, 10).slideDown();
     $("#loadMore").on('click', function (e) {
         // e.preventDefault();
         $("tr:hidden").slice(0, 10).slideDown();

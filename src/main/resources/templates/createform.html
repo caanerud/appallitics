@@ -65,6 +65,25 @@
       <form action="profile.html" th:action="@{/createDictator}" method="post" enctype="multipart/form-data">
 
 
+          <section id="choose">
+            <div class="section-header">
+              <h1>Choose Your Path...</h1>
+            </div>
+
+            <br/>
+            <br/>
+
+            <div class="choices">
+              <div id="choice1">
+                <h2>Dictator</h2>
+              </div>
+              <div id="choice2">
+                <h2>Minion</h2>
+              </div>
+            </div>
+          </section>
+
+
           <section id="overview">
               <div class="section-header">
                 <h1>Let's Create a Ruling Party!</h1>
@@ -75,7 +94,7 @@
               </div>
 
               <!--For username-->
-              <h3>Welcome, <div id="username-print" th:text="${dictator.getUser().getUsername()}"></div></h3>
+              <h3>Welcome, <span id="username-print" th:text="${dictator.getUser().getUsername()}"></span></h3>
               <br/>
 
               <div class="input-field">
@@ -279,7 +298,7 @@
 
     <!-- FOOTER____________________________________________ -->
     <footer>
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p></p>
     </footer>
 
 
