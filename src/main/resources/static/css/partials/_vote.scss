@@ -17,9 +17,21 @@
 }
 
 #vote-buttons{
-  text-align: center;
+  margin: 30px auto;
+  max-width: 420px;
+  align-items: center;
+  justify-content: space-between;
+
 
   button{
-    display: inline-block;
+    width: 200px;
+    margin: 0 auto;
+  }
+}
+
+
+@media (min-width:900px) {
+  #vote-buttons{
+    display: flex;
   }
 }
