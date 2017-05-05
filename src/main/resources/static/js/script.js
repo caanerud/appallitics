@@ -85,7 +85,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 
   $(function () {
-    $("tr").slice(0, 10).show();
+    $("tr").slice(0, 10).slideDown();
     $("#loadMore").on('click', function (e) {
         // e.preventDefault();
         $("tr:hidden").slice(0, 10).slideDown();
