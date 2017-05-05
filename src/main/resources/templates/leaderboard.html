@@ -99,7 +99,7 @@
                     <div class="image-overlay"><img src="../static/images/tiger.png" th:src="@{images/tiger.png}" alt="tiger" th:alt="tiger"/></div>
                 </td>
                 <td> <a href="profile.html" th:text="${rank.getUser().getUsername()}" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">Username 1</a></td>
-                <td th:text="${rank.getOverviewDictatorshipName()}">Dictatorship 1</td>
+                <td> <a href="profile.html" th:text="${rank.getOverviewDictatorshipName()}" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">Dictatorship 1</a></td>
                 <td th:text="${rank.getPledge()}">1</td>
                 <td th:text="${rank.getRevolt()}">99</td>
                 <td th:text="${rank.getPledge() - rank.getRevolt()}">-98</td>
