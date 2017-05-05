@@ -207,6 +207,8 @@ td .color-overlay {
   margin: 0 auto 20px;
   overflow: hidden;
   position: relative;
+  background-size: cover;
+  background-position: center;
   background-color: rgba(0, 0, 0, 0.1); }
   .profile-pic img {
     width: 100%; }
@@ -462,6 +464,11 @@ td .color-overlay {
   font-size: 3rem;
   position: relative;
   bottom: 5px; }
+
+#vote-buttons {
+  text-align: center; }
+  #vote-buttons button {
+    display: inline-block; }
 
 html {
   min-height: 100%;

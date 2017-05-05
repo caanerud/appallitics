@@ -15,3 +15,11 @@
   position: relative;
   bottom:5px;
 }
+
+#vote-buttons{
+  text-align: center;
+
+  button{
+    display: inline-block;
+  }
+}
