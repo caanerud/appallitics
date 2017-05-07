@@ -62,15 +62,10 @@
 
     <!-- CONTENT___________________________________________ -->
     <div class="content">
-        <!--image of the user-->
-        <!-- <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}" style="width:100%;"/> -->
 
-        <!--The mascot image-->
-        <!-- <div>
-            <div class="color-overlay" style="background-color:#fff" th:style="'background-color:'+${dictator.getOverviewColor()}"></div>
-            <div class="image-overlay"><img src="../static/images/tiger.png" th:src="@{images/tiger.png}" alt="tiger" th:alt="tiger"/></div>
-        </div> -->
-
+        <div class="section-header">
+          <h1>The Gauntlet</h1>
+        </div>
 
         <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
             <div class="profile-icon" style="background-image:url('../static/images/tiger.png');" th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
@@ -84,13 +79,27 @@
         </div>
 
 
-        <!--MODAL to view more-->
-        <div class="more-info-container">
-            <label for="more-info">More Info</label>
-            <button id="more-info" type="button" data-remodal-target="modal"></button>
+        <!--Voting buttons-->
+
+        <div class="buttons" id="vote-buttons">
+
+          <!--MODAL TRIGGERS-->
+          <div class="more-info-container">
+              <button id="more-info" type="button" data-remodal-target="modal"></button>
+              <!-- <label for="more-info">More Info</label> -->
+          </div>
+
+          <a href="vote.html" th:href="@{'/revolt?dictatorId='+${dictator.getUser().getId()}}">
+              <button id="revolt-button" type="button" data-remodal-target="revolt-modal">Revolt</button>
+          </a>
+
+          <a href="vote.html" th:href="@{'/pledge?dictatorId='+${dictator.getUser().getId()}}">
+              <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
+          </a>
         </div>
 
-        <!--The modal-->
+
+        <!--The modals-->
         <div class="remodal" data-remodal-id="modal">
             <a href="#" data-remodal-action="close" class="remodal-close" ></a>
             <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>'s Economic Policies</h4>
@@ -124,20 +133,18 @@
                 <li>Minion weapon rights: <span th:text="${dictator.getLegalWeapons()}"></span></li>
             </ul>
             <br />
+            <br />
 
-            <a href="#" data-remodal-action="cancel">Return</a>
+
+            <a href="#" data-remodal-action="cancel" class="remodal-return">RETURN</a>
         </div>
 
-        <!--Voting buttons-->
+        <div class="remodal" id="revolt-modal" data-remodal-id="revolt-modal">
+          <h2>You have Revolted!</h2>
+        </div>
 
-        <div class="buttons" id="vote-buttons">
-          <a href="vote.html" th:href="@{'/revolt?dictatorId='+${dictator.getUser().getId()}}">
-              <button id="revolt-button" type="button">Revolt</button>
-          </a>
-
-          <a href="vote.html" th:href="@{'/pledge?dictatorId='+${dictator.getUser().getId()}}">
-              <button id="pledge-button" type="button">Pledge</button>
-          </a>
+        <div class="remodal" id="pledge-modal" data-remodal-id="pledge-modal">
+          <h2>You have Pledged!</h2>
         </div>
 
     </div>

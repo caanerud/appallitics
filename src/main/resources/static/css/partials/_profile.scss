@@ -1,6 +1,6 @@
 .top-section{
   justify-content: space-between;
-  margin: 30px 0;
+  margin-bottom:30px;
 }
 
 .profile-pic{
@@ -109,15 +109,15 @@
   }
 
   #revolt-button{
-    background-color: red;
+    background-color: $color1;
   }
 
   #pledge-button{
-    background-color: green;
+    background-color: $green;
   }
 
   #edit-button{
-    background-color: $color1;
+    background-color: grey;
   }
 
   .view{
@@ -141,14 +141,6 @@
   }
 }
 
-
-
-.remodal{
-  a{
-    color:black;
-    margin: 0 10px;
-  }
-}
 
 .bottom-section{
   margin: 30px 0 0;

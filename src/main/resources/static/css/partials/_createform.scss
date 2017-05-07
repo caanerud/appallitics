@@ -40,12 +40,11 @@
 }
 
 #choice2{
-  background-color: orange;
-  color:black;
+  background-color: $blue;
 }
 
 #choice2:hover{
-  background-color:darkorange;
+  background-color: darken($blue, 3%);
   transform: translate(0);
 }
 
@@ -54,6 +53,7 @@
   width: 100%;
   background-color:white;
   display: flex;
+  margin-top: -30px;
   margin-bottom: 30px;
 
   .step{

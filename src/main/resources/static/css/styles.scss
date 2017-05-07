@@ -6,6 +6,7 @@
 @import "partials/_profile.scss";
 @import "partials/_createform.scss";
 @import "partials/_vote.scss";
+@import "partials/_about.scss";
 
 html{
   min-height: 100%;
@@ -29,13 +30,21 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, hr, {
 }
 
 h1{
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   text-align: center;
   color:white;
   letter-spacing: .2rem;
   margin-bottom: 10px;
   line-height: 2.5rem;
+}
+
+h2{
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color:white;
+  letter-spacing: .1rem;
+  // margin-bottom: 10px;
 }
 
 h3{
@@ -175,12 +184,13 @@ header{
 
 .content{
   max-width: 900px;
-  margin: 70px auto 0;
+  margin: 70px auto;
+  padding: 0 15px;
 }
 
 section{
   min-height: 76vh;
-  margin:0 15px 70px;
+  // margin:0 15px;
   position: relative;
   color:white;
   padding-bottom: 100px;
@@ -188,7 +198,8 @@ section{
 
 .section-header{
   background-color: $color4;
-  padding: 30px 15px 15px;
+  padding: 30px 50px 15px;
+  margin-bottom: 30px;
 }
 
 input{
@@ -200,7 +211,6 @@ input{
 }
 
 input[type="submit"], button{
-  margin-top: 30px;
   max-width: 280px;
   display: block;
   margin: 30px auto 0;
@@ -315,5 +325,16 @@ footer{
   }
   100%{
     transform: scale(1);
+  }
+}
+
+// PULSE ANIMATION
+@keyframes pulse {
+  0%{
+    transform: scale(0);
+  }
+
+  100%{
+    transform: scale(20);
   }
 }

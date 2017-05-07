@@ -63,7 +63,7 @@
 
   /*color: #2b2e38;
   background: #fff;*/
-  background: #FE5745;
+  background:#635a60;
 }
 
 .remodal.remodal-is-opening,
@@ -111,7 +111,7 @@
   transition: color 0.2s;
   text-decoration: none;
 
-  color: #95979c;
+  /*color: #95979c;*/
   border: 0;
   outline: 0;
   background: transparent;
@@ -142,7 +142,8 @@
 /* Dialog buttons */
 
 .remodal-confirm,
-.remodal-cancel {
+.remodal-cancel,
+.remodal-return {
   font: inherit;
 
   display: inline-block;
@@ -164,23 +165,40 @@
 }
 
 .remodal-confirm {
-  color: #fff;
-  background: #81c784;
+  border: 1px solid white;
+  /*background: #21b913;*/
+  /*border-radius: 50px;*/
+  /*box-shadow: 2px 5px 10px rgba(0,0,0,.1);*/
 }
 
 .remodal-confirm:hover,
 .remodal-confirm:focus {
-  background: #66bb6a;
+  background: rgba(250,250,250,.1);
+  /*background: #199d0d;*/
 }
 
 .remodal-cancel {
-  color: #fff;
-  background: #e57373;
+  /*background: #54fe45;*/
+  /*border-radius: 50px;*/
+  /*box-shadow: 2px 5px 10px rgba(0,0,0,.1);*/
 }
 
 .remodal-cancel:hover,
 .remodal-cancel:focus {
-  background: #ef5350;
+  /*background: #d74737;*/
+}
+
+.remodal-return{
+  /*color:black;*/
+  /*background: grey;*/
+  border: 1px solid white;
+  /*border-radius: 50px;*/
+  /*box-shadow: 2px 5px 10px rgba(0,0,0,.1);*/
+}
+
+.remodal-return:hover,
+.remodal-return:focus {
+  background: rgba(250,250,250,.1);
 }
 
 /* Remove inner padding and border in Firefox 4+ for the button tag. */
@@ -191,6 +209,14 @@
   padding: 0;
 
   border: 0;
+}
+
+#revolt-modal{
+  background-color: #FE5745;
+}
+
+#pledge-modal{
+  background-color: #21b913;
 }
 
 /* Keyframes
