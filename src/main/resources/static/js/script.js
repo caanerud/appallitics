@@ -30,9 +30,15 @@ $(document).ready(function(){
 $(document).ready(function(){
 
   $('#choice1').click(function(){
-    $(this).parent().parent().hide();
-    $('#overview').show();
+    $(this).parent().parent().delay(100).hide(0);
+    $('#overview').delay(100).show(0);
     $('#overview .pro-bar .step:last-of-type').delay(500).animate({width:'25%'});
+  });
+
+  $('#choice2').click(function(){
+    var href = $(this).attr('href');
+    setTimeout(function() {window.location = href}, 100);
+    return false;
   });
 
   $('.next').click(function(){

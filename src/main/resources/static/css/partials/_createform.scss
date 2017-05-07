@@ -16,19 +16,19 @@
   align-items: center;
   justify-content: center;
   box-shadow: 3px 5px 10px rgba(0,0,0,.1);
-  transition: all .2s ease-in-out;
+  transition: all .1s ease-in-out;
   -webkit-animation: balloon 0.7s;
   -moz-animation: balloon 0.7s;
   animation: balloon 0.7s;
   cursor: pointer;
-  border-radius: 0;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
 }
 
 #choice1:active, #choice2:active{
-  transform: scale(.9);
+  // transform: scale(.9);
+  transform: translateY(5px);
 }
 
 #choice1{
@@ -45,7 +45,6 @@
 
 #choice2:hover{
   background-color: darken($blue, 3%);
-  transform: translate(0);
 }
 
 .pro-bar{
