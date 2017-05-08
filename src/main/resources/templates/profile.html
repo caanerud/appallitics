@@ -19,25 +19,25 @@
 
     <header>
         <div class="logo">
-            <a href="index.html" th:href="@{/}">Appallitics</a>
+            <a href="index.html" th:href="@{/}" title="Return Home, while you still have one">Appallitics</a>
         </div>
         <!--if logged in-->
         <div th:if="${checkloggedin} != 0">
             <ul class="main-nav" >
-                <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
-                <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
-                <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
-                <li><a href="about.html" th:href="@{/about}">About</a></li>
-                <li><a href="login.html" th:href="@{/logout}">Logout</a></li>
+                <li><a href="leaderboard.html" th:href="@{/leaderboard}" title="See who is the worst at losing">Leaderboard</a></li>
+                <li><a href="vote.html" th:href="@{/vote}" title="Determine your horrifying vision of the future">Vote</a></li>
+                <li><a href="profile.html" th:href="@{/profile}" title="Remind yourself about your terrible choices">Profile</a></li>
+                <li><a href="about.html" th:href="@{/about}" title="See who is subjecting you to this">About</a></li>
+                <li><a href="login.html" th:href="@{/logout}" title="Escape while you can">Logout</a></li>
             </ul>
             <div class="hamburger-trigger">
                 <div class="hamburger-container">
                     <ul class="hamburger-nav">
-                        <li><a href="leaderboard.html" th:href="@{/leaderboard}">Leaderboard</a></li>
-                        <li><a href="vote.html" th:href="@{/vote}">Vote</a></li>
-                        <li><a href="profile.html" th:href="@{/profile}">Profile</a></li>
-                        <li><a href="about.html" th:href="@{/about}">About</a></li>
-                        <li><a href="login.html" th:href="@{/logout}">Logout</a></li>
+                        <li><a href="leaderboard.html" th:href="@{/leaderboard}" title="See who is the worst at losing">Leaderboard</a></li>
+                        <li><a href="vote.html" th:href="@{/vote}" title="Determine your horrifying vision of the future">Vote</a></li>
+                        <li><a href="profile.html" th:href="@{/profile}" title="Remind yourself about your terrible choices">Profile</a></li>
+                        <li><a href="about.html" th:href="@{/about}" title="See who is subjecting you to this">About</a></li>
+                        <li><a href="login.html" th:href="@{/logout}" title="Escape while you can">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -45,14 +45,14 @@
         <!--if not logged in-->
         <div th:if="${checkloggedin} == 0">
             <ul class="main-nav">
-                <li><a href="login.html" th:href="@{/login}">Login</a></li>
-                <li><a href="about.html" th:href="@{/about}">About</a></li>
+                <li><a href="login.html" th:href="@{/login}" title="Begin your mental anguish">Login</a></li>
+                <li><a href="about.html" th:href="@{/about}" title="See who is subjecting you to this">About</a></li>
             </ul>
             <div class="hamburger-trigger">
                 <div class="hamburger-container">
                     <ul class="hamburger-nav">
-                        <li><a href="login.html" th:href="@{/login}">Login</a></li>
-                        <li><a href="about.html" th:href="@{/about}">About</a></li>
+                        <li><a href="login.html" th:href="@{/login}" title="Begin your mental anguish">Login</a></li>
+                        <li><a href="about.html" th:href="@{/about}" title="See who is subjecting you to this">About</a></li>
                     </ul>
                 </div>
             </div>
