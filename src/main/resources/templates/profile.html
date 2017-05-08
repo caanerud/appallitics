@@ -180,7 +180,7 @@
             <h2>WAR!</h2>
             <br />
             <a href="#" data-remodal-action="cancel" class="remodal-cancel">RETREAT!</a>
-            <a href="profile.html" th:href="@{'/attack?dictatorId='+dictator.getUser().getId()}" class="remodal-confirm">LETS FIGHT</a>
+            <a href="profile.html" th:href="@{'/attack?dictatorId='+${dictator.getUser().getId()}}" class="remodal-confirm">LETS FIGHT</a>
         </div>
 
 
