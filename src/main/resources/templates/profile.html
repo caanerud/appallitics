@@ -62,7 +62,43 @@
     <!-- CONTENT___________________________________________ -->
 
     <div class="content">
-      <section>
+        <section th:if="${minion} == true">
+            <h1>Profile</h1>
+
+            <div class="top-section">
+                <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
+
+                    <div class="profile-icon" style="background-image:url('../static/images/tiger.png');"
+                         th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
+                </div>
+
+                <div class="profile-info">
+                    <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
+                    <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
+                    <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+                </div>
+
+                <!--EDIT PROFILE BUTTON-->
+                    <div class="buttons" >
+                        <div class="edit" th:if="${owner}">
+                            <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+                            <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
+                        </div>
+                    </div>
+
+                <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
+                <div class="remodal" data-remodal-id="modal">
+                    <a href="#" data-remodal-action="close" class="remodal-close" ></a>
+                    <p>Are you sure?<br/>Editing your profile will reset your user rank, pledge and revolt values.</p>
+                    <br/>
+                    <a href="#" data-remodal-action="cancel">CANCEL</a>
+                    <a href="createform.html" th:href="@{/editDictator}">OK</a>
+                </div>
+
+            </div>
+
+        </section>
+      <section th:if="${minion} == false">
         <div class="section-header">
           <h1>Profile</h1>
         </div>

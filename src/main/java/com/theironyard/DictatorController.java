@@ -211,6 +211,8 @@ public class DictatorController {
         // MINION !! IF STATEMENT HERE
         if (dictator.getLegalWeapons().trim().isEmpty()){
             model.addAttribute("minion",true);
+        } else {
+            model.addAttribute("minion",false);
         }
 
         // Adding the dictator to the model
