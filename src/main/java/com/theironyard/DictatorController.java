@@ -50,6 +50,11 @@ public class DictatorController {
             userId = 0;
         }
         model.addAttribute("checkloggedin", userId);
+
+        if (userId != 0) {
+            return "redirect:/profile";
+        }
+
         return "login";
     }
 
