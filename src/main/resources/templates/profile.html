@@ -63,17 +63,11 @@
 
     <div class="content">
 
-        <!--Facebook share-->
-        <div id="fb-root"></div>
-
-        <div class="fb-share-button" data-href="https://appallitics.herokuapp.com/profile"
-             data-layout="button_count" data-size="small" data-mobile-iframe="true">
-            <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">Share</a>
-        </div>
-
         <!--MINION-->
         <section th:if="${minion} == true">
-            <h1>Profile</h1>
+            <div class="section-header">
+                <h1>Profile</h1>
+            </div>
 
             <div class="top-section">
                 <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
@@ -96,6 +90,14 @@
                         </div>
                     </div>
 
+                <!--Facebook share-->
+                <div id="fb-root"></div>
+
+                <div class="fb-share-button" data-href="https://appallitics.herokuapp.com/profile"
+                     data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">Share</a>
+                </div>
+
                 <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
                 <div class="remodal" data-remodal-id="modal">
                     <a href="#" data-remodal-action="close" class="remodal-close" ></a>
@@ -111,7 +113,8 @@
 
         <!--DICTATOR-->
       <section th:if="${minion} == false">
-        <div class="section-header">
+
+          <div class="section-header">
           <h1>Profile</h1>
         </div>
 
@@ -151,7 +154,17 @@
                   <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
               </div>
 
+
+                <!--&lt;!&ndash;Facebook share&ndash;&gt;-->
+                <!--<div id="fb-root"></div>-->
+
+                <!--<div class="fb-share-button" data-href="https://appallitics.herokuapp.com/profile"-->
+                     <!--data-layout="button_count" data-size="small" data-mobile-iframe="true">-->
+                    <!--<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">Share</a>-->
+                <!--</div>-->
+
             </div>
+              <div th:text="${error}">ERROR</div>
 
           </div>
         </div>
@@ -168,11 +181,23 @@
         </div>
 
         <div class="remodal" id="revolt-modal" data-remodal-id="revolt-modal">
-          <h2>You have Revolted!</h2>
+            <a href="#" data-remodal-action="close" class="remodal-close" ></a>
+            <h2>Do you REALLY want to REVOLT?</h2>
+            <br />
+            <p>There may be consequences.</p>
+            <br/>
+            <a href="#" data-remodal-action="cancel" class="remodal-cancel">Cancel</a>
+            <a href="profile.html" th:href="@{'/revoltProfile?dictatorId='+${dictator.getUser().getId()}}" class="remodal-confirm">REVOLT 100%</a>
         </div>
 
         <div class="remodal" id="pledge-modal" data-remodal-id="pledge-modal">
-          <h2>You have Pledged!</h2>
+            <a href="#" data-remodal-action="close" class="remodal-close" ></a>
+            <h2>Do you REALLY want to PLEDGE?</h2>
+            <br />
+            <p>There may be consequences.</p>
+            <br/>
+            <a href="#" data-remodal-action="cancel" class="remodal-cancel">Cancel</a>
+            <a href="profile.html" th:href="@{'/pledgeProfile?dictatorId='+${dictator.getUser().getId()}}" class="remodal-confirm">PLEDGE 100%</a>
         </div>
 
         <div class="remodal" id="attack-modal" data-remodal-id="attack-modal">

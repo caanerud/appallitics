@@ -199,12 +199,12 @@ public class DictatorController {
 
     // view a profile/Dictator
     @GetMapping("/profile")
-    public String profile(Model model, HttpSession session, Integer dictatorId){
+    public String profile(Model model, HttpSession session, Integer dictatorId, String error){
         // Getting id from session
         Integer userId = (Integer) session.getAttribute("userId");
 
         // variable dictator
-        Dictator dictator = new Dictator();
+        Dictator dictator;
 
         // Getting dictator from session id (seeing own profile case) or dictatorId
         if (dictatorId == null) {
@@ -241,6 +241,9 @@ public class DictatorController {
             userId = 0;
         }
         model.addAttribute("checkloggedin", userId);
+
+        // Attack error messages
+        model.addAttribute("error",error);
 
         return "profile";
     }
@@ -459,6 +462,20 @@ public class DictatorController {
         Integer userId = (Integer) session.getAttribute("userId");
         Dictator dictatorAttack = dictatorRepository.getDictatorById(userId);
 
+        // divide by 0 error
+        if (dictatorAttack.getPledge() == 0 && dictatorAttack.getRevolt() == 0){
+//            model.addAttribute("errorMessage","You have no ability to attack!");
+//            return "redirect:/profile?dictatorId="+dictatorId;
+            return "redirect:/profile?dictatorId="+dictatorId + "&error=You have no ability to attack!";
+        }
+
+        if (dictatorDefend.getPledge() == 0 && dictatorDefend.getRevolt() == 0){
+//            model.addAttribute("errorMessage","The dictator has nothing to lose!");
+//            return "redirect:/profile?dictatorId="+dictatorId;
+            return "redirect:/profile?dictatorId="+dictatorId + "&error=The dictator has nothing to lose!";
+
+        }
+
         // Logic for attacking/defending, taking into account revolts (and making it a bit more favorable for defender)
         Double effectiveAttack = dictatorAttack.getPledge() / (dictatorAttack.getPledge()+dictatorAttack.getRevolt()) + 0.0;
         Double effectiveDefend = (dictatorDefend.getPledge() * 1.1) / (dictatorDefend.getPledge()+dictatorDefend.getRevolt()) + 0.0;
@@ -486,12 +503,14 @@ public class DictatorController {
 
         // No negative pledges
         if (dictatorAttack.getPledge() < sacrifice){
-            model.addAttribute("error","You have too little loyal minions!");
-            return "redirect:/profile?dictatorId="+dictatorId;
+//            model.addAttribute("errorMessage","You have too little loyal minions!");
+//            return "redirect:/profile?dictatorId="+dictatorId;
+            return "redirect:/profile?dictatorId="+dictatorId + "&error=You have too little loyal minions!";
         }
         if (dictatorDefend.getPledge() < defenderLost){
-            model.addAttribute("error","The dictator you are attacking has too little loyal minions!");
-            return "redirect:/profile?dictatorId="+dictatorId;
+//            model.addAttribute("errorMessage","The dictator you are attacking has too little loyal minions!");
+//            return "redirect:/profile?dictatorId="+dictatorId;
+            return "redirect:/profile?dictatorId="+dictatorId + "&error=The dictator you are attacking has too little loyal minions!";
         }
 
         // Attack successful
