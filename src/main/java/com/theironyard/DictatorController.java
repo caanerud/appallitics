@@ -449,6 +449,58 @@ public class DictatorController {
         return "redirect:/profile?dictatorId="+dictatorId;
     }
 
+    // ATTACK !!
+    @GetMapping("/attack")
+    public String attack(Model model, HttpSession session, Integer dictatorId){
+        // dictator defending
+        Dictator dictatorDefend = dictatorRepository.getDictatorById(dictatorId);
+
+        // dictator attacking
+        Integer userId = (Integer) session.getAttribute("userId");
+        Dictator dictatorAttack = dictatorRepository.getDictatorById(userId);
+
+        // Logic for attacking/defending, taking into account revolts (and making it a bit more favorable for defender)
+        Double effectiveAttack = dictatorAttack.getPledge() / (dictatorAttack.getPledge()+dictatorAttack.getRevolt()) + 0.0;
+        Double effectiveDefend = (dictatorDefend.getPledge() * 1.1) / (dictatorDefend.getPledge()+dictatorDefend.getRevolt()) + 0.0;
+        Double overall = effectiveAttack / effectiveDefend;
+
+        // Checking to see which one is the whole number (with maximum limit)
+        Integer sacrifice = 1;
+        Integer defenderLost = 1;
+        if (overall < 1){
+            overall = 1 / overall;
+            sacrifice = overall.intValue();
+            if (sacrifice > 4){
+                sacrifice = 4;
+            }
+            model.addAttribute("sacrifice",sacrifice);
+            model.addAttribute("defenderLost",1);
+        } else{
+            defenderLost = overall.intValue();
+            if (defenderLost > 4){
+                defenderLost = 4;
+            }
+            model.addAttribute("sacrifice",1);
+            model.addAttribute("defenderLost",defenderLost);
+        }
+
+        // No negative pledges
+        if (dictatorAttack.getPledge() < sacrifice){
+            model.addAttribute("error","You have too little loyal minions!");
+            return "redirect:/profile?dictatorId="+dictatorId;
+        }
+        if (dictatorDefend.getPledge() < defenderLost){
+            model.addAttribute("error","The dictator you are attacking has too little loyal minions!");
+            return "redirect:/profile?dictatorId="+dictatorId;
+        }
+
+        // Attack successful
+        dictatorRepository.pledge(dictatorAttack.getPledge()-sacrifice,userId);
+        dictatorRepository.pledge(dictatorDefend.getPledge()-defenderLost,dictatorId);
+
+        return "redirect:/profile?dictatorId="+dictatorId;
+    }
+
 
     // Getting the picture
     @GetMapping("/dictator/image")

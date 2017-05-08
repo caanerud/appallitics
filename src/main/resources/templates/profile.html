@@ -141,6 +141,9 @@
                   <a href="profile.html" th:href="@{'/pledgeProfile?dictatorId='+${dictator.getUser().getId()}}">
                       <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
                   </a>
+                  <a>
+                      <button id="attack-button" type="button" data-remodal-target="attack-modal">ATTACK</button>
+                  </a>
               </div>
 
               <div class="edit" th:if="${owner}">
@@ -170,6 +173,14 @@
 
         <div class="remodal" id="pledge-modal" data-remodal-id="pledge-modal">
           <h2>You have Pledged!</h2>
+        </div>
+
+        <div class="remodal" id="attack-modal" data-remodal-id="attack-modal">
+            <a href="#" data-remodal-action="close" class="remodal-close" ></a>
+            <h2>WAR!</h2>
+            <br />
+            <a href="#" data-remodal-action="cancel" class="remodal-cancel">RETREAT!</a>
+            <a href="profile.html" th:href="@{'/attack?dictatorId='+dictator.getUser().getId()}" class="remodal-confirm">LETS FIGHT</a>
         </div>
 
 
