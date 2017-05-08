@@ -86,7 +86,6 @@ $(document).ready(function(){
 });
 
 
-
 // LEADERBOARD LOAD MORE FUNCTIONALITY
 $(document).ready(function(){
 
