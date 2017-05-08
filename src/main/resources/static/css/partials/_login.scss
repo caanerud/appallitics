@@ -1,6 +1,5 @@
 .login, .create-account{
   z-index: -1;
-  margin:0 15px;
 }
 
 .create-account{
@@ -66,8 +65,8 @@
 
 }
 
-@media (min-width:900px) {
-  .login, .create-account{
-    margin:0 50px;
-  }
-}
+// @media (min-width:900px) {
+//   .login, .create-account{
+//     margin:0 50px;
+//   }
+// }

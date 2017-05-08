@@ -124,15 +124,15 @@
             <div class="buttons" >
               <div class="view" th:if="${!owner}" >
                   <a href="profile.html" th:href="@{'/revoltProfile?dictatorId='+${dictator.getUser().getId()}}">
-                      <button id="revolt-button" type="button">Revolt</button>
+                      <button id="revolt-button" type="button" data-remodal-target="revolt-modal">Revolt</button>
                   </a>
-                  <a href="vote.html" th:href="@{'/pledgeProfile?dictatorId='+${dictator.getUser().getId()}}">
-                      <button id="pledge-button" type="button">Pledge</button>
+                  <a href="profile.html" th:href="@{'/pledgeProfile?dictatorId='+${dictator.getUser().getId()}}">
+                      <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
                   </a>
               </div>
 
               <div class="edit" th:if="${owner}">
-                  <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+                  <button id="edit-button" type="button" data-remodal-target="edit-modal">Edit Profile</button>
                   <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
               </div>
 
@@ -141,13 +141,23 @@
           </div>
         </div>
 
-        <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
-        <div class="remodal" data-remodal-id="modal">
+        <!-- MODAL DIALOG BOXES-->
+        <div class="remodal" data-remodal-id="edit-modal">
           <a href="#" data-remodal-action="close" class="remodal-close" ></a>
-          <p>Are you sure?<br/>Editing your profile will reset your user rank, pledge and revolt values.</p>
+          <h2>ARE YOU SURE?</h2>
+          <br />
+          <p>Editing your profile will reset your user rank, pledge and revolt values.</p>
           <br/>
-          <a href="#" data-remodal-action="cancel">CANCEL</a>
-          <a href="createform.html" th:href="@{/editDictator}">OK</a>
+          <a href="#" data-remodal-action="cancel" class="remodal-cancel">CANCEL</a>
+          <a href="createform.html" th:href="@{/editDictator}" class="remodal-confirm">OK</a>
+        </div>
+
+        <div class="remodal" id="revolt-modal" data-remodal-id="revolt-modal">
+          <h2>You have Revolted!</h2>
+        </div>
+
+        <div class="remodal" id="pledge-modal" data-remodal-id="pledge-modal">
+          <h2>You have Pledged!</h2>
         </div>
 
 

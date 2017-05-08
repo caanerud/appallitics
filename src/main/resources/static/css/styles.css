@@ -1,6 +1,5 @@
 .login, .create-account {
-  z-index: -1;
-  margin: 0 15px; }
+  z-index: -1; }
 
 .create-account {
   display: none; }
@@ -50,13 +49,14 @@
     width: calc(100% + 145px);
     border-bottom: 5px solid #FE5745; }
 
-@media (min-width: 900px) {
-  .login, .create-account {
-    margin: 0 50px; } }
 .hero {
   height: 500px;
-  background: linear-gradient(rgba(62, 56, 60, 0.8), rgba(62, 56, 60, 0.8)), url("../images/src.jpg");
-  background-size: cover; }
+  background-image: url("../images/earth3.png");
+  background-color: #3E383C;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: 230%;
+  background-repeat: no-repeat; }
   .hero a {
     display: block;
     position: relative;
@@ -105,12 +105,8 @@
   .step-by-step {
     display: flex;
     justify-content: space-between; } }
-.leaderboard-container {
-  padding: 0 15px;
-  margin-bottom: 70px; }
-
 #searchbar {
-  margin: 20px 0;
+  margin-bottom: 20px;
   width: 100%; }
   #searchbar input[type="search"] {
     border: none;
@@ -199,7 +195,7 @@ td .color-overlay {
     display: block; } }
 .top-section {
   justify-content: space-between;
-  margin: 30px 0; }
+  margin-bottom: 30px; }
 
 .profile-pic {
   height: 250px;
@@ -276,11 +272,11 @@ td .color-overlay {
     max-width: 200px;
     margin: 10px auto; }
   .buttons #revolt-button {
-    background-color: red; }
-  .buttons #pledge-button {
-    background-color: green; }
-  .buttons #edit-button {
     background-color: #FE5745; }
+  .buttons #pledge-button {
+    background-color: #21b913; }
+  .buttons #edit-button {
+    background-color: grey; }
   .buttons .view {
     display: block; }
   .buttons .edit {
@@ -293,10 +289,6 @@ td .color-overlay {
     line-height: 1.1rem; }
     .buttons p b {
       color: #FE5745; }
-
-.remodal a {
-  color: black;
-  margin: 0 10px; }
 
 .bottom-section {
   margin: 30px 0 0; }
@@ -347,18 +339,17 @@ td .color-overlay {
   align-items: center;
   justify-content: center;
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
-  transition: all .2s ease-in-out;
+  transition: all .1s ease-in-out;
   -webkit-animation: balloon 0.7s;
   -moz-animation: balloon 0.7s;
   animation: balloon 0.7s;
   cursor: pointer;
-  border-radius: 0;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .1rem; }
 
 #choice1:active, #choice2:active {
-  transform: scale(0.9); }
+  transform: translateY(5px); }
 
 #choice1 {
   background-color: #FE5745; }
@@ -367,18 +358,17 @@ td .color-overlay {
   background-color: #fe4936; }
 
 #choice2 {
-  background-color: orange;
-  color: black; }
+  background-color: #878eff; }
 
 #choice2:hover {
-  background-color: darkorange;
-  transform: translate(0); }
+  background-color: #7880ff; }
 
 .pro-bar {
   height: 5px;
   width: 100%;
   background-color: white;
   display: flex;
+  margin-top: -30px;
   margin-bottom: 30px; }
   .pro-bar .step {
     background-color: #FE5745;
@@ -454,21 +444,39 @@ td .color-overlay {
   text-align: center;
   color: white; }
 
-#more-info {
-  margin: 10px auto;
-  width: 50px;
-  background-color: #635a60; }
-
-#more-info::after {
-  content: "+";
-  font-size: 3rem;
-  position: relative;
-  bottom: 5px; }
-
 #vote-buttons {
-  text-align: center; }
+  margin: 30px auto;
+  max-width: 500px;
+  align-items: stretch;
+  justify-content: space-between; }
   #vote-buttons button {
-    display: inline-block; }
+    width: 200px;
+    margin: 0 auto; }
+  #vote-buttons #more-info {
+    margin: 10px auto;
+    width: 50px;
+    background-color: #635a60; }
+  #vote-buttons #more-info::after {
+    content: "+";
+    font-size: 3rem;
+    position: relative;
+    bottom: 5px; }
+
+@media (min-width: 900px) {
+  #vote-buttons {
+    display: flex; } }
+.test-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.test-content {
+  width: 10%;
+  height: 10vh;
+  background: #FE5745;
+  animation: pulse ease-in-out 1s infinite alternate; }
 
 html {
   min-height: 100%;
@@ -488,13 +496,19 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, hr {
   letter-spacing: .05rem; }
 
 h1 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   text-align: center;
   color: white;
   letter-spacing: .2rem;
   margin-bottom: 10px;
   line-height: 2.5rem; }
+
+h2 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: .1rem; }
 
 h3 {
   font-size: 1.1rem;
@@ -598,18 +612,19 @@ header {
 
 .content {
   max-width: 900px;
-  margin: 70px auto 0; }
+  margin: 70px auto;
+  padding: 0 15px; }
 
 section {
   min-height: 76vh;
-  margin: 0 15px 70px;
   position: relative;
   color: white;
   padding-bottom: 100px; }
 
 .section-header {
   background-color: #635a60;
-  padding: 30px 15px 15px; }
+  padding: 30px 50px 15px;
+  margin-bottom: 30px; }
 
 input {
   width: 100%;
@@ -619,7 +634,6 @@ input {
   padding: 0 10px; }
 
 input[type="submit"], button {
-  margin-top: 30px;
   max-width: 280px;
   display: block;
   margin: 30px auto 0;
@@ -695,5 +709,10 @@ footer {
     transform: scale(0); }
   100% {
     transform: scale(1); } }
+@keyframes pulse {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(20); } }
 
 /*# sourceMappingURL=styles.css.map */
