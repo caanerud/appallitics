@@ -16,19 +16,18 @@
   img{
     width: 100%;
   }
+}
 
-  .profile-icon{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top:0;
-    right:0;
-    background-blend-mode: exclusion;
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: grayscale(.4);
-  }
+.profile-icon{
+  margin: 0 auto 20px;
+  width:100px;
+  height:100px;
+  background-blend-mode: difference;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: grayscale(.4);
+  background-color: white;
 }
 
 .profile-info{
@@ -101,10 +100,9 @@
 }
 
 .buttons{
-  margin-top: 30px;
 
-  #revolt-button, #pledge-button, #edit-button{
-    max-width: 200px;
+  #revolt-button, #pledge-button, #edit-button, #attack-button{
+    // max-width: 200px;
     margin:10px auto;
   }
 
@@ -118,6 +116,11 @@
 
   #edit-button{
     background-color: grey;
+  }
+
+  #attack-button{
+    color:black;
+    background-color: $yellow;
   }
 
   .view{
@@ -173,6 +176,10 @@
 @media (min-width:900px) {
   .top-section{
     display: flex;
+
+    .profile-icon{
+      margin: 0 0 20px;
+    }
 
     .profile-info{
       text-align: left;

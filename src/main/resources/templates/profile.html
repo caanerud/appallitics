@@ -73,19 +73,20 @@
 
         <!--MINION-->
         <section th:if="${minion} == true">
-            <h1>Profile</h1>
+            <div class="section-header">
+              <h1>Profile</h1>
+            </div>
 
             <div class="top-section">
                 <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
-
-                    <div class="profile-icon" style="background-image:url('../static/images/tiger.png');"
-                         th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
                 </div>
 
                 <div class="profile-info">
-                    <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
-                    <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
-                    <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+                  <div class="profile-icon" style="background-image:url('../static/images/tiger.png');"
+                       th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
+                  <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
+                  <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
+                  <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
                 </div>
 
                 <!--EDIT PROFILE BUTTON-->
@@ -117,12 +118,11 @@
 
         <div class="top-section">
           <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
-
-              <div class="profile-icon" style="background-image:url('../static/images/tiger.png');"
-                   th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
           </div>
 
           <div class="profile-info">
+            <div class="profile-icon" style="background-image:url('../static/images/tiger.png');"
+                 th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
             <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
             <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
             <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
@@ -133,6 +133,8 @@
             <h3>PLEDGE: <div id="pledge" th:text="${dictator.getPledge()}">2</div> </h3>
             <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
 
+            <br/>
+
             <div class="buttons" >
               <div class="view" th:if="${!owner}" >
                   <a href="profile.html" th:href="@{'/revoltProfile?dictatorId='+${dictator.getUser().getId()}}">
@@ -142,7 +144,7 @@
                       <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
                   </a>
                   <a>
-                      <button id="attack-button" type="button" data-remodal-target="attack-modal">ATTACK</button>
+                      <button id="attack-button" type="button" data-remodal-target="attack-modal">Attack</button>
                   </a>
               </div>
 

@@ -208,17 +208,17 @@ td .color-overlay {
   background-color: rgba(0, 0, 0, 0.1); }
   .profile-pic img {
     width: 100%; }
-  .profile-pic .profile-icon {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 0;
-    right: 0;
-    background-blend-mode: exclusion;
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: grayscale(0.4); }
+
+.profile-icon {
+  margin: 0 auto 20px;
+  width: 100px;
+  height: 100px;
+  background-blend-mode: difference;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: grayscale(0.4);
+  background-color: white; }
 
 .profile-info {
   display: block;
@@ -266,29 +266,29 @@ td .color-overlay {
   .profile-stats #revolt::before {
     content: "-"; }
 
-.buttons {
-  margin-top: 30px; }
-  .buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button {
-    max-width: 200px;
-    margin: 10px auto; }
-  .buttons #revolt-button {
-    background-color: #FE5745; }
-  .buttons #pledge-button {
-    background-color: #21b913; }
-  .buttons #edit-button {
-    background-color: grey; }
-  .buttons .view {
-    display: block; }
-  .buttons .edit {
-    display: block; }
-  .buttons p {
-    width: 200px;
-    text-align: center;
-    margin: 10px auto 0;
-    font-size: .8rem;
-    line-height: 1.1rem; }
-    .buttons p b {
-      color: #FE5745; }
+.buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button, .buttons #attack-button {
+  margin: 10px auto; }
+.buttons #revolt-button {
+  background-color: #FE5745; }
+.buttons #pledge-button {
+  background-color: #21b913; }
+.buttons #edit-button {
+  background-color: grey; }
+.buttons #attack-button {
+  color: black;
+  background-color: #ffdd33; }
+.buttons .view {
+  display: block; }
+.buttons .edit {
+  display: block; }
+.buttons p {
+  width: 200px;
+  text-align: center;
+  margin: 10px auto 0;
+  font-size: .8rem;
+  line-height: 1.1rem; }
+  .buttons p b {
+    color: #FE5745; }
 
 .bottom-section {
   margin: 30px 0 0; }
@@ -313,6 +313,8 @@ td .color-overlay {
 @media (min-width: 900px) {
   .top-section {
     display: flex; }
+    .top-section .profile-icon {
+      margin: 0 0 20px; }
     .top-section .profile-info {
       text-align: left;
       width: 35%;
