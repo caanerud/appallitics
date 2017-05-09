@@ -163,6 +163,10 @@
                   <div class="error-message" th:if="${errorExists} == true">
                     <p><b>ERROR: </b><span th:text="${error}"></span></p>
                   </div>
+                  <div class="error-message" th:if="${errorExists} == false">
+                      <p><span th:text="${attackerMessage}"></span></p>
+                      <p><span th:text="${defenderMessage}"></span></p>
+                  </div>
               </div>
 
               <div class="edit" th:if="${owner}">
