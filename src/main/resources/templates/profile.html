@@ -63,67 +63,86 @@
 
     <div class="content">
 
-        <!--MINION-->
-        <section th:if="${minion} == true">
-            <div class="section-header">
-              <h1>Profile</h1>
-            </div>
+      <!--MINION-->
+      <section th:if="${minion} == true">
+          <div class="section-header">
+            <h1>Profile</h1>
+          </div>
 
-            <div class="top-section">
-                <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
-                </div>
+          <div class="top-section">
+              <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
+              </div>
 
-                <div class="profile-info">
-                  <div class="profile-icon" style="background-image:url('../static/images/lion.png');"
-                       th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
-                  <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
-                  <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
-                  <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-                </div>
+              <div class="profile-info">
+                <div class="profile-icon" style="background-image:url('../static/images/lion.png');"
+                     th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
+                <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
+                <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
+                <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+              </div>
 
-                <!--EDIT PROFILE BUTTON-->
-                    <div class="buttons" >
-                        <div class="edit" th:if="${owner}">
-                            <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-                            <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
-                        </div>
-                    </div>
+              <!--EDIT PROFILE BUTTON-->
+                  <div class="buttons" >
+                      <div class="edit" th:if="${owner}">
+                          <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+                          <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
+                      </div>
+                  </div>
 
-                <!--Facebook share-->
-                <div id="fb-root"></div>
+              <!--Facebook share-->
+              <!-- <div id="fb-root"></div> -->
 
-                <div class="fb-share-button" data-href="https://appallitics.herokuapp.com/profile"
-                     data-layout="button_count" data-size="small" data-mobile-iframe="true">
-                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">Share</a>
-                </div>
+              <div class="fb-share-button" data-href="https://appallitics.herokuapp.com/profile"
+                   data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                  <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">Share</a>
+              </div>
 
-                <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
-                <div class="remodal" data-remodal-id="modal">
-                    <a href="#" data-remodal-action="close" class="remodal-close" ></a>
-                    <p>Are you sure?<br/>Editing your profile will reset your user rank, pledge and revolt values.</p>
-                    <br/>
-                    <a href="#" data-remodal-action="cancel">CANCEL</a>
-                    <a href="createform.html" th:href="@{/editDictator}">OK</a>
-                </div>
+              <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
+              <div class="remodal" data-remodal-id="modal">
+                  <a href="#" data-remodal-action="close" class="remodal-close" ></a>
+                  <p>Are you sure?<br/>Editing your profile will reset your user rank, pledge and revolt values.</p>
+                  <br/>
+                  <a href="#" data-remodal-action="cancel">CANCEL</a>
+                  <a href="createform.html" th:href="@{/editDictator}">OK</a>
+              </div>
 
-            </div>
+          </div>
 
-        </section>
+      </section>
 
-        <!--DICTATOR-->
+      <!--DICTATOR-->
       <section th:if="${minion} == false">
 
-          <div class="section-header">
+        <div class="section-header">
           <h1>Profile</h1>
         </div>
 
+
         <div class="top-section">
-          <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
-          </div>
+
+          <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'"></div>
 
           <div class="profile-info">
-            <div class="profile-icon" style="background-image:url('../static/images/crocodile.png');"
-                 th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
+            <div class="row">
+              <div class="profile-icon" style="background-image:url('../static/images/crocodile.png');"
+                   th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
+
+              <div class="social-icons">
+                <div class="icon fb-share-button" data-href="https://appallitics.herokuapp.com/profile"
+                     data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                     <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">
+                         <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                     </a>
+                </div>
+                <div class="icon">
+                  <a target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" th:href="@{'https://twitter.com/intent/tweet?text='+${twitterBlurb}}">
+                      <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                  </a>
+                </div>
+                <div class="icon"></div>
+              </div>
+
+            </div>
             <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
             <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
             <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
@@ -138,15 +157,12 @@
 
             <div class="buttons" >
               <div class="view" th:if="${!owner}" >
-                  <a href="profile.html" th:href="@{'/revoltProfile?dictatorId='+${dictator.getUser().getId()}}">
-                      <button id="revolt-button" type="button" data-remodal-target="revolt-modal">Revolt</button>
-                  </a>
-                  <a href="profile.html" th:href="@{'/pledgeProfile?dictatorId='+${dictator.getUser().getId()}}">
-                      <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
-                  </a>
-                  <a>
-                      <button id="attack-button" type="button" data-remodal-target="attack-modal">Attack</button>
-                  </a>
+                  <button id="revolt-button" type="button" data-remodal-target="revolt-modal">Revolt</button>
+                  <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
+                  <button id="attack-button" type="button" data-remodal-target="attack-modal">Attack</button>
+                  <div class="error-message" th:if="${errorExists} == true">
+                    <p><b>ERROR: </b><span th:text="${error}">testtesttests</span></p>
+                  </div>
               </div>
 
               <div class="edit" th:if="${owner}">
@@ -164,12 +180,6 @@
                 <!--</div>-->
 
             </div>
-              <!-- <div th:text="${error}">ERROR</div> -->
-
-              <div class="error-message" th:if="${errorExists} == true">
-                <span>ERROR:</span>
-                <p th:text="${error}"></p>
-              </div>
 
           </div>
         </div>

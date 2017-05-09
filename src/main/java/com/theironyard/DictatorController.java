@@ -223,6 +223,9 @@ public class DictatorController {
         // Adding the dictator to the model
         model.addAttribute("dictator",dictator);
 
+        // Twitter blurb
+        model.addAttribute("twitterBlurb",dictator.getOverviewBlurb().replaceAll(" ","%20"));
+
         // Creating variable to see if viewer is owner
         Boolean owner = true;
         if (userId != dictatorId){
