@@ -4,9 +4,9 @@
 }
 
 .profile-pic{
-  height:250px;
-  width: 250px;
-  margin:0 auto 20px;
+  height:275px;
+  width: 275px;
+  margin:0 auto;
   overflow: hidden;
   position: relative;
   background-size: cover;
@@ -18,16 +18,6 @@
   }
 }
 
-.profile-icon{
-  margin: 0 auto 20px;
-  width:100px;
-  height:100px;
-  background-blend-mode: difference;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: grayscale(.4);
-}
 
 .profile-info{
   display: block;
@@ -58,6 +48,60 @@
 
   h3::before, h3::after{
     content: '"';
+  }
+}
+
+.row{
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 210px;
+}
+
+.profile-icon{
+  width:100px;
+  height:100px;
+  background-blend-mode: difference;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: grayscale(.4);
+  margin-bottom: 30px;
+}
+
+.social-icons{
+  width: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  .icon{
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+    // background-color: white;
+
+    a{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .fa{
+        font-size:3rem;
+      }
+
+      .fa-facebook-official{
+        color:lightblue;
+      }
+
+      .fa-twitter-square{
+        color:blue;
+      }
+    }
   }
 }
 
@@ -122,13 +166,6 @@
     background-color: $yellow;
   }
 
-  .view{
-    display: block;
-  }
-
-  .edit{
-    display: block;
-  }
 
   p{
     width: 200px;
@@ -146,7 +183,6 @@
 
 .bottom-section{
   margin: 30px 0 0;
-  // padding: 0 15px;
   overflow: hidden;
 
   .policy{
@@ -192,8 +228,20 @@
   .top-section{
     display: flex;
 
-    .profile-icon{
-      margin: 0 0 20px;
+    .row{
+      margin:0 0 20px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .profile-pic{
+      width:300px;
+      height:300px;
+    }
+
+    .social-icons{
+      width: 100px;
+      height: 100px;
     }
 
     .profile-info{
@@ -211,11 +259,4 @@
   .profile-details{
     padding: 0 1.5%;
   }
-
-  // .bottom-section{
-  //   .policy{
-  //     width: 50%;
-  //     float: left;
-  //   }
-  // }
 }
