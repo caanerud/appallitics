@@ -217,8 +217,7 @@ td .color-overlay {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  filter: grayscale(0.4);
-  background-color: white; }
+  filter: grayscale(0.4); }
 
 .profile-info {
   display: block;
@@ -291,9 +290,20 @@ td .color-overlay {
     color: #FE5745; }
 
 .bottom-section {
-  margin: 30px 0 0; }
+  margin: 30px 0 0;
+  overflow: hidden; }
+  .bottom-section .policy {
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: #635a60; }
+  .bottom-section h4 {
+    text-align: center;
+    margin: 0 auto 30px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+    max-width: 400px; }
   .bottom-section li {
-    margin: 20px 0 20px 20px;
+    margin: 20px 0;
     font-weight: 400;
     letter-spacing: .05rem;
     text-transform: uppercase;
