@@ -199,7 +199,7 @@ public class DictatorController {
 
     // view a profile/Dictator
     @GetMapping("/profile")
-    public String profile(Model model, HttpSession session, Integer dictatorId, String error, boolean errorExists){
+    public String profile(Model model, HttpSession session, Integer dictatorId, String error, boolean errorExists, String defenderMessage, String attackerMessage){
         // Getting id from session
         Integer userId = (Integer) session.getAttribute("userId");
 
@@ -248,6 +248,10 @@ public class DictatorController {
         // Attack error messages
         model.addAttribute("errorExists",errorExists);
         model.addAttribute("error",error);
+
+        // Result of attack
+        model.addAttribute("defenderMessage",defenderMessage);
+        model.addAttribute("attackerMessage",attackerMessage);
 
         return "profile";
     }
@@ -468,16 +472,11 @@ public class DictatorController {
 
         // divide by 0 error
         if (dictatorAttack.getPledge() == 0 && dictatorAttack.getRevolt() == 0){
-//            model.addAttribute("errorMessage","You have no ability to attack!");
-//            return "redirect:/profile?dictatorId="+dictatorId;
-            return "redirect:/profile?dictatorId="+dictatorId + "&error=You have no ability to attack!"+ "&errorExists="+true;
+            return "redirect:/profile?dictatorId="+dictatorId + "&error=You have no pledged minions to attack!"+ "&errorExists="+true;
         }
 
         if (dictatorDefend.getPledge() == 0 && dictatorDefend.getRevolt() == 0){
-//            model.addAttribute("errorMessage","The dictator has nothing to lose!");
-//            return "redirect:/profile?dictatorId="+dictatorId;
             return "redirect:/profile?dictatorId="+dictatorId + "&error=The dictator has nothing to lose!"+ "&errorExists="+true;
-
         }
 
         // Logic for attacking/defending, taking into account revolts (and making it a bit more favorable for defender)
@@ -507,13 +506,9 @@ public class DictatorController {
 
         // No negative pledges
         if (dictatorAttack.getPledge() < sacrifice){
-//            model.addAttribute("errorMessage","You have too little loyal minions!");
-//            return "redirect:/profile?dictatorId="+dictatorId;
             return "redirect:/profile?dictatorId="+dictatorId + "&error=You have too little loyal minions!" + "&errorExists="+true;
         }
         if (dictatorDefend.getPledge() < defenderLost){
-//            model.addAttribute("errorMessage","The dictator you are attacking has too little loyal minions!");
-//            return "redirect:/profile?dictatorId="+dictatorId;
             return "redirect:/profile?dictatorId="+dictatorId + "&error=The dictator you are attacking has too little loyal minions!" + "&errorExists="+true;
         }
 
@@ -521,7 +516,7 @@ public class DictatorController {
         dictatorRepository.pledge(dictatorAttack.getPledge()-sacrifice,userId);
         dictatorRepository.pledge(dictatorDefend.getPledge()-defenderLost,dictatorId);
 
-        return "redirect:/profile?dictatorId="+dictatorId;
+        return "redirect:/profile?dictatorId="+dictatorId + "&attackerMessage=You have lost "+ sacrifice + " pledged minions!" + "&defenderMessage=" + dictatorDefend.getUser().getUsername() + " has lost " + defenderLost + " pledged minions!" + "&errorExists="+false;
     }
 
 
