@@ -1,7 +1,9 @@
 .hero{
-  height: 500px;
-  padding:70px;
-  // background-image: url('../images/logo.svg');
+  height: 550px;
+  // height: 50vh;
+  // min-height: 300px;
+  padding:70px 0 0;
+  position: relative;
   background-color: $color5;
   // background-blend-mode: multiply;
   // background-position: center;
@@ -9,17 +11,36 @@
   // background-position:top;
   // background-size: contain;
   // background-repeat: no-repeat;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
 
   img{
-    width: 100%;
+    width: 90%;
+    max-width: 1400px;
     display: block;
     margin: 0 auto;
-    animation: balloon 1s linear;
+    animation: balloon .5s ease;
   }
 
-  a{
-    display: block;
+  h1{
+    margin-top: 30px;
+    padding: 0 30px;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    line-height: 3rem;
   }
+
+  .hero-nav{
+    position: absolute;
+    bottom:30px;
+    left: calc(50% - 140px);
+
+    a{
+      display: block;
+    }
+  }
+
 
   .scrollDown{
     text-align: center;
