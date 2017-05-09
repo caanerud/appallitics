@@ -199,7 +199,7 @@ public class DictatorController {
 
     // view a profile/Dictator
     @GetMapping("/profile")
-    public String profile(Model model, HttpSession session, Integer dictatorId, String error){
+    public String profile(Model model, HttpSession session, Integer dictatorId, String error, boolean errorExists){
         // Getting id from session
         Integer userId = (Integer) session.getAttribute("userId");
 
@@ -243,6 +243,7 @@ public class DictatorController {
         model.addAttribute("checkloggedin", userId);
 
         // Attack error messages
+        model.addAttribute("errorExists",errorExists);
         model.addAttribute("error",error);
 
         return "profile";
@@ -466,13 +467,13 @@ public class DictatorController {
         if (dictatorAttack.getPledge() == 0 && dictatorAttack.getRevolt() == 0){
 //            model.addAttribute("errorMessage","You have no ability to attack!");
 //            return "redirect:/profile?dictatorId="+dictatorId;
-            return "redirect:/profile?dictatorId="+dictatorId + "&error=You have no ability to attack!";
+            return "redirect:/profile?dictatorId="+dictatorId + "&error=You have no ability to attack!"+ "&errorExists="+true;
         }
 
         if (dictatorDefend.getPledge() == 0 && dictatorDefend.getRevolt() == 0){
 //            model.addAttribute("errorMessage","The dictator has nothing to lose!");
 //            return "redirect:/profile?dictatorId="+dictatorId;
-            return "redirect:/profile?dictatorId="+dictatorId + "&error=The dictator has nothing to lose!";
+            return "redirect:/profile?dictatorId="+dictatorId + "&error=The dictator has nothing to lose!"+ "&errorExists="+true;
 
         }
 
@@ -505,12 +506,12 @@ public class DictatorController {
         if (dictatorAttack.getPledge() < sacrifice){
 //            model.addAttribute("errorMessage","You have too little loyal minions!");
 //            return "redirect:/profile?dictatorId="+dictatorId;
-            return "redirect:/profile?dictatorId="+dictatorId + "&error=You have too little loyal minions!";
+            return "redirect:/profile?dictatorId="+dictatorId + "&error=You have too little loyal minions!" + "&errorExists="+true;
         }
         if (dictatorDefend.getPledge() < defenderLost){
 //            model.addAttribute("errorMessage","The dictator you are attacking has too little loyal minions!");
 //            return "redirect:/profile?dictatorId="+dictatorId;
-            return "redirect:/profile?dictatorId="+dictatorId + "&error=The dictator you are attacking has too little loyal minions!";
+            return "redirect:/profile?dictatorId="+dictatorId + "&error=The dictator you are attacking has too little loyal minions!" + "&errorExists="+true;
         }
 
         // Attack successful
