@@ -86,7 +86,7 @@
                     <div class="buttons" >
                         <div class="edit" th:if="${owner}">
                             <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-                            <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
+                            <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values and may cause a catastrophic uprising!</p>
                         </div>
                     </div>
                   </div>
@@ -102,7 +102,7 @@
               <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
               <div class="remodal" data-remodal-id="modal">
                   <a href="#" data-remodal-action="close" class="remodal-close" ></a>
-                  <p>Are you sure?<br/>Editing your profile will reset your user rank, pledge and revolt values.</p>
+                  <p>Are you sure?<br/>Editing your profile will reset your user rank, pledge and revolt values and may cause a catastrophic uprising!</p>
                   <br/>
                   <a href="#" data-remodal-action="cancel">CANCEL</a>
                   <a href="createform.html" th:href="@{/editDictator}">OK</a>
@@ -167,7 +167,7 @@
 
               <div class="edit" th:if="${owner}">
                   <button id="edit-button" type="button" data-remodal-target="edit-modal">Edit Profile</button>
-                  <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
+                  <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values and may cause a catastrophic uprising!</p>
               </div>
 
 
@@ -189,7 +189,7 @@
           <a href="#" data-remodal-action="close" class="remodal-close" ></a>
           <h2>ARE YOU SURE?</h2>
           <br />
-          <p>Editing your profile will reset your user rank, pledge and revolt values.</p>
+          <p>Editing your profile will reset your user rank, pledge and revolt valuesand may cause a catastrophic uprising!</p>
           <br/>
           <a href="#" data-remodal-action="cancel" class="remodal-cancel">CANCEL</a>
           <a href="createform.html" th:href="@{/editDictator}" class="remodal-confirm">OK</a>
