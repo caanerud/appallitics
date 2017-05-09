@@ -71,7 +71,7 @@
 }
 
 .social-icons{
-  width: 150px;
+  width: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -81,7 +81,6 @@
     width: 45px;
     height: 45px;
     margin-bottom: 10px;
-    // background-color: white;
 
     a{
       width: 100%;
@@ -92,14 +91,15 @@
 
       .fa{
         font-size:3rem;
+        text-shadow: 2px 2px 5px rgba(0,0,0,.1);
       }
 
       .fa-facebook-official{
-        color:lightblue;
+        color:#3B5998;
       }
 
       .fa-twitter-square{
-        color:blue;
+        color:#1DA1F2;
       }
     }
   }
@@ -112,6 +112,11 @@
   margin:0 auto;
   padding:0 15px;
   line-height: 1rem;
+
+  h3{
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+  }
 
   #rank, #pledge, #revolt{
     display: inline-block;
@@ -145,11 +150,11 @@
 .buttons{
 
   #revolt-button, #pledge-button, #edit-button, #attack-button{
-    // max-width: 200px;
     margin:10px auto;
   }
 
   #revolt-button{
+    margin-top: 30px;
     background-color: $color1;
   }
 
@@ -162,8 +167,8 @@
   }
 
   #attack-button{
-    color:black;
-    background-color: $yellow;
+    // color:black;
+    background-color: $orange;
   }
 
 
@@ -229,7 +234,7 @@
     display: flex;
 
     .row{
-      margin:0 0 20px;
+      margin:0;
       flex-direction: row;
       justify-content: space-between;
     }

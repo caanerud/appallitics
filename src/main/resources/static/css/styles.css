@@ -250,7 +250,7 @@ td .color-overlay {
   margin-bottom: 30px; }
 
 .social-icons {
-  width: 150px;
+  width: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -266,11 +266,12 @@ td .color-overlay {
       align-items: center;
       justify-content: center; }
       .social-icons .icon a .fa {
-        font-size: 3rem; }
+        font-size: 3rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); }
       .social-icons .icon a .fa-facebook-official {
-        color: lightblue; }
+        color: #3B5998; }
       .social-icons .icon a .fa-twitter-square {
-        color: blue; }
+        color: #1DA1F2; }
 
 .profile-stats {
   width: 80%;
@@ -279,6 +280,9 @@ td .color-overlay {
   margin: 0 auto;
   padding: 0 15px;
   line-height: 1rem; }
+  .profile-stats h3 {
+    font-size: 1.3rem;
+    line-height: 1.3rem; }
   .profile-stats #rank, .profile-stats #pledge, .profile-stats #revolt {
     display: inline-block;
     font-size: 1.5rem;
@@ -298,14 +302,14 @@ td .color-overlay {
 .buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button, .buttons #attack-button {
   margin: 10px auto; }
 .buttons #revolt-button {
+  margin-top: 30px;
   background-color: #FE5745; }
 .buttons #pledge-button {
   background-color: #21b913; }
 .buttons #edit-button {
   background-color: grey; }
 .buttons #attack-button {
-  color: black;
-  background-color: #ffdd33; }
+  background-color: #ff7800; }
 .buttons p {
   width: 200px;
   text-align: center;
@@ -350,7 +354,7 @@ td .color-overlay {
   .top-section {
     display: flex; }
     .top-section .row {
-      margin: 0 0 20px;
+      margin: 0;
       flex-direction: row;
       justify-content: space-between; }
     .top-section .profile-pic {

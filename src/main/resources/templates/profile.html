@@ -82,20 +82,22 @@
               </div>
 
               <!--EDIT PROFILE BUTTON-->
-                  <div class="buttons" >
-                      <div class="edit" th:if="${owner}">
-                          <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-                          <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
-                      </div>
+                  <div class="profile-stats">
+                    <div class="buttons" >
+                        <div class="edit" th:if="${owner}">
+                            <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+                            <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values!</p>
+                        </div>
+                    </div>
                   </div>
 
               <!--Facebook share-->
               <!-- <div id="fb-root"></div> -->
 
-              <div class="fb-share-button" data-href="https://appallitics.herokuapp.com/profile"
+              <!-- <div class="fb-share-button" data-href="https://appallitics.herokuapp.com/profile"
                    data-layout="button_count" data-size="small" data-mobile-iframe="true">
                   <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">Share</a>
-              </div>
+              </div> -->
 
               <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
               <div class="remodal" data-remodal-id="modal">
@@ -128,7 +130,7 @@
                    th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div>
 
               <div class="social-icons">
-                <div class="icon fb-share-button" data-href="https://appallitics.herokuapp.com/profile"
+                <div class="icon" data-href="https://appallitics.herokuapp.com/profile"
                      data-layout="button_count" data-size="small" data-mobile-iframe="true">
                      <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">
                          <i class="fa fa-facebook-official" aria-hidden="true"></i>
@@ -139,7 +141,6 @@
                       <i class="fa fa-twitter-square" aria-hidden="true"></i>
                   </a>
                 </div>
-                <div class="icon"></div>
               </div>
 
             </div>
@@ -153,7 +154,6 @@
             <h3>PLEDGE: <div id="pledge" th:text="${dictator.getPledge()}">2</div> </h3>
             <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
 
-            <br/>
 
             <div class="buttons" >
               <div class="view" th:if="${!owner}" >
@@ -161,7 +161,7 @@
                   <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
                   <button id="attack-button" type="button" data-remodal-target="attack-modal">Attack</button>
                   <div class="error-message" th:if="${errorExists} == true">
-                    <p><b>ERROR: </b><span th:text="${error}">testtesttests</span></p>
+                    <p><b>ERROR: </b><span th:text="${error}"></span></p>
                   </div>
               </div>
 
