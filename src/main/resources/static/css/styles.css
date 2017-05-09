@@ -72,6 +72,8 @@
     position: absolute;
     bottom: 30px;
     left: calc(50% - 140px); }
+    .hero .hero-nav button {
+      width: 280px; }
     .hero .hero-nav a {
       display: block; }
   .hero .scrollDown {
@@ -86,28 +88,28 @@
   margin: 0 auto; }
 
 #instructions {
-  padding: 50px 0 50px; }
+  padding: 50px 30px; }
 
 .step-by-step {
   display: block;
   margin: 0 auto;
-  max-width: 1200px; }
+  max-width: 1200px;
+  padding: 0 30px; }
   .step-by-step article {
-    margin: 40px 0px;
+    margin: 40px 0px 60px;
     padding: 0 15px; }
     .step-by-step article .circle {
-      background-color: #FE5745;
       margin: 0 auto 20px;
-      height: 100px;
-      width: 100px;
+      height: 200px;
+      width: 200px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center; }
       .step-by-step article .circle h2 {
-        font-size: 4rem;
-        position: relative;
-        top: 5px; }
+        font-size: 10rem;
+        line-height: 0;
+        position: relative; }
     .step-by-step article p {
       padding: 30px;
       background-color: #635a60;
@@ -603,7 +605,7 @@ p {
   color: white;
   font-size: 1rem;
   letter-spacing: .05rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
   font-family: sans-serif;
   font-weight: 100; }
 
@@ -711,7 +713,6 @@ input {
 
 input[type="submit"], button {
   max-width: 280px;
-  padding: 0 40px;
   display: block;
   margin: 30px auto 0;
   width: 100%;
