@@ -2,9 +2,9 @@
   height: 550px;
   padding:70px 0 0;
   position: relative;
-  background-color: $color5;
+  background-color: $color4;
   background-image: url('../images/crowd3.png');
-  background-blend-mode: difference;
+  background-blend-mode: overlay;
 
   img{
     width: 90%;

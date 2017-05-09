@@ -3,9 +3,31 @@
   color: white;
 }
 
+#more-info{
+  float: right;
+  width: 40px;
+  height: 40px;
+  background-color: $color4;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+}
+
+#more-info::after{
+  content: "+";
+  font-size: 3rem;
+  position: relative;
+  bottom:8px;
+  left:8px;
+  color: white;
+}
+
+#more-info:hover{
+  background-color: darken($color4, 20%);
+}
+
 #vote-buttons{
   margin: 30px auto;
-  max-width: 500px;
+  max-width: 440px;
   align-items: stretch;
   justify-content: space-between;
 
@@ -13,19 +35,6 @@
   button{
     width: 200px;
     margin: 0 auto;
-  }
-
-  #more-info{
-    margin: 10px auto;
-    width: 50px;
-    background-color: $color4;
-  }
-
-  #more-info::after{
-    content: "+";
-    font-size: 3rem;
-    position: relative;
-    bottom:5px;
   }
 }
 

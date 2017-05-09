@@ -53,9 +53,9 @@
   height: 550px;
   padding: 70px 0 0;
   position: relative;
-  background-color: rgba(254, 87, 69, 0.4);
+  background-color: #635a60;
   background-image: url("../images/crowd3.png");
-  background-blend-mode: difference; }
+  background-blend-mode: overlay; }
   .hero img {
     width: 90%;
     max-width: 1200px;
@@ -218,7 +218,7 @@ td .color-overlay {
 .profile-pic {
   height: 275px;
   width: 275px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   overflow: hidden;
   position: relative;
   background-size: cover;
@@ -510,23 +510,33 @@ td .color-overlay {
   text-align: center;
   color: white; }
 
+#more-info {
+  float: right;
+  width: 40px;
+  height: 40px;
+  background-color: #635a60;
+  cursor: pointer;
+  transition: all .1s ease-in-out; }
+
+#more-info::after {
+  content: "+";
+  font-size: 3rem;
+  position: relative;
+  bottom: 8px;
+  left: 8px;
+  color: white; }
+
+#more-info:hover {
+  background-color: #2e292c; }
+
 #vote-buttons {
   margin: 30px auto;
-  max-width: 500px;
+  max-width: 440px;
   align-items: stretch;
   justify-content: space-between; }
   #vote-buttons button {
     width: 200px;
     margin: 0 auto; }
-  #vote-buttons #more-info {
-    margin: 10px auto;
-    width: 50px;
-    background-color: #635a60; }
-  #vote-buttons #more-info::after {
-    content: "+";
-    font-size: 3rem;
-    position: relative;
-    bottom: 5px; }
 
 @media (min-width: 900px) {
   #vote-buttons {
