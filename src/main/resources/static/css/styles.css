@@ -113,6 +113,8 @@
       background-color: #635a60;
       max-width: 500px;
       margin: 0 auto; }
+    .step-by-step article a {
+      color: #FE5745; }
 
 @media (min-width: 1025px) {
   .step-by-step {
@@ -317,7 +319,6 @@ td .color-overlay {
 .buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button, .buttons #attack-button {
   margin: 10px auto; }
 .buttons #revolt-button {
-  margin-top: 30px;
   background-color: #FE5745; }
 .buttons #pledge-button {
   background-color: #21b913; }
