@@ -98,8 +98,8 @@ td .color-overlay{
   position: absolute;
   top: 0;
   left: 0;
-  background-blend-mode: exclusion;
-  background-size: 80%;
+  background-blend-mode: difference;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   filter: grayscale(.4);
