@@ -728,3 +728,7 @@ footer {
     transform: scale(20); } }
 
 /*# sourceMappingURL=styles.css.map */
+
+::-webkit-input-placeholder{
+  opacity: .5;
+}
