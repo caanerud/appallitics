@@ -51,16 +51,15 @@
 
 .hero {
   height: 500px;
-  background-image: url("../images/earth3.png");
-  background-color: #3E383C;
-  background-blend-mode: multiply;
-  background-position: center;
-  background-size: 230%;
-  background-repeat: no-repeat; }
-  .hero a {
+  padding: 70px;
+  background-color: rgba(254, 87, 69, 0.4); }
+  .hero img {
+    width: 100%;
     display: block;
-    position: relative;
-    top: 75%; }
+    margin: 0 auto;
+    animation: balloon 1s linear; }
+  .hero a {
+    display: block; }
   .hero .scrollDown {
     text-align: center; }
     .hero .scrollDown .fa {

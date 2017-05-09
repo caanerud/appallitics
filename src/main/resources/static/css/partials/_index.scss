@@ -1,16 +1,24 @@
 .hero{
   height: 500px;
-  background-image: url('../images/earth3.png');
-  background-color: $color2;
-  background-blend-mode: multiply;
-  background-position: center;
-  background-size: 230%;
-  background-repeat: no-repeat;
+  padding:70px;
+  // background-image: url('../images/logo.svg');
+  background-color: $color5;
+  // background-blend-mode: multiply;
+  // background-position: center;
+  // background-size: 230%;
+  // background-position:top;
+  // background-size: contain;
+  // background-repeat: no-repeat;
+
+  img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    animation: balloon 1s linear;
+  }
 
   a{
     display: block;
-    position: relative;
-    top:75%;
   }
 
   .scrollDown{
