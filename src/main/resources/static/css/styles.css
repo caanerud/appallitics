@@ -78,11 +78,18 @@
       display: block; }
   .hero .scrollDown {
     text-align: center;
-    margin-top: 30px; }
+    margin-top: 20px;
+    padding: 15px 0;
+    border-radius: 25px;
+    background-color: #3E383C;
+    transition: all .2s ease-in-out; }
     .hero .scrollDown .fa {
+      display: none;
       font-size: 4rem;
       line-height: 2rem;
       animation: bounce .5s linear infinite alternate; }
+  .hero .scrollDown:hover {
+    background-color: #635a60; }
 
 #introduction {
   background-color: #635a60; }
