@@ -265,6 +265,10 @@ td .color-overlay {
   .profile-pic img {
     width: 100%; }
 
+#minion-icon {
+  background-color: white;
+  background-size: 75px; }
+
 .profile-info {
   display: block;
   margin: 0 auto 30px;
@@ -293,7 +297,7 @@ td .color-overlay {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 210px; }
+  max-width: 225px; }
 
 .profile-icon {
   width: 100px;
@@ -619,9 +623,10 @@ td .color-overlay {
 .creator {
   margin: 0px 0 50px; }
   .creator .creator-mascot {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 30px; }
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    background-size: cover; }
   .creator .text {
     text-align: center;
     margin: 0 auto; }

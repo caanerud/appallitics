@@ -166,34 +166,23 @@
 
 .remodal-confirm {
   border: 1px solid white;
-  /*background: #21b913;*/
-  /*border-radius: 50px;*/
-  /*box-shadow: 2px 5px 10px rgba(0,0,0,.1);*/
 }
 
 .remodal-confirm:hover,
 .remodal-confirm:focus {
   background: rgba(250,250,250,.1);
-  /*background: #199d0d;*/
 }
 
 .remodal-cancel {
-  /*background: #54fe45;*/
-  /*border-radius: 50px;*/
-  /*box-shadow: 2px 5px 10px rgba(0,0,0,.1);*/
+
 }
 
 .remodal-cancel:hover,
 .remodal-cancel:focus {
-  /*background: #d74737;*/
 }
 
 .remodal-return{
-  /*color:black;*/
-  /*background: grey;*/
   border: 1px solid white;
-  /*border-radius: 50px;*/
-  /*box-shadow: 2px 5px 10px rgba(0,0,0,.1);*/
 }
 
 .remodal-return:hover,
