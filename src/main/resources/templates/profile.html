@@ -74,7 +74,7 @@
               </div>
 
               <div class="profile-info">
-                <div class="profile-icon" style="background-image:url('../static/images/a.png');"></div>
+                <div class="profile-icon" style="background-image:url('../static/images/a.png');" th:style="'background-color:'+${dictator.getOverviewColor()}"></div>
                 <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
                 <h3>!**!##!All hail our fearless leader!##!**!</h3>
               </div>
