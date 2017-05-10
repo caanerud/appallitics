@@ -55,7 +55,7 @@
   position: relative;
   background-color: #3E383C;
   background-image: url("../images/crowd3.png");
-  background-blend-mode: darken; }
+  background-blend-mode: overlay; }
   .hero img {
     width: 90%;
     max-width: 1200px;
@@ -80,16 +80,12 @@
     text-align: center;
     margin-top: 20px;
     padding: 15px 0;
-    border-radius: 25px;
-    background-color: #3E383C;
-    transition: all .2s ease-in-out; }
+    background-color: #635a60; }
     .hero .scrollDown .fa {
       display: none;
       font-size: 4rem;
       line-height: 2rem;
       animation: bounce .5s linear infinite alternate; }
-  .hero .scrollDown:hover {
-    background-color: #635a60; }
 
 #introduction {
   background-color: #635a60; }
@@ -830,7 +826,7 @@ input {
   margin: 10px 0;
   padding: 0 10px; }
 
-input[type="submit"], button {
+input[type="submit"], button, .scrollDown {
   max-width: 280px;
   display: block;
   margin: 30px auto 0;
@@ -847,12 +843,11 @@ input[type="submit"], button {
   transition: all .1s ease-in-out;
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1); }
 
-input[type="submit"]:hover, button:hover {
+input[type="submit"]:hover, button:hover, .scrollDown:hover {
   cursor: pointer;
-  background-color: #fe4936;
   transform: scale(1.05); }
 
-input[type="submit"]:active, button:active {
+input[type="submit"]:active, button:active, .scrollDown:active {
   transform: scale(0.98);
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1); }
 
