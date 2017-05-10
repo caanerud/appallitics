@@ -48,28 +48,39 @@
 }
 
 #backstory{
-  padding: 50px 30px;
+  background-color: $color4;
+}
+
+.section-container{
   max-width: 900px;
   margin: 0 auto;
+  padding: 50px 30px 70px;
 }
 
 #instructions{
-  padding: 50px 30px;
+  padding: 50px 0px;
+
+  .instructions-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+  }
 }
 
 .step-by-step{
   display: block;
   margin: 0 auto;
   max-width: 1200px;
-  padding: 0 30px;
+  padding: 0 15px;
 
   article{
-    margin: 40px 0px 60px;
+    margin: 20px 0px 60px;
     padding:0 15px;
 
     .circle{
-      // background-color: $color1;
-      margin: 0 auto 20px;
+      background-color: $color1;
+      margin: 0 auto 30px;
       height: 200px;
       width: 200px;
       border-radius: 50%;
@@ -81,16 +92,16 @@
         font-size: 10rem;
         line-height: 0;
         position: relative;
-        // top:5px;
+        font-weight: 100;
+        top:10px;
       }
     }
 
     p{
-      padding: 30px;
-      background-color: $color4;
+      padding: 20px;
+      border: 1px solid white;
       max-width: 500px;
       margin: 0 auto;
-      // min-height: 400px;
     }
 
     a{
@@ -118,6 +129,12 @@
   .step-by-step{
     display: flex;
     justify-content: space-between;
+
+    article{
+      p{
+        // min-height: 600px;
+      }
+    }
   }
 }
 
