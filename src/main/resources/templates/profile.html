@@ -91,14 +91,6 @@
                     </div>
                   </div>
 
-              <!--Facebook share-->
-              <!-- <div id="fb-root"></div> -->
-
-              <!-- <div class="fb-share-button" data-href="https://appallitics.herokuapp.com/profile"
-                   data-layout="button_count" data-size="small" data-mobile-iframe="true">
-                  <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">Share</a>
-              </div> -->
-
               <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
               <div class="remodal" data-remodal-id="modal">
                   <a href="#" data-remodal-action="close" class="remodal-close" ></a>
@@ -150,8 +142,10 @@
 
           <div class="profile-stats">
 
-            <h3>PLEDGE: <div id="pledge" th:text="${dictator.getPledge()}">2</div> </h3>
-            <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
+            <div class="stats">
+              <h3>PLEDGE: <div id="pledge" th:text="${dictator.getPledge()}">2</div> </h3>
+              <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
+            </div>
 
 
             <div class="buttons" >
