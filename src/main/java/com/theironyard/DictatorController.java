@@ -92,8 +92,9 @@ public class DictatorController {
                 return "redirect:/profile";
             } else {
                 // the indication that login failed, stored as a variable
-                    model.addAttribute("error", "Incorrect Password!");
-                    model.addAttribute("errorTrue",true);
+                model.addAttribute("error", "Incorrect Password!");
+                model.addAttribute("errorTrue",true);
+                model.addAttribute("checkloggedin", 0);
                 return "login";
             }
         }
@@ -101,6 +102,7 @@ public class DictatorController {
         // username not in list, error then redirect
         model.addAttribute("error","Error: Username does not exist!");
         model.addAttribute("errorTrue",true);
+        model.addAttribute("checkloggedin", 0);
 
         return "login";
     }
