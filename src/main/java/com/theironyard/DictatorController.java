@@ -31,10 +31,6 @@ public class DictatorController {
     public String homepage(Model model, HttpSession session){
         Integer userId = (Integer) session.getAttribute("userId");
 
-        String[] hello = new String[5];
-        hello[1] = "what";
-        email.main(hello);
-
         if (userId == null){
             // not logged in
             userId = 0;
