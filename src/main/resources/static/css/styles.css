@@ -109,14 +109,14 @@
     .step-by-step article .circle {
       background-color: #FE5745;
       margin: 0 auto 30px;
-      height: 200px;
-      width: 200px;
+      height: 150px;
+      width: 150px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center; }
       .step-by-step article .circle h2 {
-        font-size: 10rem;
+        font-size: 7rem;
         line-height: 0;
         position: relative;
         font-weight: 100;
@@ -164,7 +164,7 @@ table {
   color: white; }
 
 tr {
-  background-color: #635a60;
+  background-color: #312c2f;
   display: none;
   width: 100%;
   margin-bottom: 10px;
@@ -183,7 +183,8 @@ td:nth-child(n+3):nth-child(-n+5), th:nth-child(n+3):nth-child(-n+5) {
 td:nth-child(n+4) {
   font-size: 1.5rem;
   font-weight: 900;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); }
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center; }
 
 td:nth-child(4) {
   color: #21b913; }
@@ -195,9 +196,17 @@ td:nth-child(6) {
   color: #878eff; }
 
 tr:first-of-type {
-  background-color: transparent;
+  background: transparent;
+  border: none;
   display: flex;
-  height: auto; }
+  height: 50px; }
+  tr:first-of-type th:nth-child(n+4) {
+    text-align: center; }
+    tr:first-of-type th:nth-child(n+4) a {
+      font-weight: 400;
+      padding: 10px 25px;
+      border-radius: 25px;
+      background-color: #FE5745; }
 
 td .color-overlay {
   width: 100px;
@@ -359,7 +368,7 @@ td .color-overlay {
     border: 1px solid white; }
   .bottom-section h4 {
     text-align: center;
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
     padding-bottom: 5px;
     border-bottom: 1px solid white;
     max-width: 400px; }
@@ -758,6 +767,9 @@ input[type="submit"]:active, button:active {
 label {
   font-size: 1.1rem;
   line-height: 1.5rem; }
+
+input::placeholder {
+  opacity: .5; }
 
 footer {
   background-color: #635a60;

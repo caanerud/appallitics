@@ -40,7 +40,8 @@ table{
 }
 
 tr{
-  background-color: $color4;
+  background-color: darken($color2, 5%);
+  // border:1px solid white;
   display: none;
   width: 100%;
   margin-bottom: 10px;
@@ -63,6 +64,7 @@ td:nth-child(n+4){
   font-size: 1.5rem;
   font-weight: 900;
   text-shadow: 2px 2px 5px rgba(0,0,0,.1);
+  text-align: center;
 }
 
 td:nth-child(4){
@@ -78,19 +80,24 @@ td:nth-child(6){
 }
 
 tr:first-of-type{
-  background-color: transparent;
+  background: transparent;
+  border:none;
   display: flex;
-  height: auto;
-}
+  height: 50px;
+  // text-transform: uppercase;
 
-// td img{
-//   width: 100px;
-//   height: 100px;
-//   object-fit: cover;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// }
+
+  th:nth-child(n+4){
+    text-align: center;
+
+    a{
+      font-weight: 400;
+      padding: 10px 25px;
+      border-radius: 25px;
+      background-color: $color1;
+    }
+  }
+}
 
 td .color-overlay{
   width: 100px;
@@ -104,24 +111,6 @@ td .color-overlay{
   background-position: center;
   filter: grayscale(.4);
 }
-
-// td .image-overlay{
-//   width: 100px;
-//   height: 100px;
-//   object-fit: cover;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   opacity: .5;
-//
-//   img{
-//     position: absolute;
-//     top:0;
-//     left:0;
-//     object-fit: contain;
-//     padding: 5px;
-//   }
-// }
 
 
 
