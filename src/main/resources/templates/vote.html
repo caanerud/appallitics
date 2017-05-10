@@ -69,7 +69,7 @@
 
         <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
             <!-- <div class="profile-icon" style="background-image:url('../static/images/tiger.png');" th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'"></div> -->
-            <div id="more-info-button" data-remodal-target="more-info"></div>
+            <!-- <div id="more-info-button" data-remodal-target="more-info"></div> -->
         </div>
 
         <!--Text display-->
@@ -77,18 +77,13 @@
           <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
           <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
           <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+          <a href="#" id="more-info-link" data-remodal-target="more-info">More Info</a>
         </div>
 
 
         <!--Voting buttons-->
 
         <div class="buttons" id="vote-buttons">
-
-          <!--MODAL TRIGGERS-->
-          <!-- <div class="more-info-container">
-              <button id="more-info" type="button" data-remodal-target="more-info"></button> -->
-              <!-- <label for="more-info">More Info</label> -->
-          <!-- </div> -->
 
           <a href="vote.html" th:href="@{'/revolt?dictatorId='+${dictator.getUser().getId()}}">
               <button id="revolt-button" type="button" >Revolt</button>

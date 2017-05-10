@@ -3,28 +3,20 @@
   color: white;
 }
 
-#more-info-button{
-  float: right;
-  width: 40px;
-  height: 40px;
-  background-color: $color4;
-  cursor: pointer;
+#more-info-link{
+  display: inline-block;
+  margin: 20px auto 0px;
   transition: all .1s ease-in-out;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin-bottom: -5px;
+  border:1px solid transparent;
+
 }
 
-#more-info-button::after{
-  content: "+";
-  font-size: 3rem;
-  position: relative;
-  bottom:8px;
-  left:8px;
-  color: white;
+#more-info-link:hover{
+  border:1px solid white;
 }
-
-#more-info-button:hover{
-  background-color: darken($color4, 20%);
-}
-
 
 #more-info{
   .more-info-policy{
@@ -46,7 +38,6 @@
       margin-bottom: 20px;
 
       span{
-        // display: block;
         margin-top: 10px;
         padding-right: 10px;
         font-family: sans-serif;
@@ -55,7 +46,6 @@
         text-transform: none;
         font-weight: 100;
         line-height: 1.3rem;
-        // color: black;
       }
 
       span::before, span::after{

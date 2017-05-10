@@ -550,24 +550,17 @@ td .color-overlay {
   text-align: center;
   color: white; }
 
-#more-info-button {
-  float: right;
-  width: 40px;
-  height: 40px;
-  background-color: #635a60;
-  cursor: pointer;
-  transition: all .1s ease-in-out; }
+#more-info-link {
+  display: inline-block;
+  margin: 20px auto 0px;
+  transition: all .1s ease-in-out;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin-bottom: -5px;
+  border: 1px solid transparent; }
 
-#more-info-button::after {
-  content: "+";
-  font-size: 3rem;
-  position: relative;
-  bottom: 8px;
-  left: 8px;
-  color: white; }
-
-#more-info-button:hover {
-  background-color: #2e292c; }
+#more-info-link:hover {
+  border: 1px solid white; }
 
 #more-info .more-info-policy {
   border: 1px solid white;
