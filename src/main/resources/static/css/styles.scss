@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, hr, {
 }
 
 h1{
+  font-weight: 400;
   font-size: 1.5rem;
   text-transform: uppercase;
   text-align: center;
@@ -55,6 +56,7 @@ h3{
 
 h4{
   font-size: 1.1rem;
+  font-weight: 400;
   color:white;
   text-transform: uppercase;
   letter-spacing: .1rem;
@@ -63,11 +65,11 @@ h4{
 
 p{
   color:white;
-  font-size: 1rem;
+  font-size: 1.1rem;
   letter-spacing: .05rem;
-  line-height: 1.5rem;
-  font-family: sans-serif;
-  font-weight: 100;
+  line-height: 2rem;
+  // font-family: sans-serif;
+  font-weight: 400;
 }
 
 a{
@@ -189,16 +191,15 @@ header{
 
 section{
   min-height: 76vh;
-  // margin:0 15px;
   position: relative;
   color:white;
   padding-bottom: 100px;
 }
 
 .section-header{
-  background-color: $color4;
-  padding: 30px 50px 15px;
+  padding: 0px 10px 5px;
   margin-bottom: 30px;
+  border-bottom: 1px solid white;
 }
 
 input{
@@ -211,7 +212,6 @@ input{
 
 input[type="submit"], button{
   max-width: 280px;
-  padding: 0 40px;
   display: block;
   margin: 30px auto 0;
   width: 100%;

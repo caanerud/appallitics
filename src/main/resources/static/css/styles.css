@@ -72,6 +72,8 @@
     position: absolute;
     bottom: 30px;
     left: calc(50% - 140px); }
+    .hero .hero-nav button {
+      width: 280px; }
     .hero .hero-nav a {
       display: block; }
   .hero .scrollDown {
@@ -81,36 +83,47 @@
       animation: bounce .5s linear infinite alternate; }
 
 #backstory {
-  padding: 50px 30px;
+  background-color: #635a60; }
+
+.section-container {
   max-width: 900px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 50px 30px 70px; }
 
 #instructions {
-  padding: 50px 0 50px; }
+  padding: 50px 0px; }
+  #instructions .instructions-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px; }
 
 .step-by-step {
   display: block;
   margin: 0 auto;
-  max-width: 1200px; }
+  max-width: 1200px;
+  padding: 0 15px; }
   .step-by-step article {
-    margin: 40px 0px;
+    margin: 20px 0px 60px;
     padding: 0 15px; }
     .step-by-step article .circle {
       background-color: #FE5745;
-      margin: 0 auto 20px;
-      height: 100px;
-      width: 100px;
+      margin: 0 auto 30px;
+      height: 200px;
+      width: 200px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center; }
       .step-by-step article .circle h2 {
-        font-size: 4rem;
+        font-size: 10rem;
+        line-height: 0;
         position: relative;
-        top: 5px; }
+        font-weight: 100;
+        top: 10px; }
     .step-by-step article p {
-      padding: 30px;
-      background-color: #635a60;
+      padding: 20px;
+      border: 1px solid white;
       max-width: 500px;
       margin: 0 auto; }
     .step-by-step article a {
@@ -192,8 +205,8 @@ td .color-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  background-blend-mode: exclusion;
-  background-size: 80%;
+  background-blend-mode: difference;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   filter: grayscale(0.4); }
@@ -316,24 +329,26 @@ td .color-overlay {
   .profile-stats #revolt::before {
     content: "-"; }
 
-.buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button, .buttons #attack-button {
-  margin: 10px auto; }
-.buttons #revolt-button {
-  background-color: #FE5745; }
-.buttons #pledge-button {
-  background-color: #21b913; }
-.buttons #edit-button {
-  background-color: grey; }
-.buttons #attack-button {
-  background-color: #ff7800; }
-.buttons p {
-  width: 200px;
-  text-align: center;
-  margin: 10px auto 0;
-  font-size: .8rem;
-  line-height: 1.1rem; }
-  .buttons p b {
-    color: #FE5745; }
+.buttons {
+  margin-top: 30px; }
+  .buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button, .buttons #attack-button {
+    margin: 10px auto; }
+  .buttons #revolt-button {
+    background-color: #FE5745; }
+  .buttons #pledge-button {
+    background-color: #21b913; }
+  .buttons #edit-button {
+    background-color: grey; }
+  .buttons #attack-button {
+    background-color: #ff7800; }
+  .buttons p {
+    width: 200px;
+    text-align: center;
+    margin: 10px auto 0;
+    font-size: .8rem;
+    line-height: 1.1rem; }
+    .buttons p b {
+      color: #FE5745; }
 
 .bottom-section {
   margin: 30px 0 0;
@@ -341,12 +356,12 @@ td .color-overlay {
   .bottom-section .policy {
     margin-bottom: 30px;
     padding: 30px;
-    background-color: #635a60; }
+    border: 1px solid white; }
   .bottom-section h4 {
     text-align: center;
     margin: 0 auto 30px;
     padding-bottom: 5px;
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid white;
     max-width: 400px; }
   .bottom-section li {
     margin: 20px 0;
@@ -434,7 +449,7 @@ td .color-overlay {
   width: 100%;
   background-color: white;
   display: flex;
-  margin-top: -30px;
+  margin-top: -31px;
   margin-bottom: 30px; }
   .pro-bar .step {
     background-color: #FE5745;
@@ -456,28 +471,32 @@ td .color-overlay {
 
 .overview-bottom {
   margin-top: 10px; }
-  .overview-bottom .choose-pic {
-    margin-bottom: 20px; }
-    .overview-bottom .choose-pic input.upload {
+  .overview-bottom .choose-pic, .overview-bottom .choose-color, .overview-bottom .choose-mascot {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+    text-align: center; }
+    .overview-bottom .choose-pic input.upload, .overview-bottom .choose-color input.upload, .overview-bottom .choose-mascot input.upload {
       display: block;
       height: 50px;
-      max-width: 300px;
       padding: 13px;
       background-color: #FE5745; }
-  .overview-bottom .choose-color {
-    margin-bottom: 20px; }
-    .overview-bottom .choose-color input[type="color"] {
-      max-width: 300px;
+    .overview-bottom .choose-pic p, .overview-bottom .choose-color p, .overview-bottom .choose-mascot p {
+      font-family: inherit;
+      font-weight: 400;
+      line-height: 1.5rem;
+      font-size: 1.1rem; }
+    .overview-bottom .choose-pic input[type="color"], .overview-bottom .choose-color input[type="color"], .overview-bottom .choose-mascot input[type="color"] {
       height: 50px;
       border: 0; }
-  .overview-bottom .choose-mascot {
-    margin-bottom: 20px; }
-    .overview-bottom .choose-mascot select {
+    .overview-bottom .choose-pic .mascot-dropdown, .overview-bottom .choose-color .mascot-dropdown, .overview-bottom .choose-mascot .mascot-dropdown {
       margin-top: 10px;
       padding: 5px;
       background-color: white;
       border: 0;
-      outline: 0; }
+      outline: 0;
+      height: 50px;
+      width: 100%; }
 
 .form-nav {
   width: 100%;
@@ -572,6 +591,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, hr {
   letter-spacing: .05rem; }
 
 h1 {
+  font-weight: 400;
   font-size: 1.5rem;
   text-transform: uppercase;
   text-align: center;
@@ -594,6 +614,7 @@ h3 {
 
 h4 {
   font-size: 1.1rem;
+  font-weight: 400;
   color: white;
   text-transform: uppercase;
   letter-spacing: .1rem;
@@ -601,11 +622,10 @@ h4 {
 
 p {
   color: white;
-  font-size: 1rem;
+  font-size: 1.1rem;
   letter-spacing: .05rem;
-  line-height: 1.5rem;
-  font-family: sans-serif;
-  font-weight: 100; }
+  line-height: 2rem;
+  font-weight: 400; }
 
 a {
   text-decoration: none; }
@@ -698,9 +718,9 @@ section {
   padding-bottom: 100px; }
 
 .section-header {
-  background-color: #635a60;
-  padding: 30px 50px 15px;
-  margin-bottom: 30px; }
+  padding: 0px 10px 5px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid white; }
 
 input {
   width: 100%;
@@ -711,7 +731,6 @@ input {
 
 input[type="submit"], button {
   max-width: 280px;
-  padding: 0 40px;
   display: block;
   margin: 30px auto 0;
   width: 100%;

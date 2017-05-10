@@ -52,7 +52,7 @@
   width: 100%;
   background-color:white;
   display: flex;
-  margin-top: -30px;
+  margin-top: -31px;
   margin-bottom: 30px;
 
   .step{
@@ -86,40 +86,69 @@
 
 .overview-bottom{
   margin-top: 10px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // width: 100%;
 
-  .choose-pic {
-    margin-bottom: 20px;
+  // .choose-pic {
+  //   margin-bottom: 20px;
+  //
+  //   // input.upload{
+  //   //   display: block;
+  //   //   height: 50px;
+  //   //   max-width: 300px;
+  //   //   padding: 13px;
+  //   //   background-color: $color1;
+  //   // }
+  // }
+
+  .choose-pic, .choose-color, .choose-mascot{
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+    text-align: center;
+
 
     input.upload{
       display: block;
       height: 50px;
-      max-width: 300px;
       padding: 13px;
       background-color: $color1;
     }
-  }
 
-  .choose-color{
-    margin-bottom:20px;
+    p{
+      font-family: inherit;
+      font-weight: 400;
+      line-height: 1.5rem;
+      font-size: 1.1rem;
+    }
 
     input[type="color"]{
-      max-width: 300px;
       height: 50px;
       border: 0;
     }
-  }
 
-  .choose-mascot{
-    margin-bottom:20px;
-
-    select{
+    .mascot-dropdown{
       margin-top:10px;
       padding:5px;
       background-color: white;
       border:0;
       outline:0;
+      height: 50px;
+      width: 100%;
     }
   }
+
+  // .choose-mascot{
+  //   select{
+  //     margin-top:10px;
+  //     padding:5px;
+  //     background-color: white;
+  //     border:0;
+  //     outline:0;
+  //   }
+  // }
 }
 
 .form-nav{
