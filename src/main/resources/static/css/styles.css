@@ -261,9 +261,7 @@ td .color-overlay {
   overflow: hidden;
   position: relative;
   background-size: cover;
-  background-position: center;
-  background-blend-mode: luminosity;
-  background-color: #FE5745; }
+  background-position: center; }
   .profile-pic img {
     width: 100%; }
 
