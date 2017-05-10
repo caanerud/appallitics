@@ -95,7 +95,7 @@
             <tr th:each="rank : ${dictators}">
                 <td>
                     <a href="profile.html" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">
-                        <div class="color-overlay" style="background-image:url('../static/images/tiger.png');"
+                        <div class="color-overlay" style="background-image:url('../static/images/lion.png');"
                              th:style="'background-image:url(images/'+${rank.getOverviewMascot().toLowerCase()}+'.png); background-color:'+${rank.getOverviewColor()}+';'">
                         </div>
                     </a>
