@@ -471,17 +471,17 @@ public class DictatorController {
         Dictator dictatorAttack = dictatorRepository.getDictatorById(userId);
 
         // divide by 0 error
-        if (dictatorAttack.getPledge() == 0 && dictatorAttack.getRevolt() == 0){
+        if (dictatorAttack.getPledge() == 0){
             return "redirect:/profile?dictatorId="+dictatorId + "&error=You have no pledged minions to attack!"+ "&errorExists="+true;
         }
 
-        if (dictatorDefend.getPledge() == 0 && dictatorDefend.getRevolt() == 0){
+        if (dictatorDefend.getPledge() == 0){
             return "redirect:/profile?dictatorId="+dictatorId + "&error=The dictator has nothing to lose!"+ "&errorExists="+true;
         }
 
         // Logic for attacking/defending, taking into account revolts (and making it a bit more favorable for defender)
-        Double effectiveAttack = dictatorAttack.getPledge() / (dictatorAttack.getPledge()+dictatorAttack.getRevolt()) + 0.0;
-        Double effectiveDefend = (dictatorDefend.getPledge() * 1.1) / (dictatorDefend.getPledge()+dictatorDefend.getRevolt()) + 0.0;
+        Double effectiveAttack = dictatorAttack.getPledge() * 1.0 / (dictatorAttack.getPledge()+dictatorAttack.getRevolt());
+        Double effectiveDefend = (dictatorDefend.getPledge() * 1.1) / (dictatorDefend.getPledge()+dictatorDefend.getRevolt());
         Double overall = effectiveAttack / effectiveDefend;
 
         // Checking to see which one is the whole number (with maximum limit)
