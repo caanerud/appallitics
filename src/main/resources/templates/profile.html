@@ -70,7 +70,7 @@
           </div>
 
           <div class="top-section">
-              <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
+              <div class="profile-pic" th:style="'background-image: url(http://lorempixel.com/400/200/cats/)'">
               </div>
 
               <div class="profile-info">
@@ -79,7 +79,7 @@
                 </div>
 
               <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
-                <h3>!**!##!All hail our fearless leader!##!**!</h3>
+                <h3>!!!All hail our fearless leader!!!</h3>
               </div>
 
               <!--EDIT PROFILE BUTTON-->
@@ -87,7 +87,7 @@
                     <div class="buttons" >
                         <div class="edit" th:if="${owner}">
                             <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-                            <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values and may cause a catastrophic uprising!</p>
+                            <p><b>WARNING:</b>You can become a dictator!</p>
                         </div>
                     </div>
                   </div>
