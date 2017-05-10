@@ -24,11 +24,16 @@ import java.util.Random;
 public class DictatorController {
     @Autowired
     DictatorRepository dictatorRepository;
+    Email email;
 
     // homepage
     @GetMapping("/")
     public String homepage(Model model, HttpSession session){
         Integer userId = (Integer) session.getAttribute("userId");
+
+        String[] hello = new String[5];
+        hello[1] = "what";
+        email.main(hello);
 
         if (userId == null){
             // not logged in
@@ -91,13 +96,15 @@ public class DictatorController {
                 return "redirect:/profile";
             } else {
                 // the indication that login failed, stored as a variable
-                    model.addAttribute("error", "Error: Incorrect Password!");
+                    model.addAttribute("error", "Incorrect Password!");
+                    model.addAttribute("errorTrue",true);
                 return "login";
             }
         }
 
         // username not in list, error then redirect
         model.addAttribute("error","Error: Username does not exist!");
+        model.addAttribute("errorTrue",true);
 
         return "login";
     }
@@ -115,17 +122,23 @@ public class DictatorController {
 
         // Checks for uniqueness of email
         if (emailList.contains(email)){
-            model.addAttribute("error","Error: Email has been used!");
+            model.addAttribute("error","Email has been used!");
+            model.addAttribute("errorTrue",true);
+
             return "login";
         }
         // Checks for uniqueness of username.
         if (usernameList.contains(username)){
-            model.addAttribute("error","Error: Username has been taken!");
+            model.addAttribute("error","Username has been taken!");
+            model.addAttribute("errorTrue",true);
+
             return "login";
         }
         // Checks if password matches
         if (!password.equals(confirm)){
-            model.addAttribute("error","Error: Passwords did not match!");
+            model.addAttribute("error","Passwords did not match!");
+            model.addAttribute("errorTrue",true);
+
             return "login";
         }
 
