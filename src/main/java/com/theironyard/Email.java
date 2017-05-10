@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class Email {
 
-    public static void main(String[] args) {
+    public static void main(String from, String to, String subject, String msg) {
         final String username = ""; //Enter email login username - IE. name@gmail.com
         final String password = ""; //Enter email login password - IE. 123Password
 
@@ -29,15 +29,13 @@ public class Email {
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("")); //Sender's Email Address (FROM)
+            message.setFrom(new InternetAddress(from)); //Sender's Email Address (FROM)
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("")); //Receiver's Email Address (TO)
-            message.setSubject(""); // Subject Line
-            message.setText(""); // Body Text
+                    InternetAddress.parse(to)); //Receiver's Email Address (TO)
+            message.setSubject(subject); // Subject Line
+            message.setText(msg); // Body Text
 
             Transport.send(message);
-
-            System.out.println("Message Sent!"); //Confirmation Method - Not necessary
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);

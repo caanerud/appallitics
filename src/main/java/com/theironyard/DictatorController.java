@@ -31,10 +31,6 @@ public class DictatorController {
     public String homepage(Model model, HttpSession session){
         Integer userId = (Integer) session.getAttribute("userId");
 
-        String[] hello = new String[5];
-        hello[1] = "what";
-        email.main(hello);
-
         if (userId == null){
             // not logged in
             userId = 0;
@@ -96,8 +92,9 @@ public class DictatorController {
                 return "redirect:/profile";
             } else {
                 // the indication that login failed, stored as a variable
-                    model.addAttribute("error", "Incorrect Password!");
-                    model.addAttribute("errorTrue",true);
+                model.addAttribute("error", "Incorrect Password!");
+                model.addAttribute("errorTrue",true);
+                model.addAttribute("checkloggedin", 0);
                 return "login";
             }
         }
@@ -105,6 +102,7 @@ public class DictatorController {
         // username not in list, error then redirect
         model.addAttribute("error","Error: Username does not exist!");
         model.addAttribute("errorTrue",true);
+        model.addAttribute("checkloggedin", 0);
 
         return "login";
     }
