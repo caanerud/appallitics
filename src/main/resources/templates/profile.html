@@ -70,7 +70,7 @@
           </div>
 
           <div class="top-section">
-              <div class="profile-pic" style="background-image: url(http://lorempixel.com/400/200/cats/)">
+              <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'">
               </div>
 
               <div class="profile-info">
