@@ -27,7 +27,6 @@
 }
 
 #choice1:active, #choice2:active{
-  // transform: scale(.9);
   transform: translateY(5px);
 }
 
@@ -86,22 +85,6 @@
 
 .overview-bottom{
   margin-top: 10px;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // width: 100%;
-
-  // .choose-pic {
-  //   margin-bottom: 20px;
-  //
-  //   // input.upload{
-  //   //   display: block;
-  //   //   height: 50px;
-  //   //   max-width: 300px;
-  //   //   padding: 13px;
-  //   //   background-color: $color1;
-  //   // }
-  // }
 
   .choose-pic, .choose-color, .choose-mascot{
     width: 90%;
@@ -140,15 +123,20 @@
     }
   }
 
-  // .choose-mascot{
-  //   select{
-  //     margin-top:10px;
-  //     padding:5px;
-  //     background-color: white;
-  //     border:0;
-  //     outline:0;
-  //   }
-  // }
+}
+
+.multiple-choice{
+  width: 100%;
+  margin-top: 20px;
+
+  select{
+    background-color: white;
+    outline:none;
+    padding:5px;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+  }
 }
 
 .form-nav{
