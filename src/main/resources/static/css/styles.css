@@ -77,12 +77,14 @@
     .hero .hero-nav a {
       display: block; }
   .hero .scrollDown {
-    text-align: center; }
+    text-align: center;
+    margin-top: 30px; }
     .hero .scrollDown .fa {
       font-size: 4rem;
+      line-height: 2rem;
       animation: bounce .5s linear infinite alternate; }
 
-#backstory {
+#introduction {
   background-color: #635a60; }
 
 .section-container {
@@ -334,6 +336,8 @@ td .color-overlay {
   margin: 0 auto;
   padding: 0 15px;
   line-height: 1rem; }
+  .profile-stats .stats {
+    margin-bottom: 30px; }
   .profile-stats h3 {
     font-size: 1.3rem;
     line-height: 1.3rem; }
@@ -353,26 +357,24 @@ td .color-overlay {
   .profile-stats #revolt::before {
     content: "-"; }
 
-.buttons {
-  margin-top: 30px; }
-  .buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button, .buttons #attack-button {
-    margin: 10px auto; }
-  .buttons #revolt-button {
-    background-color: #FE5745; }
-  .buttons #pledge-button {
-    background-color: #21b913; }
-  .buttons #edit-button {
-    background-color: grey; }
-  .buttons #attack-button {
-    background-color: #ff7800; }
-  .buttons p {
-    width: 200px;
-    text-align: center;
-    margin: 10px auto 0;
-    font-size: .8rem;
-    line-height: 1.1rem; }
-    .buttons p b {
-      color: #FE5745; }
+.buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button, .buttons #attack-button {
+  margin: 10px auto; }
+.buttons #revolt-button {
+  background-color: #FE5745; }
+.buttons #pledge-button {
+  background-color: #21b913; }
+.buttons #edit-button {
+  background-color: grey; }
+.buttons #attack-button {
+  background-color: #ff7800; }
+.buttons p {
+  width: 200px;
+  text-align: center;
+  margin: 10px auto 0;
+  font-size: .8rem;
+  line-height: 1.1rem; }
+  .buttons p b {
+    color: #FE5745; }
 
 .bottom-section {
   margin: 30px 0 0;
@@ -550,24 +552,17 @@ td .color-overlay {
   text-align: center;
   color: white; }
 
-#more-info-button {
-  float: right;
-  width: 40px;
-  height: 40px;
-  background-color: #635a60;
-  cursor: pointer;
-  transition: all .1s ease-in-out; }
+#more-info-link {
+  display: inline-block;
+  margin: 20px auto 0px;
+  transition: all .1s ease-in-out;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin-bottom: -5px;
+  border: 1px solid transparent; }
 
-#more-info-button::after {
-  content: "+";
-  font-size: 3rem;
-  position: relative;
-  bottom: 8px;
-  left: 8px;
-  color: white; }
-
-#more-info-button:hover {
-  background-color: #2e292c; }
+#more-info-link:hover {
+  border: 1px solid white; }
 
 #more-info .more-info-policy {
   border: 1px solid white;
@@ -607,19 +602,62 @@ td .color-overlay {
 @media (min-width: 900px) {
   #vote-buttons {
     display: flex; } }
-.test-wrapper {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+#about-backstory {
+  padding: 50px 0 30px;
+  background-color: #635a60; }
 
-.test-content {
-  width: 10%;
-  height: 10vh;
-  background: #FE5745;
-  animation: pulse ease-in-out 1s infinite alternate; }
+#about-creators {
+  padding-bottom: 50px;
+  background-color: #3E383C; }
+  #about-creators .section-header {
+    margin-bottom: 50px; }
 
+.about-content {
+  margin: 20px auto;
+  padding: 0 30px;
+  max-width: 900px; }
+
+.creator {
+  margin: 0px 0 50px; }
+  .creator .creator-mascot {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px; }
+  .creator .text {
+    text-align: center;
+    margin: 0 auto; }
+    .creator .text h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 10px; }
+
+#chris {
+  background-color: lightblue;
+  background-image: url("../images/crocodile.png");
+  background-blend-mode: multiply; }
+
+#ellis {
+  background-color: #FE5745;
+  background-image: url("../images/giraffe.png");
+  background-blend-mode: difference; }
+
+#james {
+  background-color: lightgrey;
+  background-image: url("../images/bear.png");
+  background-blend-mode: multiply; }
+
+@media (min-width: 900px) {
+  .about-content {
+    margin: 50px auto; }
+
+  .creator {
+    margin: 0 0 25px;
+    overflow: hidden; }
+    .creator .creator-mascot {
+      float: left;
+      margin-right: 20px; }
+    .creator .text {
+      text-align: left; } }
 html {
   min-height: 100%;
   position: relative; }
@@ -679,6 +717,11 @@ a {
 
 li {
   list-style-type: none; }
+
+hr {
+  border: none;
+  border-bottom: 1px solid white;
+  margin: 30px 0; }
 
 .flex {
   display: flex;

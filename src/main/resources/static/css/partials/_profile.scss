@@ -112,6 +112,10 @@
   padding:0 15px;
   line-height: 1rem;
 
+  .stats{
+    margin-bottom: 30px;
+  }
+
   h3{
     font-size: 1.3rem;
     line-height: 1.3rem;
@@ -147,7 +151,6 @@
 }
 
 .buttons{
-  margin-top: 30px;
 
   #revolt-button, #pledge-button, #edit-button, #attack-button{
     margin:10px auto;
