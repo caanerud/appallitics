@@ -94,14 +94,17 @@
 
             <tr th:each="rank : ${dictators}">
                 <td>
-                    <div class="color-overlay" style="background-image:url('../static/images/tiger.png');"
-                         th:style="'background-image:url(images/'+${rank.getOverviewMascot().toLowerCase()}+'.png); background-color:'+${rank.getOverviewColor()}+';'"></div>
+                    <a href="profile.html" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">
+                        <div class="color-overlay" style="background-image:url('../static/images/tiger.png');"
+                             th:style="'background-image:url(images/'+${rank.getOverviewMascot().toLowerCase()}+'.png); background-color:'+${rank.getOverviewColor()}+';'">
+                        </div>
+                    </a>
                 </td>
-                <td> <a href="profile.html" th:text="${rank.getUser().getUsername()}" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">Username 1</a></td>
-                <td> <a href="profile.html" th:text="${rank.getOverviewDictatorshipName()}" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}">Dictatorship 1</a></td>
-                <td th:text="${rank.getPledge()}">1</td>
-                <td th:text="${rank.getRevolt()}">99</td>
-                <td th:text="${rank.getPledge() - rank.getRevolt()}">-98</td>
+                <td> <a href="profile.html" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}" th:text="${rank.getUser().getUsername()}">Username 1</a></td>
+                <td> <a href="profile.html" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}" th:text="${rank.getOverviewDictatorshipName()}">Dictatorship 1</a></td>
+                <td> <a href="profile.html" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}" th:text="${rank.getPledge()}">1</a></td>
+                <td> <a href="profile.html" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}" th:text="${rank.getRevolt()}">99</a></td>
+                <td> <a href="profile.html" th:href="@{'/profile?dictatorId=' + ${rank.getUser().getId()}}" th:text="${rank.getPledge() - rank.getRevolt()}">-98</a></td>
             </tr>
 
             <tr th:remove="all">

@@ -2,9 +2,9 @@
   height: 550px;
   padding:70px 0 0;
   position: relative;
-  background-color: $color4;
+  background-color: $color2;
   background-image: url('../images/crowd3.png');
-  background-blend-mode: overlay;
+  background-blend-mode: darken;
 
   img{
     width: 90%;
@@ -18,7 +18,7 @@
     margin-top: 20px;
     padding: 0 30px;
     font-weight: 400;
-    letter-spacing: .4rem;
+    letter-spacing: .2rem;
     font-size: 1.5rem;
   }
 
