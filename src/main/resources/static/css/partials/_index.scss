@@ -39,15 +39,18 @@
 
   .scrollDown{
     text-align: center;
+    margin-top: 30px;
+
     .fa{
       font-size: 4rem;
+      line-height: 2rem;
       animation: bounce .5s linear infinite alternate;
     }
   }
 
 }
 
-#backstory{
+#introduction{
   background-color: $color4;
 }
 
@@ -130,11 +133,6 @@
     display: flex;
     justify-content: space-between;
 
-    article{
-      p{
-        // min-height: 600px;
-      }
-    }
   }
 }
 
