@@ -771,7 +771,12 @@ header {
     text-transform: uppercase;
     color: white;
     font-weight: 900;
-    letter-spacing: .1rem; }
+    letter-spacing: .1rem;
+    display: block;
+    width: 125px;
+    height: 20px; }
+    .logo a img {
+      width: 100%; }
 
 .main-nav {
   display: none;

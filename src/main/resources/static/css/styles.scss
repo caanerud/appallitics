@@ -118,6 +118,13 @@ header{
     color:white;
     font-weight: 900;
     letter-spacing: .1rem;
+    display: block;
+    width: 125px;
+    height: 20px;
+
+    img{
+      width:100%;
+    }
   }
 }
 

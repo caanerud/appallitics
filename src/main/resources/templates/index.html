@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>Appallitics</title>
     <script src="https://use.fontawesome.com/d631437608.js"></script>
     <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{css/normalize.css}"/>
@@ -19,7 +19,9 @@
     <!-- HEADER____________________________________________ -->
     <header>
         <div class="logo">
-            <a href="index.html" th:href="@{/}" title="Return Home, while you still have one">Appallitics</a>
+            <a href="index.html" th:href="@{/}" title="Return Home, while you still have one">
+              <img src="../static/images/logo.svg" alt="appallitics">
+            </a>
         </div>
         <!--if logged in-->
         <div th:if="${checkloggedin} != 0">
