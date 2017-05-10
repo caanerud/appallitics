@@ -11,8 +11,13 @@
   padding: 30px 10%;
   margin: 0 0 70px; }
   .form-container a {
+    font-size: 1.1rem;
     display: block;
     text-align: center; }
+
+#error {
+  margin-top: 30px;
+  text-align: center; }
 
 .input-container {
   height: 50px;
