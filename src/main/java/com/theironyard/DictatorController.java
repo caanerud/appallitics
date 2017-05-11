@@ -67,7 +67,7 @@ public class DictatorController {
         Integer userId = (Integer) session.getAttribute("userId");
         Dictator dictator = dictatorRepository.getDictatorById(userId);
 
-        // modeling empty dictator
+        // modeling dictator
         model.addAttribute("dictator",dictator);
 
         return "createform";
@@ -207,6 +207,40 @@ public class DictatorController {
 
         // Gets the dictator so that the input fields may be filled with previous answers
         model.addAttribute("dictator",dictator);
+
+        // PRE-SELECTED VALUES
+        // color
+        if (dictator.getOverviewColor() == "aliceblue"){
+            model.addAttribute("aliceblue",true);
+        } else if (dictator.getOverviewColor() == "aquamarine"){
+            model.addAttribute("aquamarine",true);
+        } else if (dictator.getOverviewColor() == "bisque"){
+            model.addAttribute("bisque",true);
+        } else if (dictator.getOverviewColor() == "black"){
+            model.addAttribute("black",true);
+        } else if (dictator.getOverviewColor() == "blueviolet"){
+            model.addAttribute("blueviolet",true);
+        } else if (dictator.getOverviewColor() == "brown"){
+            model.addAttribute("brown",true);
+        } else if (dictator.getOverviewColor() == "cadetblue"){
+            model.addAttribute("cadetblue",true);
+        } else if (dictator.getOverviewColor() == "coral"){
+            model.addAttribute("coral",true);
+        } else if (dictator.getOverviewColor() == "cornflowerblue"){
+            model.addAttribute("cornflowerblue",true);
+        } else if (dictator.getOverviewColor() == "crimson"){
+            model.addAttribute("crimson",true);
+        } else if (dictator.getOverviewColor() == "darkblue"){
+            model.addAttribute("darkblue",true);
+        } else if (dictator.getOverviewColor() == "darkgoldenrod"){
+            model.addAttribute("darkgoldenrod",true);
+        } else if (dictator.getOverviewColor() == "darkorange"){
+            model.addAttribute("darkorange",true);
+        } else if (dictator.getOverviewColor() == "darksalmon"){
+            model.addAttribute("darksalmon",true);
+        } else{
+            model.addAttribute("yellow",true);
+        }
 
         return "createform";
     }

@@ -116,37 +116,36 @@
 
                   <div class="choose-color">
                     <p>Choose Your Color</p>
-                    <!-- <input type="color" name="favcolor" th:value="${dictator.getOverviewColor()}" value="#ffffff"/> -->
-                    <select class="color-dropdown" name="color">
-                      <option value="aliceblue">Alice Blue</option>
-                      <option th:selected="false" value="aquamarine">Aquamarine</option>
-                      <option th:selected="false" value="bisque">Bisque</option>
-                      <option th:selected="false" value="black">Black</option>
-                      <option th:selected="false" value="blueviolet">Blue Violet</option>
-                      <option th:selected="${color}" value="brown">Brown</option>
-                      <option value="cadetblue">Cadet Blue</option>
-                      <option value="chartreuse">Chartreuse</option>
-                      <option value="coral">Coral</option>
-                      <option value="cornflowerblue">Corn Flower Blue</option>
-                      <option value="crimson">Crimson</option>
-                      <option value="darkblue">Dark Blue</option>
-                      <option value="darkgoldenrod">Dark Goldenrod</option>
-                      <option value="darkorange">Dark Orange</option>
-                      <option value="darksalmon">Dark Salmon</option>
-                      <option value="darkseagreen">Dark Sea Green</option>
-                      <option value="deeppink">Deep Pink</option>
-                      <option value="fuschia">Fuschia</option>
-                      <option value="gold">Gold</option>
-                      <option value="indigo">Indigo</option>
-                      <option value="lightblue">Light Blue</option>
-                      <option value="limegreen">Lime Green</option>
-                      <option value="olive">Olive</option>
-                      <option value="peru">Peru</option>
-                      <option value="rosybrown">Rosy Brown</option>
-                      <option value="seagreen">Sea Green</option>
-                      <option value="thistle">Thistle</option>
-                      <option value="violet">Violet</option>
-                      <option value="yellow">Yellow</option>
+                    <select class="color-dropdown" name="favcolor">
+                      <option th:selected="${aliceblue}" value="aliceblue">Alice Blue</option>
+                      <option th:selected="${aquamarine}" value="aquamarine">Aquamarine</option>
+                      <option th:selected="${bisque}" value="bisque">Bisque</option>
+                      <option th:selected="${black}" value="black">Black</option>
+                      <option th:selected="${blueviolet}" value="blueviolet">Blue Violet</option>
+                      <option th:selected="${brown}" value="brown">Brown</option>
+                      <option th:selected="${cadetblue}" value="cadetblue">Cadet Blue</option>
+                      <option th:selected="${chartreuse}" value="chartreuse">Chartreuse</option>
+                      <option th:selected="${coral}" value="coral">Coral</option>
+                      <option th:selected="${cornflowerblue}" value="cornflowerblue">Corn Flower Blue</option>
+                      <option th:selected="${crimson}" value="crimson">Crimson</option>
+                      <option th:selected="${darkblue}" value="darkblue">Dark Blue</option>
+                      <option th:selected="${darkgoldenrod}" value="darkgoldenrod">Dark Goldenrod</option>
+                      <option th:selected="${darkorange}" value="darkorange">Dark Orange</option>
+                      <option th:selected="${darksalmon}" value="darksalmon">Dark Salmon</option>
+                      <option th:selected="${darkseagreen}" value="darkseagreen">Dark Sea Green</option>
+                      <option th:selected="${deeppink}" value="deeppink">Deep Pink</option>
+                      <option th:selected="${fuschia}" value="fuschia">Fuschia</option>
+                      <option th:selected="${gold}" value="gold">Gold</option>
+                      <option th:selected="${indigo}" value="indigo">Indigo</option>
+                      <option th:selected="${lightblue}" value="lightblue">Light Blue</option>
+                      <option th:selected="${limegreen}" value="limegreen">Lime Green</option>
+                      <option th:selected="${olive}" value="olive">Olive</option>
+                      <option th:selected="${peru}" value="peru">Peru</option>
+                      <option th:selected="${rosybrown}" value="rosybrown">Rosy Brown</option>
+                      <option th:selected="${seagreen}" value="seagreen">Sea Green</option>
+                      <option th:selected="${thistle}" value="thistle">Thistle</option>
+                      <option th:selected="${violet}" value="violet">Violet</option>
+                      <option th:selected="${yellow}" value="yellow">Yellow</option>
                     </select>
                   </div>
 
