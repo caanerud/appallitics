@@ -58,9 +58,7 @@
   height: 550px;
   padding: 70px 0 0;
   position: relative;
-  background-color: #3E383C;
-  background-image: url("../images/crowd3.png");
-  background-blend-mode: overlay; }
+  background-color: transparent; }
   .hero img {
     width: 90%;
     max-width: 1200px;
@@ -74,10 +72,9 @@
     letter-spacing: .2rem;
     font-size: 1.5rem; }
   .hero .hero-nav {
-    position: absolute;
-    bottom: 30px;
-    left: calc(50% - 140px); }
+    margin-top: 30px; }
     .hero .hero-nav button {
+      margin: 0 auto;
       width: 280px; }
     .hero .hero-nav a {
       display: block; }
@@ -132,8 +129,6 @@
         font-weight: 100;
         top: 10px; }
     .step-by-step article p {
-      padding: 20px;
-      border: 1px solid white;
       max-width: 500px;
       margin: 0 auto; }
     .step-by-step article a {
@@ -523,7 +518,7 @@ td .color-overlay {
     .overview-bottom .choose-pic input[type="color"], .overview-bottom .choose-color input[type="color"], .overview-bottom .choose-mascot input[type="color"] {
       height: 50px;
       border: 0; }
-    .overview-bottom .choose-pic .mascot-dropdown, .overview-bottom .choose-color .mascot-dropdown, .overview-bottom .choose-mascot .mascot-dropdown {
+    .overview-bottom .choose-pic .mascot-dropdown, .overview-bottom .choose-pic .color-dropdown, .overview-bottom .choose-color .mascot-dropdown, .overview-bottom .choose-color .color-dropdown, .overview-bottom .choose-mascot .mascot-dropdown, .overview-bottom .choose-mascot .color-dropdown {
       margin-top: 10px;
       padding: 5px;
       background-color: white;
