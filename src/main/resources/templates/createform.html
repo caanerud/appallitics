@@ -19,7 +19,7 @@
     <header>
         <div class="logo">
           <a href="index.html" th:href="@{/}" title="Return Home, while you still have one">
-            <img src="../static/images/logo.svg" alt="appallitics" />
+              <img src="../static/images/logo.svg" th:src="@{images/logo.svg}" alt="appallitics" />
           </a>
         </div>
         <!--if logged in-->
@@ -121,9 +121,9 @@
                       <option value="aliceblue">Alice Blue</option>
                       <option th:selected="false" value="aquamarine">Aquamarine</option>
                       <option th:selected="false" value="bisque">Bisque</option>
-                      <option value="black">Black</option>
-                      <option th:selected="true" value="blueviolet">Blue Violet</option>
-                      <option value="brown">Brown</option>
+                      <option th:selected="false" value="black">Black</option>
+                      <option th:selected="false" value="blueviolet">Blue Violet</option>
+                      <option th:selected="${color}" value="brown">Brown</option>
                       <option value="cadetblue">Cadet Blue</option>
                       <option value="chartreuse">Chartreuse</option>
                       <option value="coral">Coral</option>

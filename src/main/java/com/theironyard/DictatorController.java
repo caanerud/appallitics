@@ -159,7 +159,7 @@ public class DictatorController {
 
         // creates blank dictator
         Dictator dictator = new Dictator(new User(userWithId.getId()),
-                " ", " "," ","#ffffff",null,new byte [1],
+                " ", " "," ","#ffffff"," ",new byte [1],
                 " "," "," "," "," ",
                 " "," "," "," "," ",
                 " "," "," "," "," ",
