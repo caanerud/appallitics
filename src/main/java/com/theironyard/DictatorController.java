@@ -265,6 +265,40 @@ public class DictatorController {
             model.addAttribute("Giraffe",true);
         }
 
+        // econ first multiple choice (infrastructure)
+        if (dictator.getEconInfrastructure() == "I will use tax money to sustain our crumbling infrastructure."){
+            model.addAttribute("econInfrastructure1",true);
+        } else if (dictator.getEconInfrastructure() == "I will use tax money to repair and improve our crumbling infrastructure."){
+            model.addAttribute("econInfrastructure2",true);
+        } else if (dictator.getEconInfrastructure() == "I will use paid minion labor to sustain our crumbling infrastructure."){
+            model.addAttribute("econInfrastructure3",true);
+        } else if (dictator.getEconInfrastructure() == "I will use free minion labor to sustain our crumbling infrastructure."){
+            model.addAttribute("econInfrastructure4",true);
+        } else if (dictator.getEconInfrastructure() == "I will ignore our crumbling infrastructure and focus on more important matters."){
+            model.addAttribute("econInfrastructure5",true);
+        } else if (dictator.getEconInfrastructure() == "I will actively destroy our crumbling infrastructure."){
+            model.addAttribute("econInfrastructure6",true);
+        }
+        // econ second multiple choice (tax)
+        if (dictator.getEconTax() == "Tax 100% of minion income."){
+            model.addAttribute("econTax1",true);
+        } else if (dictator.getEconTax() == "Tax 75% of minion income.") {
+            model.addAttribute("econTax2", true);
+        } else if (dictator.getEconTax() == "Tax 50% of minion income.") {
+            model.addAttribute("econTax3", true);
+        } else if (dictator.getEconTax() == "Tax 35% of minion income.") {
+            model.addAttribute("econTax4", true);
+        } else if (dictator.getEconTax() == "Tax 15% of minion income.") {
+            model.addAttribute("econTax5", true);
+        } else if (dictator.getEconTax() == "No tax") {
+            model.addAttribute("econTax6", true);
+        } else if (dictator.getEconTax() == "I plan on abolishing currency.") {
+            model.addAttribute("econTax7", true);
+        }
+
+
+
+
         return "createform";
     }
 

@@ -207,27 +207,27 @@
                 <label for="econInfrastructure">Country Infrastructure (click for options)</label>
                 <br />
                 <select spellcheck="true" type="text" id="econInfrastructure" name="econInfrastructure" th:value="${dictator.getEconInfrastructure().trim()}" placeholder="build bridges with your former enemies! or better yet have them build the bridges">
-                    <option value ="I will use tax money to sustain our crumbling infrastructure.">I will use tax money to sustain our crumbling infrastructure.</option>
-                    <option value ="I will use tax money to repair and improve our crumbling infrastructure.">I will use tax money to repair and improve our crumbling infrastructure.</option>
-                    <option value ="I will use paid minion labor to sustain our crumbling infrastructure.">I will use paid minion labor to sustain our crumbling infrastructure.</option>
-                    <option value ="I will use free minion labor to sustain our crumbling infrastructure.">I will use free minion labor to sustain our crumbling infrastructure.</option>
-                    <option value ="I will ignore our crumbling infrastructure and focus on more important matters.">I will ignore our crumbling infrastructure and focus on more important matters.</option>
-                    <option value ="I will actively destroy our crumbling infrastructure.">I will actively destroy our crumbling infrastructure.</option>
-                    required="required"</select>
+                    <option th:selected="${econInfrastructure1}" value ="I will use tax money to sustain our crumbling infrastructure.">I will use tax money to sustain our crumbling infrastructure.</option>
+                    <option th:selected="${econInfrastructure2}" value ="I will use tax money to repair and improve our crumbling infrastructure.">I will use tax money to repair and improve our crumbling infrastructure.</option>
+                    <option th:selected="${econInfrastructure3}" value ="I will use paid minion labor to sustain our crumbling infrastructure.">I will use paid minion labor to sustain our crumbling infrastructure.</option>
+                    <option th:selected="${econInfrastructure4}" value ="I will use free minion labor to sustain our crumbling infrastructure.">I will use free minion labor to sustain our crumbling infrastructure.</option>
+                    <option th:selected="${econInfrastructure5}" value ="I will ignore our crumbling infrastructure and focus on more important matters.">I will ignore our crumbling infrastructure and focus on more important matters.</option>
+                    <option th:selected="${econInfrastructure6}" value ="I will actively destroy our crumbling infrastructure.">I will actively destroy our crumbling infrastructure.</option>
+                </select>
               </div>
 
               <div class="multiple-choice">
                 <label for="econTax">Minion Taxes (click for options)</label>
                 <br />
                 <select spellcheck="true" type="text" id="econTax" name="econTax" th:value="${dictator.getEconTax().trim()}" placeholder="haha, as if you'll pay them a living wage">
-                    <option value ="Tax 100% of minion income.">Tax 100% of minion income.</option>
-                    <option value ="Tax 75% of minion income.">Tax 75% of minion income.</option>
-                    <option value ="Tax 50% of minion income.">Tax 50% of minion income.</option>
-                    <option value ="Tax 35% of minion income.">Tax 35% of minion income.</option>
-                    <option value ="Tax 15% of minion income.">Tax 15% of minion income.</option>
-                    <option value ="No tax.">No tax.</option>
-                    <option value ="I plan on abolishing currency.">I plan on abolishing currency.</option>
-                    required="required"</select>
+                    <option th:selected="${econTax1}" value ="Tax 100% of minion income.">Tax 100% of minion income.</option>
+                    <option th:selected="${econTax2}" value ="Tax 75% of minion income.">Tax 75% of minion income.</option>
+                    <option th:selected="${econTax3}" value ="Tax 50% of minion income.">Tax 50% of minion income.</option>
+                    <option th:selected="${econTax4}" value ="Tax 35% of minion income.">Tax 35% of minion income.</option>
+                    <option th:selected="${econTax5}" value ="Tax 15% of minion income.">Tax 15% of minion income.</option>
+                    <option th:selected="${econTax6}" value ="No tax.">No tax.</option>
+                    <option th:selected="${econTax7}" value ="I plan on abolishing currency.">I plan on abolishing currency.</option>
+                </select>
               </div>
 
 
