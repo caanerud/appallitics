@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 3px 5px 10px rgba(0,0,0,.1);
+  // box-shadow: 3px 5px 10px rgba(0,0,0,.1);
   transition: all .1s ease-in-out;
   -webkit-animation: balloon 0.7s;
   -moz-animation: balloon 0.7s;
@@ -26,24 +26,21 @@
   letter-spacing: .1rem;
 }
 
+#choice1:hover, #choice2:hover{
+  transform: scale(1.05);
+}
+
 #choice1:active, #choice2:active{
-  transform: translateY(5px);
+  // transform: translateY(5px);
+  transform: scale(.95);
 }
 
 #choice1{
   background-color: $color1;
 }
 
-#choice1:hover{
-  background-color: darken($color1, 3%);
-}
-
 #choice2{
   background-color: $blue;
-}
-
-#choice2:hover{
-  background-color: darken($blue, 3%);
 }
 
 .pro-bar{
@@ -141,7 +138,8 @@
 
 .form-nav{
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
+  padding: 15px;
   position: absolute;
   bottom: 0;
   left:0;
@@ -162,6 +160,10 @@
 
 
 @media (min-width:900px) {
+
+  .form-nav{
+    padding:30px;
+  }
 
   #choice1, #choice2{
     width: 300px;

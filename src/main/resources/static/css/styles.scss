@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, hr, {
 
 h1{
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-transform: uppercase;
   text-align: center;
   color:white;
@@ -65,10 +65,9 @@ h4{
 
 p{
   color:white;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   letter-spacing: .05rem;
   line-height: 2rem;
-  // font-family: sans-serif;
   font-weight: 400;
 }
 
@@ -197,7 +196,7 @@ header{
 // CONTENT__________________________________
 
 .content{
-  max-width: 900px;
+  max-width: 1200px;
   margin: 70px auto;
   padding: 0 15px;
 }
@@ -206,13 +205,15 @@ section{
   min-height: 76vh;
   position: relative;
   color:white;
-  padding-bottom: 100px;
+  padding: 15px 15px 100px;
+  // padding-bottom: 100px;
+  background-color: rgba(0,0,0,.2);
 }
 
 .section-header{
   padding: 0px 10px 5px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid white;
+  margin:15px 0;
+  // border-bottom: 1px solid white;
 }
 
 input{
@@ -238,18 +239,17 @@ input[type="submit"], button, .scrollDown{
   text-transform: uppercase;
   letter-spacing: .1rem;
   transition: all .1s ease-in-out;
-  box-shadow: 3px 5px 10px rgba(0,0,0,.1);
+  // box-shadow: 3px 5px 10px rgba(0,0,0,.1);
 }
 
 input[type="submit"]:hover, button:hover, .scrollDown:hover{
   cursor: pointer;
-  // background-color: darken($color1, 3%);
   transform: scale(1.05);
 }
 
 input[type="submit"]:active, button:active, .scrollDown:active{
   transform: scale(.98);
-  box-shadow: 1px 2px 5px rgba(0,0,0,.1);
+  // box-shadow: 1px 2px 5px rgba(0,0,0,.1);
 }
 
 label{
@@ -296,8 +296,16 @@ footer{
     margin: 100px auto;
   }
 
+  .section-header{
+    margin: 30px 0;
+  }
+
+  section{
+    padding: 15px 30px 130px;
+  }
+
   h1{
-    font-size: 2rem;
+    font-size: 2.3rem;
     margin-top:10px;
     margin-bottom: 20px;
   }
