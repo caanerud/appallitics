@@ -66,22 +66,30 @@
     <div class="content">
 
       <!--MINION-->
-      <section th:if="${minion} == true">
-          <div class="section-header">
+      <section th:if="${minion} == true" class="profile-section">
+          <!-- <div class="section-header">
             <h1>Minion</h1>
-          </div>
+          </div> -->
 
-          <div class="top-section">
+
+
+            <div class="top-section">
               <div class="profile-pic" style="background-image:url(http://lorempixel.com/400/200/cats/)">
               </div>
 
-              <div class="profile-info">
-                <div class="row">
-                  <div class="profile-icon" id="minion-icon" style="background-image:url('../static/images/a.png');"
-                       th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url('+@{images/a.png}+');'">
-                  </div>
+              <div class="row">
+                <div class="profile-info">
+                    <div class="profile-icon" id="minion-icon" style="background-image:url('../static/images/a.png');"
+                         th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url('+@{images/a.png}+');'">
+                    </div>
 
-                  <div class="social-icons">
+                    <div class="profile-text">
+                      <h2>Minion</h2>
+                      <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
+                      <h3>All hail our fearless leader!!!</h3>
+                    </div>
+
+                  <!-- <div class="social-icons">
                     <div class="icon" data-href="https://appallitics.herokuapp.com/profile"
                          data-layout="button_count" data-size="small" data-mobile-iframe="true">
                          <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">
@@ -93,32 +101,29 @@
                           <i class="fa fa-twitter-square" aria-hidden="true"></i>
                       </a>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
 
-                <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
-                <h3>All hail our fearless leader!!!</h3>
-              </div>
-
-              <!--EDIT PROFILE BUTTON-->
-                  <div class="profile-stats">
-                    <div class="buttons" >
-                        <div class="edit" th:if="${owner}">
-                            <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-                            <p>Click to change your status from Minion to Dictator</p>
-                        </div>
+                <!--EDIT PROFILE BUTTON-->
+                    <div class="profile-stats">
+                      <div class="buttons" >
+                          <div class="edit" th:if="${owner}">
+                              <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+                              <p>Click to change your status from Minion to Dictator</p>
+                          </div>
+                      </div>
                     </div>
-                  </div>
 
-              <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
-              <div class="remodal" data-remodal-id="modal">
-                  <a href="#" data-remodal-action="close" class="remodal-close" ></a>
-                  <h2>Time to rule</h2>
-                  <br/>
-                  <p>Continue to become the greatest despot of them all!</p>
-                  <br/>
-                  <a href="#" data-remodal-action="cancel" class="remodal-cancel">CANCEL</a>
-                  <a href="createform.html" class="remodal-return" th:href="@{/editDictator}">OK</a>
+                <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
+                <div class="remodal" data-remodal-id="modal">
+                    <a href="#" data-remodal-action="close" class="remodal-close" ></a>
+                    <h2>Time to rule</h2>
+                    <br/>
+                    <p>Continue to become the greatest despot of them all!</p>
+                    <br/>
+                    <a href="#" data-remodal-action="cancel" class="remodal-cancel">CANCEL</a>
+                    <a href="createform.html" class="remodal-return" th:href="@{/editDictator}">OK</a>
+                </div>
               </div>
 
           </div>

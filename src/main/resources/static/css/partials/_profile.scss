@@ -1,18 +1,23 @@
+.profile-section{
+  background-color: transparent;
+}
+
 .top-section{
-  justify-content: space-between;
-  margin-bottom:30px;
+  // justify-content: space-between;
+  // margin: 0 -15px;
+  margin-bottom:60px;
+  padding: 15px 0 0;
 }
 
 .profile-pic{
-  height:275px;
-  width: 275px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
   margin:0 auto 30px;
-  overflow: hidden;
-  position: relative;
   background-size: cover;
   background-position: center;
-  // background-blend-mode:soft-light;
-  // background-color: $color1;
+  background-blend-mode:lighten;
+  background-color: $color1;
 
   img{
     width: 100%;
@@ -22,6 +27,16 @@
 #minion-icon{
   background-color: white;
   background-size: 75px;
+}
+
+.row{
+  // border: 1px solid white;
+  // margin: 30px auto 0;
+  // display: flex;
+  // justify-content: center;
+  // flex-direction: column;
+  // align-items: center;
+  // max-width: 225px;
 }
 
 
@@ -57,13 +72,6 @@
   }
 }
 
-.row{
-  margin: 30px auto 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 225px;
-}
 
 .profile-icon{
   width:100px;
@@ -73,7 +81,7 @@
   background-repeat: no-repeat;
   background-position: center;
   filter: grayscale(.4);
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
 }
 
 .social-icons{
@@ -81,7 +89,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-bottom: 30px;
+  margin: 30px auto 0;
+  padding-bottom: 30px;
 
   .icon{
     width: 40px;
@@ -111,7 +120,6 @@
 }
 
 .profile-stats{
-  // width: 80%;
   text-align: center;
   display: block;
   margin:0 auto;
@@ -159,8 +167,8 @@
 .buttons{
 
   #revolt-button, #pledge-button, #edit-button, #attack-button{
-    max-width: 100%;
-    margin:10px auto;
+    max-width: 400px;
+    margin: 0 auto 15px;
   }
 
   #revolt-button{
@@ -242,34 +250,66 @@
 
 
 @media (min-width:900px) {
+
+  .profile-pic{
+    margin: 0;
+  }
+
   .top-section{
     display: flex;
+    justify-content: space-between;
+    margin:-15px -30px 0;
+    background-color: rgba(0,0,0,.2);
+    padding: 60px;
 
     .row{
-      margin:0;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .profile-pic{
-      width:300px;
-      height:300px;
+      width: 60%;
+      // margin:0;
+      // display: block;
+      // flex-direction: row;
+      // justify-content: space-between;
+      // display: flex;
     }
 
     .social-icons{
-      height: 100px;
-      flex-direction: column;
+      clear: both;
+      // height: 100px;
+      // flex-direction: column;
     }
 
     .profile-info{
       text-align: left;
-      width: 35%;
-      margin:0 auto 0px;
+      margin: 0;
+      padding:0;
+      overflow: hidden;
+      // background-color: orange;
+    }
+
+    .profile-icon{
+      margin: 0;
+      float: left;
+    }
+
+    .profile-text{
+      float: left;
+      padding-left: 20px;
     }
 
     .profile-stats{
+      margin: 0;
       text-align: left;
-      width:35%;
+      padding: 20px 0 0;
+      // background-color: brown;
+    }
+
+    .buttons{
+      #revolt-button, #pledge-button, #edit-button, #attack-button{
+        margin: 0 0 15px;
+      }
+
+      p{
+        text-align: left;
+      }
     }
   }
 
