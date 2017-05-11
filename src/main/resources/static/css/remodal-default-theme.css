@@ -47,7 +47,7 @@
 /* Default theme styles of the wrapper */
 
 .remodal-wrapper {
-  padding: 10px 10px 0;
+  /*padding: 10px 10px 0;*/
 }
 
 /* Default theme styles of the modal dialog */
@@ -55,8 +55,9 @@
 .remodal {
   box-sizing: border-box;
   width: 100%;
-  margin-bottom: 10px;
-  padding: 35px;
+  /*margin-bottom: 10px;*/
+  /*padding: 35px;*/
+  padding:50px 30px;
 
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -330,6 +331,7 @@
   .remodal {
     max-width: 700px;
   }
+
 }
 
 /* IE8

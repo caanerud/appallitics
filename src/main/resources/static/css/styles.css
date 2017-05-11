@@ -5,7 +5,7 @@
   display: none; }
 
 .form-container {
-  background-color: #635a60;
+  background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   min-height: 70vh;
   padding: 30px 10%;
@@ -203,7 +203,7 @@ td:nth-child(n+4) {
   text-align: center; }
 
 td:nth-child(4) a {
-  color: #21b913;
+  color: #2a8c21;
   margin-top: -3px; }
 
 td:nth-child(5) a {
@@ -336,7 +336,6 @@ td .color-overlay {
         color: #1DA1F2; }
 
 .profile-stats {
-  width: 80%;
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -355,7 +354,7 @@ td .color-overlay {
   .profile-stats #rank {
     color: #878eff; }
   .profile-stats #pledge {
-    color: #21b913; }
+    color: #2a8c21; }
   .profile-stats #pledge::before {
     content: "+"; }
   .profile-stats #revolt {
@@ -364,21 +363,21 @@ td .color-overlay {
     content: "-"; }
 
 .buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button, .buttons #attack-button {
+  max-width: 100%;
   margin: 10px auto; }
 .buttons #revolt-button {
   background-color: #FE5745; }
 .buttons #pledge-button {
-  background-color: #21b913; }
+  background-color: #2a8c21; }
 .buttons #edit-button {
   background-color: grey; }
 .buttons #attack-button {
   background-color: #ff7800; }
 .buttons p {
-  width: 200px;
   text-align: center;
   margin: 10px auto 0;
-  font-size: .8rem;
-  line-height: 1.1rem; }
+  font-size: 1.1rem;
+  line-height: 1.5rem; }
   .buttons p b {
     color: #FE5745; }
 
@@ -448,7 +447,6 @@ td .color-overlay {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
   transition: all .1s ease-in-out;
   -webkit-animation: balloon 0.7s;
   -moz-animation: balloon 0.7s;
@@ -458,20 +456,17 @@ td .color-overlay {
   text-transform: uppercase;
   letter-spacing: .1rem; }
 
+#choice1:hover, #choice2:hover {
+  transform: scale(1.05); }
+
 #choice1:active, #choice2:active {
-  transform: translateY(5px); }
+  transform: scale(0.95); }
 
 #choice1 {
   background-color: #FE5745; }
 
-#choice1:hover {
-  background-color: #fe4936; }
-
 #choice2 {
   background-color: #878eff; }
-
-#choice2:hover {
-  background-color: #7880ff; }
 
 .pro-bar {
   height: 5px;
@@ -540,7 +535,8 @@ td .color-overlay {
 
 .form-nav {
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
+  padding: 15px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -554,6 +550,9 @@ td .color-overlay {
     margin: 0; }
 
 @media (min-width: 900px) {
+  .form-nav {
+    padding: 30px; }
+
   #choice1, #choice2 {
     width: 300px;
     height: 300px;
@@ -618,7 +617,10 @@ td .color-overlay {
 
 @media (min-width: 900px) {
   #vote-buttons {
-    display: flex; } }
+    display: flex; }
+
+  #more-info {
+    max-width: 80%; } }
 #about-backstory {
   padding: 50px 0 30px;
   background-color: #635a60; }
@@ -695,7 +697,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, hr {
 
 h1 {
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-transform: uppercase;
   text-align: center;
   color: white;
@@ -725,7 +727,7 @@ h4 {
 
 p {
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   letter-spacing: .05rem;
   line-height: 2rem;
   font-weight: 400; }
@@ -820,7 +822,7 @@ header {
     color: black; }
 
 .content {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 70px auto;
   padding: 0 15px; }
 
@@ -828,12 +830,12 @@ section {
   min-height: 76vh;
   position: relative;
   color: white;
-  padding-bottom: 100px; }
+  padding: 15px 15px 100px;
+  background-color: rgba(0, 0, 0, 0.2); }
 
 .section-header {
   padding: 0px 10px 5px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid white; }
+  margin: 15px 0; }
 
 input {
   width: 100%;
@@ -856,16 +858,14 @@ input[type="submit"], button, .scrollDown {
   font-family: inherit;
   text-transform: uppercase;
   letter-spacing: .1rem;
-  transition: all .1s ease-in-out;
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1); }
+  transition: all .1s ease-in-out; }
 
 input[type="submit"]:hover, button:hover, .scrollDown:hover {
   cursor: pointer;
   transform: scale(1.05); }
 
 input[type="submit"]:active, button:active, .scrollDown:active {
-  transform: scale(0.98);
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1); }
+  transform: scale(0.98); }
 
 label {
   font-size: 1.1rem;
@@ -894,8 +894,14 @@ footer {
   .content {
     margin: 100px auto; }
 
+  .section-header {
+    margin: 30px 0; }
+
+  section {
+    padding: 15px 30px 130px; }
+
   h1 {
-    font-size: 2rem;
+    font-size: 2.3rem;
     margin-top: 10px;
     margin-bottom: 20px; }
 
