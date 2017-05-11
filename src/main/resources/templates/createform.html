@@ -112,6 +112,9 @@
                     <input name="file" id="file" type="file" class="upload" />
                   </div>
 
+                  <div>CURRENT IMAGE</div>
+                  <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}" />
+
                   <div class="choose-color">
                     <p>Choose Your Color</p>
                     <input type="color" name="favcolor" th:value="${dictator.getOverviewColor()}" value="#ffffff"/>

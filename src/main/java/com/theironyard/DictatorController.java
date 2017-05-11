@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.mail.Multipart;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.net.URI;
@@ -61,12 +62,23 @@ public class DictatorController {
 
     // creating dictator form
     @GetMapping("/createform")
-    public String createform(Model model, HttpSession session){
+    public String createform(Model model, HttpSession session, @RequestParam(name="file") MultipartFile file){
         // Getting id from session
         Integer userId = (Integer) session.getAttribute("userId");
+        Dictator dictator = dictatorRepository.getDictatorById(userId);
+
+        // Giving the image back if it exist
+        if (!file.isEmpty()){
+            try{
+                dictator.setOverviewImage(file.getBytes());
+                dictator.setOverviewContentType(file.getContentType());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         // modeling empty dictator
-        model.addAttribute("dictator",dictatorRepository.getDictatorById(userId));
+        model.addAttribute("dictator",dictator);
 
         return "createform";
     }
@@ -201,9 +213,10 @@ public class DictatorController {
     public String editDictator(HttpSession session, Model model){
         // Gets the id of the user
         Integer userId = (Integer) session.getAttribute("userId");
+        Dictator dictator = dictatorRepository.getDictatorById(userId);
 
         // Gets the dictator so that the input fields may be filled with previous answers
-        model.addAttribute("dictator",dictatorRepository.getDictatorById(userId));
+        model.addAttribute("dictator",dictator);
 
         return "createform";
     }
