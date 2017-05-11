@@ -296,9 +296,60 @@ public class DictatorController {
             model.addAttribute("econTax7", true);
         }
 
+        // social first multiple choice (environment)
+        if (dictator.getSocialEnvironment() == "I will sustain the current state of our polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment1",true);
+        } else if (dictator.getSocialEnvironment() == "I will work to improve and care for our polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment2",true);
+        } else if (dictator.getSocialEnvironment() == "I will actively sabotage the environment of our polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment3",true);
+        } else if (dictator.getSocialEnvironment() == "I will refuse to acknowledge that we live in a polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment4",true);
+        } else if (dictator.getSocialEnvironment() == "I will actively work on finding a country to invade that isn't a polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment5",true);
+        } else if (dictator.getSocialEnvironment() == "I will encourage space travel in order to find a habitable planet that isn't a polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment6",true);
+        }
+        // social second multiple choice (retirement)
+        if (dictator.getSocialRetirement() == "All minions work until I decide otherwise."){
+            model.addAttribute("socialRetirement1",true);
+        } else if (dictator.getSocialRetirement() == "There is no retirement. The word 'retirement' ceases to exist effective immediately."){
+            model.addAttribute("socialRetirement2",true);
+        } else if (dictator.getSocialRetirement() == "Retirement age of 65, and then you live on your meager savings."){
+            model.addAttribute("socialRetirement3",true);
+        } else if (dictator.getSocialRetirement() == "All older minions move into retirement homes and then perform menial tasks to further serve the country."){
+            model.addAttribute("socialRetirement4",true);
+        } else if (dictator.getSocialRetirement() == "Minions can retire at a reasonable old age and then mooch off younger minions."){
+            model.addAttribute("socialRetirement5",true);
+        }
 
-
-
+        // legal first multiple choice (immigration)
+        if (dictator.getLegalImmigration() == "I will encourage minions from other countries to come and do my bidding."){
+            model.addAttribute("legalImmigration1",true);
+        } else if (dictator.getLegalImmigration() == "I will discourage minions from other countries to come and do my bidding."){
+            model.addAttribute("legalImmigration2",true);
+        } else if (dictator.getLegalImmigration() == "I will allow minions from other countries to visit and do my bidding and then let them return home."){
+            model.addAttribute("legalImmigration3",true);
+        } else if (dictator.getLegalImmigration() == "I will actively work to conquer foreign lands so that their minions can do my bidding."){
+            model.addAttribute("legalImmigration4",true);
+        } else if (dictator.getLegalImmigration() == "I will encourage you to move to another country if you aren't a productive and satisfied member of society."){
+            model.addAttribute("legalImmigration5",true);
+        }
+        // legal second multiple choice (privacy laws)
+        if (dictator.getLegalPrivacyLaws() == "I will use the latest technology to monitor every aspect of your lives and I will be open and honest about it."){
+            model.addAttribute("legalPrivacyLaws1",true);
+        } else if (dictator.getLegalPrivacyLaws() == "I will use the latest technology to monitor every aspect of your lives and I will hide this from you."){
+            model.addAttribute("legalPrivacyLaws2",true);
+        } else if (dictator.getLegalPrivacyLaws() == "I will let you gather and share information with only moderate fear of persecution."){
+            model.addAttribute("legalPrivacyLaws3",true);
+        } else if (dictator.getLegalPrivacyLaws() == "I will let you gather and share information while working to undermine your efforts."){
+            model.addAttribute("legalPrivacyLaws4",true);
+        } else if (dictator.getLegalPrivacyLaws() == "I will let you decide which aspects of your lives that I assert control over."){
+            model.addAttribute("legalPrivacyLaws5",true);
+        } else if (dictator.getLegalPrivacyLaws() == "I will allow you to live your lives free of constant oversight and supervision."){
+            model.addAttribute("legalPrivacyLaws6",true);
+        }
+        
         return "createform";
     }
 

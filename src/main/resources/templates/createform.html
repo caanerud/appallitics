@@ -206,7 +206,7 @@
               <div class="multiple-choice">
                 <label for="econInfrastructure">Country Infrastructure (click for options)</label>
                 <br />
-                <select spellcheck="true" type="text" id="econInfrastructure" name="econInfrastructure" th:value="${dictator.getEconInfrastructure().trim()}" placeholder="build bridges with your former enemies! or better yet have them build the bridges">
+                <select spellcheck="true" type="text" id="econInfrastructure" name="econInfrastructure" >
                     <option th:selected="${econInfrastructure1}" value ="I will use tax money to sustain our crumbling infrastructure.">I will use tax money to sustain our crumbling infrastructure.</option>
                     <option th:selected="${econInfrastructure2}" value ="I will use tax money to repair and improve our crumbling infrastructure.">I will use tax money to repair and improve our crumbling infrastructure.</option>
                     <option th:selected="${econInfrastructure3}" value ="I will use paid minion labor to sustain our crumbling infrastructure.">I will use paid minion labor to sustain our crumbling infrastructure.</option>
@@ -219,7 +219,7 @@
               <div class="multiple-choice">
                 <label for="econTax">Minion Taxes (click for options)</label>
                 <br />
-                <select spellcheck="true" type="text" id="econTax" name="econTax" th:value="${dictator.getEconTax().trim()}" placeholder="haha, as if you'll pay them a living wage">
+                <select spellcheck="true" type="text" id="econTax" name="econTax" >
                     <option th:selected="${econTax1}" value ="Tax 100% of minion income.">Tax 100% of minion income.</option>
                     <option th:selected="${econTax2}" value ="Tax 75% of minion income.">Tax 75% of minion income.</option>
                     <option th:selected="${econTax3}" value ="Tax 50% of minion income.">Tax 50% of minion income.</option>
@@ -271,27 +271,27 @@
 
               <div class="multiple-choice">
                 <label for="socialEnvironment">Environmental Issues (click for options)</label>
-                <select spellcheck="true" type="text" id="socialEnvironment" name="socialEnvironment" th:value="${dictator.getSocialEnvironment().trim()}" placeholder="destroying the planet is hard work but someone's got to do it">
-                    <option value ="I will sustain the current state of our polluted, festering wasteland."> I will sustain the current state of our polluted, festering wasteland.</option>
-                    <option value ="I will work to improve and care for our polluted, festering wasteland.">I will work to improve and care for our polluted, festering wasteland.</option>
-                    <option value ="I will actively sabotage the environment of our polluted, festering wasteland.">I will actively sabotage the environment of our polluted, festering wasteland.</option>
-                    <option value ="I will refuse to acknowledge that we live in a polluted, festering wasteland.">I will refuse to acknowledge that we live in a polluted, festering wasteland.</option>
-                    <option value ="I will actively work on finding a country to invade that isn't a polluted, festering wasteland.">I will actively work on finding a country to invade that isn't a polluted, festering wasteland.</option>
-                    <option value ="I will encourage space travel in order to find a habitable planet that isn't a polluted, festering wasteland.">I will encourage space travel in order to find a habitable planet that isn't a polluted, festering wasteland.</option>
-                    required="required"</select>
+                <select spellcheck="true" type="text" id="socialEnvironment" name="socialEnvironment" >
+                    <option th:selected="${socialEnvironment1}" value ="I will sustain the current state of our polluted, festering wasteland."> I will sustain the current state of our polluted, festering wasteland.</option>
+                    <option th:selected="${socialEnvironment2}" value ="I will work to improve and care for our polluted, festering wasteland.">I will work to improve and care for our polluted, festering wasteland.</option>
+                    <option th:selected="${socialEnvironment3}" value ="I will actively sabotage the environment of our polluted, festering wasteland.">I will actively sabotage the environment of our polluted, festering wasteland.</option>
+                    <option th:selected="${socialEnvironment4}" value ="I will refuse to acknowledge that we live in a polluted, festering wasteland.">I will refuse to acknowledge that we live in a polluted, festering wasteland.</option>
+                    <option th:selected="${socialEnvironment5}" value ="I will actively work on finding a country to invade that isn't a polluted, festering wasteland.">I will actively work on finding a country to invade that isn't a polluted, festering wasteland.</option>
+                    <option th:selected="${socialEnvironment6}" value ="I will encourage space travel in order to find a habitable planet that isn't a polluted, festering wasteland.">I will encourage space travel in order to find a habitable planet that isn't a polluted, festering wasteland.</option>
+                </select>
               </div>
 
 
 
               <div class="multiple-choice">
                 <label for="socialRetirement">Minion Retirement (click for options)</label>
-                <select spellcheck="true" type="text" id="socialRetirement" name="socialRetirement" th:value="${dictator.getSocialRetirement().trim()}" placeholder="too old to work? that's unpossible">
-                    <option value ="All minions work until I decide otherwise.">All minions work until I decide otherwise.</option>
-                    <option value ="There is no retirement. The word 'retirement' ceases to exist effective immediately.">There is no retirement. The word 'retirement' ceases to exist effective immediately.</option>
-                    <option value ="Retirement age of 65, and then you live on your meager savings.">Retirement age of 65, and then you live on your meager savings.</option>
-                    <option value ="All older minions move into retirement homes and then perform menial tasks to further serve the country.">All older minions move into retirement homes and then perform menial tasks to further serve the country.</option>
-                    <option value ="Minions can retire at a reasonable old age and then mooch off younger minions.">Minions can retire at a reasonable old age and then mooch off younger minions.</option>
-                    required="required"</select>
+                <select spellcheck="true" type="text" id="socialRetirement" name="socialRetirement" >
+                    <option th:selected="${socialRetirement1}" value ="All minions work until I decide otherwise.">All minions work until I decide otherwise.</option>
+                    <option th:selected="${socialRetirement2}" value ="There is no retirement. The word 'retirement' ceases to exist effective immediately.">There is no retirement. The word 'retirement' ceases to exist effective immediately.</option>
+                    <option th:selected="${socialRetirement3}" value ="Retirement age of 65, and then you live on your meager savings.">Retirement age of 65, and then you live on your meager savings.</option>
+                    <option th:selected="${socialRetirement4}" value ="All older minions move into retirement homes and then perform menial tasks to further serve the country.">All older minions move into retirement homes and then perform menial tasks to further serve the country.</option>
+                    <option th:selected="${socialRetirement5}" value ="Minions can retire at a reasonable old age and then mooch off younger minions.">Minions can retire at a reasonable old age and then mooch off younger minions.</option>
+                </select>
               </div>
 
 
@@ -336,26 +336,26 @@
 
               <div class="multiple-choice">
                 <label for="legalImmigration">Minion Immigration (click for options)</label>
-                <select spellcheck="true" type="text" id="legalImmigration" name="legalImmigration" th:value="${dictator.getLegalImmigration().trim()}" placeholder="you will be more than happy to accept/deny new vassals who will do your bidding">
-                    <option value ="I will encourage minions from other countries to come and do my bidding."> I will encourage minions from other countries to come and do my bidding.</option>
-                    <option value ="I will discourage minions from other countries to come and do my bidding.">I will discourage minions from other countries to come and do my bidding.</option>
-                    <option value ="I will allow minions from other countries to visit and do my bidding and then let them return home.">I will allow minions from other countries to visit and do my bidding and then let them return home.</option>
-                    <option value ="I will actively work to conquer foreign lands so that their minions can do my bidding.">I will actively work to conquer foreign lands so that their minions can do my bidding.</option>
-                    <option value ="I will encourage you to move to another country if you aren't a productive and satisfied member of society.">I will encourage you to move to another country if you aren't a productive and satisfied member of society.</option>
-                    required="required"</select>
+                <select spellcheck="true" type="text" id="legalImmigration" name="legalImmigration" >
+                    <option th:selected="${legalImmigration1}" value ="I will encourage minions from other countries to come and do my bidding."> I will encourage minions from other countries to come and do my bidding.</option>
+                    <option th:selected="${legalImmigration2}" value ="I will discourage minions from other countries to come and do my bidding.">I will discourage minions from other countries to come and do my bidding.</option>
+                    <option th:selected="${legalImmigration3}" value ="I will allow minions from other countries to visit and do my bidding and then let them return home.">I will allow minions from other countries to visit and do my bidding and then let them return home.</option>
+                    <option th:selected="${legalImmigration4}" value ="I will actively work to conquer foreign lands so that their minions can do my bidding.">I will actively work to conquer foreign lands so that their minions can do my bidding.</option>
+                    <option th:selected="${legalImmigration5}" value ="I will encourage you to move to another country if you aren't a productive and satisfied member of society.">I will encourage you to move to another country if you aren't a productive and satisfied member of society.</option>
+                </select>
               </div>
 
 
               <div class="multiple-choice">
                 <label for="legalPrivacyLaws">Minion Privacy Laws (click for options)</label>
-                <select spellcheck="true" type="text" id="legalPrivacyLaws" name="legalPrivacyLaws" th:value="${dictator.getLegalPrivacyLaws().trim()}" placeholder="your minions will of course have nothing to hide from you">
-                    <option value ="I will use the latest technology to monitor every aspect of your lives and I will be open and honest about it."> I will use the latest technology to monitor every aspect of your lives and I will be open and honest about it.</option>
-                    <option value ="I will use the latest technology to monitor every aspect of your lives and I will hide this from you.">I will use the latest technology to monitor every aspect of your lives and I will hide this from you.</option>
-                    <option value ="I will let you gather and share information with only moderate fear of persecution.">I will let you gather and share information with only moderate fear of persecution.</option>
-                    <option value ="I will let you gather and share information while working to undermine your efforts.">I will let you gather and share information while working to undermine your efforts.</option>
-                    <option value ="I will let you decide which aspects of your lives that I assert control over.">I will let you decide which aspects of your lives that I assert control over.</option>
-                    <option value ="I will allow you to live your lives free of constant oversight and supervision.">I will allow you to live your lives free of constant oversight and supervision.</option>
-                    required="required"</select>
+                <select spellcheck="true" type="text" id="legalPrivacyLaws" name="legalPrivacyLaws" >
+                    <option th:selected="${legalPrivacyLaws1}" value ="I will use the latest technology to monitor every aspect of your lives and I will be open and honest about it."> I will use the latest technology to monitor every aspect of your lives and I will be open and honest about it.</option>
+                    <option th:selected="${legalPrivacyLaws2}" value ="I will use the latest technology to monitor every aspect of your lives and I will hide this from you.">I will use the latest technology to monitor every aspect of your lives and I will hide this from you.</option>
+                    <option th:selected="${legalPrivacyLaws3}" value ="I will let you gather and share information with only moderate fear of persecution.">I will let you gather and share information with only moderate fear of persecution.</option>
+                    <option th:selected="${legalPrivacyLaws4}" value ="I will let you gather and share information while working to undermine your efforts.">I will let you gather and share information while working to undermine your efforts.</option>
+                    <option th:selected="${legalPrivacyLaws5}" value ="I will let you decide which aspects of your lives that I assert control over.">I will let you decide which aspects of your lives that I assert control over.</option>
+                    <option th:selected="${legalPrivacyLaws6}" value ="I will allow you to live your lives free of constant oversight and supervision.">I will allow you to live your lives free of constant oversight and supervision.</option>
+                </select>
               </div>
 
 
