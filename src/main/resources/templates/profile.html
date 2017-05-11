@@ -74,22 +74,25 @@
 
 
             <div class="top-section">
-              <div class="profile-pic" style="background-image:url(http://lorempixel.com/400/200/cats/)">
+
+              <div class="left">
+                <div class="profile-pic" style="background-image:url(http://lorempixel.com/400/200/cats/)">
+                </div>
+
+                <div class="profile-text">
+                  <h2>Minion</h2>
+                  <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
+                  <h3>All hail our fearless leader!!!</h3>
+                </div>
               </div>
 
-              <div class="row">
+              <div class="right">
                 <div class="profile-info">
-                    <div class="profile-icon" id="minion-icon" style="background-image:url('../static/images/a.png');"
-                         th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url('+@{images/a.png}+');'">
-                    </div>
+                  <div class="profile-icon" id="minion-icon" style="background-image:url('../static/images/a.png');"
+                       th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url('+@{images/a.png}+');'">
+                  </div>
 
-                    <div class="profile-text">
-                      <h2>Minion</h2>
-                      <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
-                      <h3>All hail our fearless leader!!!</h3>
-                    </div>
-
-                  <!-- <div class="social-icons">
+                  <div class="social-icons">
                     <div class="icon" data-href="https://appallitics.herokuapp.com/profile"
                          data-layout="button_count" data-size="small" data-mobile-iframe="true">
                          <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">
@@ -101,18 +104,21 @@
                           <i class="fa fa-twitter-square" aria-hidden="true"></i>
                       </a>
                     </div>
-                  </div> -->
+                  </div>
                 </div>
 
+                <hr/>
+
                 <!--EDIT PROFILE BUTTON-->
-                    <div class="profile-stats">
-                      <div class="buttons" >
-                          <div class="edit" th:if="${owner}">
-                              <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-                              <p>Click to change your status from Minion to Dictator</p>
-                          </div>
-                      </div>
-                    </div>
+
+                <div class="buttons">
+                  <!-- <div class="view"></div> -->
+                  <div class="edit" th:if="${owner}">
+                      <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
+                      <p>Click to change your status from Minion to Dictator</p>
+                  </div>
+                </div>
+
 
                 <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
                 <div class="remodal" data-remodal-id="modal">
@@ -130,22 +136,45 @@
 
       </section>
 
-      <!--DICTATOR-->
-      <section th:if="${minion} == false">
 
-        <div class="section-header">
+
+
+
+
+
+
+
+      <!--DICTATOR____________________________________________-->
+      <section th:if="${minion} == false" class="profile-section">
+
+        <!-- <div class="section-header">
             <h1 th:text="${dictator.getOverviewDictatorshipName()}">Party</h1>
-        </div>
+        </div> -->
 
 
         <div class="top-section">
 
-          <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'"></div>
+          <div class="left">
+            <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'"></div>
 
-          <div class="profile-info">
-            <div class="row">
+            <div class="profile-text">
+              <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
+              <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
+              <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="profile-info">
               <div class="profile-icon" style="background-image:url('../static/images/crocodile.png');"
                    th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url(images/'+${dictator.getOverviewMascot().toLowerCase()}+'.png);'">
+              </div>
+
+              <div class="profile-stats">
+                <div class="stats">
+                  <h3>PLEDGE: <div id="pledge" th:text="${dictator.getPledge()}">2</div> </h3>
+                  <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
+                </div>
               </div>
 
               <div class="social-icons">
@@ -161,51 +190,37 @@
                   </a>
                 </div>
               </div>
-
-            </div>
-            <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
-            <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-          </div>
-
-          <div class="profile-stats">
-
-            <div class="stats">
-              <h3>PLEDGE: <div id="pledge" th:text="${dictator.getPledge()}">2</div> </h3>
-              <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
             </div>
 
+            <hr/>
 
-            <div class="buttons" >
-              <div class="view" th:if="${!owner}" >
-                  <button id="revolt-button" type="button" data-remodal-target="revolt-modal">Revolt</button>
-                  <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
-                  <button id="attack-button" type="button" data-remodal-target="attack-modal">Attack</button>
-                  <div class="error-message" th:if="${errorExists} == true">
-                    <p><b>ERROR: </b><span th:text="${error}"></span></p>
-                  </div>
-                  <div class="error-message" th:if="${errorExists} == false">
-                      <p><span th:text="${attackerMessage}"></span></p>
-                      <p><span th:text="${defenderMessage}"></span></p>
-                  </div>
-              </div>
+              <div class="buttons" >
+                <div class="view" th:if="${!owner}" >
+                    <button id="revolt-button" type="button" data-remodal-target="revolt-modal">Revolt</button>
+                    <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
+                    <button id="attack-button" type="button" data-remodal-target="attack-modal">Attack</button>
+                    <div class="error-message" th:if="${errorExists} == true">
+                      <p><b>ERROR: </b><span th:text="${error}"></span></p>
+                    </div>
+                    <div class="error-message" th:if="${errorExists} == false">
+                        <p><span th:text="${attackerMessage}"></span></p>
+                        <p><span th:text="${defenderMessage}"></span></p>
+                    </div>
+                </div>
 
-              <div class="edit" th:if="${owner}">
-                  <button id="edit-button" type="button" data-remodal-target="edit-modal">Edit Profile</button>
-                  <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values and may cause a catastrophic uprising!</p>
+                <div class="edit" th:if="${owner}">
+                    <button id="edit-button" type="button" data-remodal-target="edit-modal">Edit Profile</button>
+                    <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values and may cause a catastrophic uprising!</p>
+                </div>
+
               </div>
 
 
-                <!--&lt;!&ndash;Facebook share&ndash;&gt;-->
-                <!--<div id="fb-root"></div>-->
-
-                <!--<div class="fb-share-button" data-href="https://appallitics.herokuapp.com/profile"-->
-                     <!--data-layout="button_count" data-size="small" data-mobile-iframe="true">-->
-                    <!--<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">Share</a>-->
-                <!--</div>-->
-
-            </div>
-
           </div>
+
+
+
+
         </div>
 
         <!-- MODAL DIALOG BOXES-->
@@ -252,7 +267,7 @@
 
         <div class="bottom-section">
           <div class="policy">
-            <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>: Economic Policies</h4>
+            <h4>Economic Policies</h4>
               <ul>
                 <li>Stance on minion labor rights: <span th:text="${dictator.getEconLabor()}"></span></li>
                 <li>Minion Taxes: <span th:text="${dictator.getEconTax()}"></span></li>
@@ -262,8 +277,10 @@
               </ul>
           </div>
 
+          <!-- <hr/> -->
+
           <div class="policy">
-            <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>: Social Policies</h4>
+            <h4>Social Policies</h4>
               <ul>
                 <li>Stance on minion healthcare: <span th:text="${dictator.getSocialHealthcare()}"></span></li>
                 <li>Minion retirement: <span th:text="${dictator.getSocialRetirement()}"></span></li>
@@ -273,8 +290,10 @@
               </ul>
           </div>
 
+          <!-- <hr/> -->
+
           <div class="policy">
-            <h4><span th:text="${dictator.getOverviewDictatorshipName()}">Your</span>: Legal Policies</h4>
+            <h4>Legal Policies</h4>
               <ul>
                 <li>Minion punishment: <span th:text="${dictator.getLegalPunishment()}"></span></li>
                 <li>Minion immigration: <span th:text="${dictator.getLegalImmigration()}"></span></li>

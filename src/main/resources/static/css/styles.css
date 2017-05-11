@@ -108,7 +108,7 @@
 .step-by-step {
   display: block;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 0 15px; }
   .step-by-step article {
     margin: 20px 0px 60px;
@@ -134,10 +134,12 @@
     .step-by-step article a {
       color: #FE5745; }
 
-@media (min-width: 1025px) {
+@media (min-width: 1200px) {
   .step-by-step {
     display: flex;
-    justify-content: space-between; } }
+    justify-content: space-between; }
+    .step-by-step article {
+      max-width: 400px; } }
 @media (min-width: 1200px) {
   .hero h1 {
     font-size: 2rem; } }
@@ -254,10 +256,10 @@ td .color-overlay {
   td:nth-child(n+3):nth-child(-n+5), th:nth-child(n+3):nth-child(-n+5) {
     display: block; } }
 .profile-section {
-  background-color: transparent; }
+  background-color: transparent;
+  padding: 0; }
 
 .top-section {
-  margin-bottom: 60px;
   padding: 15px 0 0; }
 
 .profile-pic {
@@ -276,28 +278,29 @@ td .color-overlay {
   background-color: white;
   background-size: 75px; }
 
-.profile-info {
-  display: block;
-  margin: 0 auto 30px;
-  padding: 0 30px;
+.profile-text {
   text-align: center; }
-  .profile-info h2 {
+  .profile-text h2 {
     color: white;
     font-size: 1.5rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: .1rem;
     margin-bottom: 5px; }
-  .profile-info h2:last-of-type {
+  .profile-text h2:last-of-type {
     margin-bottom: 20px; }
-  .profile-info h3 {
+  .profile-text h3 {
     color: white;
     font-weight: 100;
     font-style: italic;
     max-width: 400px;
     margin: 0 auto; }
-  .profile-info h3::before, .profile-info h3::after {
+  .profile-text h3::before, .profile-text h3::after {
     content: '"'; }
+
+.profile-info {
+  display: block;
+  margin: 30px auto 15px; }
 
 .profile-icon {
   width: 100px;
@@ -310,7 +313,7 @@ td .color-overlay {
   margin: 0 auto 30px; }
 
 .social-icons {
-  width: 100px;
+  width: 90px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -337,7 +340,6 @@ td .color-overlay {
   text-align: center;
   display: block;
   margin: 0 auto;
-  padding: 0 15px;
   line-height: 1rem; }
   .profile-stats .stats {
     margin-bottom: 30px; }
@@ -360,67 +362,70 @@ td .color-overlay {
   .profile-stats #revolt::before {
     content: "-"; }
 
-.buttons #revolt-button, .buttons #pledge-button, .buttons #edit-button, .buttons #attack-button {
-  max-width: 400px;
+.buttons #revolt-button, .buttons #pledge-button, .buttons #attack-button, .buttons #edit-button {
+  width: 100%;
   margin: 0 auto 15px; }
 .buttons #revolt-button {
   background-color: #FE5745; }
 .buttons #pledge-button {
   background-color: #2a8c21; }
-.buttons #edit-button {
-  background-color: grey; }
 .buttons #attack-button {
   background-color: #ff7800; }
 .buttons p {
   text-align: center;
   margin: 10px auto 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.5rem; }
   .buttons p b {
     color: #FE5745; }
 
+#edit-button {
+  background-color: grey; }
+
 .bottom-section {
   margin: 30px 0 0;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 30px 30px 0; }
   .bottom-section .policy {
     margin-bottom: 30px;
-    padding: 30px;
-    border: 1px solid white; }
+    padding-top: 40px;
+    border-top: 1px solid white; }
   .bottom-section h4 {
     text-align: center;
     margin: 0 auto 40px;
     padding-bottom: 5px;
-    border-bottom: 1px solid white;
-    max-width: 400px; }
+    max-width: 400px;
+    font-size: 1.5rem; }
   .bottom-section li {
     text-transform: capitalize;
-    text-align: left;
+    text-align: center;
+    font-size: 1.3rem;
     line-height: 1.5rem;
-    margin-bottom: 20px; }
+    margin-bottom: 30px; }
     .bottom-section li span {
+      display: block;
       margin-top: 10px;
       padding-right: 10px;
       font-style: italic;
       text-transform: none;
       font-weight: 100;
-      line-height: 1.3rem; }
+      line-height: 1.7rem; }
     .bottom-section li span::before, .bottom-section li span::after {
       content: '"'; }
 
 @media (min-width: 900px) {
-  .profile-pic {
-    margin: 0; }
-
   .top-section {
     display: flex;
-    justify-content: space-between;
-    margin: -15px -30px 0;
     background-color: rgba(0, 0, 0, 0.2);
-    padding: 60px; }
-    .top-section .row {
-      width: 60%; }
+    padding: 40px; }
+    .top-section .left {
+      width: 35%; }
+    .top-section .right {
+      width: 65%;
+      padding-left: 20px; }
     .top-section .social-icons {
-      clear: both; }
+      margin: 0;
+      float: right; }
     .top-section .profile-info {
       text-align: left;
       margin: 0;
@@ -429,20 +434,37 @@ td .color-overlay {
     .top-section .profile-icon {
       margin: 0;
       float: left; }
-    .top-section .profile-text {
-      float: left;
-      padding-left: 20px; }
     .top-section .profile-stats {
+      float: left;
       margin: 0;
+      margin-left: 20px;
       text-align: left;
-      padding: 20px 0 0; }
-    .top-section .buttons #revolt-button, .top-section .buttons #pledge-button, .top-section .buttons #edit-button, .top-section .buttons #attack-button {
-      margin: 0 0 15px; }
-    .top-section .buttons p {
-      text-align: left; }
+      padding: 0; }
+    .top-section .buttons {
+      display: flex; }
+      .top-section .buttons #revolt-button, .top-section .buttons #pledge-button, .top-section .buttons #attack-button, .top-section .buttons #edit-button {
+        margin: 0 auto 15px; }
+      .top-section .buttons p {
+        text-align: center;
+        margin: 0; }
+    .top-section .edit {
+      width: 50%;
+      padding: 0 10px; }
+    .top-section .view {
+      width: 50%;
+      padding: 0 10px; }
 
   .profile-details {
-    padding: 0 1.5%; } }
+    padding: 0 1.5%; }
+
+  .bottom-section {
+    margin: 0;
+    padding: 0 60px;
+    background-color: #635a60; }
+    .bottom-section .policy h4 {
+      font-size: 2rem; }
+    .bottom-section .policy:first-of-type {
+      border: 0; } }
 .choices {
   display: flex;
   align-items: center;
@@ -591,47 +613,53 @@ td .color-overlay {
 #more-info-link:hover {
   border: 1px solid white; }
 
-#more-info .more-info-policy {
-  border: 1px solid white;
-  padding: 30px; }
-  #more-info .more-info-policy h4 {
-    text-align: center;
-    margin: 0 auto 40px;
-    padding-bottom: 5px;
+#more-info {
+  overflow: hidden; }
+  #more-info .more-info-policy {
     border-bottom: 1px solid white;
-    max-width: 400px; }
-  #more-info .more-info-policy li {
-    text-transform: capitalize;
-    text-align: left;
-    line-height: 1.5rem;
-    margin-bottom: 20px; }
-    #more-info .more-info-policy li span {
-      margin-top: 10px;
-      padding-right: 10px;
-      font-family: sans-serif;
-      font-size: .9rem;
-      font-style: italic;
-      text-transform: none;
-      font-weight: 100;
-      line-height: 1.3rem; }
-    #more-info .more-info-policy li span::before, #more-info .more-info-policy li span::after {
-      content: '"'; }
+    padding: 30px; }
+    #more-info .more-info-policy h4 {
+      text-align: center;
+      margin: 0 auto 40px;
+      padding-bottom: 5px;
+      max-width: 400px;
+      font-size: 1.5rem; }
+    #more-info .more-info-policy li {
+      text-transform: capitalize;
+      text-align: center;
+      font-size: 1.3rem;
+      line-height: 1.5rem;
+      margin-bottom: 30px; }
+      #more-info .more-info-policy li span {
+        display: block;
+        margin-top: 10px;
+        padding-right: 10px;
+        font-style: italic;
+        text-transform: none;
+        font-weight: 100;
+        line-height: 1.7rem; }
+      #more-info .more-info-policy li span::before, #more-info .more-info-policy li span::after {
+        content: '"'; }
+  #more-info .more-info-policy:last-of-type {
+    border: 0; }
 
 #vote-buttons {
   margin: 30px auto;
-  max-width: 440px;
-  align-items: stretch;
+  max-width: 600px;
+  justify-content: center;
   justify-content: space-between; }
-  #vote-buttons button {
-    width: 200px;
-    margin: 0 auto; }
+  #vote-buttons #revolt-button, #vote-buttons #pledge-button {
+    width: 280px; }
 
 @media (min-width: 900px) {
   #vote-buttons {
     display: flex; }
 
   #more-info {
-    max-width: 80%; } }
+    max-width: 1200px;
+    padding: 50px; }
+    #more-info .more-info-policy h4 {
+      font-size: 2rem; } }
 #about-backstory {
   padding: 50px 0 30px;
   background-color: #635a60; }
