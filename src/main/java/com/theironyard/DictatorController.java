@@ -238,8 +238,31 @@ public class DictatorController {
             model.addAttribute("darkorange",true);
         } else if (dictator.getOverviewColor() == "darksalmon"){
             model.addAttribute("darksalmon",true);
-        } else{
+        } else if (dictator.getOverviewColor() == "yellow"){
             model.addAttribute("yellow",true);
+        }
+
+        // mascot
+        if (dictator.getOverviewMascot() == "Lion"){
+            model.addAttribute("Lion",true);
+        } else if (dictator.getOverviewMascot() == "Bear"){
+            model.addAttribute("Bear",true);
+        } else if (dictator.getOverviewMascot() == "ClownFish"){
+            model.addAttribute("ClownFish",true);
+        } else if (dictator.getOverviewMascot() == "Mouse"){
+            model.addAttribute("Mouse",true);
+        } else if (dictator.getOverviewMascot() == "Crocodile"){
+            model.addAttribute("Crocodile",true);
+        } else if (dictator.getOverviewMascot() == "Parrot"){
+            model.addAttribute("Parrot",true);
+        } else if (dictator.getOverviewMascot() == "Rhino"){
+            model.addAttribute("Rhino",true);
+        } else if (dictator.getOverviewMascot() == "Shark"){
+            model.addAttribute("Shark",true);
+        } else if (dictator.getOverviewMascot() == "Trout"){
+            model.addAttribute("Trout",true);
+        } else if (dictator.getOverviewMascot() == "Giraffe"){
+            model.addAttribute("Giraffe",true);
         }
 
         return "createform";
