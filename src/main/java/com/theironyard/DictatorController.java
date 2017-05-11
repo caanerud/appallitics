@@ -62,20 +62,10 @@ public class DictatorController {
 
     // creating dictator form
     @GetMapping("/createform")
-    public String createform(Model model, HttpSession session, @RequestParam(name="file") MultipartFile file){
+    public String createform(Model model, HttpSession session){
         // Getting id from session
         Integer userId = (Integer) session.getAttribute("userId");
         Dictator dictator = dictatorRepository.getDictatorById(userId);
-
-        // Giving the image back if it exist
-        if (!file.isEmpty()){
-            try{
-                dictator.setOverviewImage(file.getBytes());
-                dictator.setOverviewContentType(file.getContentType());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
 
         // modeling empty dictator
         model.addAttribute("dictator",dictator);
@@ -169,7 +159,7 @@ public class DictatorController {
 
         // creates blank dictator
         Dictator dictator = new Dictator(new User(userWithId.getId()),
-                " ", " "," ","#ffffff"," ",new byte [1],
+                " ", " "," ","#ffffff",null,new byte [1],
                 " "," "," "," "," ",
                 " "," "," "," "," ",
                 " "," "," "," "," ",
@@ -555,7 +545,6 @@ public class DictatorController {
                 .ok()
                 .header(HttpHeaders.CONTENT_TYPE, dictator.getOverviewContentType())
                 .body(dictator.getOverviewImage());
-
     }
 
     // logout
