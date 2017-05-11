@@ -19,7 +19,7 @@
     <header>
         <div class="logo">
           <a href="index.html" th:href="@{/}" title="Return Home, while you still have one">
-            <img src="../static/images/logo.svg" alt="appallitics">
+            <img src="../static/images/logo.svg" alt="appallitics" />
           </a>
         </div>
         <!--if logged in-->
@@ -112,10 +112,10 @@
                   <div class="choose-pic">
                     <label for="file">Choose Your Profile Picture</label>
                     <input name="file" id="file" type="file" class="upload" />
+                      <div class="image-upload">
+                          <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}" />
+                      </div>
                   </div>
-
-                  <div>CURRENT IMAGE</div>
-                  <img th:src="@{/dictator/image(id=${dictator.getUser().getId()})}" />
 
                   <div class="choose-color">
                     <p>Choose Your Color</p>
