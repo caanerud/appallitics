@@ -67,7 +67,7 @@ public class DictatorController {
         Integer userId = (Integer) session.getAttribute("userId");
         Dictator dictator = dictatorRepository.getDictatorById(userId);
 
-        // modeling empty dictator
+        // modeling dictator
         model.addAttribute("dictator",dictator);
 
         return "createform";
@@ -208,6 +208,148 @@ public class DictatorController {
         // Gets the dictator so that the input fields may be filled with previous answers
         model.addAttribute("dictator",dictator);
 
+        // PRE-SELECTED VALUES
+        // color
+        if (dictator.getOverviewColor() == "aliceblue"){
+            model.addAttribute("aliceblue",true);
+        } else if (dictator.getOverviewColor() == "aquamarine"){
+            model.addAttribute("aquamarine",true);
+        } else if (dictator.getOverviewColor() == "bisque"){
+            model.addAttribute("bisque",true);
+        } else if (dictator.getOverviewColor() == "black"){
+            model.addAttribute("black",true);
+        } else if (dictator.getOverviewColor() == "blueviolet"){
+            model.addAttribute("blueviolet",true);
+        } else if (dictator.getOverviewColor() == "brown"){
+            model.addAttribute("brown",true);
+        } else if (dictator.getOverviewColor() == "cadetblue"){
+            model.addAttribute("cadetblue",true);
+        } else if (dictator.getOverviewColor() == "coral"){
+            model.addAttribute("coral",true);
+        } else if (dictator.getOverviewColor() == "cornflowerblue"){
+            model.addAttribute("cornflowerblue",true);
+        } else if (dictator.getOverviewColor() == "crimson"){
+            model.addAttribute("crimson",true);
+        } else if (dictator.getOverviewColor() == "darkblue"){
+            model.addAttribute("darkblue",true);
+        } else if (dictator.getOverviewColor() == "darkgoldenrod"){
+            model.addAttribute("darkgoldenrod",true);
+        } else if (dictator.getOverviewColor() == "darkorange"){
+            model.addAttribute("darkorange",true);
+        } else if (dictator.getOverviewColor() == "darksalmon"){
+            model.addAttribute("darksalmon",true);
+        } else if (dictator.getOverviewColor() == "yellow"){
+            model.addAttribute("yellow",true);
+        }
+
+        // mascot
+        if (dictator.getOverviewMascot() == "Lion"){
+            model.addAttribute("Lion",true);
+        } else if (dictator.getOverviewMascot() == "Bear"){
+            model.addAttribute("Bear",true);
+        } else if (dictator.getOverviewMascot() == "ClownFish"){
+            model.addAttribute("ClownFish",true);
+        } else if (dictator.getOverviewMascot() == "Mouse"){
+            model.addAttribute("Mouse",true);
+        } else if (dictator.getOverviewMascot() == "Crocodile"){
+            model.addAttribute("Crocodile",true);
+        } else if (dictator.getOverviewMascot() == "Parrot"){
+            model.addAttribute("Parrot",true);
+        } else if (dictator.getOverviewMascot() == "Rhino"){
+            model.addAttribute("Rhino",true);
+        } else if (dictator.getOverviewMascot() == "Shark"){
+            model.addAttribute("Shark",true);
+        } else if (dictator.getOverviewMascot() == "Trout"){
+            model.addAttribute("Trout",true);
+        } else if (dictator.getOverviewMascot() == "Giraffe"){
+            model.addAttribute("Giraffe",true);
+        }
+
+        // econ first multiple choice (infrastructure)
+        if (dictator.getEconInfrastructure() == "I will use tax money to sustain our crumbling infrastructure."){
+            model.addAttribute("econInfrastructure1",true);
+        } else if (dictator.getEconInfrastructure() == "I will use tax money to repair and improve our crumbling infrastructure."){
+            model.addAttribute("econInfrastructure2",true);
+        } else if (dictator.getEconInfrastructure() == "I will use paid minion labor to sustain our crumbling infrastructure."){
+            model.addAttribute("econInfrastructure3",true);
+        } else if (dictator.getEconInfrastructure() == "I will use free minion labor to sustain our crumbling infrastructure."){
+            model.addAttribute("econInfrastructure4",true);
+        } else if (dictator.getEconInfrastructure() == "I will ignore our crumbling infrastructure and focus on more important matters."){
+            model.addAttribute("econInfrastructure5",true);
+        } else if (dictator.getEconInfrastructure() == "I will actively destroy our crumbling infrastructure."){
+            model.addAttribute("econInfrastructure6",true);
+        }
+        // econ second multiple choice (tax)
+        if (dictator.getEconTax() == "Tax 100% of minion income."){
+            model.addAttribute("econTax1",true);
+        } else if (dictator.getEconTax() == "Tax 75% of minion income.") {
+            model.addAttribute("econTax2", true);
+        } else if (dictator.getEconTax() == "Tax 50% of minion income.") {
+            model.addAttribute("econTax3", true);
+        } else if (dictator.getEconTax() == "Tax 35% of minion income.") {
+            model.addAttribute("econTax4", true);
+        } else if (dictator.getEconTax() == "Tax 15% of minion income.") {
+            model.addAttribute("econTax5", true);
+        } else if (dictator.getEconTax() == "No tax") {
+            model.addAttribute("econTax6", true);
+        } else if (dictator.getEconTax() == "I plan on abolishing currency.") {
+            model.addAttribute("econTax7", true);
+        }
+
+        // social first multiple choice (environment)
+        if (dictator.getSocialEnvironment() == "I will sustain the current state of our polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment1",true);
+        } else if (dictator.getSocialEnvironment() == "I will work to improve and care for our polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment2",true);
+        } else if (dictator.getSocialEnvironment() == "I will actively sabotage the environment of our polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment3",true);
+        } else if (dictator.getSocialEnvironment() == "I will refuse to acknowledge that we live in a polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment4",true);
+        } else if (dictator.getSocialEnvironment() == "I will actively work on finding a country to invade that isn't a polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment5",true);
+        } else if (dictator.getSocialEnvironment() == "I will encourage space travel in order to find a habitable planet that isn't a polluted, festering wasteland."){
+            model.addAttribute("socialEnvironment6",true);
+        }
+        // social second multiple choice (retirement)
+        if (dictator.getSocialRetirement() == "All minions work until I decide otherwise."){
+            model.addAttribute("socialRetirement1",true);
+        } else if (dictator.getSocialRetirement() == "There is no retirement. The word 'retirement' ceases to exist effective immediately."){
+            model.addAttribute("socialRetirement2",true);
+        } else if (dictator.getSocialRetirement() == "Retirement age of 65, and then you live on your meager savings."){
+            model.addAttribute("socialRetirement3",true);
+        } else if (dictator.getSocialRetirement() == "All older minions move into retirement homes and then perform menial tasks to further serve the country."){
+            model.addAttribute("socialRetirement4",true);
+        } else if (dictator.getSocialRetirement() == "Minions can retire at a reasonable old age and then mooch off younger minions."){
+            model.addAttribute("socialRetirement5",true);
+        }
+
+        // legal first multiple choice (immigration)
+        if (dictator.getLegalImmigration() == "I will encourage minions from other countries to come and do my bidding."){
+            model.addAttribute("legalImmigration1",true);
+        } else if (dictator.getLegalImmigration() == "I will discourage minions from other countries to come and do my bidding."){
+            model.addAttribute("legalImmigration2",true);
+        } else if (dictator.getLegalImmigration() == "I will allow minions from other countries to visit and do my bidding and then let them return home."){
+            model.addAttribute("legalImmigration3",true);
+        } else if (dictator.getLegalImmigration() == "I will actively work to conquer foreign lands so that their minions can do my bidding."){
+            model.addAttribute("legalImmigration4",true);
+        } else if (dictator.getLegalImmigration() == "I will encourage you to move to another country if you aren't a productive and satisfied member of society."){
+            model.addAttribute("legalImmigration5",true);
+        }
+        // legal second multiple choice (privacy laws)
+        if (dictator.getLegalPrivacyLaws() == "I will use the latest technology to monitor every aspect of your lives and I will be open and honest about it."){
+            model.addAttribute("legalPrivacyLaws1",true);
+        } else if (dictator.getLegalPrivacyLaws() == "I will use the latest technology to monitor every aspect of your lives and I will hide this from you."){
+            model.addAttribute("legalPrivacyLaws2",true);
+        } else if (dictator.getLegalPrivacyLaws() == "I will let you gather and share information with only moderate fear of persecution."){
+            model.addAttribute("legalPrivacyLaws3",true);
+        } else if (dictator.getLegalPrivacyLaws() == "I will let you gather and share information while working to undermine your efforts."){
+            model.addAttribute("legalPrivacyLaws4",true);
+        } else if (dictator.getLegalPrivacyLaws() == "I will let you decide which aspects of your lives that I assert control over."){
+            model.addAttribute("legalPrivacyLaws5",true);
+        } else if (dictator.getLegalPrivacyLaws() == "I will allow you to live your lives free of constant oversight and supervision."){
+            model.addAttribute("legalPrivacyLaws6",true);
+        }
+        
         return "createform";
     }
 
