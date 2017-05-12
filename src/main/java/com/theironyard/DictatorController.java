@@ -484,12 +484,44 @@ public class DictatorController {
         return "leaderboard";
     }
 
+    // leaderboard sort best
+    @GetMapping("/bestDictators")
+    public String bestDictators(Model model, @RequestParam(defaultValue = "") String search, Integer firstPosition){
+        // The searched list
+        List<Dictator> searchDictators = dictatorRepository.listBestDictators(search);
+
+        // sorting the other way if clicked again
+        if (searchDictators.get(0).getUser().getId() == firstPosition){
+            searchDictators = dictatorRepository.listBestDictatorsSort(search);
+        }
+
+        // Getting the list of worst dictators
+        List<Dictator> dictatorList = new ArrayList<>();
+
+        // Getting the dictators (with data)
+        for (int x = 0; x < searchDictators.size(); x = x + 1){
+            if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
+                dictatorList.add(searchDictators.get(x));
+            }
+        }
+
+        // Sending the filtered list of dictators to leaderboard
+        model.addAttribute("dictators",dictatorList);
+
+        return "leaderboard";
+    }
+
     // leaderboard sort worst
     @GetMapping("/worstDictators")
-    public String worstDictators(Model model, @RequestParam(defaultValue = "") String search, ){
+    public String worstDictators(Model model, @RequestParam(defaultValue = "") String search, Integer firstPosition){
 
     // The searched list
         List<Dictator> searchDictators = dictatorRepository.listWorstDictators(search);
+
+        // sorting the other way if clicked again
+        if (searchDictators.get(0).getUser().getId() == firstPosition){
+            searchDictators = dictatorRepository.listWorstDictatorsSort(search);
+        }
 
         // Getting the list of worst dictators
         List<Dictator> dictatorList = new ArrayList<>();
@@ -509,10 +541,15 @@ public class DictatorController {
 
     // leaderboard sort by score
     @GetMapping("/score")
-    public String score(Model model, @RequestParam(defaultValue = "") String search){
+    public String score(Model model, @RequestParam(defaultValue = "") String search, Integer firstPosition){
 
         // The searched list
         List<Dictator> searchDictators = dictatorRepository.sortByScore(search);
+
+        // sorting the other way if clicked again
+        if (searchDictators.get(0).getUser().getId() == firstPosition){
+            searchDictators = dictatorRepository.sortByScoreSort(search);
+        }
 
         // Getting the list of dictators sorted by score
         List<Dictator> dictatorList = new ArrayList<>();
