@@ -14,8 +14,8 @@
   margin:0 auto 30px;
   background-size: cover;
   background-position: center;
-  background-blend-mode:multiply;
-  background-color: $color1;
+  background-blend-mode:luminosity;
+  filter: grayscale(.3);
 
   img{
     width: 100%;
