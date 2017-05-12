@@ -92,36 +92,32 @@
                        th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image:url('+@{images/a.png}+');'">
                   </div>
 
-                  <div class="social-icons">
-                    <div class="icon" data-href="https://appallitics.herokuapp.com/profile"
-                         data-layout="button_count" data-size="small" data-mobile-iframe="true">
-                         <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">
-                             <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                         </a>
+                  <div class="float-right">
+                    <div class="social-icons">
+                      <div class="icon" data-href="https://appallitics.herokuapp.com/profile"
+                           data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                           <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">
+                               <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                           </a>
+                      </div>
+                      <div class="icon">
+                        <a target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" th:href="@{'https://twitter.com/intent/tweet?text='+${twitterBlurb}}">
+                            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        </a>
+                      </div>
                     </div>
-                    <div class="icon">
-                      <a target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" th:href="@{'https://twitter.com/intent/tweet?text='+${twitterBlurb}}">
-                          <i class="fa fa-twitter-square" aria-hidden="true"></i>
-                      </a>
+
+                    <!--EDIT PROFILE BUTTON-->
+                    <div class="edit" th:if="${owner}" data-remodal-target="minion-modal">
+                        <a href="#" id="edit-button">Edit Profile</a>
                     </div>
                   </div>
                 </div>
 
-                <!-- <hr/> -->
-
-                <!--EDIT PROFILE BUTTON-->
-
-                <div class="buttons">
-                  <!-- <div class="view"></div> -->
-                  <div class="edit" th:if="${owner}">
-                      <a href="#" id="edit-button" data-remodal-target="modal">Edit Profile</a>
-                      <!-- <p>Click to change your status from Minion to Dictator</p> -->
-                  </div>
-                </div>
 
 
                 <!-- MODAL DIALOG BOX FOR EDIT BUTTON -->
-                <div class="remodal" data-remodal-id="modal">
+                <div class="remodal" data-remodal-id="minion-modal">
                     <a href="#" data-remodal-action="close" class="remodal-close" ></a>
                     <h2>Time to rule</h2>
                     <br/>
@@ -167,22 +163,29 @@
 
               <div class="profile-stats">
                 <div class="stats">
+                  <h3>SCORE: <div id="rank" th:text="${dictator.getPledge() - dictator.getRevolt()}">3</div></h3>
                   <h3>PLEDGE: <div id="pledge" th:text="${dictator.getPledge()}">2</div> </h3>
                   <h3>REVOLT: <div id="revolt" th:text="${dictator.getRevolt()}">998001</div> </h3>
                 </div>
               </div>
 
-              <div class="social-icons">
-                <div class="icon" data-href="https://appallitics.herokuapp.com/profile"
-                     data-layout="button_count" data-size="small" data-mobile-iframe="true">
-                     <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">
-                         <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                     </a>
+              <div class="float-right">
+                <div class="social-icons">
+                  <div class="icon" data-href="https://appallitics.herokuapp.com/profile"
+                       data-layout="button_count" data-size="small" data-mobile-iframe="true">
+                       <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fappallitics.herokuapp.com%2Fprofile&amp;src=sdkpreparse">
+                           <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                       </a>
+                  </div>
+                  <div class="icon">
+                    <a target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" th:href="@{'https://twitter.com/intent/tweet?text='+${twitterBlurb}}">
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    </a>
+                  </div>
                 </div>
-                <div class="icon">
-                  <a target="_blank" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" th:href="@{'https://twitter.com/intent/tweet?text='+${twitterBlurb}}">
-                      <i class="fa fa-twitter-square" aria-hidden="true"></i>
-                  </a>
+
+                <div class="edit" th:if="${owner}">
+                    <a href="#" id="edit-button" data-remodal-target="edit-modal">Edit Profile</a>
                 </div>
               </div>
             </div>
@@ -190,9 +193,9 @@
             <!-- <hr/> -->
 
               <div class="buttons" >
-                <div class="edit" th:if="${owner}">
+                <!-- <div class="edit" th:if="${owner}">
                     <a href="#" id="edit-button" data-remodal-target="edit-modal">Edit Profile</a>
-                </div>
+                </div> -->
 
                 <div class="view" th:if="${!owner}" >
                     <div class="gameplay-buttons">
