@@ -25,7 +25,6 @@ import java.util.Random;
 public class DictatorController {
     @Autowired
     DictatorRepository dictatorRepository;
-    Email email;
 
     // homepage
     @GetMapping("/")
@@ -169,6 +168,33 @@ public class DictatorController {
         // redirect to creating dictator
         return "redirect:/createform";
     }
+
+    // forgot password
+    @GetMapping("/password")
+    public String password(){
+        return "password";
+    }
+
+    @PostMapping("/forgetPassword")
+    public String forgetPassword(String username, String email){
+
+        // Getting the list of users and storing it as a variable
+        List<User> listOfUsers = dictatorRepository.listUsers();
+
+        // The email
+        Email sendEmail = new Email();
+
+        // The forgetful one, send email to him
+        for (int x = 0; x < listOfUsers.size(); x = x + 1){
+            if (listOfUsers.get(x).getUsername() == username && listOfUsers.get(x).getEmail() == email){
+                sendEmail.email("email","Reset Password",
+                        "Click on this link, https://appallitics.herokuapp.com/"+listOfUsers.get(x).getPassword()+", to reset password.");
+            }
+        }
+
+        return "password";
+    }
+
 
 
     // CREATING DICTATOR, EDITING DICTATOR, AND VIEWING DICTATOR !!
@@ -349,7 +375,7 @@ public class DictatorController {
         } else if (dictator.getLegalPrivacyLaws() == "I will allow you to live your lives free of constant oversight and supervision."){
             model.addAttribute("legalPrivacyLaws6",true);
         }
-        
+
         return "createform";
     }
 
@@ -460,9 +486,9 @@ public class DictatorController {
 
     // leaderboard sort worst
     @GetMapping("/worstDictators")
-    public String worstDictators(Model model, @RequestParam(defaultValue = "") String search){
+    public String worstDictators(Model model, @RequestParam(defaultValue = "") String search, ){
 
-// The searched list
+    // The searched list
         List<Dictator> searchDictators = dictatorRepository.listWorstDictators(search);
 
         // Getting the list of worst dictators
