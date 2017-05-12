@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/images/favicon.png" type="image/x-icon" />
     <title>Profile</title>
     <script src="https://use.fontawesome.com/d631437608.js"></script>
     <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{css/normalize.css}"/>
@@ -149,7 +150,7 @@
         <div class="top-section">
 
           <div class="left">
-            <div class="profile-pic" th:style="'background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'"></div>
+            <div class="profile-pic" th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'"></div>
 
             <div class="profile-text">
               <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
@@ -190,7 +191,7 @@
 
               <div class="buttons" >
                 <div class="edit" th:if="${owner}">
-                    <a href"#" id="edit-button" data-remodal-target="edit-modal">Edit Profile</a>
+                    <a href="#" id="edit-button" data-remodal-target="edit-modal">Edit Profile</a>
                 </div>
 
                 <div class="view" th:if="${!owner}" >

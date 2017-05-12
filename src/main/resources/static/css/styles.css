@@ -269,8 +269,8 @@ td .color-overlay {
   margin: 0 auto 30px;
   background-size: cover;
   background-position: center;
-  background-blend-mode: lighten;
-  background-color: #FE5745; }
+  background-blend-mode: luminosity;
+  filter: grayscale(0.3); }
   .profile-pic img {
     width: 100%; }
 

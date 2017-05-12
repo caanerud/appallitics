@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="shortcut icon" href="../static/images/favicon.png" type="image/x-icon" />
     <title>Vote</title>
     <script src="https://use.fontawesome.com/d631437608.js"></script>
     <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{css/normalize.css}"/>
@@ -132,7 +132,7 @@
             <div class="more-info-policy">
               <h4>Legal Policies</h4>
               <ul>
-                  <li>Minion punishment: <span th:text="${dictator.getLegalPunishment()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></li>
+                  <li>Minion punishment: <span th:text="${dictator.getLegalPunishment()}"></span></li>
                   <li>Minion immigration: <span th:text="${dictator.getLegalImmigration()}"></span></li>
                   <li>Minion voting rights: <span th:text="${dictator.getLegalVotingRights()}"></span></li>
                   <li>Minion privacy Laws: <span th:text="${dictator.getLegalPrivacyLaws()}"></span></li>
