@@ -269,7 +269,7 @@ td .color-overlay {
   margin: 0 auto 30px;
   background-size: cover;
   background-position: center;
-  background-blend-mode: overlay;
+  background-blend-mode: multiply;
   background-color: #FE5745; }
   .profile-pic img {
     width: 100%; }
