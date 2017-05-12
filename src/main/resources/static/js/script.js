@@ -110,9 +110,9 @@ $(document).ready(function(){
 });
 
 // PROFILE STAT SLIDEDOWN
-$(document).ready(function(){
-  $('.bottom-section').delay(500).slideDown(1000);
-});
+// $(document).ready(function(){
+//   $('.bottom-section').delay(500).slideDown(1000);
+// });
 
 
 

@@ -14,8 +14,7 @@
   margin:0 auto 30px;
   background-size: cover;
   background-position: center;
-  background-blend-mode:luminosity;
-  filter: grayscale(.3);
+  background-color: red;
 
   img{
     width: 100%;
@@ -121,7 +120,7 @@
 
   h3{
     font-size: 1.3rem;
-    line-height: 1.3rem;
+    line-height: 1.7rem;
   }
 
   #rank, #pledge, #revolt{
@@ -155,7 +154,7 @@
 
 .buttons{
 
-  #revolt-button, #pledge-button, #attack-button, #edit-button{
+  #revolt-button, #pledge-button, #attack-button{
     width: 100%;
     margin: 0 auto 15px;
   }
@@ -186,15 +185,12 @@
 
 
 .edit{
-  text-align: center;
-  margin: 50px 0;
-
-  #edit-button{
-    width: 50%;
-    padding: 15px;
-    border:1px solid white;
-    transition: all .1s ease-in-out;
-  }
+  display: block;
+  width: 100px;
+  margin: 10px auto 60px ;
+  padding: 10px;
+  border:1px solid white;
+  transition: all .1s ease-in-out;
 }
 
 .view{
@@ -209,7 +205,6 @@
 
 
 .bottom-section{
-  display: none;
   margin: 30px 0 0;
   overflow: hidden;
   padding: 30px 30px 0;
@@ -272,14 +267,17 @@
 
     .social-icons{
       margin: 0;
-      float: right;
+      padding: 0;
+      width: 100px;
     }
 
     .profile-info{
       text-align: left;
       margin: 0;
       padding:0;
+      padding-bottom: 30px;
       overflow: hidden;
+      border-bottom: 1px solid white;
     }
 
     .profile-icon{
@@ -293,14 +291,17 @@
       margin-left: 20px;
       text-align: left;
       padding:0;
+      height: 100px;
+
+      .stats{
+        margin:0;
+      }
     }
 
     .buttons{
-      padding: 30px 0 0;
+      padding: 0;
       width: 100%;
       margin:30px 0 0;
-      border-top: 1px solid white;
-
 
       #revolt-button, #pledge-button, #attack-button{
         margin: 0 auto 15px;
@@ -308,26 +309,30 @@
     }
 
     .edit{
-      cursor: pointer;
-      margin:15px 0 50px;
-      text-align: left;
+      margin:20px auto 0;
+    }
 
-      #edit-button:hover{
-        background-color: rgba(250,250,250,.1);
-      }
+    .edit:hover{
+      cursor: pointer;
+      background-color: rgba(250,250,250,.1);
     }
 
     .view{
       width: 100%;
       margin: 0;
-      display: flex;
 
       .gameplay-buttons{
-        width: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        button{
+          max-width: 30%;
+        }
       }
 
       .attack-messages{
-        width: 50%;
+        max-width: 100%;
         margin: 0;
 
         .error-message{

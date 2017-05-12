@@ -269,8 +269,7 @@ td .color-overlay {
   margin: 0 auto 30px;
   background-size: cover;
   background-position: center;
-  background-blend-mode: luminosity;
-  filter: grayscale(0.3); }
+  background-color: red; }
   .profile-pic img {
     width: 100%; }
 
@@ -345,7 +344,7 @@ td .color-overlay {
     margin-bottom: 30px; }
   .profile-stats h3 {
     font-size: 1.3rem;
-    line-height: 1.3rem; }
+    line-height: 1.7rem; }
   .profile-stats #rank, .profile-stats #pledge, .profile-stats #revolt {
     display: inline-block;
     font-size: 1.5rem;
@@ -362,7 +361,7 @@ td .color-overlay {
   .profile-stats #revolt::before {
     content: "-"; }
 
-.buttons #revolt-button, .buttons #pledge-button, .buttons #attack-button, .buttons #edit-button {
+.buttons #revolt-button, .buttons #pledge-button, .buttons #attack-button {
   width: 100%;
   margin: 0 auto 15px; }
 .buttons #revolt-button {
@@ -380,20 +379,18 @@ td .color-overlay {
     color: #FE5745; }
 
 .edit {
-  text-align: center;
-  margin: 50px 0; }
-  .edit #edit-button {
-    width: 50%;
-    padding: 15px;
-    border: 1px solid white;
-    transition: all .1s ease-in-out; }
+  display: block;
+  width: 100px;
+  margin: 10px auto 60px;
+  padding: 10px;
+  border: 1px solid white;
+  transition: all .1s ease-in-out; }
 
 .view .attack-messages {
   max-width: 300px;
   margin: 0 auto; }
 
 .bottom-section {
-  display: none;
   margin: 30px 0 0;
   overflow: hidden;
   padding: 30px 30px 0; }
@@ -436,12 +433,15 @@ td .color-overlay {
       padding-left: 20px; }
     .top-section .social-icons {
       margin: 0;
-      float: right; }
+      padding: 0;
+      width: 100px; }
     .top-section .profile-info {
       text-align: left;
       margin: 0;
       padding: 0;
-      overflow: hidden; }
+      padding-bottom: 30px;
+      overflow: hidden;
+      border-bottom: 1px solid white; }
     .top-section .profile-icon {
       margin: 0;
       float: left; }
@@ -450,28 +450,32 @@ td .color-overlay {
       margin: 0;
       margin-left: 20px;
       text-align: left;
-      padding: 0; }
+      padding: 0;
+      height: 100px; }
+      .top-section .profile-stats .stats {
+        margin: 0; }
     .top-section .buttons {
-      padding: 30px 0 0;
+      padding: 0;
       width: 100%;
-      margin: 30px 0 0;
-      border-top: 1px solid white; }
+      margin: 30px 0 0; }
       .top-section .buttons #revolt-button, .top-section .buttons #pledge-button, .top-section .buttons #attack-button {
         margin: 0 auto 15px; }
     .top-section .edit {
+      margin: 20px auto 0; }
+    .top-section .edit:hover {
       cursor: pointer;
-      margin: 15px 0 50px;
-      text-align: left; }
-      .top-section .edit #edit-button:hover {
-        background-color: rgba(250, 250, 250, 0.1); }
+      background-color: rgba(250, 250, 250, 0.1); }
     .top-section .view {
       width: 100%;
-      margin: 0;
-      display: flex; }
+      margin: 0; }
       .top-section .view .gameplay-buttons {
-        width: 50%; }
+        width: 100%;
+        display: flex;
+        justify-content: space-between; }
+        .top-section .view .gameplay-buttons button {
+          max-width: 30%; }
       .top-section .view .attack-messages {
-        width: 50%;
+        max-width: 100%;
         margin: 0; }
         .top-section .view .attack-messages .error-message {
           padding: 0 30px; }
@@ -972,7 +976,10 @@ footer {
     display: block; }
 
   .hamburger-trigger {
-    display: none; } }
+    display: none; }
+
+  .float-right {
+    float: right; } }
 @keyframes bounce {
   0% {
     transform: translateY(0px); }
