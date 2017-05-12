@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Profile</title>
     <script src="https://use.fontawesome.com/d631437608.js"></script>
     <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{css/normalize.css}"/>
@@ -107,15 +106,15 @@
                   </div>
                 </div>
 
-                <hr/>
+                <!-- <hr/> -->
 
                 <!--EDIT PROFILE BUTTON-->
 
                 <div class="buttons">
                   <!-- <div class="view"></div> -->
                   <div class="edit" th:if="${owner}">
-                      <button id="edit-button" type="button" data-remodal-target="modal">Edit Profile</button>
-                      <p>Click to change your status from Minion to Dictator</p>
+                      <a href="#" id="edit-button" data-remodal-target="modal">Edit Profile</a>
+                      <!-- <p>Click to change your status from Minion to Dictator</p> -->
                   </div>
                 </div>
 
@@ -146,11 +145,6 @@
 
       <!--DICTATOR____________________________________________-->
       <section th:if="${minion} == false" class="profile-section">
-
-        <!-- <div class="section-header">
-            <h1 th:text="${dictator.getOverviewDictatorshipName()}">Party</h1>
-        </div> -->
-
 
         <div class="top-section">
 
@@ -192,25 +186,30 @@
               </div>
             </div>
 
-            <hr/>
+            <!-- <hr/> -->
 
               <div class="buttons" >
-                <div class="view" th:if="${!owner}" >
-                    <button id="revolt-button" type="button" data-remodal-target="revolt-modal">Revolt</button>
-                    <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
-                    <button id="attack-button" type="button" data-remodal-target="attack-modal">Attack</button>
-                    <div class="error-message" th:if="${errorExists} == true">
-                      <p><b>ERROR: </b><span th:text="${error}"></span></p>
-                    </div>
-                    <div class="error-message" th:if="${errorExists} == false">
-                        <p><span th:text="${attackerMessage}"></span></p>
-                        <p><span th:text="${defenderMessage}"></span></p>
-                    </div>
+                <div class="edit" th:if="${owner}">
+                    <a href"#" id="edit-button" data-remodal-target="edit-modal">Edit Profile</a>
                 </div>
 
-                <div class="edit" th:if="${owner}">
-                    <button id="edit-button" type="button" data-remodal-target="edit-modal">Edit Profile</button>
-                    <p><b>WARNING:</b> Editing profile will reset user rank, pledge and revolt values and may cause a catastrophic uprising!</p>
+                <div class="view" th:if="${!owner}" >
+                    <div class="gameplay-buttons">
+                      <button id="revolt-button" type="button" data-remodal-target="revolt-modal">Revolt</button>
+                      <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
+                      <button id="attack-button" type="button" data-remodal-target="attack-modal">Attack</button>
+                    </div>
+
+                    <div class="attack-messages">
+                      <div class="error-message" th:if="${errorExists} == true">
+                        <p><b>ERROR:</b><br/><span th:text="${error}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></p>
+                      </div>
+                      <div class="error-message" th:if="${errorExists} == false">
+                          <p><span th:text="${attackerMessage}"></span></p>
+                          <p><span th:text="${defenderMessage}"></span></p>
+                      </div>
+                    </div>
+
                 </div>
 
               </div>
@@ -224,11 +223,11 @@
         </div>
 
         <!-- MODAL DIALOG BOXES-->
-        <div class="remodal" data-remodal-id="edit-modal">
+        <div class="remodal" id="edit-modal" data-remodal-id="edit-modal">
           <a href="#" data-remodal-action="close" class="remodal-close" ></a>
-          <h2>ARE YOU SURE?</h2>
+          <h2>Warning!</h2>
           <br />
-          <p>Editing your profile will reset your user rank, pledge and revolt valuesand may cause a catastrophic uprising!</p>
+          <p>Editing your profile will reset your user rank, pledge and revolt values and may cause a catastrophic uprising!</p>
           <br/>
           <a href="#" data-remodal-action="cancel" class="remodal-cancel">CANCEL</a>
           <a href="createform.html" th:href="@{/editDictator}" class="remodal-confirm">OK</a>

@@ -184,8 +184,24 @@
   }
 }
 
-#edit-button{
-  background-color: grey;
+
+.edit{
+  text-align: center;
+  margin: 50px 0;
+
+  #edit-button{
+    width: 50%;
+    padding: 15px;
+    border:1px solid white;
+    transition: all .1s ease-in-out;
+  }
+}
+
+.view{
+  .attack-messages{
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
 
 
@@ -193,8 +209,8 @@
 
 
 .bottom-section{
+  display: none;
   margin: 30px 0 0;
-  // background-color: $color4;
   overflow: hidden;
   padding: 30px 30px 0;
 
@@ -280,49 +296,63 @@
     }
 
     .buttons{
-      display: flex;
+      padding: 30px 0 0;
+      width: 100%;
+      margin:30px 0 0;
+      border-top: 1px solid white;
 
-      #revolt-button, #pledge-button, #attack-button, #edit-button{
+
+      #revolt-button, #pledge-button, #attack-button{
         margin: 0 auto 15px;
-      }
-
-      p{
-        text-align: center;
-        margin: 0;
       }
     }
 
     .edit{
-      width: 50%;
-      padding: 0 10px;
+      cursor: pointer;
+      margin:15px 0 50px;
+      text-align: left;
+
+      #edit-button:hover{
+        background-color: rgba(250,250,250,.1);
+      }
     }
 
     .view{
-      width: 50%;
-      padding: 0 10px;
+      width: 100%;
+      margin: 0;
+      display: flex;
+
+      .gameplay-buttons{
+        width: 50%;
+      }
+
+      .attack-messages{
+        width: 50%;
+        margin: 0;
+
+        .error-message{
+          padding:0 30px;
+        }
+      }
     }
 
   }
 
-  .profile-details{
-    padding: 0 1.5%;
-  }
+  // .profile-details{
+  //   padding: 0 1.5%;
+  // }
 
 
   .bottom-section{
     margin: 0;
-    padding: 0 60px;
-    background-color: $color4;
+    padding: 0 40px;
+    background-color: rgba(0,0,0,.2);
 
     .policy{
 
       h4{
         font-size: 2rem;
       }
-    }
-
-    .policy:first-of-type{
-      border: 0;
     }
   }
 }

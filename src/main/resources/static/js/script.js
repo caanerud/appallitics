@@ -109,6 +109,16 @@ $(document).ready(function(){
 
 });
 
+// PROFILE STAT SLIDEDOWN
+$(document).ready(function(){
+  $('.bottom-section').delay(500).slideDown(1000);
+});
+
+
+
+
+
+
 // $("#pledge-button").click(function(e) {
 //     e.preventDefault();
 //     $(this).attr("disabled", "disabled");

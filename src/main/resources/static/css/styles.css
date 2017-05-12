@@ -142,7 +142,7 @@
       max-width: 400px; } }
 @media (min-width: 1200px) {
   .hero h1 {
-    font-size: 2rem; } }
+    font-size: 2.3rem; } }
 #searchbar {
   margin-bottom: 20px;
   width: 100%; }
@@ -379,10 +379,21 @@ td .color-overlay {
   .buttons p b {
     color: #FE5745; }
 
-#edit-button {
-  background-color: grey; }
+.edit {
+  text-align: center;
+  margin: 50px 0; }
+  .edit #edit-button {
+    width: 50%;
+    padding: 15px;
+    border: 1px solid white;
+    transition: all .1s ease-in-out; }
+
+.view .attack-messages {
+  max-width: 300px;
+  margin: 0 auto; }
 
 .bottom-section {
+  display: none;
   margin: 30px 0 0;
   overflow: hidden;
   padding: 30px 30px 0; }
@@ -441,30 +452,36 @@ td .color-overlay {
       text-align: left;
       padding: 0; }
     .top-section .buttons {
-      display: flex; }
-      .top-section .buttons #revolt-button, .top-section .buttons #pledge-button, .top-section .buttons #attack-button, .top-section .buttons #edit-button {
+      padding: 30px 0 0;
+      width: 100%;
+      margin: 30px 0 0;
+      border-top: 1px solid white; }
+      .top-section .buttons #revolt-button, .top-section .buttons #pledge-button, .top-section .buttons #attack-button {
         margin: 0 auto 15px; }
-      .top-section .buttons p {
-        text-align: center;
-        margin: 0; }
     .top-section .edit {
-      width: 50%;
-      padding: 0 10px; }
+      cursor: pointer;
+      margin: 15px 0 50px;
+      text-align: left; }
+      .top-section .edit #edit-button:hover {
+        background-color: rgba(250, 250, 250, 0.1); }
     .top-section .view {
-      width: 50%;
-      padding: 0 10px; }
-
-  .profile-details {
-    padding: 0 1.5%; }
+      width: 100%;
+      margin: 0;
+      display: flex; }
+      .top-section .view .gameplay-buttons {
+        width: 50%; }
+      .top-section .view .attack-messages {
+        width: 50%;
+        margin: 0; }
+        .top-section .view .attack-messages .error-message {
+          padding: 0 30px; }
 
   .bottom-section {
     margin: 0;
-    padding: 0 60px;
-    background-color: #635a60; }
+    padding: 0 40px;
+    background-color: rgba(0, 0, 0, 0.2); }
     .bottom-section .policy h4 {
-      font-size: 2rem; }
-    .bottom-section .policy:first-of-type {
-      border: 0; } }
+      font-size: 2rem; } }
 .choices {
   display: flex;
   align-items: center;
@@ -919,7 +936,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: 50px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   padding: 0px 15px;
@@ -970,6 +987,6 @@ footer {
   0% {
     transform: scale(0); }
   100% {
-    transform: scale(20); } }
+    transform: scale(1.5); } }
 
 /*# sourceMappingURL=styles.css.map */
