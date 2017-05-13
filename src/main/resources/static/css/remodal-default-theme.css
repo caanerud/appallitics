@@ -24,6 +24,7 @@
 .remodal-overlay {
   /*background: rgba(43, 46, 56, 0.9);*/
   background-color: rgba(62,56,60,.9);
+  /*background-color: #635a60;*/
 }
 
 .remodal-overlay.remodal-is-opening,
@@ -96,8 +97,8 @@
 
 .remodal-close {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 15px;
+  left: 15px;
 
   display: block;
   overflow: visible;
@@ -112,7 +113,6 @@
   transition: color 0.2s;
   text-decoration: none;
 
-  /*color: #95979c;*/
   border: 0;
   outline: 0;
   background: transparent;

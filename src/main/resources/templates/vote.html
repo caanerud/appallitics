@@ -102,48 +102,48 @@
         <!--The modals-->
         <div class="remodal" data-remodal-id="more-info" id="more-info">
             <a href="#" data-remodal-action="close" class="remodal-close" ></a>
+            <!-- <a href="#" data-remodal-action="cancel" class="remodal-return">X</a> -->
 
-            <div class="more-info-policy">
-              <h4>Economic Policies</h4>
-              <ul>
-                  <li>Stance on minion labor rights: <span th:text="${dictator.getEconLabor()}"></span></li>
-                  <li>Minion Taxes: <span th:text="${dictator.getEconTax()}"></span></li>
-                  <li>Foreign trade with other realms: <span th:text="${dictator.getEconTrade()}"></span></li>
-                  <li>Realm infrastructure: <span th:text="${dictator.getEconInfrastructure()}"></span></li>
-                  <li>Military might: <span th:text="${dictator.getEconMilitary()}"></span></li>
-              </ul>
+            <div class="centered">
+              <div class="more-info-policies">
+                <div class="more-info-policy">
+                  <h4>Economic Policies</h4>
+                  <ul>
+                      <li>Stance on minion labor rights: <span th:text="${dictator.getEconLabor()}"></span></li>
+                      <li>Minion Taxes: <span th:text="${dictator.getEconTax()}"></span></li>
+                      <li>Foreign trade with other realms: <span th:text="${dictator.getEconTrade()}"></span></li>
+                      <li>Realm infrastructure: <span th:text="${dictator.getEconInfrastructure()}"></span></li>
+                      <li>Military might: <span th:text="${dictator.getEconMilitary()}"></span></li>
+                  </ul>
+                </div>
+
+
+                <div class="more-info-policy">
+                  <h4>Social Policies</h4>
+                  <ul>
+                      <li>Stance on minion healthcare: <span th:text="${dictator.getSocialHealthcare()}"></span></li>
+                      <li>Minion retirement: <span th:text="${dictator.getSocialRetirement()}"></span></li>
+                      <li>Minion education: <span th:text="${dictator.getSocialEducation()}"></span></li>
+                      <li>Environmental issues: <span th:text="${dictator.getSocialEnvironment()}"></span></li>
+                      <li>Minion welfare: <span th:text="${dictator.getSocialWelfare()}"></span></li>
+                  </ul>
+                </div>
+
+
+                <div class="more-info-policy">
+                  <h4>Legal Policies</h4>
+                  <ul>
+                      <li>Minion punishment: <span th:text="${dictator.getLegalPunishment()}"></span></li>
+                      <li>Minion immigration: <span th:text="${dictator.getLegalImmigration()}"></span></li>
+                      <li>Minion voting rights: <span th:text="${dictator.getLegalVotingRights()}"></span></li>
+                      <li>Minion privacy Laws: <span th:text="${dictator.getLegalPrivacyLaws()}"></span></li>
+                      <li>Minion weapon rights: <span th:text="${dictator.getLegalWeapons()}"></span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <a href="#" data-remodal-action="cancel" class="remodal-return">RETURN</a>
             </div>
-            <!-- <br/>
-            <br/> -->
-
-            <div class="more-info-policy">
-              <h4>Social Policies</h4>
-              <ul>
-                  <li>Stance on minion healthcare: <span th:text="${dictator.getSocialHealthcare()}"></span></li>
-                  <li>Minion retirement: <span th:text="${dictator.getSocialRetirement()}"></span></li>
-                  <li>Minion education: <span th:text="${dictator.getSocialEducation()}"></span></li>
-                  <li>Environmental issues: <span th:text="${dictator.getSocialEnvironment()}"></span></li>
-                  <li>Minion welfare: <span th:text="${dictator.getSocialWelfare()}"></span></li>
-              </ul>
-            </div>
-            <!-- <br/>
-            <br/> -->
-
-            <div class="more-info-policy">
-              <h4>Legal Policies</h4>
-              <ul>
-                  <li>Minion punishment: <span th:text="${dictator.getLegalPunishment()}"></span></li>
-                  <li>Minion immigration: <span th:text="${dictator.getLegalImmigration()}"></span></li>
-                  <li>Minion voting rights: <span th:text="${dictator.getLegalVotingRights()}"></span></li>
-                  <li>Minion privacy Laws: <span th:text="${dictator.getLegalPrivacyLaws()}"></span></li>
-                  <li>Minion weapon rights: <span th:text="${dictator.getLegalWeapons()}"></span></li>
-              </ul>
-            </div>
-            <!-- <br />
-            <br /> -->
-
-
-            <a href="#" data-remodal-action="cancel" class="remodal-return">RETURN</a>
         </div>
 
         <div class="remodal" id="revolt-modal" data-remodal-id="revolt-modal">

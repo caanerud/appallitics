@@ -1,19 +1,14 @@
+@charset "UTF-8";
 .login, .create-account {
   z-index: -1; }
 
 .create-account {
   display: none; }
 
-.form-container {
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  min-height: 70vh;
-  padding: 30px 10%;
-  margin: 0 0 70px; }
-  .form-container a {
-    font-size: 1.1rem;
-    display: block;
-    text-align: center; }
+.go-to-create-account, .go-to-login {
+  font-size: 1.1rem;
+  display: block;
+  text-align: center; }
 
 #error {
   margin-top: 30px;
@@ -21,11 +16,11 @@
 
 .input-container {
   height: 50px;
-  width: 100%;
+  max-width: 900px;
   position: relative;
   overflow: hidden;
   background-color: white;
-  margin-bottom: 20px; }
+  margin: 0 auto 30px; }
   .input-container input {
     position: absolute;
     top: 0;
@@ -103,7 +98,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0px 20px; }
+    padding: 0px 30px; }
 
 .step-by-step {
   display: block;
@@ -268,8 +263,7 @@ td .color-overlay {
   border-radius: 50%;
   margin: 0 auto 30px;
   background-size: cover;
-  background-position: center;
-  background-color: red; }
+  background-position: center; }
   .profile-pic img {
     width: 100%; }
 
@@ -527,7 +521,6 @@ td .color-overlay {
   width: 100%;
   background-color: white;
   display: flex;
-  margin-top: -31px;
   margin-bottom: 30px; }
   .pro-bar .step {
     background-color: #FE5745;
@@ -635,7 +628,7 @@ td .color-overlay {
   border: 1px solid white; }
 
 #more-info {
-  overflow: hidden; }
+  max-width: 100%; }
   #more-info .more-info-policy {
     border-bottom: 1px solid white;
     padding: 30px; }
@@ -674,13 +667,22 @@ td .color-overlay {
 
 @media (min-width: 900px) {
   #vote-buttons {
-    display: flex; }
-
+    display: flex; } }
+@media (min-width: 1200px) {
   #more-info {
-    max-width: 1200px;
-    padding: 50px; }
-    #more-info .more-info-policy h4 {
-      font-size: 2rem; } }
+    padding: 0;
+    min-height: 100vh; }
+    #more-info .more-info-policies {
+      display: flex;
+      width: 100%; }
+    #more-info .more-info-policy {
+      border: 0;
+      border-right: 1px solid white;
+      width: 33.333%; }
+    #more-info .more-info-policy:last-of-type {
+      border: 0; }
+    #more-info .remodal-return {
+      margin-top: 50px; } }
 #about-backstory {
   padding: 50px 0 30px;
   background-color: #635a60; }
@@ -883,7 +885,7 @@ header {
 
 .content {
   max-width: 1200px;
-  margin: 70px auto;
+  margin: 70px auto 60px;
   padding: 0 15px; }
 
 section {
@@ -894,7 +896,7 @@ section {
   background-color: rgba(0, 0, 0, 0.2); }
 
 .section-header {
-  padding: 0px 10px 5px;
+  padding: 0px 10px;
   margin: 15px 0; }
 
 input {
@@ -939,16 +941,15 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 50px;
-  display: none;
+  display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px 15px;
-  box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.05); }
+  justify-content: center;
+  padding: 0px 15px; }
   footer p {
-    font-size: .8rem;
-    margin: 0 auto;
-    text-align: center; }
+    font-family: sans-serif;
+    font-size: .6rem; }
+  footer p:after {
+    content: "Appallitics © 2017"; }
 
 @media (min-width: 900px) {
   .content {
@@ -980,6 +981,14 @@ footer {
 
   .float-right {
     float: right; } }
+@media (min-width: 1200px) {
+  .centered {
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; } }
 @keyframes bounce {
   0% {
     transform: translateY(0px); }

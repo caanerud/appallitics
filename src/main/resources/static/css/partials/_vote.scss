@@ -19,7 +19,8 @@
 }
 
 #more-info{
-  overflow: hidden;
+  max-width: 100%;
+  // height: 100%;
 
   .more-info-policy{
     border-bottom: 1px solid white;
@@ -80,20 +81,29 @@
   #vote-buttons{
     display: flex;
   }
+}
 
+@media (min-width:1200px) {
   #more-info{
-    max-width: 1200px;
-    padding:50px;
+    padding:0;
+    min-height: 100vh;
 
+    .more-info-policies{
+      display: flex;
+      width: 100%;
+    }
     .more-info-policy{
-      h4{
-        font-size: 2rem;
-      }
+      border: 0;
+      border-right: 1px solid white;
+      width: 33.333%;
     }
 
-    // .remodal-return{
-    //   clear: both;
-    //   margin-top: 30px;
-    // }
+    .more-info-policy:last-of-type{
+      border:0;
+    }
+
+    .remodal-return{
+      margin-top: 50px;
+    }
   }
 }

@@ -68,8 +68,10 @@
       <div class="content">
 
         <form class="login" action="profile.html" th:action="@{/loginVerify}" method="post">
-          <div class="form-container">
-            <h1>Login</h1>
+          <section>
+            <div class="section-header">
+              <h1>Login</h1>
+            </div>
 
 
             <div class="input-container">
@@ -91,13 +93,15 @@
               <br/>
               <span th:text="${error}"></span>
             </div>
-          </div>
+          </section>
         </form>
 
 
         <form class="create-account" action="createform.html" th:action="@{/createAccount}" method="post" >
-          <div class="form-container">
-            <h1>Create Account</h1>
+          <section>
+            <div class="section-header">
+              <h1>Create Account</h1>
+            </div>
 
 
             <div class="input-container">
@@ -123,7 +127,7 @@
             <br />
             <a href="#" class="go-to-login">Already have an account?</a>
             <input type="submit" name="submit" value="create account" />
-          </div>
+          </section>
         </form>
 
       </div>

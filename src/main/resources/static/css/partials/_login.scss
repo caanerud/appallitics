@@ -6,18 +6,10 @@
   display: none;
 }
 
-.form-container{
-  background-color: rgba(0,0,0,.2);
-  width: 100%;
-  min-height:70vh;
-  padding:30px 10%;
-  margin: 0 0 70px;
-
-  a{
-    font-size: 1.1rem;
-    display: block;
-    text-align: center;
-  }
+.go-to-create-account, .go-to-login{
+  font-size: 1.1rem;
+  display: block;
+  text-align: center;
 }
 
 #error{
@@ -27,11 +19,12 @@
 
 .input-container{
   height: 50px;
-  width: 100%;
+  max-width: 900px;
+  // width: 100%;
   position: relative;
   overflow: hidden;
   background-color: white;
-  margin-bottom: 20px;
+  margin: 0 auto 30px;
 
   input{
     position: absolute;
