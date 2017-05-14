@@ -2,6 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
 }
 
 #ghost-input{
@@ -9,8 +11,8 @@
 }
 
 #choice1, #choice2{
-  height: 125px;
-  width: 125px;
+  height: 200px;
+  width: 200px;
   margin: 10px;
   display: flex;
   align-items: center;
@@ -24,8 +26,8 @@
   letter-spacing: .1rem;
 
   h2{
-    margin-top: 200px;
-    font-size: 2rem;
+    margin-top: 125%;
+    font-size: 1rem;
   }
 }
 
@@ -38,16 +40,22 @@
 }
 
 #choice1{
-  background-color: $color1;
+  background-color:darkcyan;
   background-image: url('../images/crown.png');
   background-size: 80%;
   background-repeat: no-repeat;
-  background-position: 50% 30%;
-  background-blend-mode: soft-light;
+  background-position: center;
+  background-blend-mode: normal;
+  margin-bottom: 60px;
 }
 
 #choice2{
-  background-color: $blue;
+  background-color: darksalmon;
+  background-image: url('../images/minions.png');
+  background-size: 115%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode:difference;
 }
 
 .pro-bar{
@@ -55,7 +63,6 @@
   width: 100%;
   background-color:white;
   display: flex;
-  // margin-top: -31px;
   margin-bottom: 30px;
 
   .step{
@@ -172,11 +179,18 @@
     padding:30px;
   }
 
+  .choices{
+    flex-direction: row;
+  }
+
   #choice1, #choice2{
     width: 300px;
     height: 300px;
     margin:20px;
-    font-size: 1.5rem;
+
+    h2{
+      font-size: 2rem;
+    }
   }
 
   .overview-bottom{
