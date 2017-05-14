@@ -41,7 +41,6 @@ table{
 
 tr{
   background-color: darken($color2, 5%);
-  // border:1px solid white;
   display: none;
   width: 100%;
   margin-bottom: 10px;
@@ -113,7 +112,7 @@ tr:first-of-type{
       padding: 10px 25px;
       border-radius: 25px;
       background-color: $color1;
-      box-shadow: 2px 2px 5px rgba(0,0,0,.1);
+      // box-shadow: 2px 2px 5px rgba(0,0,0,.1);
     }
   }
 }

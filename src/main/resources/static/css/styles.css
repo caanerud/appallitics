@@ -222,8 +222,7 @@ tr:first-of-type {
       font-weight: 400;
       padding: 10px 25px;
       border-radius: 25px;
-      background-color: #FE5745;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); }
+      background-color: #FE5745; }
 
 td .color-overlay {
   width: 100px;
@@ -500,9 +499,11 @@ td .color-overlay {
   -moz-animation: balloon 0.7s;
   animation: balloon 0.7s;
   cursor: pointer;
-  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .1rem; }
+  #choice1 h2, #choice2 h2 {
+    margin-top: 200px;
+    font-size: 2rem; }
 
 #choice1:hover, #choice2:hover {
   transform: scale(1.05); }
@@ -511,7 +512,12 @@ td .color-overlay {
   transform: scale(0.95); }
 
 #choice1 {
-  background-color: #FE5745; }
+  background-color: #FE5745;
+  background-image: url("../images/crown.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 50% 30%;
+  background-blend-mode: soft-light; }
 
 #choice2 {
   background-color: #878eff; }
