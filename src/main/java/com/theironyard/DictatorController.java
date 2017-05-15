@@ -225,6 +225,23 @@ public class DictatorController {
         return "redirect:/profile";
     }
 
+    // From dictator to minion
+    @GetMapping("/minion")
+    public String minion(HttpSession session) {
+        // Gets the id of the user
+        Integer userId = (Integer) session.getAttribute("userId");
+        Dictator dictator = new Dictator(new User(userId), " ", " ",
+                " ", " ", " ", new byte[]{}, " ", " ", " ",
+                " "," "," "," "," ",
+                " "," "," "," "," ",
+                " "," ",0,0);
+
+        // saving the minion to database
+        dictatorRepository.updateDictator(dictator);
+
+        return "redirect:/profile";
+    }
+
     @GetMapping("/editDictator")
     public String editDictator(HttpSession session, Model model){
         // Gets the id of the user
