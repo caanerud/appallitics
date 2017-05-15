@@ -633,11 +633,17 @@ public class DictatorController {
             dictatorId = -1;
         }
 
-        // Checking if user is a dictator, and removing if he/she is & the previous dictator seen
+        // Checking if user is a dictator
         if (!dictatorRepository.getDictatorById(userId).getLegalWeapons().trim().isEmpty()) {
             for (int y = 0; y < dictatorList.size(); y = y + 1) {
-                if (dictatorList.get(y).getUser().getId() == userId || dictatorList.get(y).getUser().getId() == dictatorId) {
+                if (dictatorList.get(y).getUser().getId() == userId) {
                     dictatorList.remove(y);
+                }
+            }
+            // no repeat of previous dictator
+            for (int z = 0; z < dictatorList.size(); z = z + 1){
+                if (dictatorList.get(z).getUser().getId() == dictatorId){
+                    dictatorList.remove(z);
                 }
             }
         }
