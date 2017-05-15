@@ -298,9 +298,11 @@
     }
 
     .buttons{
-      padding: 0;
+      padding: 30px;
       width: 100%;
+      min-height: 250px;
       margin:30px 0 0;
+      background-color: rgba(0,0,0,.1);
 
       #revolt-button, #pledge-button, #attack-button{
         margin: 0 auto 15px;
@@ -318,6 +320,7 @@
 
     .view{
       width: 100%;
+      // min-height: 200px;
       margin: 0;
 
       .gameplay-buttons{

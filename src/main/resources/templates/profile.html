@@ -126,9 +126,12 @@
                     <a href="#" data-remodal-action="cancel" class="remodal-cancel">CANCEL</a>
                     <a href="createform.html" class="remodal-return" th:href="@{/editDictator}">OK</a>
                 </div>
+
+                <div class="buttons"></div>
               </div>
 
           </div>
+
 
       </section>
 
@@ -151,7 +154,7 @@
             <div class="profile-text">
               <h2 th:text="${dictator.getOverviewDictatorshipName()}">Party</h2>
               <h2 th:text="${dictator.getUser().getUsername()}">Username</h2>
-              <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+              <h3 th:text="${dictator.getOverviewBlurb()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
             </div>
           </div>
 
