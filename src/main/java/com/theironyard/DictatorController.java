@@ -278,6 +278,8 @@ public class DictatorController {
             model.addAttribute("brown",true);
         } else if (dictator.getOverviewColor().equals("cadetblue")){
             model.addAttribute("cadetblue",true);
+        } else if (dictator.getOverviewColor().equals("chartreuse")){
+            model.addAttribute("chartreuse",true);
         } else if (dictator.getOverviewColor().equals("coral")){
             model.addAttribute("coral",true);
         } else if (dictator.getOverviewColor().equals("cornflowerblue")){
@@ -292,6 +294,34 @@ public class DictatorController {
             model.addAttribute("darkorange",true);
         } else if (dictator.getOverviewColor().equals("darksalmon")){
             model.addAttribute("darksalmon",true);
+        } else if (dictator.getOverviewColor().equals("darkseagreen")){
+            model.addAttribute("darkseagreen",true);
+        } else if (dictator.getOverviewColor().equals("deeppink")){
+            model.addAttribute("deeppink",true);
+        } else if (dictator.getOverviewColor().equals("fuschia")){
+            model.addAttribute("fuschia",true);
+        } else if (dictator.getOverviewColor().equals("gold")){
+            model.addAttribute("gold",true);
+        } else if (dictator.getOverviewColor().equals("grey")){
+            model.addAttribute("grey",true);
+        } else if (dictator.getOverviewColor().equals("indigo")){
+            model.addAttribute("indigo",true);
+        } else if (dictator.getOverviewColor().equals("lightblue")){
+            model.addAttribute("lightblue",true);
+        } else if (dictator.getOverviewColor().equals("limegreen")){
+            model.addAttribute("limegreen",true);
+        } else if (dictator.getOverviewColor().equals("olive")){
+            model.addAttribute("olive",true);
+        } else if (dictator.getOverviewColor().equals("peru")){
+            model.addAttribute("peru",true);
+        } else if (dictator.getOverviewColor().equals("rosybrown")){
+            model.addAttribute("rosybrown",true);
+        } else if (dictator.getOverviewColor().equals("seagreen")){
+            model.addAttribute("seagreen",true);
+        } else if (dictator.getOverviewColor().equals("thistle")){
+            model.addAttribute("thistle",true);
+        } else if (dictator.getOverviewColor().equals("violet")){
+            model.addAttribute("violet",true);
         } else if (dictator.getOverviewColor().equals("yellow")){
             model.addAttribute("yellow",true);
         }
