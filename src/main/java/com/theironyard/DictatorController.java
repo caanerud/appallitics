@@ -786,7 +786,7 @@ public class DictatorController {
         Double effectiveDefend = (dictatorDefend.getPledge() * 1.1) / (dictatorDefend.getPledge()+dictatorDefend.getRevolt());
         Double overall = effectiveAttack / effectiveDefend;
 
-        // Checking to see which one is the whole number (with maximum limit)
+        // Checking to see which one is the whole number (with maximum limit of 4)
         Integer sacrifice = 1;
         Integer defenderLost = 1;
         if (overall < 1){

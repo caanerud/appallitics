@@ -200,7 +200,7 @@
                     <a href="#" id="edit-button" data-remodal-target="edit-modal">Edit Profile</a>
                 </div> -->
 
-                <div class="view" th:if="${!owner}" >
+                <div class="view" th:if="${!owner and checkloggedin != 0}" >
                     <div class="gameplay-buttons">
                       <button id="revolt-button" type="button" data-remodal-target="revolt-modal">Revolt</button>
                       <button id="pledge-button" type="button" data-remodal-target="pledge-modal">Pledge</button>
