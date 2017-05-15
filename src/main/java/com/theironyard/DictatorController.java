@@ -574,8 +574,8 @@ public class DictatorController {
     }
 
     // voting part
-    @GetMapping("/vote")
-    public String vote(Model model, HttpSession session){
+    @GetMapping("/gauntlet")
+    public String gauntlet(Model model, HttpSession session){
         // The user id of the voter
         Integer userId = (Integer) session.getAttribute("userId");
 
@@ -624,7 +624,7 @@ public class DictatorController {
         }
         model.addAttribute("checkloggedin", userId);
 
-        return "vote";
+        return "gauntlet";
     }
 
     // pledge and vote from vote page
@@ -639,7 +639,7 @@ public class DictatorController {
         // sending it back to database
         dictatorRepository.pledge(pledge,dictatorId);
 
-        return "redirect:/vote";
+        return "redirect:/gauntlet";
     }
 
     @GetMapping("/revolt")
@@ -653,7 +653,7 @@ public class DictatorController {
         // sending it back to database
         dictatorRepository.revolt(revolt,dictatorId);
 
-        return "redirect:/vote";
+        return "redirect:/gauntlet";
     }
 
     // from profile page
