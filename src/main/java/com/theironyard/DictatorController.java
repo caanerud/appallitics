@@ -211,11 +211,6 @@ public class DictatorController {
         // Getting id from session
         Integer userId = (Integer) session.getAttribute("userId");
 
-//        // uploading previous image if empty
-//        if (file.getContentType().trim().isEmpty()){
-//            file.setOverviewContentType() = dictatorRepository.getDictatorById(userId).getOverviewContentType();
-//        }
-
         // creating the dictator
         Dictator dictator = new Dictator(new User(userId), overviewBlurb, overviewDictatorshipName,
                 mascot, favcolor, file.getContentType(), file.getBytes(), econLabor, econTax, econTrade,
@@ -223,6 +218,11 @@ public class DictatorController {
                 socialEnvironment,socialWelfare,legalPunishment,legalImmigration,legalVotingRights,
                 legalPrivacyLaws,legalWeapons,0,0);
 
+        // uploading previous image if empty
+        if (file.isEmpty()) {
+            dictator.setOverviewContentType(dictatorRepository.getDictatorById(userId).getOverviewContentType());
+            dictator.setOverviewImage(dictatorRepository.getDictatorById(userId).getOverviewImage());
+        }
 
         // saving the dictator to database
         dictatorRepository.updateDictator(dictator);
