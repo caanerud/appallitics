@@ -592,10 +592,15 @@ public class DictatorController {
             }
         }
 
-        // Checking if user is a dictator, and removing if he/she is
+        // first time entering gauntlet page
+        if (dictatorId == null){
+            dictatorId = -1;
+        }
+
+        // Checking if user is a dictator, and removing if he/she is & the previous dictator seen
         if (!dictatorRepository.getDictatorById(userId).getLegalWeapons().trim().isEmpty()) {
             for (int y = 0; y < dictatorList.size(); y = y + 1) {
-                if (dictatorList.get(y).getUser().getId() == userId) {
+                if (dictatorList.get(y).getUser().getId() == userId || dictatorList.get(y).getUser().getId() == dictatorId) {
                     dictatorList.remove(y);
                 }
             }
@@ -611,16 +616,6 @@ public class DictatorController {
          // Random number generator that will link to a dictator
         Random random = new Random();
         int number = random.nextInt(dictatorList.size());
-
-        // First time they click "The Gauntlet page"
-        if (dictatorId == null){
-            dictatorId = -1;
-        }
-        
-        // No repeat of the previous dictator seen
-        while (number == dictatorId){
-            number = random.nextInt(dictatorList.size());
-        }
 
         // The lucky dictator to get a vote
         Dictator luckyDictator = dictatorRepository.getDictatorById(x[number]);
