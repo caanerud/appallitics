@@ -60,18 +60,22 @@ tr{
 
 td{
   text-align: center;
-  width: 33.333%;
+  // width: 33.333%;
+  width: 50%;
   letter-spacing: .05rem;
   position: relative;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 th{
-  width: 33.333%;
+  // width: 33.333%;
+  width: 50%;
   letter-spacing: .05rem;
   padding-top: 15px;
 }
 
-td:nth-child(n+3):nth-child(-n+5),th:nth-child(n+3):nth-child(-n+5){
+td:nth-child(n+3):nth-child(-n+5),td:first-child, th:nth-child(n+3):nth-child(-n+5), th:first-child{
   display: none;
 }
 
@@ -148,7 +152,7 @@ td .color-overlay{
     display: block;
   }
 
-  td:nth-child(n+3):nth-child(-n+5),th:nth-child(n+3):nth-child(-n+5){
+  td:nth-child(n+3):nth-child(-n+5),td:first-child, th:nth-child(n+3):nth-child(-n+5), th:first-child{
     display: block;
   }
 }
