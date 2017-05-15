@@ -65,7 +65,7 @@
 
     <div class="content">
 
-      <form action="profile.html" th:action="@{/createDictator}" method="post" enctype="multipart/form-data">
+      <form action="profile.html" th:action="@{/createDictator}" method="post" enctype="multipart/form-data" >
 
 
           <section id="choose">
@@ -112,11 +112,12 @@
 
               <div class="overview-bottom">
 
-                  <div class="choose-pic">
+                  <div class="choose-pic" runat="server" >
                     <label for="file">Choose Your Profile Picture</label>
                     <input name="file" id="file" type="file" class="upload" />
+                  <img id="blah" src="#" alt="your image" />
                   </div>
-                  
+
                   <div class="choose-color">
                     <p>Choose Your Color</p>
                     <select class="color-dropdown" name="favcolor">
