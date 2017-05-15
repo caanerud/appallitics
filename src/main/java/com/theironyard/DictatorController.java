@@ -575,7 +575,7 @@ public class DictatorController {
 
     // voting part
     @GetMapping("/gauntlet")
-    public String gauntlet(Model model, HttpSession session){
+    public String gauntlet(Model model, HttpSession session, Integer dictatorId){
         // The user id of the voter
         Integer userId = (Integer) session.getAttribute("userId");
 
@@ -612,6 +612,16 @@ public class DictatorController {
         Random random = new Random();
         int number = random.nextInt(dictatorList.size());
 
+        // First time they click "The Gauntlet page"
+        if (dictatorId == null){
+            dictatorId = -1;
+        }
+        
+        // No repeat of the previous dictator seen
+        while (number == dictatorId){
+            number = random.nextInt(dictatorList.size());
+        }
+
         // The lucky dictator to get a vote
         Dictator luckyDictator = dictatorRepository.getDictatorById(x[number]);
 
@@ -639,7 +649,7 @@ public class DictatorController {
         // sending it back to database
         dictatorRepository.pledge(pledge,dictatorId);
 
-        return "redirect:/gauntlet";
+        return "redirect:/gauntlet?dictatorId="+dictatorId;
     }
 
     @GetMapping("/revolt")
@@ -653,7 +663,7 @@ public class DictatorController {
         // sending it back to database
         dictatorRepository.revolt(revolt,dictatorId);
 
-        return "redirect:/gauntlet";
+        return "redirect:/gauntlet?dictatorId="+dictatorId;
     }
 
     // from profile page
