@@ -117,6 +117,8 @@
                     <input name="file" id="file" type="file" class="upload" />
                   </div>
 
+                  <div class="profile-pic" th:style="'background-color:'+${dictator.getOverviewColor()}+'; background-image: url(' + @{/dictator/image(id=${dictator.getUser().getId()})}+')'"></div>
+
                   <div class="choose-color">
                     <p>Choose Your Color</p>
                     <select class="color-dropdown" name="favcolor">

@@ -211,6 +211,11 @@ public class DictatorController {
         // Getting id from session
         Integer userId = (Integer) session.getAttribute("userId");
 
+//        // uploading previous image if empty
+//        if (file.getContentType().trim().isEmpty()){
+//            file.setOverviewContentType() = dictatorRepository.getDictatorById(userId).getOverviewContentType();
+//        }
+
         // creating the dictator
         Dictator dictator = new Dictator(new User(userId), overviewBlurb, overviewDictatorshipName,
                 mascot, favcolor, file.getContentType(), file.getBytes(), econLabor, econTax, econTrade,
@@ -253,7 +258,7 @@ public class DictatorController {
 
         // PRE-SELECTED VALUES
 //        // image
-//        if (!dictator.getOverviewContentType().isEmpty()) {
+//        if (!dictator.getOverviewContentType().trim().isEmpty()) {
 //            dictator.setOverviewImage(dictator.getOverviewImage());
 //            dictator.setOverviewContentType(dictator.getOverviewContentType());
 //        }
@@ -495,9 +500,11 @@ public class DictatorController {
         List<Dictator> dictatorList = new ArrayList<>();
 
         // Getting the dictators (with data)
-        for (int x = 0; x < searchDictators.size(); x = x + 1){
-            if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
-                dictatorList.add(searchDictators.get(x));
+        if (searchDictators.size() != 0){
+            for (int x = 0; x < searchDictators.size(); x = x + 1){
+                if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
+                    dictatorList.add(searchDictators.get(x));
+                }
             }
         }
 
@@ -514,17 +521,21 @@ public class DictatorController {
         List<Dictator> searchDictators = dictatorRepository.listBestDictators(search);
 
         // sorting the other way if clicked again
-        if (searchDictators.get(0).getUser().getId() == firstPosition){
-            searchDictators = dictatorRepository.listBestDictatorsSort(search);
+        if (searchDictators.size() != 0){
+            if (searchDictators.get(0).getUser().getId() == firstPosition){
+                searchDictators = dictatorRepository.listBestDictatorsSort(search);
+            }
         }
 
         // Getting the list of worst dictators
         List<Dictator> dictatorList = new ArrayList<>();
 
         // Getting the dictators (with data)
-        for (int x = 0; x < searchDictators.size(); x = x + 1){
-            if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
-                dictatorList.add(searchDictators.get(x));
+        if (searchDictators.size() != 0){
+            for (int x = 0; x < searchDictators.size(); x = x + 1){
+                if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
+                    dictatorList.add(searchDictators.get(x));
+                }
             }
         }
 
@@ -542,17 +553,21 @@ public class DictatorController {
         List<Dictator> searchDictators = dictatorRepository.listWorstDictators(search);
 
         // sorting the other way if clicked again
-        if (searchDictators.get(0).getUser().getId() == firstPosition){
-            searchDictators = dictatorRepository.listWorstDictatorsSort(search);
+        if (searchDictators.size() != 0){
+            if (searchDictators.get(0).getUser().getId() == firstPosition){
+                searchDictators = dictatorRepository.listWorstDictatorsSort(search);
+            }
         }
 
         // Getting the list of worst dictators
         List<Dictator> dictatorList = new ArrayList<>();
 
         // Getting the dictators (with data)
-        for (int x = 0; x < searchDictators.size(); x = x + 1){
-            if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
-                dictatorList.add(searchDictators.get(x));
+        if (searchDictators.size() != 0 ){
+            for (int x = 0; x < searchDictators.size(); x = x + 1){
+                if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
+                    dictatorList.add(searchDictators.get(x));
+                }
             }
         }
 
@@ -570,17 +585,21 @@ public class DictatorController {
         List<Dictator> searchDictators = dictatorRepository.sortByScore(search);
 
         // sorting the other way if clicked again
-        if (searchDictators.get(0).getUser().getId() == firstPosition){
-            searchDictators = dictatorRepository.sortByScoreSort(search);
+        if (searchDictators.size() != 0){
+            if (searchDictators.get(0).getUser().getId() == firstPosition){
+                searchDictators = dictatorRepository.sortByScoreSort(search);
+            }
         }
 
         // Getting the list of dictators sorted by score
         List<Dictator> dictatorList = new ArrayList<>();
 
         // Getting the dictators (with data)
-        for (int x = 0; x < searchDictators.size(); x = x + 1){
-            if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
-                dictatorList.add(searchDictators.get(x));
+        if (searchDictators.size() != 0){
+            for (int x = 0; x < searchDictators.size(); x = x + 1){
+                if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
+                    dictatorList.add(searchDictators.get(x));
+                }
             }
         }
 
