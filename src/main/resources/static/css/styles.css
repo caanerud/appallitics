@@ -239,8 +239,7 @@ td .color-overlay {
   background-blend-mode: difference;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  filter: grayscale(0.4); }
+  background-position: center; }
 
 @media (min-width: 767px) {
   #searchbar {
