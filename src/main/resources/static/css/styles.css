@@ -452,9 +452,11 @@ td .color-overlay {
       .top-section .profile-stats .stats {
         margin: 0; }
     .top-section .buttons {
-      padding: 0;
+      padding: 30px;
       width: 100%;
-      margin: 30px 0 0; }
+      min-height: 250px;
+      margin: 30px 0 0;
+      background-color: rgba(0, 0, 0, 0.1); }
       .top-section .buttons #revolt-button, .top-section .buttons #pledge-button, .top-section .buttons #attack-button {
         margin: 0 auto 15px; }
     .top-section .edit {
