@@ -640,6 +640,12 @@ public class DictatorController {
                     dictatorList.remove(y);
                 }
             }
+            // no repeat of previous dictator
+            for (int z = 0; z < dictatorList.size(); z = z + 1){
+                if (dictatorList.get(z).getUser().getId() == dictatorId){
+                    dictatorList.remove(z);
+                }
+            }
         }
 
         // GETTING RANDOM DICTATOR TO VIEW
