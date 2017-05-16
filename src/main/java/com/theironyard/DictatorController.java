@@ -543,6 +543,9 @@ public class DictatorController {
         // Sending the filtered list of dictators to leaderboard
         model.addAttribute("dictators",dictatorList);
 
+        // reuse search
+        model.addAttribute("search",search);
+
         return "leaderboard";
     }
 
@@ -573,6 +576,9 @@ public class DictatorController {
 
         // Sending the filtered list of dictators to leaderboard
         model.addAttribute("dictators",dictatorList);
+
+        // reuse search
+        model.addAttribute("search",search);
 
         return "leaderboard";
     }
@@ -606,6 +612,9 @@ public class DictatorController {
         // Sending the filtered list of dictators to leaderboard
         model.addAttribute("dictators",dictatorList);
 
+        // reuse search
+        model.addAttribute("search",search);
+
         return "leaderboard";
     }
 
@@ -637,6 +646,9 @@ public class DictatorController {
 
         // Sending the filtered list of dictators to leaderboard
         model.addAttribute("dictators",dictatorList);
+
+        // reuse search
+        model.addAttribute("search",search);
 
         return "leaderboard";
     }

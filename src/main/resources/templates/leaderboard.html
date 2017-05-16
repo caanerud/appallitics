@@ -82,13 +82,13 @@
                 <th>Username</th>
                 <th>Dictatorship</th>
                 <th title="Sort by Greatest or Least # of Pledges" >
-                    <a href="leaderboard.html" th:href="@{'bestDictators?firstPosition='+${dictators.get(0).getUser().getId()}}">Pledges</a>
+                    <a href="leaderboard.html" th:href="@{'/bestDictators?search='+${search}+'&amp;firstPosition='+${dictators.get(0).getUser().getId()}}">Pledges</a>
                 </th>
                 <th title="Sort by Greatest or Least # of Revolts">
-                    <a href="leaderboard.html" th:href="@{'/worstDictators?firstPosition='+${dictators.get(0).getUser().getId()}}">Revolts</a>
+                    <a href="leaderboard.html" th:href="@{'/worstDictators?search='+${search}+'&amp;firstPosition='+${dictators.get(0).getUser().getId()}}">Revolts</a>
                 </th>
                 <th title="Sort by Highest or Lowest Score">
-                    <a href="leaderboard.html" th:href="@{'/score?firstPosition='+${dictators.get(0).getUser().getId()}}">Score</a>
+                    <a href="leaderboard.html" th:href="@{'/score?search='+${search}+'&amp;firstPosition='+${dictators.get(0).getUser().getId()}}">Score</a>
                 </th>
 
 
