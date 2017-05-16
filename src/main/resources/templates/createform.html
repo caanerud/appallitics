@@ -100,12 +100,12 @@
 
               <div class="input-field">
                 <label for="overviewBlurb">Party Catchphrase</label>
-                <input spellcheck="true" type="text" id="overviewBlurb" name="overviewBlurb" th:value="${dictator.getOverviewBlurb().trim()}" placeholder="instill fear in your fellow minions! or advertise your home business" maxlength="140" required="required"/>
+                <input spellcheck="true" type="text" id="overviewBlurb" name="overviewBlurb" th:value="${dictator.getOverviewBlurb().trim()}" placeholder="instill fear in your fellow minions! or advertise your home business" maxlength="255" required="required"/>
               </div>
 
               <div class="input-field">
                 <label for="overviewDictatorshipName">Dictatorship Name</label>
-                <input spellcheck="true" type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" th:value="${dictator.getOverviewDictatorshipName().trim()}" placeholder="make it something intimidating, like Meat Hammock or Butterfly Nozzle or The Sentient Waffle Iron" maxlength="16" required="required"/>
+                <input spellcheck="true" type="text" id="overviewDictatorshipName" name="overviewDictatorshipName" th:value="${dictator.getOverviewDictatorshipName().trim()}" placeholder="make it something intimidating, like Meat Hammock or Butterfly Nozzle or The Sentient Waffle Iron" maxlength="30" required="required"/>
               </div>
 
               <br/>
@@ -192,19 +192,19 @@
 
               <label for="econLabor">Stance on Minion Labor Rights</label>
               <br />
-              <input spellcheck="true" type="text" id="econLabor" name="econLabor" th:value="${dictator.getEconLabor().trim()}" placeholder="minimum wage! unions! unemployment! and other things that the sniveling masses expect you to care about" maxlength="140" required="required"/>
+              <input spellcheck="true" type="text" id="econLabor" name="econLabor" th:value="${dictator.getEconLabor().trim()}" placeholder="minimum wage! unions! unemployment! and other things that the sniveling masses expect you to care about" maxlength="255" required="required"/>
               <br />
               <!-- <br /> -->
 
               <label for="econTrade">Foreign Trade with Other Countries</label>
               <br />
-              <input spellcheck="true" type="text" id="econTrade" name="econTrade" th:value="${dictator.getEconTrade().trim()}" placeholder="let's just pretend for a moment that you'll have to deal with an equal at some point during your reign" maxlength="140" required="required"/>
+              <input spellcheck="true" type="text" id="econTrade" name="econTrade" th:value="${dictator.getEconTrade().trim()}" placeholder="let's just pretend for a moment that you'll have to deal with an equal at some point during your reign" maxlength="255" required="required"/>
               <br />
               <!-- <br /> -->
 
               <label for="econMilitary">Military Might</label>
               <br />
-              <input spellcheck="true" type="text" id="econMilitary" name="econMilitary" th:value="${dictator.getEconMilitary().trim()}" placeholder="crush your enemies -- See them driven before you...etc" maxlength="140" required="required"/>
+              <input spellcheck="true" type="text" id="econMilitary" name="econMilitary" th:value="${dictator.getEconMilitary().trim()}" placeholder="crush your enemies -- See them driven before you...etc" maxlength="255" required="required"/>
               <br />
               <!-- <br /> -->
 
@@ -257,19 +257,19 @@
 
               <label for="socialHealthcare">Stance on Minion Healthcare</label>
               <br />
-              <input spellcheck="true" type="text" id="socialHealthcare" name="socialHealthcare" th:value="${dictator.getSocialHealthcare().trim()}" placeholder="more like Deathcare, am I right?" maxlength="140" required="required"/>
+              <input spellcheck="true" type="text" id="socialHealthcare" name="socialHealthcare" th:value="${dictator.getSocialHealthcare().trim()}" placeholder="more like Deathcare, am I right?" maxlength="255" required="required"/>
               <br />
               <!-- <br /> -->
 
               <label for="socialWelfare">Minion Welfare</label>
               <br />
-              <input spellcheck="true" type="text" id="socialWelfare" name="socialWelfare" th:value="${dictator.getSocialWelfare().trim()}" placeholder="let's throw a pity party for the weak and feeble" maxlength="140" required="required"/>
+              <input spellcheck="true" type="text" id="socialWelfare" name="socialWelfare" th:value="${dictator.getSocialWelfare().trim()}" placeholder="let's throw a pity party for the weak and feeble" maxlength="255" required="required"/>
               <br />
               <!-- <br /> -->
 
               <label for="socialEducation">Minion Education</label>
               <br />
-              <input spellcheck="true" type="text" id="socialEducation" name="socialEducation" th:value="${dictator.getSocialEducation().trim()}" placeholder="because a well-educated minion will lack the physical strength to defeat you in hand-to-hand combat" maxlength="140" required="required"/>
+              <input spellcheck="true" type="text" id="socialEducation" name="socialEducation" th:value="${dictator.getSocialEducation().trim()}" placeholder="because a well-educated minion will lack the physical strength to defeat you in hand-to-hand combat" maxlength="255" required="required"/>
               <br />
               <!-- <br /> -->
 
@@ -323,19 +323,19 @@
 
               <label for="legalPunishment">Minion Punishment</label>
               <br />
-              <input spellcheck="true" type="text" id="legalPunishment" name="legalPunishment" th:value="${dictator.getLegalPunishment().trim()}" placeholder="undignified slaps with the back of your hand shall abound" maxlength="140" required="required"/>
+              <input spellcheck="true" type="text" id="legalPunishment" name="legalPunishment" th:value="${dictator.getLegalPunishment().trim()}" placeholder="undignified slaps with the back of your hand shall abound" maxlength="255" required="required"/>
               <br />
               <!-- <br /> -->
 
               <label for="legalWeapons">Minion Weapon Rights</label>
               <br />
-              <input spellcheck="true" type="text" id="legalWeapons" name="legalWeapons" th:value="${dictator.getLegalWeapons().trim()}" placeholder="the right to bear spiked clubs and ninja stars" maxlength="140" required="required"/>
+              <input spellcheck="true" type="text" id="legalWeapons" name="legalWeapons" th:value="${dictator.getLegalWeapons().trim()}" placeholder="the right to bear spiked clubs and ninja stars" maxlength="255" required="required"/>
               <br />
               <!-- <br /> -->
 
               <label for="legalVotingRights">Minion Voting Rights</label>
               <br />
-              <input spellcheck="true" type="text" id="legalVotingRights" name="legalVotingRights" th:value="${dictator.getLegalVotingRights().trim()}" placeholder="dictator-for-life does have a nice ring to it" maxlength="140" required="required"/>
+              <input spellcheck="true" type="text" id="legalVotingRights" name="legalVotingRights" th:value="${dictator.getLegalVotingRights().trim()}" placeholder="dictator-for-life does have a nice ring to it" maxlength="255" required="required"/>
               <br />
               <!-- <br /> -->
 
