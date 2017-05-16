@@ -79,11 +79,11 @@ public class DictatorController {
         // Creates list of usernames
         ArrayList<String> usernameList = new ArrayList<>();
         for (int x = 0; x < dictatorRepository.listUsers().size(); x =x + 1){
-            usernameList.add(dictatorRepository.listUsers().get(x).getUsername());
+            usernameList.add(dictatorRepository.listUsers().get(x).getUsername().toLowerCase());
         }
 
         // Checks to see if username is in database
-        if (usernameList.contains(username)){
+        if (usernameList.contains(username.toLowerCase())){
             // gets a particular user by username
             User user = dictatorRepository.getByUserName(username);
 
@@ -536,6 +536,8 @@ public class DictatorController {
                     dictatorList.add(searchDictators.get(x));
                 }
             }
+        } else {
+            model.addAttribute("empty",0);
         }
 
         // Sending the filtered list of dictators to leaderboard
