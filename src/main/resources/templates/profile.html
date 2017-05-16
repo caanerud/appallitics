@@ -127,7 +127,9 @@
                     <a href="createform.html" class="remodal-return" th:href="@{/editDictator}">OK</a>
                 </div>
 
-                <div class="buttons"></div>
+                <div class="buttons">
+                  <p>There is a limit to the application of democratic methods. You can inquire of all the passengers as to what type of car they like to ride in, but it is impossible to question them as to whether to apply the brakes when the train is at full speed and accident threatens.<br/><br/>– Leon Trotsky</p>
+                </div>
               </div>
 
           </div>
@@ -196,9 +198,8 @@
             <!-- <hr/> -->
 
               <div class="buttons" >
-                <!-- <div class="edit" th:if="${owner}">
-                    <a href="#" id="edit-button" data-remodal-target="edit-modal">Edit Profile</a>
-                </div> -->
+
+                <p th:if="${owner}"><br/>Politics is when you say you are going to do one thing while intending to do another. Then you do neither what you said nor what you intended.<br/><br/>– Saddam Hussein</p>
 
                 <div class="view" th:if="${!owner and checkloggedin != 0}" >
                     <div class="gameplay-buttons">
@@ -207,7 +208,7 @@
                       <button id="attack-button" type="button" data-remodal-target="attack-modal">Attack</button>
                     </div>
 
-                    <div class="attack-messages">
+                    <!-- <div class="attack-messages"> -->
                       <div class="error-message" th:if="${errorExists} == true">
                         <p><b>ERROR:</b><br/><span th:text="${error}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></p>
                       </div>
@@ -215,7 +216,7 @@
                           <p><span th:text="${attackerMessage}"></span></p>
                           <p><span th:text="${defenderMessage}"></span></p>
                       </div>
-                    </div>
+                    <!-- </div> -->
 
                 </div>
 
