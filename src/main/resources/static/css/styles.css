@@ -71,12 +71,12 @@
     letter-spacing: .2rem;
     font-size: 1.5rem; }
   .hero .hero-nav {
-    margin-top: 30px; }
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
     .hero .hero-nav button {
-      margin: 0 auto;
       width: 280px; }
-    .hero .hero-nav a {
-      display: block; }
   .hero .scrollDown {
     text-align: center;
     margin-top: 20px;
