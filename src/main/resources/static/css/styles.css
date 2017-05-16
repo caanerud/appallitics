@@ -373,7 +373,8 @@ td .color-overlay {
   text-align: center;
   margin: 10px auto 0;
   font-size: 1.2rem;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+  max-width: 300px; }
   .buttons p b {
     color: #FE5745; }
 
@@ -384,10 +385,6 @@ td .color-overlay {
   padding: 10px;
   border: 1px solid white;
   transition: all .1s ease-in-out; }
-
-.view .attack-messages {
-  max-width: 300px;
-  margin: 0 auto; }
 
 .bottom-section {
   margin: 30px 0 0;
@@ -461,6 +458,8 @@ td .color-overlay {
       background-color: rgba(0, 0, 0, 0.1); }
       .top-section .buttons #revolt-button, .top-section .buttons #pledge-button, .top-section .buttons #attack-button {
         margin: 0 auto 15px; }
+      .top-section .buttons p {
+        max-width: 400px; }
     .top-section .edit {
       margin: 20px auto 0; }
     .top-section .edit:hover {
@@ -475,11 +474,6 @@ td .color-overlay {
         justify-content: space-between; }
         .top-section .view .gameplay-buttons button {
           max-width: 30%; }
-      .top-section .view .attack-messages {
-        max-width: 100%;
-        margin: 0; }
-        .top-section .view .attack-messages .error-message {
-          padding: 0 30px; }
 
   .bottom-section {
     margin: 0;

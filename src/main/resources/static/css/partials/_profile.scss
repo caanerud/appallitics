@@ -175,6 +175,7 @@
     margin: 10px auto 0;
     font-size: 1.2rem;
     line-height: 1.5rem;
+    max-width: 300px;
 
     b{
       color: $color1;
@@ -190,13 +191,6 @@
   padding: 10px;
   border:1px solid white;
   transition: all .1s ease-in-out;
-}
-
-.view{
-  .attack-messages{
-    max-width: 300px;
-    margin: 0 auto;
-  }
 }
 
 
@@ -307,6 +301,10 @@
       #revolt-button, #pledge-button, #attack-button{
         margin: 0 auto 15px;
       }
+
+      p{
+        max-width: 400px;
+      }
     }
 
     .edit{
@@ -320,7 +318,6 @@
 
     .view{
       width: 100%;
-      // min-height: 200px;
       margin: 0;
 
       .gameplay-buttons{
@@ -332,22 +329,10 @@
           max-width: 30%;
         }
       }
-
-      .attack-messages{
-        max-width: 100%;
-        margin: 0;
-
-        .error-message{
-          padding:0 30px;
-        }
-      }
     }
 
   }
 
-  // .profile-details{
-  //   padding: 0 1.5%;
-  // }
 
 
   .bottom-section{
