@@ -1,5 +1,6 @@
 package com.theironyard;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -529,16 +530,22 @@ public class DictatorController {
         // Getting the list of best dictators
         List<Dictator> dictatorList = new ArrayList<>();
 
+        // if filtered data is empty
+        Integer empty = 0;
+
         // Getting the dictators (with data)
-        if (searchDictators.size() != 0){
-            for (int x = 0; x < searchDictators.size(); x = x + 1){
-                if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()){
+        if (searchDictators.size() != 0) {
+            for (int x = 0; x < searchDictators.size(); x = x + 1) {
+                if (!searchDictators.get(x).getLegalWeapons().trim().isEmpty()) {
                     dictatorList.add(searchDictators.get(x));
                 }
             }
-        } else {
-            model.addAttribute("empty",0);
+            empty = 1;
         }
+
+        // model empty
+        model.addAttribute("emptyTable",empty);
+
 
         // Sending the filtered list of dictators to leaderboard
         model.addAttribute("dictators",dictatorList);
